@@ -1,0 +1,9 @@
+[Unit]
+Description=Build daily missions
+
+[Service]
+Type=oneshot
+User=school
+WorkingDirectory=/srv/school-site/current
+EnvironmentFile=/srv/school-site/.env
+ExecStart=/srv/school-site/venv/bin/python manage.py build_missions

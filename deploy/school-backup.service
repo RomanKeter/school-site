@@ -1,0 +1,8 @@
+[Unit]
+Description=Backup school DB
+
+[Service]
+Type=oneshot
+User=school
+EnvironmentFile=/srv/school-site/.env
+ExecStart=/bin/sh -c 'pg_dump -Fc -h 127.0.0.1 -U $POSTGRES_USER $POSTGRES_DB > /srv/school-site/backups/school-$(date +%%F).dump && find /srv/school-site/backups -name "*.dump" -mtime +14 -delete'

@@ -13,4 +13,5 @@ urlpatterns = [
     path("", include("apps.learning.urls")),
     path("", include("apps.rewards.urls")),
     path("parent/", include("apps.parents.urls")),
+    path("", include("apps.content.urls")),
 ]

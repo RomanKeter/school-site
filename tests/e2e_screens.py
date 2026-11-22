@@ -13,6 +13,30 @@ OUT.mkdir(parents=True, exist_ok=True)
 external = []
 errors = []
 
+# Создаём свежие блоки практики для демо-ребёнка (alesya) прямо через ORM
+import os, django  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
+django.setup()
+from apps.accounts.models import ChildProfile  # noqa: E402
+from apps.content.models import Exercise, VocabularyWord  # noqa: E402
+from apps.learning.models import Block  # noqa: E402
+
+_kid = ChildProfile.objects.get(user__username="alesya")
+
+
+def _blk(key=None, word=None):
+    if word:
+        w = VocabularyWord.objects.get(word=word)
+        return Block.objects.create(child=_kid, kind="words", title="5 слов", subject_code="en",
+                                    queue=[{"t": "word", "id": w.id, "mode": "flashcard"}]).id
+    e = Exercise.objects.get(external_key=key)
+    return Block.objects.create(child=_kid, kind="free", title="Практика", queue=[{"t": "ex", "id": e.id}], meta={"level": 1}).id
+
+
+B = {"frac": _blk("math.fr.a.ex1"), "steps": _blk("math.eq.ex6"), "cat": _blk("math.primes.ex1"),
+     "match": _blk("en.gr.hg.ex3"), "word": _blk(word="apple"), "order": _blk("math.fr.c.ex4")}
+
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox"])
     ctx = browser.new_context(viewport={"width": 1024, "height": 768}, device_scale_factor=1.5, locale="ru-RU", has_touch=True)
@@ -46,7 +70,7 @@ with sync_playwright() as p:
     page.wait_for_url("**/home/")
     shot("02_home_mission.png")
 
-    page.goto(f"{BASE}/play/1/")
+    page.goto(f"{BASE}/play/{B['frac']}/")
     page.fill("input[name=num]", "5")
     page.fill("input[name=den]", "14")
     page.click("[data-submit-task]")
@@ -59,13 +83,13 @@ with sync_playwright() as p:
     page.wait_for_selector(".fb.ok")
     shot("03b_exercise_fraction_correct.png")
 
-    page.goto(f"{BASE}/play/2/")
+    page.goto(f"{BASE}/play/{B['steps']}/")
     shot("04_step_by_step_bar_model.png")
 
-    page.goto(f"{BASE}/play/5/")
+    page.goto(f"{BASE}/play/{B['word']}/")
     shot("05_english_word_card.png")
 
-    page.goto(f"{BASE}/play/4/")
+    page.goto(f"{BASE}/play/{B['match']}/")
     for i in range(2):
         page.click(f"[data-left=l{i}]")
         page.click(f"[data-right=r{i}]")
@@ -74,8 +98,11 @@ with sync_playwright() as p:
     page.goto(f"{BASE}/map/math/")
     shot("08_map_islands.png")
 
-    page.goto(f"{BASE}/play/3/")
+    page.goto(f"{BASE}/play/{B['cat']}/")
     shot("09_categorize.png")
+
+    page.goto(f"{BASE}/play/{B['order']}/")
+    shot("09b_drag_order.png")
     browser.close()
 
 print("external requests:", external)

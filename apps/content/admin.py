@@ -49,7 +49,13 @@ class SkillAdmin(admin.ModelAdmin):
 
 @admin.register(Exercise)
 class ExerciseAdmin(admin.ModelAdmin):
-    list_display = ("external_key", "type", "skill", "difficulty", "status")
+    list_display = ("external_key", "type", "skill", "difficulty", "status", "preview")
+
+    @admin.display(description="Предпросмотр")
+    def preview(self, obj):
+        from django.utils.html import format_html
+
+        return format_html('<a href="/preview/exercise/{}/" target="_blank">👁 открыть</a>', obj.pk)
     list_filter = ("type", "difficulty", "status")
     search_fields = ("external_key", "payload")
 

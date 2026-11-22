@@ -10,4 +10,5 @@ urlpatterns = [
     path("play/<int:block_id>/word/<int:word_id>/check/", views.check_word, name="check_word"),
     path("activity/ping/", views.activity_ping, name="activity_ping"),
     path("words/", views.dictionary, name="dictionary"),
+    path("reflect/", views.reflect, name="reflect"),
 ]

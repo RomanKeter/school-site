@@ -116,6 +116,7 @@ def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block
         feedback["phrase"] = phrase("correct_first" if attempt_no == 1 and hints_used == 0 else "correct_retry")
     elif is_final:
         feedback["phrase"] = phrase("solution")
+        feedback["correct_answer"] = correct_answer_text(exercise=exercise, word=word, word_mode=word_mode)
         if exercise:
             feedback["solution_steps"] = (exercise.payload or {}).get("solution_steps") or []
             if exercise.type == "step_by_step":
@@ -208,3 +209,32 @@ def is_quiet_hours(child, now) -> bool:
 def limit_reached(child, today) -> bool:
     act = activity_get(child, today)
     return act.active_seconds >= child.settings.limit_for(today) * 60
+
+
+def correct_answer_text(*, exercise=None, word=None, word_mode=""):
+    """Правильный ответ для показа ПОСЛЕ исчерпания попыток (FR-LRN-3)."""
+    if word is not None:
+        if word_mode == "en_to_ru":
+            return f"{word.word} — {word.translation_ru}"
+        return f"{word.picture} {word.word} — {word.translation_ru}"
+    if exercise is None:
+        return ""
+    a, p = exercise.answer or {}, exercise.payload or {}
+    if "correct" in a:
+        opts = {o["id"]: o["text"] for o in p.get("options", [])}
+        return ", ".join(opts.get(c, c) for c in a["correct"])
+    if "order" in a:
+        items = {i["id"]: i["text"] for i in p.get("items", [])}
+        return " → ".join(items.get(i, i) for i in a["order"])
+    if "pairs" in a:
+        left = {i["id"]: i["text"] for i in p.get("left", [])}
+        right = {i["id"]: i["text"] for i in p.get("right", [])}
+        return "; ".join(f"{left.get(k, k)} — {right.get(v, v)}" for k, v in a["pairs"].items())
+    if "buckets" in a:
+        titles = {b["id"]: b["title"] for b in p.get("buckets", [])}
+        return "; ".join(f"{titles.get(b, b)}: {', '.join(v)}" for b, v in a["buckets"].items())
+    if "steps" in a:
+        return " → ".join(str(s.get("answer")) for s in a["steps"])
+    if "value" in a:
+        return ("x = " if exercise.type == "equation" else "") + str(a["value"])
+    return ""

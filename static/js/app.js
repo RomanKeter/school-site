@@ -138,6 +138,7 @@
       form.querySelectorAll("[data-letter]").forEach((b) =>
         b.addEventListener("click", (e) => { e.preventDefault(); out.textContent += b.dataset.letter; b.disabled = true; used.push(b); })
       );
+      form.addEventListener("tiles-reset", () => (used.length = 0));
       const back = form.querySelector("[data-tiles-back]");
       if (back) back.addEventListener("click", (e) => { e.preventDefault(); const b = used.pop(); if (b) { b.disabled = false; out.textContent = out.textContent.slice(0, -1); } });
     }
@@ -215,6 +216,9 @@
         tf.dataset.attempt = String(Number(tf.dataset.attempt || 1) + 1);
         tf.dataset.choice = "";
         tf.querySelectorAll("[data-choice].sel").forEach((x) => x.classList.remove("sel"));
+        // плитки букв: после «почти» начинаем собирать слово заново
+        const built = tf.querySelector(".built");
+        if (built) { built.textContent = ""; tf.querySelectorAll("[data-letter]").forEach((b) => (b.disabled = false)); tf.dispatchEvent(new Event("tiles-reset")); }
         const sol = document.querySelector("[data-solution]");
         if (sol) sol.hidden = false;
         if (fb.dataset.autohint === "1") {

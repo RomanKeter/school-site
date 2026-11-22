@@ -1,7 +1,7 @@
 import json
 import random
 
-from django.http import HttpResponseBadRequest, JsonResponse
+from django.http import HttpResponse, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 from django.views.decorators.http import require_POST
@@ -57,7 +57,7 @@ def play_block(request, block_id):
             awards = []
             if block.mission_id:
                 awards = mission_builder.complete_mission_if_done(block.mission, local_today(child.family))
-            return render(request, "child/celebrate.html", {"blk": block, "awards": awards})
+            return render(request, "child/celebrate.html", {"blk": block, "awards": awards, "reflect_options": REFLECT})
         if ctx["kind"] == "worked":
             return render(request, "child/worked.html", {"blk": block, "skill": ctx["skill"], "example": ctx["example"]})
         if ctx["kind"] == "exercise":
@@ -226,13 +226,24 @@ def _finish_block(request, block):
     _after_final(block, today)
     awards = []
     if block.kind == "diagnostic":
-        return render(request, "child/celebrate.html", {"blk": block, "awards": []})
+        return render(request, "child/celebrate.html", {"blk": block, "awards": [], "reflect_options": REFLECT})
+    if block.kind == "lesson" and block.skill_id:
+        from .mastery import STATUS_VIEW
+        from .models import SkillMastery
+        m = SkillMastery.objects.filter(child=child, skill=block.skill).first()
+        icon, label = STATUS_VIEW.get(m.status if m else "learning", ("🌱", "Учу"))
+        if block.mission_id:
+            mission_builder.complete_mission_if_done(block.mission, today)
+        return render(request, "child/celebrate.html", {
+            "blk": block, "awards": [], "reflect_options": REFLECT,
+            "island": f"Остров «{block.skill.title}»: {icon} {label}",
+        })
     if block.mission_id:
         awards = mission_builder.complete_mission_if_done(block.mission, today)
         nxt = block.mission.blocks.exclude(status="done").order_by("order").first()
         if nxt:
             return redirect("play_block", block_id=nxt.id)
-    return render(request, "child/celebrate.html", {"blk": block, "awards": awards})
+    return render(request, "child/celebrate.html", {"blk": block, "awards": awards, "reflect_options": REFLECT})
 
 
 @child_required
@@ -258,6 +269,27 @@ def activity_ping(request):
     if services.limit_reached(child, today):
         resp["redirect"] = "/home/"
     return JsonResponse(resp)
+
+
+REFLECT = [("easy", "😊", "было легко"), ("ok", "🙂", "нормально"), ("hard", "😮", "трудно")]
+
+
+@child_required
+@require_POST
+def reflect(request):
+    """Мини-рефлексия «Как тебе было?» (+1 ★ раз в день)."""
+    child = request.child
+    today = local_today(child.family)
+    mood = request.POST.get("mood", "")
+    if mood not in {c for c, _, _ in REFLECT}:
+        return HttpResponseBadRequest("bad mood")
+    act = services.activity_get(child, today)
+    act.reflection = mood
+    act.save(update_fields=["reflection"])
+    from apps.rewards import stars as stars_svc
+    got = stars_svc.award(child, 1, "reflection", today.isoformat(), today=today)
+    msg = "Спасибо, что рассказала! Трудно — значит, мозг растёт 💪" if mood == "hard" else "Спасибо, что рассказала!"
+    return HttpResponse(f'<p class="bubble" style="display:inline-block">{msg}{" ⭐ +1" if got else ""}</p>')
 
 
 @child_required

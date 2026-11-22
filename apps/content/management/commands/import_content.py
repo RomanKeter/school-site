@@ -31,7 +31,9 @@ class Command(BaseCommand):
                 if dry_run:
                     raise _DryRun()
         except _DryRun:
-            self.stdout.write(self.style.WARNING("dry-run: изменений нет"))
+            self.stdout.write(self.style.WARNING(
+                f"dry-run: ошибок нет, было бы создано {report['created']}, обновлено {report['updated']}. В БД ничего не записано."))
+            return
         except _HasErrors:
             pass
         if report["errors"]:
@@ -72,7 +74,7 @@ class Command(BaseCommand):
                         report["errors"].append(f"prerequisite not found: {pk}")
                 for ei, e in enumerate(s.get("exercises", [])):
                     if "type" not in e or "answer" not in e:
-                        report["errors"].append(f"skills[{si}].exercises[{ei}]: type/answer required")
+                        report["errors"].append(f"topics[{ti}].skills[{si}].exercises[{ei}] ({e.get('key', '?')}): type/answer required")
                         continue
                     self._upsert(Exercise, e["key"], update, report,
                                  skill=skill, type=e["type"], difficulty=e.get("difficulty", 1),

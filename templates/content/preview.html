@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load learn %}
+{% block bodyclass %}subj-{{ exercise.skill.topic.unit.subject.code }}{% endblock %}
+{% block content %}
+<p class="muted">Предпросмотр · {{ exercise.external_key }} · {{ exercise.get_type_display }} · сложность {{ exercise.difficulty }} · <a href="/admin/content/exercise/{{ exercise.pk }}/change/">← в админку</a></p>
+<div class="task card">
+  <p class="prompt">{{ payload.prompt }}</p>
+  {% visual_model payload.model %}
+  <form class="taskform" data-type="{{ exercise.type }}">{% include "exercises/"|add:exercise.type|add:".html" %}</form>
+</div>
+<div class="card"><h2>Для автора</h2>
+  <p><b>Ответ:</b> <code>{{ exercise.answer }}</code></p>
+  {% if payload.hints %}<ol>{% for h in payload.hints %}<li>Ур. {{ h.level }}: {{ h.text }}</li>{% endfor %}</ol>{% endif %}
+  {% if payload.solution_steps %}<p><b>Решение:</b></p><ol>{% for s in payload.solution_steps %}<li>{{ s }}</li>{% endfor %}</ol>{% endif %}
+</div>
+{% endblock %}

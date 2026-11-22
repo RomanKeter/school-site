@@ -298,3 +298,43 @@ def test_diagnostic_completion_appends_regular_mission(client, family, content):
     assert SkillMastery.objects.filter(child=child, placed=True).exists()
     # знакомые слова стартуют сразу с интервала 3 дня
     assert ReviewItem.objects.filter(child=child, item_type="word", interval_days=3).exists()
+
+
+def test_every_seed_exercise_renders_for_child_and_in_admin_preview(client, family, content):
+    from apps.accounts.models import User
+    _, child = family
+    login_child(client, child)
+    for ex in Exercise.objects.all():
+        b = Block.objects.create(child=child, kind="free", title="t", queue=[{"t": "ex", "id": ex.id}])
+        r = client.get(reverse("play_block", args=[b.id]))
+        assert r.status_code == 200, ex.external_key
+        html = r.content.decode()
+        assert "taskform" in html, ex.external_key
+    admin = User.objects.create_superuser("adm", "a@a.a", "AdminPass123!!", role="admin")
+    client.force_login(admin)
+    for ex in Exercise.objects.all()[:5]:
+        assert client.get(f"/preview/exercise/{ex.pk}/").status_code == 200
+
+
+def test_child_templates_have_no_shaming_words():
+    """AC-1-12: в шаблонах ребёнка нет «Неправильно/Ошибка/Неверно», красных крестиков и процентов."""
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent / "templates"
+    files = list((root / "child").glob("*.html")) + list((root / "exercises").glob("*.html")) + list((root / "partials").glob("*.html"))
+    for f in files:
+        txt = f.read_text(encoding="utf-8")
+        for bad in ("Неправильно", "Ошибка", "Неверно", "ошибка", "✗", "❌"):
+            assert bad not in txt, f"{f.name}: {bad}"
+        assert "%</" not in txt and " %<" not in txt, f"{f.name}: percent shown to child"
+    from apps.learning.feedback import PHRASES
+    for lst in PHRASES.values():
+        for ph in lst:
+            assert "неправ" not in ph.lower() and "ошиб" not in ph.lower() or "нашла ошибку" in ph
+
+
+def test_reflection_star_once_per_day(client, family):
+    _, child = family
+    login_child(client, child)
+    r1 = client.post(reverse("reflect"), {"mood": "hard"}).content.decode()
+    r2 = client.post(reverse("reflect"), {"mood": "easy"}).content.decode()
+    assert "+1" in r1 and "+1" not in r2
