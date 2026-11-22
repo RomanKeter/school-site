@@ -261,3 +261,5 @@ table.t td,table.t th{padding:8px;border-bottom:1px solid var(--line);text-align
 .hint::after{content:"";display:block;clear:both}
 .island .btn{font-size:17px;padding:0 14px;max-width:100%}
 .island{align-self:stretch}
+#reflect .iconbtn .ico-svg{width:44px;height:44px}
+h1 .ico-svg,h2 .ico-svg{color:var(--blue)}
