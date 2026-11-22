@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>🏅 Мои награды</h1>
+<div class="card"><span style="font-size:32px;font-weight:800">⭐ {{ balance }}</span>{% if streak %} &nbsp; <span style="font-size:24px">🔥 серия: {{ streak.current }} · рекорд {{ streak.best }} 🏆</span>{% endif %}</div>
+<h2>Мои значки</h2>
+<div class="badges">
+  {% for cb in owned %}<div class="badge"><div class="i">{{ cb.badge.icon }}</div><b>{{ cb.badge.title }}</b><div class="muted">{{ cb.badge.description }}</div></div>
+  {% empty %}<p class="muted">Первый значок совсем близко!</p>{% endfor %}
+</div>
+{% if upcoming %}<h2 style="margin-top:24px">Скоро будет…</h2>
+<div class="badges">{% for b in upcoming %}<div class="badge soon"><div class="i">{{ b.icon }}</div><b>{{ b.title }}</b><div class="muted">{{ b.description }}</div></div>{% endfor %}</div>{% endif %}
+{% endblock %}

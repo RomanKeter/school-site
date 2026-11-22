@@ -1,0 +1,2 @@
+{% load learn %}<ul class="order-list">{% for it in payload.items|shuffled %}
+<li data-id="{{ it.id }}"><span aria-hidden="true">☰</span><span class="grow">{{ it.text }}</span><button type="button" data-move="up" aria-label="Выше">↑</button><button type="button" data-move="down" aria-label="Ниже">↓</button></li>{% endfor %}</ul>

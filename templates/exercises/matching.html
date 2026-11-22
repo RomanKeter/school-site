@@ -1,0 +1,5 @@
+{% load learn %}<div class="match">
+  <div class="col">{% for l in payload.left %}<button type="button" class="opt" data-left="{{ l.id }}">{{ l.text }}</button>{% endfor %}</div>
+  <div class="col">{% for r in payload.right|shuffled %}<button type="button" class="opt" data-right="{{ r.id }}">{{ r.text }}</button>{% endfor %}</div>
+</div>
+<p class="muted">Нажми слева, потом справа — получится пара.</p>

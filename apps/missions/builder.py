@@ -228,6 +228,9 @@ def advance_block(block: Block):
             m, _ = SkillMastery.objects.get_or_create(child=block.child, skill=block.skill)
             m.lessons_done += 1
             m.save(update_fields=["lessons_done"])
+            from apps.rewards import stars as stars_svc
+
+            stars_svc.award(block.child, 5, "lesson", block.pk, today=timezone.localdate())
     else:
         block.status = "in_progress"
     block.save()

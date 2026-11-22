@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}<div class="rest">
+{% include "partials/mascot.html" with state="rest" size="big" say="На сегодня всё! Мозгу нужно отдохнуть, чтобы всё запомнилось." %}
+<p><a class="btn secondary" href="{% url 'rewards' %}">🏅 Мои награды</a> <a class="btn secondary" href="{% url 'dictionary' %}">📖 Словарик</a></p>
+</div>{% endblock %}

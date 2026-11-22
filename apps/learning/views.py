@@ -1,8 +1,9 @@
 import json
 import random
 
-from django.http import HttpResponse, HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 from apps.accounts.utils import child_required, local_now, local_today
@@ -56,16 +57,16 @@ def play_block(request, block_id):
             awards = []
             if block.mission_id:
                 awards = mission_builder.complete_mission_if_done(block.mission, local_today(child.family))
-            return render(request, "child/celebrate.html", {"block": block, "awards": awards})
+            return render(request, "child/celebrate.html", {"blk": block, "awards": awards})
         if ctx["kind"] == "worked":
-            return render(request, "child/worked.html", {"block": block, "skill": ctx["skill"], "example": ctx["example"]})
+            return render(request, "child/worked.html", {"blk": block, "skill": ctx["skill"], "example": ctx["example"]})
         if ctx["kind"] == "exercise":
             ex = ctx["exercise"]
             if ex is None:
                 mission_builder.advance_block(block)
                 continue
             return render(request, "child/exercise.html", {
-                "block": block, "exercise": ex, "stage": ctx.get("stage"),
+                "blk": block, "exercise": ex, "stage": ctx.get("stage"),
                 "payload": ex.payload, "progress": f"{block.position + 1}/{len(block.queue)}",
                 "hints_used": 0, "attempt_no": 1,
             })
@@ -78,7 +79,7 @@ def play_block(request, block_id):
             options = distractors + [word]
             random.shuffle(options)
             return render(request, "child/word.html", {
-                "block": block, "word": word, "mode": ctx["mode"], "options": options,
+                "blk": block, "word": word, "mode": ctx["mode"], "options": options,
                 "progress": f"{block.position + 1}/{len(block.queue)}",
             })
         break
@@ -102,6 +103,12 @@ def check_exercise(request, block_id, exercise_id):
     child = request.child
     block = get_object_or_404(Block, pk=block_id, child=child)
     ex = get_object_or_404(Exercise, pk=exercise_id)
+    if player.current_exercise_id(block) != ex.id:
+        # повторная отправка уже засчитанного задания — без повторного начисления (AC-1-08)
+        return render(request, "partials/feedback.html", {
+            "fb": {"correct": True, "phrase": "Уже засчитано 👍", "stars": 0, "is_final": True},
+            "blk": block, "next_url": f"/play/{block.id}/",
+        })
     try:
         given = json.loads(request.POST.get("answer", "{}"))
     except json.JSONDecodeError:
@@ -116,20 +123,10 @@ def check_exercise(request, block_id, exercise_id):
         child, exercise=ex, block=block, given=given, attempt_no=attempt_no,
         hints_used=hints_used, duration_ms=duration_ms,
         context=block.kind if block.kind != "lesson" else "lesson",
-        solution_shown=show_solution, today=today,
+        solution_shown=show_solution, today=today, final_now=(block.kind == "diagnostic"),
     )
-    # активность
-    act = services.activity_get(child, today)
-    act.active_seconds += max(1, duration_ms // 1000)
-    act.since_break_seconds += max(1, duration_ms // 1000)
-    if act.since_break_seconds >= child.settings.break_every_min * 60:
-        from django.utils import timezone
-        act.break_started_at = timezone.now()
-        act.breaks_taken += 1
-        act.since_break_seconds = 0
-    act.save()
-
     if fb["is_final"]:
+        _requeue_failed_review(block, fb)
         # диагностика: отметить placed при верном
         if block.kind == "diagnostic" and fb["correct"] and ex.skill_id:
             m = services.get_or_create_mastery(child, ex.skill)
@@ -142,7 +139,7 @@ def check_exercise(request, block_id, exercise_id):
         # завершение диагностики
         if block.kind == "diagnostic" and block.status == "done":
             DiagnosticResult.objects.update_or_create(
-                child=child, defaults={"completed_at": __import__("django.utils.timezone", fromlist=["timezone"]).timezone.now(), "data": {}}
+                child=child, defaults={"completed_at": timezone.now(), "data": {}}
             )
             # сгенерировать обычную миссию на сегодня заново? оставляем diag как первую;
             # завтра — обычная. Для UX сразу создадим вторую миссию-продолжение нет —
@@ -152,7 +149,7 @@ def check_exercise(request, block_id, exercise_id):
                 mission_builder.complete_mission_if_done(block.mission, today)
 
     return render(request, "partials/feedback.html", {
-        "fb": fb, "exercise": ex, "block": block,
+        "fb": fb, "exercise": ex, "blk": block,
         "attempt_no": attempt_no, "hints_used": hints_used,
         "next_url": f"/play/{block.id}/" if fb["is_final"] else None,
     })
@@ -186,6 +183,15 @@ def check_word(request, block_id, word_id):
     child = request.child
     block = get_object_or_404(Block, pk=block_id, child=child)
     word = get_object_or_404(VocabularyWord, pk=word_id)
+    step = player.current_step(block) or {}
+    step_word = step.get("id") if step.get("t") == "word" else None
+    if step.get("t") == "review":
+        step_word = block.child.review_items.filter(pk=step.get("item")).values_list("word_id", flat=True).first()
+    if step_word != word.id:
+        return render(request, "partials/feedback.html", {
+            "fb": {"correct": True, "phrase": "Уже засчитано 👍", "stars": 0, "is_final": True},
+            "blk": block, "next_url": f"/play/{block.id}/",
+        })
     mode = request.POST.get("mode", "flashcard")
     try:
         given = json.loads(request.POST.get("answer", "{}"))
@@ -202,20 +208,22 @@ def check_word(request, block_id, word_id):
         mission_builder.advance_block(block)
         return render(request, "partials/feedback.html", {
             "fb": {"correct": True, "phrase": "Запомнили!", "stars": 0, "is_final": True, "solution_steps": []},
-            "block": block, "next_url": f"/play/{block.id}/",
+            "blk": block, "next_url": f"/play/{block.id}/",
         })
 
     att, fb = services.submit_answer(
         child, word=word, word_mode=mode, block=block, given=given,
         attempt_no=attempt_no, hints_used=0, duration_ms=duration_ms,
-        context="words" if block.kind == "words" else "review", today=today,
+        context="words" if block.kind == "words" else ("diagnostic" if block.kind == "diagnostic" else "review"), today=today,
+        final_now=(block.kind == "diagnostic"),
     )
     if fb["is_final"]:
+        _requeue_failed_review(block, fb)
         mission_builder.advance_block(block)
         from apps.rewards import badges
         badges.evaluate(child, "word_learned")
     return render(request, "partials/feedback.html", {
-        "fb": fb, "block": block, "word": word,
+        "fb": fb, "blk": block, "word": word,
         "next_url": f"/play/{block.id}/" if fb["is_final"] else None,
         "attempt_no": attempt_no,
     })
@@ -230,7 +238,7 @@ def _finish_block(request, block):
         nxt = block.mission.blocks.exclude(status="done").order_by("order").first()
         if nxt:
             return redirect("play_block", block_id=nxt.id)
-    return render(request, "child/celebrate.html", {"block": block, "awards": awards})
+    return render(request, "child/celebrate.html", {"blk": block, "awards": awards})
 
 
 @child_required
@@ -239,12 +247,23 @@ def activity_ping(request):
     child = request.child
     today = local_today(child.family)
     act = services.activity_get(child, today)
-    from django.utils import timezone
-    act.last_ping = timezone.now()
+    now = timezone.now()
+    # Считаем не чаще раза в 25 с (защита от накрутки/дублей вкладок)
+    if act.last_ping and (now - act.last_ping).total_seconds() < 25:
+        return JsonResponse({"ok": True})
+    act.last_ping = now
     act.active_seconds += 30
     act.since_break_seconds += 30
+    resp = {"ok": True}
+    if act.since_break_seconds >= child.settings.break_every_min * 60:
+        act.break_started_at = now
+        act.breaks_taken += 1
+        act.since_break_seconds = 0
+        resp["redirect"] = "/home/"
     act.save()
-    return HttpResponse("ok")
+    if services.limit_reached(child, today):
+        resp["redirect"] = "/home/"
+    return JsonResponse(resp)
 
 
 @child_required
@@ -253,3 +272,13 @@ def dictionary(request):
     words = VocabularyWord.objects.filter(language="en", status="published").order_by("order")
     learned = set(child.review_items.filter(item_type="word").values_list("word_id", flat=True))
     return render(request, "child/dictionary.html", {"words": words, "learned": learned})
+
+
+def _requeue_failed_review(block, fb):
+    """SR-4: неверная карточка повторения показывается ещё раз в конце сессии (однократно)."""
+    if block.kind != "review" or fb.get("correct"):
+        return
+    step = block.queue[block.position] if block.position < len(block.queue) else None
+    if step and step.get("t") == "review" and not step.get("again"):
+        block.queue = block.queue + [{**step, "again": True}]
+        block.save(update_fields=["queue"])

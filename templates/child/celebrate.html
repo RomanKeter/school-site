@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="center card" style="max-width:720px;margin:24px auto">
+  {% include "partials/mascot.html" with state="party" size="big" say="Ура! Получилось!" %}
+  <h1>{% if blk.kind == "surprise" %}Миссия выполнена! 🎁{% elif blk.kind == "diagnostic" %}Спасибо! Теперь я знаю, с чего начать{% else %}Шаг пройден!{% endif %}</h1>
+  {% for a in awards %}
+    <div class="badge" style="max-width:320px;margin:16px auto"><div class="i" style="font-size:120px">{{ a.badge.icon }}</div><h2>{{ a.badge.title }}</h2><p>{{ a.badge.description }}</p></div>
+  {% endfor %}
+  <p>Как тебе было?</p>
+  <p style="font-size:44px">😊 🙂 😮</p>
+  <a class="btn" href="{% url 'home' %}">Дальше →</a>
+</div>
+{% endblock %}

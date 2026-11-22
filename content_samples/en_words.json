@@ -1,0 +1,653 @@
+{
+ "format_version": 1,
+ "subject": "en",
+ "unit": {
+  "key": "en.g5.u1",
+  "title": "Лексика 5 класса",
+  "grade": 5,
+  "quarter": 1,
+  "order": 1
+ },
+ "topics": [
+  {
+   "key": "en.school",
+   "title": "Школа",
+   "order": 0,
+   "words": [
+    {
+     "key": "en.school.pen",
+     "word": "pen",
+     "translation_ru": "ручка",
+     "transcription": "/pen/",
+     "picture": "🖊️",
+     "example": "I have got a blue pen.",
+     "example_translation": "У меня есть синяя ручка.",
+     "order": 1
+    },
+    {
+     "key": "en.school.pencil",
+     "word": "pencil",
+     "translation_ru": "карандаш",
+     "transcription": "/ˈpen.səl/",
+     "picture": "✏️",
+     "example": "This is my pencil.",
+     "example_translation": "Это мой карандаш.",
+     "order": 2
+    },
+    {
+     "key": "en.school.book",
+     "word": "book",
+     "translation_ru": "книга",
+     "transcription": "/bʊk/",
+     "picture": "📕",
+     "example": "I like this book.",
+     "example_translation": "Мне нравится эта книга.",
+     "order": 3
+    },
+    {
+     "key": "en.school.bag",
+     "word": "bag",
+     "translation_ru": "сумка, рюкзак",
+     "transcription": "/bæɡ/",
+     "picture": "🎒",
+     "example": "My bag is red.",
+     "example_translation": "Мой рюкзак красный.",
+     "order": 4
+    },
+    {
+     "key": "en.school.ruler",
+     "word": "ruler",
+     "translation_ru": "линейка",
+     "transcription": "/ˈruː.lər/",
+     "picture": "📏",
+     "example": "Can I take your ruler?",
+     "example_translation": "Можно взять твою линейку?",
+     "order": 5
+    },
+    {
+     "key": "en.school.teacher",
+     "word": "teacher",
+     "translation_ru": "учитель",
+     "transcription": "/ˈtiː.tʃər/",
+     "picture": "👩‍🏫",
+     "example": "Our teacher is kind.",
+     "example_translation": "Наша учительница добрая.",
+     "order": 6
+    },
+    {
+     "key": "en.school.desk",
+     "word": "desk",
+     "translation_ru": "парта",
+     "transcription": "/desk/",
+     "picture": "🪑",
+     "example": "My desk is near the window.",
+     "example_translation": "Моя парта у окна.",
+     "order": 7
+    }
+   ]
+  },
+  {
+   "key": "en.food",
+   "title": "Еда",
+   "order": 1,
+   "words": [
+    {
+     "key": "en.food.apple",
+     "word": "apple",
+     "translation_ru": "яблоко",
+     "transcription": "/ˈæp.əl/",
+     "picture": "🍎",
+     "example": "I like apples.",
+     "example_translation": "Я люблю яблоки.",
+     "order": 8
+    },
+    {
+     "key": "en.food.bread",
+     "word": "bread",
+     "translation_ru": "хлеб",
+     "transcription": "/bred/",
+     "picture": "🍞",
+     "example": "We buy bread every day.",
+     "example_translation": "Мы покупаем хлеб каждый день.",
+     "order": 9
+    },
+    {
+     "key": "en.food.milk",
+     "word": "milk",
+     "translation_ru": "молоко",
+     "transcription": "/mɪlk/",
+     "picture": "🥛",
+     "example": "I drink milk in the morning.",
+     "example_translation": "Я пью молоко утром.",
+     "order": 10
+    },
+    {
+     "key": "en.food.cheese",
+     "word": "cheese",
+     "translation_ru": "сыр",
+     "transcription": "/tʃiːz/",
+     "picture": "🧀",
+     "example": "Mice like cheese.",
+     "example_translation": "Мыши любят сыр.",
+     "order": 11
+    },
+    {
+     "key": "en.food.egg",
+     "word": "egg",
+     "translation_ru": "яйцо",
+     "transcription": "/eɡ/",
+     "picture": "🥚",
+     "example": "I have an egg for breakfast.",
+     "example_translation": "На завтрак у меня яйцо.",
+     "order": 12
+    },
+    {
+     "key": "en.food.banana",
+     "word": "banana",
+     "translation_ru": "банан",
+     "transcription": "/bəˈnɑː.nə/",
+     "picture": "🍌",
+     "example": "Monkeys eat bananas.",
+     "example_translation": "Обезьяны едят бананы.",
+     "order": 13
+    },
+    {
+     "key": "en.food.soup",
+     "word": "soup",
+     "translation_ru": "суп",
+     "transcription": "/suːp/",
+     "picture": "🍲",
+     "example": "Granny makes tasty soup.",
+     "example_translation": "Бабушка варит вкусный суп.",
+     "order": 14
+    }
+   ]
+  },
+  {
+   "key": "en.animals",
+   "title": "Животные",
+   "order": 2,
+   "words": [
+    {
+     "key": "en.animals.cat",
+     "word": "cat",
+     "translation_ru": "кошка",
+     "transcription": "/kæt/",
+     "picture": "🐱",
+     "example": "My cat is black.",
+     "example_translation": "Моя кошка чёрная.",
+     "order": 15
+    },
+    {
+     "key": "en.animals.dog",
+     "word": "dog",
+     "translation_ru": "собака",
+     "transcription": "/dɒɡ/",
+     "picture": "🐶",
+     "example": "The dog can run fast.",
+     "example_translation": "Собака умеет быстро бегать.",
+     "order": 16
+    },
+    {
+     "key": "en.animals.bird",
+     "word": "bird",
+     "translation_ru": "птица",
+     "transcription": "/bɜːd/",
+     "picture": "🐦",
+     "example": "The bird can fly.",
+     "example_translation": "Птица умеет летать.",
+     "order": 17
+    },
+    {
+     "key": "en.animals.horse",
+     "word": "horse",
+     "translation_ru": "лошадь",
+     "transcription": "/hɔːs/",
+     "picture": "🐴",
+     "example": "The horse is big.",
+     "example_translation": "Лошадь большая.",
+     "order": 18
+    },
+    {
+     "key": "en.animals.rabbit",
+     "word": "rabbit",
+     "translation_ru": "кролик",
+     "transcription": "/ˈræb.ɪt/",
+     "picture": "🐰",
+     "example": "The rabbit likes carrots.",
+     "example_translation": "Кролик любит морковку.",
+     "order": 19
+    },
+    {
+     "key": "en.animals.fox",
+     "word": "fox",
+     "translation_ru": "лиса",
+     "transcription": "/fɒks/",
+     "picture": "🦊",
+     "example": "A fox lives in the forest.",
+     "example_translation": "Лиса живёт в лесу.",
+     "order": 20
+    },
+    {
+     "key": "en.animals.bison",
+     "word": "bison",
+     "translation_ru": "зубр",
+     "transcription": "/ˈbaɪ.sən/",
+     "picture": "🦬",
+     "example": "The bison is strong.",
+     "example_translation": "Зубр сильный.",
+     "order": 21
+    }
+   ]
+  },
+  {
+   "key": "en.family",
+   "title": "Семья",
+   "order": 3,
+   "words": [
+    {
+     "key": "en.family.mother",
+     "word": "mother",
+     "translation_ru": "мама",
+     "transcription": "/ˈmʌð.ər/",
+     "picture": "👩",
+     "example": "My mother is a doctor.",
+     "example_translation": "Моя мама — врач.",
+     "order": 22
+    },
+    {
+     "key": "en.family.father",
+     "word": "father",
+     "translation_ru": "папа",
+     "transcription": "/ˈfɑː.ðər/",
+     "picture": "👨",
+     "example": "My father can swim.",
+     "example_translation": "Мой папа умеет плавать.",
+     "order": 23
+    },
+    {
+     "key": "en.family.sister",
+     "word": "sister",
+     "translation_ru": "сестра",
+     "transcription": "/ˈsɪs.tər/",
+     "picture": "👧",
+     "example": "I have got a sister.",
+     "example_translation": "У меня есть сестра.",
+     "order": 24
+    },
+    {
+     "key": "en.family.brother",
+     "word": "brother",
+     "translation_ru": "брат",
+     "transcription": "/ˈbrʌð.ər/",
+     "picture": "👦",
+     "example": "My brother is ten.",
+     "example_translation": "Моему брату десять.",
+     "order": 25
+    },
+    {
+     "key": "en.family.grandmother",
+     "word": "grandmother",
+     "translation_ru": "бабушка",
+     "transcription": "/ˈɡræn.mʌð.ər/",
+     "picture": "👵",
+     "example": "My grandmother lives in Minsk.",
+     "example_translation": "Моя бабушка живёт в Минске.",
+     "order": 26
+    },
+    {
+     "key": "en.family.baby",
+     "word": "baby",
+     "translation_ru": "малыш",
+     "transcription": "/ˈbeɪ.bi/",
+     "picture": "👶",
+     "example": "The baby is sleeping.",
+     "example_translation": "Малыш спит.",
+     "order": 27
+    }
+   ]
+  },
+  {
+   "key": "en.home",
+   "title": "Дом",
+   "order": 4,
+   "words": [
+    {
+     "key": "en.home.house",
+     "word": "house",
+     "translation_ru": "дом",
+     "transcription": "/haʊs/",
+     "picture": "🏠",
+     "example": "This is my house.",
+     "example_translation": "Это мой дом.",
+     "order": 28
+    },
+    {
+     "key": "en.home.kitchen",
+     "word": "kitchen",
+     "translation_ru": "кухня",
+     "transcription": "/ˈkɪtʃ.ɪn/",
+     "picture": "🍳",
+     "example": "Mum is in the kitchen.",
+     "example_translation": "Мама на кухне.",
+     "order": 29
+    },
+    {
+     "key": "en.home.bedroom",
+     "word": "bedroom",
+     "translation_ru": "спальня",
+     "transcription": "/ˈbed.ruːm/",
+     "picture": "🛏️",
+     "example": "My bedroom is small.",
+     "example_translation": "Моя спальня маленькая.",
+     "order": 30
+    },
+    {
+     "key": "en.home.window",
+     "word": "window",
+     "translation_ru": "окно",
+     "transcription": "/ˈwɪn.dəʊ/",
+     "picture": "🪟",
+     "example": "Open the window, please.",
+     "example_translation": "Открой окно, пожалуйста.",
+     "order": 31
+    },
+    {
+     "key": "en.home.door",
+     "word": "door",
+     "translation_ru": "дверь",
+     "transcription": "/dɔːr/",
+     "picture": "🚪",
+     "example": "Close the door.",
+     "example_translation": "Закрой дверь.",
+     "order": 32
+    },
+    {
+     "key": "en.home.lamp",
+     "word": "lamp",
+     "translation_ru": "лампа",
+     "transcription": "/læmp/",
+     "picture": "💡",
+     "example": "There is a lamp on the desk.",
+     "example_translation": "На столе лампа.",
+     "order": 33
+    }
+   ]
+  },
+  {
+   "key": "en.weather",
+   "title": "Погода и время",
+   "order": 5,
+   "words": [
+    {
+     "key": "en.weather.sun",
+     "word": "sun",
+     "translation_ru": "солнце",
+     "transcription": "/sʌn/",
+     "picture": "☀️",
+     "example": "The sun is hot.",
+     "example_translation": "Солнце горячее.",
+     "order": 34
+    },
+    {
+     "key": "en.weather.rain",
+     "word": "rain",
+     "translation_ru": "дождь",
+     "transcription": "/reɪn/",
+     "picture": "🌧️",
+     "example": "I don't like rain.",
+     "example_translation": "Я не люблю дождь.",
+     "order": 35
+    },
+    {
+     "key": "en.weather.snow",
+     "word": "snow",
+     "translation_ru": "снег",
+     "transcription": "/snəʊ/",
+     "picture": "❄️",
+     "example": "There is a lot of snow in winter.",
+     "example_translation": "Зимой много снега.",
+     "order": 36
+    },
+    {
+     "key": "en.weather.monday",
+     "word": "Monday",
+     "translation_ru": "понедельник",
+     "transcription": "/ˈmʌn.deɪ/",
+     "picture": "📅",
+     "example": "I go to school on Monday.",
+     "example_translation": "В понедельник я иду в школу.",
+     "order": 37
+    },
+    {
+     "key": "en.weather.tuesday",
+     "word": "Tuesday",
+     "translation_ru": "вторник",
+     "transcription": "/ˈtʃuːz.deɪ/",
+     "picture": "📅",
+     "example": "On Tuesday I have English.",
+     "example_translation": "Во вторник у меня английский.",
+     "order": 38
+    },
+    {
+     "key": "en.weather.morning",
+     "word": "morning",
+     "translation_ru": "утро",
+     "transcription": "/ˈmɔː.nɪŋ/",
+     "picture": "🌅",
+     "example": "Good morning!",
+     "example_translation": "Доброе утро!",
+     "order": 39
+    },
+    {
+     "key": "en.weather.winter",
+     "word": "winter",
+     "translation_ru": "зима",
+     "transcription": "/ˈwɪn.tər/",
+     "picture": "⛄",
+     "example": "I like winter.",
+     "example_translation": "Я люблю зиму.",
+     "order": 40
+    }
+   ]
+  },
+  {
+   "key": "en.grammar",
+   "title": "Грамматика 5 класса",
+   "order": 99,
+   "skills": [
+    {
+     "key": "en.gr.have_got",
+     "title": "have got / has got",
+     "rule_card": "I/you/we/they have got; he/she/it has got.",
+     "worked_example": {
+      "title": "She ___ got a cat.",
+      "steps": [
+       "She — это «она» (he/she/it).",
+       "С he/she/it используем has.",
+       "She has got a cat."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "en.gr.hg.ex1",
+       "type": "fill_blank_choice",
+       "difficulty": 1,
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "I ___ got a brother.",
+        "options": [
+         {
+          "id": "a",
+          "text": "has"
+         },
+         {
+          "id": "b",
+          "text": "have"
+         },
+         {
+          "id": "c",
+          "text": "am"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "I — это «я». С I используем have."
+         }
+        ]
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       }
+      },
+      {
+       "key": "en.gr.hg.ex2",
+       "type": "fill_blank_choice",
+       "difficulty": 1,
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "She ___ got a dog.",
+        "options": [
+         {
+          "id": "a",
+          "text": "have"
+         },
+         {
+          "id": "b",
+          "text": "has"
+         },
+         {
+          "id": "c",
+          "text": "is"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "He/she/it → has."
+         }
+        ]
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       }
+      },
+      {
+       "key": "en.gr.hg.ex3",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини слово и перевод",
+        "left": [
+         {
+          "id": "l0",
+          "text": "Monday"
+         },
+         {
+          "id": "l1",
+          "text": "kitchen"
+         },
+         {
+          "id": "l2",
+          "text": "Tuesday"
+         },
+         {
+          "id": "l3",
+          "text": "bedroom"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "понедельник"
+         },
+         {
+          "id": "r1",
+          "text": "кухня"
+         },
+         {
+          "id": "r2",
+          "text": "вторник"
+         },
+         {
+          "id": "r3",
+          "text": "спальня"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни слова из тем «Дом» и «Время»."
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       }
+      },
+      {
+       "key": "en.gr.hg.ex4",
+       "type": "text_input",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Переведи на английский: «кошка»",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Слово из 3 букв, начинается на c."
+         }
+        ]
+       },
+       "answer": {
+        "value": "cat",
+        "accept": [
+         "cat",
+         "a cat"
+        ]
+       }
+      },
+      {
+       "key": "en.gr.hg.ex5",
+       "type": "letter_tiles",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Собери слово «яблоко»",
+        "letters": [
+         "p",
+         "a",
+         "l",
+         "e",
+         "p",
+         "o",
+         "t"
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Начинается на a."
+         }
+        ]
+       },
+       "answer": {
+        "value": "apple"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block bodyclass %}subj-{{ subject.code }}{% endblock %}
+{% block content %}
+<h1><a href="{% url 'home' %}" aria-label="Назад">←</a> {{ subject.icon }} {{ subject.title }}: мои острова</h1>
+<div class="sea">
+  {% for i in islands %}
+    {% if not forloop.first %}<span class="bridge" aria-hidden="true"></span>{% endif %}
+    <div class="island {% if i.locked %}locked{% endif %}">
+      <span class="ico" aria-hidden="true">{{ i.icon }}</span>
+      <span class="t">{{ i.skill.title }}</span>
+      <span class="s">{{ i.label }}</span>
+    </div>
+  {% empty %}<p>Острова скоро появятся.</p>{% endfor %}
+</div>
+<p class="muted">🌱 учу → 🌷 почти → 🌳 освоено. Острова растут, когда ты занимаешься.</p>
+{% endblock %}

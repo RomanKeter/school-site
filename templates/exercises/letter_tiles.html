@@ -1,0 +1,3 @@
+{% load learn %}<div class="built" aria-live="polite"></div>
+<div class="letters">{% for l in payload.letters|shuffled %}<button type="button" data-letter="{{ l }}">{{ l }}</button>{% endfor %}</div>
+<p class="center"><button type="button" class="btn secondary small" data-tiles-back>⌫ Стереть</button></p>

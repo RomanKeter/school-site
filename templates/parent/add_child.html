@@ -1,0 +1,9 @@
+{% extends "parent/base_parent.html" %}
+{% block pcontent %}
+<h1>Новый профиль ребёнка</h1>
+<form method="post" class="card form">{% csrf_token %}
+  {{ form.as_p }}
+  <p class="muted">Картинки: apple 🍎, cat 🐱, star ⭐, ball ⚽, moon 🌙, bike 🚲, flower 🌸, balloon 🎈, fish 🐟</p>
+  <button class="btn">Создать</button>
+</form>
+{% endblock %}

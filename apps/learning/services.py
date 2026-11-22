@@ -35,11 +35,18 @@ def apply_mastery(child, skill, q: int, today: dt.date) -> SkillMastery:
     new_status = mastery_mod.status(
         window, ever_mastered=m.ever_mastered, review_fail_streak=fail_streak, placed=m.placed
     )
-    if new_status == "mastered" and not m.ever_mastered:
+    newly = new_status == "mastered" and not m.ever_mastered
+    if newly:
         m.ever_mastered = True
         m.mastered_at = timezone.now()
     m.status = new_status
     m.save()
+    if newly:
+        from apps.rewards import badges
+        from apps.rewards import stars as stars_svc
+
+        stars_svc.award(child, 15, "skill_mastered", skill.pk, today=today)
+        badges.evaluate(child, "skill_mastered", skill=skill)
     return m
 
 
@@ -61,7 +68,7 @@ def pick_exercise(skill, level: int, exclude_ids=None, for_warmup=False):
 @transaction.atomic
 def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block | None = None,
                   given, attempt_no: int, hints_used: int, duration_ms: int, context: str,
-                  solution_shown=False, today: dt.date | None = None):
+                  solution_shown=False, today: dt.date | None = None, final_now=False):
     today = today or timezone.localdate()
     if exercise:
         result = check(exercise.type, exercise.payload, exercise.answer, given)
@@ -84,7 +91,7 @@ def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block
     if solution_shown and not result.correct:
         q = 1
 
-    is_final = result.correct or attempt_no >= 3 or solution_shown
+    is_final = result.correct or attempt_no >= 3 or solution_shown or final_now
     att = Attempt.objects.create(
         child=child, exercise=exercise, word=word, word_mode=word_mode, block=block,
         context=context, answer_given=given if isinstance(given, dict) else {"value": given},
@@ -140,7 +147,12 @@ def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block
             block.save(update_fields=["meta"])
 
     if is_final and word is not None:
-        srs_svc.ensure_item(child, today=today, word=word, due_tomorrow=True)
+        item = srs_svc.ensure_item(child, today=today, word=word, due_tomorrow=not result.correct)
+        if context == "diagnostic" and result.correct and item.n == 0:
+            # слово уже знакомо — сразу «успешное повторение»: следующий показ через 3 дня
+            item.n, item.interval_days = 1, 3
+            item.due_date = today + dt.timedelta(days=3)
+            item.save(update_fields=["n", "interval_days", "due_date"])
         if context == "review":
             item = child.review_items.filter(word=word).first()
             if item:
@@ -155,10 +167,11 @@ def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block
             amount = 2
         elif result.correct:
             amount = 1
-        elif solution_shown:
-            amount = 1  # за упорство
+        else:
+            amount = 1  # «за упорство»: досмотрела разбор решения
         if amount:
-            feedback["stars"] = stars_svc.award(child, amount, "attempt", att.pk, today=today)
+            src = f"{block.pk}:{block.position}" if block is not None else f"a{att.pk}"
+            feedback["stars"] = stars_svc.award(child, amount, "attempt", src, today=today)
 
     return att, feedback
 

@@ -1,0 +1,993 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.u3",
+  "title": "Обыкновенные дроби",
+  "grade": 5,
+  "quarter": 2,
+  "order": 3
+ },
+ "topics": [
+  {
+   "key": "math.fractions",
+   "title": "Обыкновенные дроби",
+   "badge_code": "fraction_master",
+   "synonyms": [
+    "дроби с одинаковыми знаменателями",
+    "сложение дробей"
+   ],
+   "keywords": [
+    "дробь",
+    "знаменатель",
+    "числитель"
+   ],
+   "textbook_refs": [
+    "§ 18"
+   ],
+   "skills": [
+    {
+     "key": "math.fr.notion",
+     "title": "Что такое дробь",
+     "rule_card": "Знаменатель показывает, на сколько равных частей разделили целое, числитель — сколько частей взяли.",
+     "worked_example": {
+      "title": "Дробь 3/5",
+      "model": {
+       "kind": "strip",
+       "n": 5,
+       "parts": [
+        3
+       ]
+      },
+      "steps": [
+       "Полоску разрезали на 5 равных частей — это знаменатель 5.",
+       "Закрасили 3 части — это числитель 3.",
+       "Записываем: 3/5 (три пятых)."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.n.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Какая часть полоски закрашена?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько всего частей?"
+         },
+         {
+          "level": 2,
+          "text": "Сколько закрашено?"
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {},
+        "model": {
+         "kind": "strip",
+         "n": 7,
+         "parts": [
+          2
+         ]
+        }
+       },
+       "answer": {
+        "value": "2/7",
+        "require_reduced": false
+       }
+      },
+      {
+       "key": "math.fr.n.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Какая часть полоски закрашена?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посчитай все кусочки — это знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Закрашенные — числитель."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {},
+        "model": {
+         "kind": "strip",
+         "n": 4,
+         "parts": [
+          3
+         ]
+        }
+       },
+       "answer": {
+        "value": "3/4",
+        "require_reduced": false
+       }
+      },
+      {
+       "key": "math.fr.n.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Пиццу разрезали на 8 кусков, съели 3. Какую часть съели?",
+        "options": [
+         {
+          "id": "a",
+          "text": "3/8"
+         },
+         {
+          "id": "b",
+          "text": "8/3"
+         },
+         {
+          "id": "c",
+          "text": "5/8"
+         },
+         {
+          "id": "d",
+          "text": "3/5"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель — на сколько частей разрезали."
+         },
+         {
+          "level": 2,
+          "text": "Числитель — сколько взяли."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.n.ex4",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини дробь и её название",
+        "left": [
+         {
+          "id": "l0",
+          "text": "1/2"
+         },
+         {
+          "id": "l1",
+          "text": "1/4"
+         },
+         {
+          "id": "l2",
+          "text": "3/5"
+         },
+         {
+          "id": "l3",
+          "text": "2/3"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "одна вторая"
+         },
+         {
+          "id": "r1",
+          "text": "одна четвёртая"
+         },
+         {
+          "id": "r2",
+          "text": "три пятых"
+         },
+         {
+          "id": "r3",
+          "text": "две третьих"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель читается как «вторая, третья…»."
+         },
+         {
+          "level": 2,
+          "text": "Числитель — как «одна, две, три…»."
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       }
+      },
+      {
+       "key": "math.fr.n.ex5",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь меньше единицы?",
+        "options": [
+         {
+          "id": "a",
+          "text": "7/7"
+         },
+         {
+          "id": "b",
+          "text": "9/5"
+         },
+         {
+          "id": "c",
+          "text": "4/9"
+         },
+         {
+          "id": "d",
+          "text": "10/3"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дробь меньше 1, если числитель меньше знаменателя."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "key": "math.fr.compare",
+     "title": "Сравнение дробей с одинаковыми знаменателями",
+     "prerequisites": [
+      "math.fr.notion"
+     ],
+     "rule_card": "Из двух дробей с одинаковыми знаменателями больше та, у которой числитель больше.",
+     "worked_example": {
+      "title": "Сравни 3/8 и 5/8",
+      "model": {
+       "kind": "strip",
+       "n": 8,
+       "parts": [
+        3
+       ]
+      },
+      "steps": [
+       "Знаменатели одинаковые — части одного размера.",
+       "3 части меньше, чем 5 частей.",
+       "Значит, 3/8 < 5/8."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.c.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни: 3/8 ? 5/8",
+        "options": [
+         {
+          "id": "a",
+          "text": "<"
+         },
+         {
+          "id": "b",
+          "text": ">"
+         },
+         {
+          "id": "c",
+          "text": "="
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Части одинакового размера."
+         },
+         {
+          "level": 2,
+          "text": "Сравни числители."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.c.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни: 7/9 ? 4/9",
+        "options": [
+         {
+          "id": "a",
+          "text": "<"
+         },
+         {
+          "id": "b",
+          "text": ">"
+         },
+         {
+          "id": "c",
+          "text": "="
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Где кусочков больше?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.c.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/11"
+         },
+         {
+          "id": "b",
+          "text": "9/11"
+         },
+         {
+          "id": "c",
+          "text": "5/11"
+         },
+         {
+          "id": "d",
+          "text": "1/11"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатели одинаковые — смотри на числитель."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.c.ex4",
+       "type": "drag_order",
+       "difficulty": 2,
+       "est_seconds": 50,
+       "payload": {
+        "prompt": "Расставь дроби от меньшей к большей",
+        "items": [
+         {
+          "id": "a",
+          "text": "5/12"
+         },
+         {
+          "id": "b",
+          "text": "1/12"
+         },
+         {
+          "id": "c",
+          "text": "11/12"
+         },
+         {
+          "id": "d",
+          "text": "7/12"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сравнивай числители."
+         },
+         {
+          "level": 2,
+          "text": "1 < 5 < 7 < 11."
+         }
+        ]
+       },
+       "answer": {
+        "order": [
+         "b",
+         "a",
+         "d",
+         "c"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.c.ex5",
+       "type": "single_choice",
+       "difficulty": 3,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни: 3/5 ? 3/7",
+        "options": [
+         {
+          "id": "a",
+          "text": "<"
+         },
+         {
+          "id": "b",
+          "text": ">"
+         },
+         {
+          "id": "c",
+          "text": "="
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числители одинаковые, а знаменатели разные."
+         },
+         {
+          "level": 2,
+          "text": "На 7 частей — кусочки меньше, чем на 5."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "key": "math.fr.add",
+     "title": "Сложение и вычитание дробей с одинаковыми знаменателями",
+     "prerequisites": [
+      "math.fr.compare"
+     ],
+     "rule_card": "Чтобы сложить дроби с одинаковыми знаменателями, сложи числители, а знаменатель оставь тем же.",
+     "worked_example": {
+      "title": "2/7 + 3/7",
+      "model": {
+       "kind": "strip",
+       "n": 7,
+       "parts": [
+        2,
+        3
+       ]
+      },
+      "steps": [
+       "Полоска разрезана на 7 частей — знаменатель 7 не меняется.",
+       "Было 2 части и добавили 3 части.",
+       "2 + 3 = 5 частей.",
+       "2/7 + 3/7 = 5/7."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.a.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сложи: 2/7 + 3/7",
+        "hints": [
+         {
+          "level": 1,
+          "text": "На сколько частей разрезана полоска? Изменится ли это после сложения?"
+         },
+         {
+          "level": 2,
+          "text": "Знаменатель остаётся прежним. Сложи только числители."
+         },
+         {
+          "level": 3,
+          "text": "Похожий пример: 1/5 + 2/5 = 3/5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {
+         "5/14": "Похоже, ты сложила знаменатели. Кусочки стали меньше? Нет — их размер тот же."
+        },
+        "model": {
+         "kind": "strip",
+         "n": 7,
+         "parts": [
+          2,
+          3
+         ]
+        }
+       },
+       "answer": {
+        "value": "5/7",
+        "require_reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сложи: 1/4 + 1/4",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель тот же."
+         },
+         {
+          "level": 2,
+          "text": "1 + 1 = ?"
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {
+         "2/8": "Похоже, ты сложила и знаменатели. Посмотри на полоски: части остались того же размера?"
+        },
+        "model": {
+         "kind": "strip",
+         "n": 4,
+         "parts": [
+          1,
+          1
+         ]
+        }
+       },
+       "answer": {
+        "value": "2/4",
+        "require_reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычти: 7/9 − 4/9",
+        "hints": [
+         {
+          "level": 1,
+          "text": "При вычитании знаменатель тоже не меняется."
+         },
+         {
+          "level": 2,
+          "text": "7 − 4 = ?"
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/9",
+        "require_reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сколько будет 4/9 − 1/9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "3/9"
+         },
+         {
+          "id": "b",
+          "text": "3/0"
+         },
+         {
+          "id": "c",
+          "text": "5/9"
+         },
+         {
+          "id": "d",
+          "text": "4/18"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Что делаем со знаменателем при вычитании?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.a.ex5",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сложи: 3/10 + 4/10 + 2/10",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Складывай числители по очереди."
+         },
+         {
+          "level": 2,
+          "text": "3 + 4 + 2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9/10",
+        "require_reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex6",
+       "type": "step_by_step",
+       "difficulty": 3,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Маша прочитала 2/9 книги в понедельник и 4/9 во вторник. Какую часть книги ей осталось прочитать? (ответ — числитель при знаменателе 9)",
+        "steps": [
+         {
+          "ask": "Сколько девятых прочитала за два дня? (числитель)",
+          "answer": 6
+         },
+         {
+          "ask": "Вся книга — 9/9. Сколько девятых осталось? (числитель)",
+          "answer": 3
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала сложи прочитанное."
+         },
+         {
+          "level": 2,
+          "text": "Вся книга — это 9/9."
+         }
+        ],
+        "model": {
+         "kind": "bar",
+         "segments": [
+          {
+           "label": "пн 2/9"
+          },
+          {
+           "label": "вт 4/9"
+          },
+          {
+           "label": "? "
+          }
+         ]
+        }
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 6
+         },
+         {
+          "answer": 3
+         }
+        ]
+       }
+      },
+      {
+       "key": "math.fr.a.ex7",
+       "type": "fraction_input",
+       "difficulty": 3,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Найди x: x + 2/11 = 7/11",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Неизвестное слагаемое = сумма − известное слагаемое."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/11",
+        "require_reduced": false
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "math.equations",
+   "title": "Уравнения и текстовые задачи",
+   "badge_code": "",
+   "skills": [
+    {
+     "key": "math.eq.simple",
+     "title": "Простые уравнения",
+     "rule_card": "Неизвестное слагаемое = сумма − известное слагаемое. Неизвестный множитель = произведение : известный множитель.",
+     "worked_example": {
+      "title": "x + 37 = 105",
+      "model": {
+       "kind": "scales"
+      },
+      "steps": [
+       "На весах слева x и 37, справа 105.",
+       "Уберём 37 с обеих чаш.",
+       "x = 105 − 37 = 68.",
+       "Проверка: 68 + 37 = 105 ✓"
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.eq.ex1",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение: x + 37 = 105",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Как найти неизвестное слагаемое?"
+         },
+         {
+          "level": 2,
+          "text": "Из суммы вычти известное слагаемое."
+         },
+         {
+          "level": 3,
+          "text": "Похожий: x + 5 = 12 → x = 7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "68"
+       }
+      },
+      {
+       "key": "math.eq.ex2",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение: x − 18 = 42",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Как найти уменьшаемое?"
+         },
+         {
+          "level": 2,
+          "text": "Сложи разность и вычитаемое."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "60"
+       }
+      },
+      {
+       "key": "math.eq.ex3",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение: 7 · x = 63",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Неизвестный множитель = произведение : известный множитель."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       }
+      },
+      {
+       "key": "math.eq.ex4",
+       "type": "equation",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение: 120 : x = 8",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Неизвестный делитель = делимое : частное."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       }
+      },
+      {
+       "key": "math.eq.ex5",
+       "type": "equation",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение: 3 · x + 5 = 32",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала найди 3 · x = 32 − 5."
+         },
+         {
+          "level": 2,
+          "text": "Потом раздели на 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       }
+      },
+      {
+       "key": "math.eq.ex6",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Велосипедист ехал 3 ч со скоростью 12 км/ч, а потом 2 ч со скоростью 15 км/ч. Какой путь он проехал?",
+        "steps": [
+         {
+          "ask": "Сколько км он проехал за первые 3 часа?",
+          "answer": 36
+         },
+         {
+          "ask": "А за следующие 2 часа?",
+          "answer": 30
+         },
+         {
+          "ask": "Какой весь путь (км)?",
+          "answer": 66
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Путь = скорость × время."
+         },
+         {
+          "level": 2,
+          "text": "Сложи два отрезка пути."
+         }
+        ],
+        "model": {
+         "kind": "bar",
+         "segments": [
+          {
+           "label": "3 ч · 12 км/ч"
+          },
+          {
+           "label": "2 ч · 15 км/ч"
+          }
+         ]
+        }
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 36
+         },
+         {
+          "answer": 30
+         },
+         {
+          "answer": 66
+         }
+        ]
+       }
+      },
+      {
+       "key": "math.eq.ex7",
+       "type": "drag_order",
+       "difficulty": 2,
+       "est_seconds": 50,
+       "payload": {
+        "prompt": "Расставь действия по порядку: 48 : (6 + 2) · 3 − 5",
+        "items": [
+         {
+          "id": "a",
+          "text": "6 + 2"
+         },
+         {
+          "id": "b",
+          "text": "48 : 8"
+         },
+         {
+          "id": "c",
+          "text": "6 · 3"
+         },
+         {
+          "id": "d",
+          "text": "18 − 5"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Что делаем первым — скобки или деление?"
+         },
+         {
+          "level": 2,
+          "text": "Потом умножение и деление слева направо, затем вычитание."
+         }
+        ]
+       },
+       "answer": {
+        "order": [
+         "a",
+         "b",
+         "c",
+         "d"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

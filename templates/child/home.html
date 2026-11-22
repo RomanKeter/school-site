@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+{% if mission.status == "done" %}
+  {% include "partials/mascot.html" with state="party" size="big" say="Миссия выполнена! 🎉 Ты молодец." %}
+{% elif current and current.kind == "diagnostic" %}
+  {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Я Зубрик. Давай познакомимся: решим немного задачек, чтобы я понял, с чего начать." %}
+{% else %}
+  {% include "partials/mascot.html" with state="hello" size="big" say="Доброе утро! Сегодня "|add:blocks|length|stringformat:"s"|add:" шагов" %}
+{% endif %}
+
+<nav class="path" aria-label="Тропинка миссии">
+  {% for b in blocks %}
+    {% if not forloop.first %}<span class="dash" aria-hidden="true"></span>{% endif %}
+    {% if b.status == "done" %}<span class="step done">✅ {{ b.title }}</span>
+    {% elif b == current %}<span class="step current">▶ {{ b.title }}</span>
+    {% elif b.kind == "surprise" %}<span class="step">{{ b.title }}</span>
+    {% else %}<a class="step" href="{% url 'play_block' b.id %}">○ {{ b.title }}</a>{% endif %}
+  {% endfor %}
+</nav>
+
+<div class="center">
+  {% if mission.status == "done" %}
+    <a class="btn secondary" href="{% url 'map' 'math' %}">Свободная практика</a>
+  {% else %}
+    <form method="post" action="{% url 'start_mission' %}">{% csrf_token %}
+      <button class="btn">▶ {% if mission.status == "pending" %}Начать миссию{% else %}Продолжить миссию{% endif %}</button>
+    </form>
+    <div class="bar" aria-hidden="true"><span style="width:{{ progress_pct }}%"></span></div>
+    <div class="muted">~{{ left_min }} мин осталось</div>
+  {% endif %}
+</div>
+
+<section class="tiles" style="margin-top:32px">
+  <a class="tile" href="{% url 'map' 'math' %}"><span class="ico">🏝️</span>Мои острова</a>
+  <a class="tile" href="{% url 'map' 'en' %}"><span class="ico">🔤</span>Английский</a>
+  <a class="tile" href="{% url 'dictionary' %}"><span class="ico">📖</span>Словарик</a>
+  <a class="tile" href="{% url 'rewards' %}"><span class="ico">🏅</span>Награды</a>
+  <span class="tile disabled" aria-disabled="true"><span class="ico">📝</span>Домашка<small class="muted">скоро</small></span>
+</section>
+{% endblock %}

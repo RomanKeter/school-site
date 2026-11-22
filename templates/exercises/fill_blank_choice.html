@@ -1,0 +1,1 @@
+{% load learn %}<div class="options">{% for o in payload.options|shuffled %}<button type="button" class="opt" data-choice="{{ o.id }}">{{ o.text }}</button>{% endfor %}</div>

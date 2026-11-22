@@ -26,10 +26,14 @@ class Command(BaseCommand):
         try:
             with transaction.atomic():
                 self._import(data, update, report)
+                if report["errors"]:
+                    raise _HasErrors()
                 if dry_run:
                     raise _DryRun()
         except _DryRun:
             self.stdout.write(self.style.WARNING("dry-run: изменений нет"))
+        except _HasErrors:
+            pass
         if report["errors"]:
             for e in report["errors"]:
                 self.stderr.write(self.style.ERROR(e))
@@ -102,4 +106,8 @@ class Command(BaseCommand):
 
 
 class _DryRun(Exception):
+    pass
+
+
+class _HasErrors(Exception):
     pass

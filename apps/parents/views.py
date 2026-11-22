@@ -95,7 +95,8 @@ def settings_view(request):
         s.save()
         messages.success(request, "Настройки сохранены.")
         return redirect(f"/parent/settings/?child={child.pk}")
-    return render(request, "parent/settings.html", {"child": child, "settings": s, "children": parent.family.children.all()})
+    days = list(enumerate(["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]))
+    return render(request, "parent/settings.html", {"child": child, "settings": s, "days": days, "children": parent.family.children.all()})
 
 
 @parent_required
@@ -131,7 +132,7 @@ def assign_skill(request):
     parent = request.parent
     child = get_object_or_404(parent.family.children, pk=request.POST.get("child"))
     skill = get_object_or_404(Skill, pk=request.POST.get("skill"))
-    day = dt.date.fromisoformat(request.POST.get("date") or local_today(parent.family).isoformat())
+    day = dt.date.fromisoformat(request.POST.get("date") or (local_today(parent.family) + dt.timedelta(days=1)).isoformat())
     AssignedSkill.objects.create(child=child, skill=skill, date=day)
     messages.success(request, f"Тема «{skill.title}» добавлена в миссию на {day.isoformat()}.")
     return redirect(f"/parent/?child={child.pk}")

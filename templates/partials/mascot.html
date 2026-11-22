@@ -1,0 +1,21 @@
+<div class="mascot {{ size }}">
+<svg viewBox="0 0 120 120" role="img" aria-label="Зубрик{% if state == 'hint' %} с лампочкой{% elif state == 'party' %} празднует{% elif state == 'rest' %} отдыхает{% endif %}">
+  <ellipse cx="60" cy="98" rx="38" ry="14" fill="#E9DCC6"/>
+  <path d="M26 40 Q14 30 18 18 Q26 30 36 34Z" fill="#F2E6D0" stroke="#6B4A2B" stroke-width="2"/>
+  <path d="M94 40 Q106 30 102 18 Q94 30 84 34Z" fill="#F2E6D0" stroke="#6B4A2B" stroke-width="2"/>
+  <circle cx="60" cy="56" r="34" fill="#8A5A34"/>
+  <ellipse cx="60" cy="38" rx="26" ry="16" fill="#6B4227"/>
+  <ellipse cx="60" cy="70" rx="20" ry="14" fill="#C79A6B"/>
+  <circle cx="47" cy="54" r="6" fill="#fff"/><circle cx="73" cy="54" r="6" fill="#fff"/>
+  {% if state == 'rest' %}<path d="M42 55 q5 4 10 0 M68 55 q5 4 10 0" stroke="#2B2B33" stroke-width="3" fill="none"/>
+  {% else %}<circle cx="48" cy="55" r="3.2" fill="#2B2B33"/><circle cx="74" cy="55" r="3.2" fill="#2B2B33"/>{% endif %}
+  <ellipse cx="53" cy="70" rx="3" ry="2" fill="#5A3A22"/><ellipse cx="67" cy="70" rx="3" ry="2" fill="#5A3A22"/>
+  <path d="M52 77 Q60 84 68 77" stroke="#5A3A22" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M30 86 Q60 100 90 86 L90 94 Q60 108 30 94Z" fill="#2A9D8F"/>
+  <rect x="78" y="90" width="9" height="20" rx="3" fill="#2A9D8F"/>
+  {% if state == 'hint' %}<g transform="translate(92 6)"><circle cx="12" cy="12" r="11" fill="#FFE58A" stroke="#E8A317" stroke-width="2"/><rect x="8" y="22" width="8" height="6" rx="2" fill="#A8742A"/></g>{% endif %}
+  {% if state == 'party' %}<g font-size="16"><text x="4" y="20">🎉</text><text x="96" y="22">✨</text></g>{% endif %}
+  {% if state == 'rest' %}<text x="94" y="24" font-size="18">☕</text>{% endif %}
+</svg>
+{% if say %}<div class="bubble">{{ say }}</div>{% endif %}
+</div>

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load learn %}
+{% block content %}
+<div class="task card" id="worked">
+  <div class="muted">👀 Смотри, как</div>
+  <h1>{{ example.title|default:skill.title }}</h1>
+  {% if skill.rule_card %}<p class="hint">📘 {{ skill.rule_card }}</p>{% endif %}
+  {% visual_model example.model %}
+  <ol class="steps-list" style="font-size:22px">
+    {% for s in example.steps %}<li class="wstep">{{ s }}</li>{% endfor %}
+  </ol>
+  <div class="actions">
+    <span></span>
+    <button class="btn secondary" type="button" id="worked-more">Дальше ↓</button>
+    <form method="post" action="{% url 'worked_next' blk.id %}" id="worked-go" hidden>{% csrf_token %}<button class="btn">Понятно, попробую! →</button></form>
+  </div>
+</div>
+{% endblock %}

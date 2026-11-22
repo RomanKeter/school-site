@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block bodyclass %}subj-en{% endblock %}
+{% block topbar %}
+<header class="topbar">
+  <a class="iconbtn" href="{% url 'home' %}" aria-label="Назад к миссии">🏠</a>
+  <div class="progressdots"><span style="width:{% widthratio blk.position|add:1 blk.queue|length 100 %}%"></span></div>
+  <span class="muted">{{ progress }}</span>
+</header>
+{% endblock %}
+{% block content %}
+<div class="task card">
+<form class="taskform" data-type="{{ mode }}" data-mode="{{ mode }}" data-attempt="1" data-hints="0"
+      {% if mode == "en_to_ru" %}data-choice-kind="value"{% endif %}
+      {% if mode == "flashcard" or mode == "picture_choice" %}data-autospeak="{{ word.word }}"{% endif %}
+      hx-post="{% url 'check_word' blk.id word.id %}" hx-target="#feedback" hx-swap="innerHTML">
+{% if mode == "flashcard" %}
+  <div class="wordcard">
+    <div class="pic" role="img" aria-label="{{ word.translation_ru }}">{{ word.picture }}</div>
+    <div class="w">{{ word.word }} <button type="button" class="speak" data-speak="{{ word.word }}" aria-label="Послушать">🔊</button></div>
+    {% if current_child.settings.show_transcription %}<div class="tr">{{ word.transcription }}</div>{% endif %}
+    <div style="font-size:26px;font-weight:700">{{ word.translation_ru }}</div>
+    {% if word.example %}<p>«{{ word.example }}» <button type="button" class="iconbtn" data-speak="{{ word.example }}" aria-label="Послушать пример">🔊</button><br><span class="muted">{{ word.example_translation }}</span></p>{% endif %}
+  </div>
+  <div class="actions"><span></span><button class="btn" type="button" data-submit-task>Дальше →</button></div>
+{% elif mode == "picture_choice" %}
+  <p class="prompt">Послушай и выбери картинку <button type="button" class="speak" data-speak="{{ word.word }}" aria-label="Послушать ещё раз">🔊</button></p>
+  <div class="options">{% for o in options %}<button type="button" class="opt pic" data-choice="{{ o.id }}" aria-label="вариант {{ forloop.counter }}">{{ o.picture }}</button>{% endfor %}</div>
+{% elif mode == "en_to_ru" %}
+  <p class="prompt">Что значит <b>{{ word.word }}</b>? <button type="button" class="iconbtn" data-speak="{{ word.word }}">🔊</button></p>
+  <div class="options">{% for o in options %}<button type="button" class="opt" data-choice="{{ o.translation_ru }}">{{ o.translation_ru }}</button>{% endfor %}</div>
+{% elif mode == "ru_to_en" %}
+  <p class="prompt">Напиши по-английски: <b>{{ word.translation_ru }}</b> <span style="font-size:48px">{{ word.picture }}</span></p>
+  <p class="center"><input class="bigin" style="width:340px" name="value" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Слово по-английски"></p>
+  <div class="actions"><span></span><button class="btn" type="button" data-submit-task>Проверить ✓</button></div>
+{% elif mode == "tiles" %}
+  {% load learn %}
+  <p class="prompt">Собери слово: <span style="font-size:56px">{{ word.picture }}</span> {{ word.translation_ru }}</p>
+  <div class="built" aria-live="polite"></div>
+  <div class="letters">{% tiles_for word.word as letters %}{% for l in letters %}<button type="button" data-letter="{{ l }}">{{ l }}</button>{% endfor %}</div>
+  <div class="actions"><button type="button" class="btn secondary small" data-tiles-back>⌫ Стереть</button><button class="btn" type="button" data-submit-task>Проверить ✓</button></div>
+{% endif %}
+</form>
+<div id="feedback" aria-live="polite"></div>
+</div>
+{% endblock %}

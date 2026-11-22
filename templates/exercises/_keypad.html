@@ -1,0 +1,4 @@
+<div class="keypad" aria-label="Цифровая клавиатура">
+{% for k in "1234567890" %}<button type="button" data-key="{{ k }}">{{ k }}</button>{% endfor %}
+<button type="button" data-key=",">,</button><button type="button" data-key="back" aria-label="Стереть">⌫</button>
+</div>

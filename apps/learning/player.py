@@ -14,6 +14,25 @@ def current_step(block: Block):
     return block.queue[block.position]
 
 
+def _remember(block: Block, ex):
+    """Зафиксировать выбранное задание в шаге очереди (стабильность при перезагрузке и защита от дублей)."""
+    if ex is None:
+        return
+    q = list(block.queue)
+    q[block.position] = {**q[block.position], "chosen": ex.id}
+    block.queue = q
+    block.save(update_fields=["queue"])
+
+
+def current_exercise_id(block: Block):
+    step = current_step(block)
+    if not step:
+        return None
+    if step.get("t") == "ex":
+        return step["id"]
+    return step.get("chosen")
+
+
 def resolve(block: Block):
     step = current_step(block)
     if step is None:
@@ -31,8 +50,8 @@ def resolve(block: Block):
         skill = Skill.objects.get(pk=step["skill"])
         level = int(block.meta.get("level", 1))
         prefer = step.get("prefer")
-        ex = None
-        if prefer:
+        ex = Exercise.objects.filter(pk=step["chosen"]).first() if step.get("chosen") else None
+        if ex is None and prefer and level == 1:
             ex = Exercise.objects.filter(pk=prefer, skill=skill).first()
         if ex is None:
             qs = Exercise.objects.filter(skill=skill, status="published")
@@ -40,6 +59,8 @@ def resolve(block: Block):
             ex = qs.filter(difficulty=d).order_by("?").first() if d else None
         if ex is None:
             return {"kind": "skip"}
+        if not step.get("chosen"):
+            _remember(block, ex)
         return {"kind": "exercise", "exercise": ex, "stage": step.get("stage", "solo"), "adaptive": True}
     if t == "word":
         word = VocabularyWord.objects.get(pk=step["id"])
@@ -54,9 +75,12 @@ def resolve(block: Block):
         skill = item.skill or (item.exercise.skill if item.exercise_id else None)
         if item.exercise_id:
             return {"kind": "exercise", "exercise": item.exercise, "stage": "review", "review_item": item}
-        qs = Exercise.objects.filter(skill=skill, status="published")
-        level = int(block.meta.get("level", 1))
-        d = pick_difficulty(set(qs.values_list("difficulty", flat=True)), level)
-        ex = qs.filter(difficulty=d).order_by("?").first() if d else qs.order_by("?").first()
+        ex = Exercise.objects.filter(pk=step["chosen"]).first() if step.get("chosen") else None
+        if ex is None:
+            qs = Exercise.objects.filter(skill=skill, status="published")
+            level = int(block.meta.get("level", 1))
+            d = pick_difficulty(set(qs.values_list("difficulty", flat=True)), level)
+            ex = qs.filter(difficulty=d).order_by("?").first() if d else qs.order_by("?").first()
+            _remember(block, ex)
         return {"kind": "exercise", "exercise": ex, "stage": "review", "review_item": item, "skill": skill}
     return {"kind": "skip"}

@@ -1,0 +1,17 @@
+{% extends "parent/base_parent.html" %}
+{% block pcontent %}
+<h1>Настройки: {{ child.display_name }}</h1>
+<form method="post" class="card form">{% csrf_token %}
+  <p><label>Дневной лимит, мин <select name="daily_limit_min">    <option value="15" {% if settings.daily_limit_min == 15 %}selected{% endif %}>15</option>
+    <option value="20" {% if settings.daily_limit_min == 20 %}selected{% endif %}>20</option>
+    <option value="30" {% if settings.daily_limit_min == 30 %}selected{% endif %}>30</option>
+    <option value="45" {% if settings.daily_limit_min == 45 %}selected{% endif %}>45</option></select></label></p>
+  <p><label>Перерыв каждые, мин <input type="number" name="break_every_min" min="5" max="60" value="{{ settings.break_every_min }}"></label></p>
+  <p><label>Тихие часы с <input type="time" name="quiet_from" value="{{ settings.quiet_from|time:'H:i' }}"></label>
+     <label>до <input type="time" name="quiet_to" value="{{ settings.quiet_to|time:'H:i' }}"></label></p>
+  <p><label>Карточек повторения в миссии <input type="number" name="srs_daily_limit" min="5" max="30" value="{{ settings.srs_daily_limit }}"></label></p>
+  <p>Дни без миссии:
+    {% for d, name in days %}<label><input type="checkbox" name="days_off" value="{{ d }}" {% if d in settings.days_off %}checked{% endif %}> {{ name }}</label> {% endfor %}</p>
+  <p><button class="btn">Сохранить</button> <button class="btn secondary" name="extend15" value="1">+15 минут на сегодня</button></p>
+</form>
+{% endblock %}

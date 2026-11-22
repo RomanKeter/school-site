@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "partials/mascot.html" with state="hello" size="big" say="Привет! Напиши свой логин." %}
+<form method="post" class="card center">{% csrf_token %}
+  <p><input class="bigin" style="width:320px" name="login" autocomplete="username" autofocus value="{{ form.login.value|default:'' }}" aria-label="Логин"></p>
+  {% if form.login.errors %}<p class="muted">{{ form.login.errors.0 }}</p>{% endif %}
+  <button class="btn">Дальше →</button>
+</form>
+<a class="btn secondary small adult" href="{% url 'parent_login' %}">🔒 Я взрослый</a>
+{% endblock %}

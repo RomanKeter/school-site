@@ -1,0 +1,3 @@
+{% load learn %}{% for it in payload.items|shuffled %}
+<div class="cat-row" data-item="{{ it.id }}"><span class="item">{{ it.text }}</span>
+{% for b in payload.buckets %}<button type="button" class="opt" data-bucket="{{ b.id }}">{{ b.title }}</button>{% endfor %}</div>{% endfor %}

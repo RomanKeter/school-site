@@ -1,0 +1,27 @@
+{% load static %}<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Учимся с Зубриком{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'css/app.css' %}">
+<script src="{% static 'js/htmx.min.js' %}" defer></script>
+<script src="{% static 'js/app.js' %}" defer></script>
+</head>
+<body class="{% block bodyclass %}{% endblock %}" data-csrf="{{ csrf_token }}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+      {% if current_child %}data-child="1" data-en-variant="{% if current_child.settings.en_variant == 'us' %}en-US{% else %}en-GB{% endif %}" style="font-size:{{ current_child.font_scale|stringformat:'s' }}em"{% endif %}>
+{% block topbar %}
+{% if current_child %}
+<header class="topbar">
+  <div class="who"><span class="avatar" aria-hidden="true">{{ current_child.avatar }}</span>{{ current_child.display_name }}</div>
+  <div class="stat" title="Звёзды">⭐ {{ star_balance }}</div>
+  <div class="stat" title="Серия дней">🔥 {{ streak_current }}</div>
+  <div class="spacer"></div>
+  <a class="iconbtn" href="{% url 'home' %}" aria-label="Домой">🏠</a>
+  <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="iconbtn" aria-label="Выйти">🚪</button></form>
+</header>
+{% endif %}
+{% endblock %}
+<main class="wrap">{% block content %}{% endblock %}</main>
+</body>
+</html>
