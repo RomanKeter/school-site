@@ -1,0 +1,2 @@
+{% load learn %}<p class="ru-word" aria-label="{{ payload.parts.0 }} пропуск {{ payload.parts.1 }}">{{ payload.parts.0 }}<span class="gap">…</span>{{ payload.parts.1 }}</p>
+<div class="options ru-letters">{% for o in payload.options|shuffled %}<button type="button" class="opt" data-choice="{{ o.id }}">{{ o.text }}</button>{% endfor %}</div>

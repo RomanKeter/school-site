@@ -101,6 +101,8 @@ EXERCISE_TYPES = [
     ("drag_order", "Упорядочить"),
     ("categorize", "Разложи по корзинам"),
     ("letter_tiles", "Собери слово"),
+    ("fill_letters", "Вставь букву"),
+    ("punctuation", "Поставь запятые"),
     ("step_by_step", "Задача по шагам"),
     ("audio_text_choice", "Послушай и выбери слово"),
     ("flashcard", "Карточка-знакомство"),

@@ -1,0 +1,1 @@
+<p class="ru-sentence">{% for w in payload.words %}<span class="w">{{ w }}</span>{% if not forloop.last %}<button type="button" class="gapbtn" data-gap="{{ forloop.counter0 }}" aria-pressed="false" aria-label="Запятая после «{{ w }}»">,</button>{% endif %}{% endfor %}</p>

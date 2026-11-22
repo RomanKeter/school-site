@@ -143,6 +143,17 @@
       if (back) back.addEventListener("click", (e) => { e.preventDefault(); const b = used.pop(); if (b) { b.disabled = false; out.textContent = out.textContent.slice(0, -1); } });
     }
 
+    // русский язык (D-203): буква встаёт в пропуск; запятые включаются тапом между словами
+    if (type === "fill_letters") {
+      const gap = form.querySelector(".gap");
+      form.querySelectorAll("[data-choice]").forEach((b) => b.addEventListener("click", () => { if (gap) gap.textContent = b.textContent; }));
+    }
+    if (type === "punctuation") {
+      form.querySelectorAll("[data-gap]").forEach((b) =>
+        b.addEventListener("click", (e) => { e.preventDefault(); b.classList.toggle("on"); b.setAttribute("aria-pressed", b.classList.contains("on")); })
+      );
+    }
+
     if (form.dataset.autospeak) setTimeout(() => speak(form.dataset.autospeak), 400);
   }
 
@@ -168,6 +179,10 @@
         });
         return { buckets: buckets };
       }
+      case "fill_letters":
+        return { id: form.dataset.choice || "" };
+      case "punctuation":
+        return { commas: Array.from(form.querySelectorAll("[data-gap].on")).map((b) => Number(b.dataset.gap)) };
       case "letter_tiles": case "tiles":
         return { value: (form.querySelector(".built") || {}).textContent || "" };
       case "step_by_step":

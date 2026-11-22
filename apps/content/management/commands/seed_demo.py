@@ -16,8 +16,9 @@ class Command(BaseCommand):
         seed_badges()
         Subject.objects.get_or_create(code="math", defaults={"title": "Математика", "color_token": "math", "icon": "🔢", "order": 1})
         Subject.objects.get_or_create(code="en", defaults={"title": "Английский", "color_token": "en", "icon": "🔤", "order": 2})
+        Subject.objects.get_or_create(code="ru", defaults={"title": "Русский язык", "color_token": "ru", "icon": "📝", "order": 3})
         samples = Path(__file__).resolve().parents[4] / "content_samples"
-        for name in ("math_divisibility.json", "math_fractions.json", "en_words.json"):
+        for name in ("math_divisibility.json", "math_fractions.json", "en_words.json", "ru_orthography.json", "ru_grammar.json"):
             call_command("import_content", str(samples / name), update=True)
         call_command("seed_feynman")
         from apps.accounts.models import User
