@@ -14,28 +14,44 @@ from apps.rewards.stars import award, DAILY_CAP
 from apps.srs.models import ReviewItem
 
 
-def login_child(client, child, seq=("apple", "cat", "star", "ball")):
+def login_child(client, child, seq=None):
     from apps.accounts.utils import set_trusted_device
     from django.http import HttpResponse
 
     resp = set_trusted_device(HttpResponse(), child.family)
     client.cookies["family_device"] = resp.cookies["family_device"].value
-    return client.post(reverse("child_pictures", args=[child.pk]), {"sequence": ",".join(seq)})
+    return client.get(reverse("child_pictures", args=[child.pk]))
 
 
-def test_picture_login_and_lockout(client, family):
+def test_child_login_requires_trusted_device(client, family):
     _, child = family
-    for _ in range(5):
-        r = login_child(client, child, ("moon", "moon", "moon", "moon"))
-        assert "ошибка" not in r.content.decode().lower()
-    r = login_child(client, child)  # заблокировано на 5 минут
-    assert "передохнём" in r.content.decode()
+    r = client.get(reverse("child_pictures", args=[child.pk]))
+    assert r.status_code == 302 and r.url == reverse("child_start")
+    page = client.get(reverse("child_start"))
+    html = page.content.decode()
+    assert "семейное" in html
+    assert "pwgrid" not in html
+    # без cookie вход не выполняется
+    home = client.get(reverse("home"))
+    assert home.status_code == 302
 
 
-def test_picture_login_ok(client, family):
+def test_child_login_ok(client, family):
     _, child = family
     r = login_child(client, child)
     assert r.status_code == 302 and r.url == reverse("home")
+
+
+def test_child_login_rejects_other_family(client, family):
+    _, child = family
+    other = create_parent("parent2b", "VeryLongPass456", family_name="Семья В")
+    from apps.accounts.utils import set_trusted_device
+    from django.http import HttpResponse
+
+    resp = set_trusted_device(HttpResponse(), other.family)
+    client.cookies["family_device"] = resp.cookies["family_device"].value
+    r = client.get(reverse("child_pictures", args=[child.pk]))
+    assert r.status_code == 404
 
 
 def test_idor_parent_cannot_see_other_family(client, family):

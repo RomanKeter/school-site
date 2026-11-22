@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% include "partials/mascot.html" with state="hello" size="big" say="Привет! Напиши свой логин." %}
-<form method="post" class="card center">{% csrf_token %}
-  <p><input class="bigin" style="width:320px" name="login" autocomplete="username" autofocus value="{{ form.login.value|default:'' }}" aria-label="Логин"></p>
-  {% if form.login.errors %}<p class="muted">{{ form.login.errors.0 }}</p>{% endif %}
-  <button class="btn">Дальше {% include "partials/icon.html" with n="arrow-right" %}</button>
-</form>
+{% include "partials/mascot.html" with state="hello" size="big" say="Попроси взрослого отметить это устройство как семейное." %}
+<p class="center muted">Тогда ты войдёшь, нажав на свою картинку.</p>
 <a class="btn secondary small adult" href="{% url 'parent_login' %}">{% include "partials/icon.html" with n="lock" %} Я взрослый</a>
 {% endblock %}

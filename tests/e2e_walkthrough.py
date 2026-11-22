@@ -45,19 +45,13 @@ with sync_playwright() as p:
     page.click("text=Выход")
     log("1 ok: parent created child + trusted device")
 
-    # 2. Ребёнок: неверный пароль → мягкое «Попробуй ещё раз», потом верный
+    # 2. Ребёнок входит нажатием аватарки на доверенном устройстве (без картинного пароля)
     page.goto(f"{BASE}/start/")
     page.click(f"text={NAME}")
-    for c in ("apple", "apple", "apple", "apple"):
-        page.click(f"[data-pic={c}]")
-    page.wait_for_load_state()
-    assert "Попробуй ещё раз" in page.content()
-    for c in ("moon", "fish", "star", "bike"):
-        page.click(f"[data-pic={c}]")
     page.wait_for_url("**/home/")
     assert "познакомимся" in page.content()
     page.screenshot(path=str(OUT / "10_first_login_diagnostic_home.png"), full_page=True)
-    log("2 ok: picture login (wrong then right), diagnostic offered")
+    log("2 ok: avatar tap login, diagnostic offered")
 
     # 3. Проходим всё подряд: диагностика + миссия
     page.click("button:has-text('миссию')")

@@ -62,11 +62,8 @@ with sync_playwright() as p:
     page.wait_for_load_state()
 
     page.goto(f"{BASE}/start/")
-    page.click("text=Алеся")
-    for code in ("apple", "cat", "star"):
-        page.click(f"[data-pic={code}]")
     shot("01_child_login_pictures.png")
-    page.click("[data-pic=ball]")
+    page.click("text=Алеся")
     page.wait_for_url("**/home/")
     shot("02_home_mission.png")
 

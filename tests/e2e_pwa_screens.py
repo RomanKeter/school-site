@@ -42,8 +42,6 @@ with sync_playwright() as p:
     page.click("text=Выход")
     page.goto(f"{BASE}/start/")
     page.click("text=Алеся")
-    for code in ("apple", "cat", "star", "ball"):
-        page.click(f"[data-pic={code}]")
     page.wait_for_url("**/home/")
     page.wait_for_timeout(800)  # регистрация SW и пакет
     shot("pwa_01_home_online.png")
