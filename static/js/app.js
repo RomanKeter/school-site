@@ -196,7 +196,7 @@
     const tf = document.querySelector("form.taskform");
     if (!tf) return;
     const t = e.detail.target;
-    if (t.id === "hint-panel") {
+    if (t.id === "hint-panel" || (t.id === "ai-panel" && t.querySelector("[data-ai-hint]"))) {
       tf.dataset.hints = String(Number(tf.dataset.hints || 0) + 1);
       return;
     }

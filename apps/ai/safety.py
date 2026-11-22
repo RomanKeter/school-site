@@ -112,8 +112,28 @@ def answer_strings(exercise) -> list[str]:
     return res
 
 
+def is_en_blank(exercise) -> bool:
+    """Английское задание с пропуском («I ___ got a brother.»)."""
+    if exercise is None or "___" not in (exercise.payload or {}).get("prompt", ""):
+        return False
+    return exercise.skill.topic.unit.subject.code == "en"
+
+
+def _filled_sentences(exercise) -> list[str]:
+    prompt = (exercise.payload or {}).get("prompt", "")
+    out = []
+    for a in answer_strings(exercise):
+        s = re.sub(r"\s+", " ", _norm_answer(prompt.replace("___", a))).strip(" .!?")
+        out.append(s)
+    return out
+
+
 def leaks_answer(text: str, exercise) -> bool:
     t = _norm_answer(text)
+    if is_en_blank(exercise):
+        # D-110: правило со словом объяснять можно; нельзя только выдать готовое заполненное предложение
+        t = re.sub(r"[«»\"“”*]", "", re.sub(r"\s+", " ", t))
+        return any(s and s in t for s in _filled_sentences(exercise))
     for a in answer_strings(exercise):
         if re.search(r"(?<![\w/.,])" + re.escape(a) + r"(?![\w/]|[.,]\d)", t):
             return True

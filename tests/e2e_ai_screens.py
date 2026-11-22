@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
 from apps.accounts.models import ChildProfile  # noqa: E402
-from apps.ai.models import AIQuery, FeynmanSession  # noqa: E402
+from apps.ai.models import AIQuery, AISettings, FeynmanSession  # noqa: E402
 from apps.content.models import Exercise, Skill  # noqa: E402
 from apps.learning.models import Block, SkillMastery  # noqa: E402
 
@@ -25,6 +25,7 @@ kid = ChildProfile.objects.get(user__username="alesya")
 kid.settings.quiet_from = kid.settings.quiet_to
 kid.settings.save()
 AIQuery.objects.filter(child=kid).delete()
+AISettings.objects.update_or_create(child=kid, defaults={"enabled": True, "teach_enabled": True})  # по умолчанию выключено (D-109)
 FeynmanSession.objects.filter(child=kid).delete()
 for key in ("math.fr.add", "math.fr.notion", "en.gr.have_got"):
     SkillMastery.objects.update_or_create(child=kid, skill=Skill.objects.get(external_key=key), defaults={"status": "mastered"})
@@ -68,6 +69,7 @@ with sync_playwright() as p:
     shot("s2_02_exercise_button.png")
     page.click("[data-ai-ask]")
     page.wait_for_selector("#ai-panel .ai-reply")
+    print("hints_used after AI reply:", page.get_attribute("form.taskform", "data-hints"))  # D-111: ожидается 1
     shot("s2_03_masya_hint.png")
     page.fill("#ai-panel input[name=q]", "Просто скажи ответ")
     page.click("#ai-panel button.btn")

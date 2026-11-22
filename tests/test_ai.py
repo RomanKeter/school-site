@@ -38,6 +38,10 @@ def _block(child, key):
     return Block.objects.create(child=child, kind="free", title="Практика", queue=[{"t": "ex", "id": ex.id}], meta={"level": 1}), ex
 
 
+def _enable(child):
+    AISettings.objects.update_or_create(child=child, defaults={"enabled": True, "teach_enabled": True})
+
+
 def _today(child):
     from apps.accounts.utils import local_today
     return local_today(child.family)
@@ -204,11 +208,14 @@ def test_ask_view_button_and_parent_toggle(client, content, family):
     parent, child = family
     blk, ex = _block(child, "math.div.s1.ex1")
     login_child(client, child)
+    assert "Спросить Масю" not in client.get(reverse("play_block", args=[blk.id])).content.decode()  # D-109: выкл. по умолчанию
+    _enable(child)
     page = client.get(reverse("play_block", args=[blk.id])).content.decode()
     assert "Спросить Масю" in page and 'id="ai-panel"' in page
     r = client.post(reverse("ai_ask", args=[blk.id, ex.id]), {"turn": "1"})
     body = r.content.decode()
     assert r.status_code == 200 and "Мася" in body and "Спросить ещё" in body and "248" not in body
+    assert "data-ai-hint" in body  # D-111: считается подсказкой (app.js увеличивает hints_used)
     AISettings.objects.update_or_create(child=child, defaults={"enabled": False})
     assert "Спросить Масю" not in client.get(reverse("play_block", args=[blk.id])).content.decode()
     assert limits.MSG_OFF in client.post(reverse("ai_ask", args=[blk.id, ex.id])).content.decode()
@@ -242,6 +249,8 @@ def test_teach_locked_until_mastered(client, teach_ready):
     child = teach_ready
     skill = Skill.objects.get(external_key="math.fr.add")
     login_child(client, child)
+    assert client.get(reverse("ai_teach_list")).status_code == 404  # D-109: выкл. по умолчанию
+    _enable(child)
     assert "Сначала освой эту тему" in client.get(reverse("ai_teach_list")).content.decode()
     assert client.get(reverse("ai_teach", args=[skill.id])).status_code == 302
 
@@ -250,6 +259,7 @@ def test_teach_flow_offline_full(client, teach_ready):
     child = teach_ready
     skill = Skill.objects.get(external_key="math.fr.add")
     SkillMastery.objects.create(child=child, skill=skill, status="mastered", mastery=0.9)
+    _enable(child)
     login_child(client, child)
     url = reverse("ai_teach", args=[skill.id])
     assert "складывать дроби" in client.get(url).content.decode()
@@ -350,3 +360,32 @@ def test_teach_finale_has_no_question_and_provider_retries_5xx(teach_ready, monk
     monkeypatch.setattr("apps.ai.providers.time.sleep", lambda s: None)
     assert OpenAICompatibleProvider("gemini", "https://x.test", "k", "m").complete([]).text == "ok"
     assert len(calls) == 2
+
+
+def test_defaults_off_and_blocked_reply_not_counted_as_hint(client, content, family):
+    _, child = family
+    s = limits.settings_for(child)
+    assert not s.enabled and not s.teach_enabled
+    blk, ex = _block(child, "math.div.s1.ex1")
+    AISettings.objects.create(child=child, enabled=True, daily_limit=0)
+    login_child(client, child)
+    body = client.post(reverse("ai_ask", args=[blk.id, ex.id]), {"turn": "1"}).content.decode()
+    assert limits.MSG_LIMIT in body and "data-ai-hint" not in body
+
+
+def test_english_blank_rule_with_word_allowed_but_not_filled_sentence(content, family):
+    _, child = family
+    ex = Exercise.objects.get(external_key="en.gr.hg.ex1")  # «I ___ got a brother.», ответ have
+    assert safety.is_en_blank(ex)
+    assert not safety.leaks_answer("С I говорим have got: I have got a cat. Какое слово подходит?", ex)
+    assert safety.leaks_answer("Правильно так: «I have got a brother».", ex)
+    assert safety.leaks_answer("I HAVE  got a brother!", ex)
+    math = Exercise.objects.get(external_key="math.div.s1.ex1")
+    assert not safety.is_en_blank(math) and safety.leaks_answer("ответ 248", math)
+    blk, _ = _block(child, "en.gr.hg.ex1")
+    fake = FakeProvider(replies=["Вспомни: с I, you, we, they говорим have got. Например: We have got a dog. А кто в твоём предложении?"])
+    fake.offline = False
+    set_provider_for_tests(fake)
+    r = helper.ask(child, ex, "", turn=1, prev_answer="", today=_today(child))
+    assert not r["offline"] and "have got" in r["text"]
+    assert any("заполненным пропуском" in m["content"] for m in fake.calls[0] if m["role"] == "system")

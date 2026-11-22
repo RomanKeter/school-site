@@ -51,7 +51,7 @@ def offline_reply(exercise, turn: int) -> str:
 
 
 def _postfilter(text: str, flags: list) -> str | None:
-    text, had_url = safety.strip_urls(text.replace("$", "").replace("**", ""))
+    text, had_url = safety.strip_urls(text.replace("$", "").replace("*", ""))
     if had_url:
         flags.append("url")
     if safety.has_stopword(text):
@@ -94,6 +94,8 @@ def ask(child, exercise, question: str, *, turn: int, prev_answer: str, today) -
     )
     messages = [{"role": "system", "content": system},
                 {"role": "user", "content": prompts.TASK_FRAME.format(task=_task_text(exercise))}]
+    if safety.is_en_blank(exercise):
+        messages.append({"role": "system", "content": prompts.EN_BLANK_NOTE})
     if prev_answer:
         messages.append({"role": "assistant", "content": prev_answer[:800]})
     messages.append({"role": "user", "content": prompts.CHILD_FRAME.format(text=q or "Я не знаю, с чего начать. Помоги, пожалуйста.")})

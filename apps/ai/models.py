@@ -9,8 +9,8 @@ class AISettings(models.Model):
     """Настройки ИИ для ребёнка. Меняет только родитель (страница «ИИ-помощник»)."""
 
     child = models.OneToOneField("accounts.ChildProfile", on_delete=models.CASCADE, related_name="ai_settings")
-    enabled = models.BooleanField("кнопка «Спросить Масю» включена", default=True)
-    teach_enabled = models.BooleanField("«Научи Масю» включено", default=True)
+    enabled = models.BooleanField("кнопка «Спросить Масю» включена", default=False)  # D-109: включает родитель
+    teach_enabled = models.BooleanField("«Научи Масю» включено", default=False)
     daily_limit = models.PositiveSmallIntegerField("вопросов в день", default=10)  # AI-1: 0–30
 
     class Meta:
