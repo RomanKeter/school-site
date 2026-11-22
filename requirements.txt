@@ -1,0 +1,9 @@
+Django>=5.1,<6
+argon2-cffi>=23.1
+psycopg[binary]>=3.2
+gunicorn>=22
+# dev / tests
+pytest>=8
+pytest-django>=4.9
+hypothesis>=6
+playwright>=1.47

@@ -1,0 +1,197 @@
+"""Сервисы обучения: попытки, mastery, адаптивность, выбор задания."""
+from __future__ import annotations
+
+import datetime as dt
+
+from django.db import transaction
+from django.utils import timezone
+
+from apps.srs import services as srs_svc
+from apps.srs.algorithm import quality
+
+from . import adaptive as adaptive_mod
+from . import mastery as mastery_mod
+from .checkers import check
+from .feedback import phrase
+from .models import Attempt, Block, DailyActivity, SkillMastery
+
+
+def get_or_create_mastery(child, skill) -> SkillMastery:
+    m, _ = SkillMastery.objects.get_or_create(child=child, skill=skill)
+    return m
+
+
+@transaction.atomic
+def apply_mastery(child, skill, q: int, today: dt.date) -> SkillMastery:
+    m = get_or_create_mastery(child, skill)
+    day = today.isoformat()
+    window = mastery_mod.push(m.last_window or [], q, day)
+    m.last_window = window
+    m.mastery = mastery_mod.mastery_value(window)
+    m.attempts_count += 1
+    m.distinct_days = mastery_mod.distinct_days(window)
+    review = srs_svc.due_items(child, today).filter(skill=skill).first()
+    fail_streak = review.fail_streak if review else 0
+    new_status = mastery_mod.status(
+        window, ever_mastered=m.ever_mastered, review_fail_streak=fail_streak, placed=m.placed
+    )
+    if new_status == "mastered" and not m.ever_mastered:
+        m.ever_mastered = True
+        m.mastered_at = timezone.now()
+    m.status = new_status
+    m.save()
+    return m
+
+
+def pick_exercise(skill, level: int, exclude_ids=None, for_warmup=False):
+    from apps.content.models import Exercise
+
+    qs = Exercise.objects.filter(skill=skill, status="published")
+    if exclude_ids:
+        qs = qs.exclude(id__in=exclude_ids)
+    if for_warmup:
+        qs = qs.filter(difficulty=1)
+    diffs = set(qs.values_list("difficulty", flat=True))
+    d = adaptive_mod.pick_difficulty(diffs, level) if diffs else None
+    if d is None:
+        return None
+    return qs.filter(difficulty=d).order_by("?").first()
+
+
+@transaction.atomic
+def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block | None = None,
+                  given, attempt_no: int, hints_used: int, duration_ms: int, context: str,
+                  solution_shown=False, today: dt.date | None = None):
+    today = today or timezone.localdate()
+    if exercise:
+        result = check(exercise.type, exercise.payload, exercise.answer, given)
+        est = exercise.est_seconds
+        skill = exercise.skill
+    else:
+        # проверка слова (режимы)
+        result = _check_word(word, word_mode, given)
+        est = 25
+        skill = None
+
+    q = quality(
+        correct=result.correct,
+        attempt_no=attempt_no,
+        hints_used=hints_used,
+        duration_s=duration_ms / 1000.0,
+        est_seconds=est,
+        skipped=solution_shown and not result.correct,
+    )
+    if solution_shown and not result.correct:
+        q = 1
+
+    is_final = result.correct or attempt_no >= 3 or solution_shown
+    att = Attempt.objects.create(
+        child=child, exercise=exercise, word=word, word_mode=word_mode, block=block,
+        context=context, answer_given=given if isinstance(given, dict) else {"value": given},
+        is_correct=result.correct, partial_score=result.partial, attempt_no=attempt_no,
+        hints_used=hints_used, solution_shown=solution_shown, is_final=is_final,
+        duration_ms=duration_ms, q=q if is_final else None,
+    )
+
+    feedback = {
+        "correct": result.correct,
+        "partial": result.partial,
+        "distractor": result.distractor,
+        "is_final": is_final,
+        "q": q if is_final else None,
+        "phrase": "",
+        "stars": 0,
+        "solution_steps": [],
+        "mastery_status": None,
+    }
+
+    if result.correct:
+        feedback["phrase"] = phrase("correct_first" if attempt_no == 1 and hints_used == 0 else "correct_retry")
+    elif is_final:
+        feedback["phrase"] = phrase("solution")
+        if exercise:
+            feedback["solution_steps"] = (exercise.payload or {}).get("solution_steps") or []
+            if exercise.type == "step_by_step":
+                feedback["solution_steps"] = [
+                    f"{s.get('ask', '')} → {s.get('answer')}" for s in (exercise.payload or {}).get("steps") or []
+                ]
+    else:
+        feedback["phrase"] = result.distractor or phrase("almost")
+
+    if is_final and skill is not None:
+        m = apply_mastery(child, skill, q, today)
+        feedback["mastery_status"] = m.status
+        if context in ("lesson", "mission", "review", "diagnostic", "free"):
+            srs_svc.ensure_item(child, today=today, skill=skill, due_tomorrow=not result.correct)
+            if context == "review":
+                item = child.review_items.filter(skill=skill).first()
+                if item:
+                    srs_svc.record_review(item, q, today)
+        # адаптивность — в meta блока
+        if block is not None:
+            st = adaptive_mod.AdaptiveState(
+                level=int(block.meta.get("level", 1)),
+                right_streak=int(block.meta.get("right_streak", 0)),
+                wrong_streak=int(block.meta.get("wrong_streak", 0)),
+            )
+            first_ok = result.correct and attempt_no == 1 and hints_used == 0
+            st2 = adaptive_mod.update(st, first_ok)
+            block.meta = {**block.meta, "level": st2.level, "right_streak": st2.right_streak, "wrong_streak": st2.wrong_streak}
+            block.save(update_fields=["meta"])
+
+    if is_final and word is not None:
+        srs_svc.ensure_item(child, today=today, word=word, due_tomorrow=True)
+        if context == "review":
+            item = child.review_items.filter(word=word).first()
+            if item:
+                srs_svc.record_review(item, q, today)
+
+    # звёзды
+    from apps.rewards import stars as stars_svc
+
+    if is_final:
+        amount = 0
+        if result.correct and attempt_no == 1 and hints_used == 0:
+            amount = 2
+        elif result.correct:
+            amount = 1
+        elif solution_shown:
+            amount = 1  # за упорство
+        if amount:
+            feedback["stars"] = stars_svc.award(child, amount, "attempt", att.pk, today=today)
+
+    return att, feedback
+
+
+def _check_word(word, mode, given):
+    from .checkers import CheckResult, normalize_text
+
+    raw = given.get("value") if isinstance(given, dict) else given
+    if mode in ("ru_to_en", "tiles", "type"):
+        ok = normalize_text(str(raw or "")) == normalize_text(word.word)
+        return CheckResult(ok, 1.0 if ok else 0.0)
+    if mode in ("en_to_ru", "choice_ru"):
+        ok = normalize_text(str(raw or "")) == normalize_text(word.translation_ru)
+        return CheckResult(ok, 1.0 if ok else 0.0)
+    # picture/audio choice by id
+    gid = given.get("id") if isinstance(given, dict) else given
+    ok = str(gid) == str(word.pk)
+    return CheckResult(ok, 1.0 if ok else 0.0)
+
+
+def activity_get(child, today) -> DailyActivity:
+    obj, _ = DailyActivity.objects.get_or_create(child=child, date=today)
+    return obj
+
+
+def is_quiet_hours(child, now) -> bool:
+    s = child.settings
+    t = now.time()
+    if s.quiet_from <= s.quiet_to:
+        return s.quiet_from <= t < s.quiet_to
+    return t >= s.quiet_from or t < s.quiet_to
+
+
+def limit_reached(child, today) -> bool:
+    act = activity_get(child, today)
+    return act.active_seconds >= child.settings.limit_for(today) * 60
