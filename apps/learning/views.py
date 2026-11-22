@@ -136,17 +136,7 @@ def check_exercise(request, block_id, exercise_id):
                     m.status = "almost"
                 m.save()
         mission_builder.advance_block(block)
-        # завершение диагностики
-        if block.kind == "diagnostic" and block.status == "done":
-            DiagnosticResult.objects.update_or_create(
-                child=child, defaults={"completed_at": timezone.now(), "data": {}}
-            )
-            # сгенерировать обычную миссию на сегодня заново? оставляем diag как первую;
-            # завтра — обычная. Для UX сразу создадим вторую миссию-продолжение нет —
-            # ребёнок заканчивает знакомство и видит home (ensure создаст только если blocks пусты).
-            # Пометим diag done; home покажет выполненную миссию; нажмёт свободную — ок.
-            if block.mission_id:
-                mission_builder.complete_mission_if_done(block.mission, today)
+        _after_final(block, today)
 
     return render(request, "partials/feedback.html", {
         "fb": fb, "exercise": ex, "blk": block,
@@ -220,6 +210,7 @@ def check_word(request, block_id, word_id):
     if fb["is_final"]:
         _requeue_failed_review(block, fb)
         mission_builder.advance_block(block)
+        _after_final(block, today)
         from apps.rewards import badges
         badges.evaluate(child, "word_learned")
     return render(request, "partials/feedback.html", {
@@ -232,7 +223,10 @@ def check_word(request, block_id, word_id):
 def _finish_block(request, block):
     child = request.child
     today = local_today(child.family)
+    _after_final(block, today)
     awards = []
+    if block.kind == "diagnostic":
+        return render(request, "child/celebrate.html", {"blk": block, "awards": []})
     if block.mission_id:
         awards = mission_builder.complete_mission_if_done(block.mission, today)
         nxt = block.mission.blocks.exclude(status="done").order_by("order").first()
@@ -282,3 +276,10 @@ def _requeue_failed_review(block, fb):
     if step and step.get("t") == "review" and not step.get("again"):
         block.queue = block.queue + [{**step, "again": True}]
         block.save(update_fields=["queue"])
+
+
+def _after_final(block, today):
+    if block.kind == "diagnostic" and block.status == "done":
+        mission_builder.finish_diagnostic(block, today)
+    elif block.mission_id and block.status == "done":
+        mission_builder.complete_mission_if_done(block.mission, today)

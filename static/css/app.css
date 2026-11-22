@@ -133,7 +133,7 @@ h2{font-size:26px;font-weight:800;margin:0 0 12px}
 
 /* Карта островов (Э3) */
 .sea{background:linear-gradient(180deg,#DDEEFF,#C8E2FA);border-radius:28px;padding:28px;display:flex;flex-wrap:wrap;gap:20px;align-items:center}
-.island{background:#F6E7C1;border-radius:50% 45% 50% 40%/50% 50% 40% 45%;width:200px;min-height:170px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;box-shadow:0 6px 0 #E2CB93;text-decoration:none;color:var(--text)}
+.island{background:#F6E7C1;border-radius:50% 45% 50% 40%/50% 50% 40% 45%;width:210px;min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:16px;box-shadow:0 6px 0 #E2CB93;text-decoration:none;color:var(--text)}
 .island .ico{font-size:52px}
 .island .t{font-weight:800;font-size:17px;line-height:1.25}
 .island .s{font-size:15px;color:var(--muted);font-weight:700}

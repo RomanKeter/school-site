@@ -5,7 +5,7 @@
 {% elif current and current.kind == "diagnostic" %}
   {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Я Зубрик. Давай познакомимся: решим немного задачек, чтобы я понял, с чего начать." %}
 {% else %}
-  {% include "partials/mascot.html" with state="hello" size="big" say="Доброе утро! Сегодня "|add:blocks|length|stringformat:"s"|add:" шагов" %}
+  {% include "partials/mascot.html" with state="hello" size="big" say=greeting %}
 {% endif %}
 
 <nav class="path" aria-label="Тропинка миссии">

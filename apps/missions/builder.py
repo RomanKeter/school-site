@@ -138,6 +138,12 @@ def ensure_mission(child, today: dt.date | None = None) -> DailyMission:
         mission.save()
         return mission
 
+    mission.status = "pending"
+    return build_regular(child, mission, today, order)
+
+
+def build_regular(child, mission: DailyMission, today: dt.date, order: int = 0) -> DailyMission:
+    """Обычная миссия: разминка → повторение → урок → 5 слов → сюрприз (FR-MIS-1)."""
     # 1. Разминка
     warm_skill = None
     mastered = SkillMastery.objects.filter(child=child, status="mastered").select_related("skill").first()
@@ -177,7 +183,7 @@ def ensure_mission(child, today: dt.date | None = None) -> DailyMission:
         Block.objects.create(
             child=child, mission=mission, order=order, kind="lesson",
             title=lesson_skill.title, subject_code="math", skill=lesson_skill,
-            queue=_lesson_queue(lesson_skill), est_seconds=8 * 60, meta={"level": 1},
+            queue=_lesson_queue(lesson_skill), est_seconds=5 * 60, meta={"level": 1},
         )
         order += 1
         if assigned:
@@ -190,7 +196,7 @@ def ensure_mission(child, today: dt.date | None = None) -> DailyMission:
         Block.objects.create(
             child=child, mission=mission, order=order, kind="words",
             title="5 слов (EN)", subject_code="en", queue=wq,
-            est_seconds=5 * 60, meta={"level": 1, "word_ids": [w.id for w in words]},
+            est_seconds=3 * 60, meta={"level": 1, "word_ids": [w.id for w in words]},
         )
         order += 1
 
@@ -199,10 +205,11 @@ def ensure_mission(child, today: dt.date | None = None) -> DailyMission:
         child=child, mission=mission, order=order, kind="surprise",
         title="Сюрприз 🎁", queue=[{"t": "celebrate"}], est_seconds=30, meta={},
     )
-    mission.status = "pending"
     mission.planned_seconds = TARGET
     mission.save()
     return mission
+
+
 
 
 def _build_diagnostic(child):
@@ -263,3 +270,16 @@ def complete_mission_if_done(mission: DailyMission, today: dt.date):
     stars_svc.award(mission.child, 10, "mission", f"{mission.pk}", today=today)
     st, comeback = streaks.on_mission_done(mission.child, today)
     return badges.evaluate(mission.child, "mission_done", comeback=comeback)
+
+
+@transaction.atomic
+def finish_diagnostic(block: Block, today: dt.date):
+    """Диагностика пройдена → результат сохранён, в ту же миссию добавляется обычная миссия дня."""
+    DiagnosticResult.objects.update_or_create(child=block.child, defaults={"completed_at": timezone.now()})
+    mission = block.mission
+    if mission is None or mission.blocks.exclude(kind="diagnostic").exists():
+        return
+    order = (mission.blocks.order_by("-order").values_list("order", flat=True).first() or 0) + 1
+    build_regular(block.child, mission, today, order)
+    mission.status = "in_progress"
+    mission.save(update_fields=["status"])

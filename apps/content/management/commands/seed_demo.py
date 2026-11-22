@@ -26,6 +26,8 @@ class Command(BaseCommand):
             parent = User.objects.get(username="roman").parent_profile
         if not parent.family.children.filter(display_name="Алеся").exists():
             create_child(parent.family, "alesya", "Алеся", ["apple", "cat", "star", "ball"], avatar_code="fox", grade=5)
+        if not User.objects.filter(username="admin").exists():
+            User.objects.create_superuser("admin", "admin@example.com", "AdminPass123!", role="admin")
         self.stdout.write(self.style.SUCCESS(
-            "Готово. Родитель: roman / ChildPass123!  Ребёнок: аватарка Лиса, пароль 🍎🐱⭐⚽"
+            "Готово. Родитель: roman / ChildPass123!  Ребёнок: alesya, пароль 🍎🐱⭐⚽  Админ: admin / AdminPass123!"
         ))

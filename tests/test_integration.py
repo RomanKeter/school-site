@@ -265,3 +265,36 @@ def _answer_for(ex, correct):
     if t == "matching":
         return {"pairs": a["pairs"]} if correct else {"pairs": {}}
     return {"value": a.get("value", "") if correct else "zzz"}
+
+
+def test_diagnostic_completion_appends_regular_mission(client, family, content):
+    """Диагностика заканчивается словами → результат сохранён и в миссию добавлены обычные шаги."""
+    from apps.learning.models import DiagnosticResult
+    _, child = family
+    login_child(client, child)
+    m = ensure_mission(child)
+    diag = m.blocks.get(kind="diagnostic")
+    for _ in range(len(diag.queue)):
+        diag.refresh_from_db()
+        step = diag.queue[diag.position]
+        if step["t"] == "ex":
+            ex = Exercise.objects.get(pk=step["id"])
+            r = client.post(reverse("check_exercise", args=[diag.id, ex.id]),
+                            {"answer": json.dumps(_answer_for(ex, True)), "attempt_no": 1, "hints_used": 0, "duration_ms": 4000})
+        else:
+            r = client.post(reverse("check_word", args=[diag.id, step["id"]]),
+                            {"answer": json.dumps({"id": step["id"]}), "mode": step["mode"], "attempt_no": 1})
+        html = r.content.decode()
+        assert "Записал" in html and "Точно" not in html  # нейтрально, без оценки
+    diag.refresh_from_db()
+    assert diag.status == "done"
+    assert DiagnosticResult.objects.get(child=child).completed_at
+    kinds = list(m.blocks.order_by("order").values_list("kind", flat=True))
+    assert kinds[0] == "diagnostic" and "lesson" in kinds and kinds[-1] == "surprise"
+    m.refresh_from_db()
+    assert m.status != "done"
+    # освоенные на диагностике навыки отмечены как знакомые
+    from apps.learning.models import SkillMastery
+    assert SkillMastery.objects.filter(child=child, placed=True).exists()
+    # знакомые слова стартуют сразу с интервала 3 дня
+    assert ReviewItem.objects.filter(child=child, item_type="word", interval_days=3).exists()

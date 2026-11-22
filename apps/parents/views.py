@@ -2,6 +2,7 @@ import datetime as dt
 
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect, render
+from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 from apps.accounts.forms import ChildCreateForm
@@ -55,6 +56,15 @@ def dashboard(request):
                 weak.append({"mastery": m, "last": last})
             if len(weak) >= 5:
                 break
+        # 3+ ошибки подряд за последние 7 дней (FR-PAR-2)
+        since = timezone.now() - dt.timedelta(days=7)
+        for m in SkillMastery.objects.filter(child=child).select_related("skill"):
+            if any(w["mastery"].skill_id == m.skill_id for w in weak):
+                continue
+            last3 = list(Attempt.objects.filter(child=child, exercise__skill=m.skill, is_final=True, created_at__gte=since)
+                         .select_related("exercise").order_by("-created_at")[:3])
+            if len(last3) == 3 and not any(a.is_correct for a in last3):
+                weak.append({"mastery": m, "last": last3[0], "note": "3 ошибки подряд"})
         # fail streak reviews
         for it in ReviewItem.objects.filter(child=child, fail_streak__gte=2, skill__isnull=False).select_related("skill")[:3]:
             if not any(w["mastery"].skill_id == it.skill_id for w in weak):

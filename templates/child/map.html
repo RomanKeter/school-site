@@ -9,6 +9,7 @@
       <span class="ico" aria-hidden="true">{{ i.icon }}</span>
       <span class="t">{{ i.skill.title }}</span>
       <span class="s">{{ i.label }}</span>
+      {% if not i.locked %}<form method="post" action="{% url 'practice_skill' i.skill.id %}">{% csrf_token %}<button class="btn small" style="min-height:48px;margin-top:6px">{% if i.status == "not_started" %}Учить урок{% else %}Потренироваться{% endif %}</button></form>{% endif %}
     </div>
   {% empty %}<p>Острова скоро появятся.</p>{% endfor %}
 </div>
