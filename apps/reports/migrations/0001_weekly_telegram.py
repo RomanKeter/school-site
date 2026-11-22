@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('accounts', '0002_weekly_telegram'),
-        ('content', '0003_weekly_telegram'),
+        ('content', '0004_weekly_telegram'),
     ]
 
     operations = [
