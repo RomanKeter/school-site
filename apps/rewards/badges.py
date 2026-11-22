@@ -12,6 +12,7 @@ DEFAULT_BADGES = [
     ("persistent", "Упорство", "10 заданий, решённых верно после ошибки", "💪", {"type": "retry_ok", "value": 10}, 8),
     ("comeback", "С возвращением!", "Миссия после перерыва ≥ 3 дня", "👋", {"type": "comeback"}, 9),
     ("rule_keeper", "Хранитель правил", "Освоены 10 правил русского языка", "📜", {"type": "subject_skills", "subject": "ru", "value": 10}, 10),
+    ("mova_friend", "Сябар мовы", "Освоены 10 правил белорусского языка", "🌾", {"type": "subject_skills", "subject": "by", "value": 10}, 11),
 ]
 
 
@@ -73,6 +74,13 @@ def evaluate(child, event: str, **ctx):
 
             if SkillMastery.objects.filter(child=child, status="mastered", skill__topic__unit__subject__code="ru").count() >= 10:
                 b = grant(child, "rule_keeper")
+                if b:
+                    awarded.append(b)
+        if skill and skill.topic.unit.subject.code == "by":  # D-806: «Сябар мовы»
+            from apps.learning.models import SkillMastery
+
+            if SkillMastery.objects.filter(child=child, status="mastered", skill__topic__unit__subject__code="by").count() >= 10:
+                b = grant(child, "mova_friend")
                 if b:
                     awarded.append(b)
     if event == "retry_ok":

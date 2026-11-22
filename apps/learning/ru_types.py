@@ -101,11 +101,13 @@ def check_morphemes(payload, answer, given):
 
 # ---------- Диктант ----------
 
-_TOKEN = re.compile(r"[а-яёa-z0-9-]+|[,:;!?—]", re.I)
+_TOKEN = re.compile(r"[а-яёіўa-z0-9'-]+|[,:;!?—]", re.I)  # і, ў, апостраф — для белорусского (D-803)
 
 
-def dict_tokens(text):
-    t = (text or "").lower().replace("ё", "е").replace("–", "—").replace(" - ", " — ")
+def dict_tokens(text, fold_yo=True):
+    t = (text or "").lower().replace("–", "—").replace(" - ", " — ").replace("’", "'").replace("ʼ", "'")
+    if fold_yo:  # в русском ё часто пишут как е; в белорусском ё пишется всегда
+        t = t.replace("ё", "е")
     return _TOKEN.findall(t)
 
 
@@ -113,7 +115,8 @@ def check_dictation(payload, answer, given):
     from .checkers import CheckResult
 
     raw = given.get("value") if isinstance(given, dict) else given
-    need, got = dict_tokens(answer.get("value")), dict_tokens(raw)
+    fold = not str((payload or {}).get("lang", "")).startswith("be")
+    need, got = dict_tokens(answer.get("value"), fold), dict_tokens(raw, fold)
     if got == need:
         return CheckResult(True, 1.0)
     words_need = [t for t in need if t[0].isalnum()]

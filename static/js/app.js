@@ -169,9 +169,18 @@
         e.preventDefault();
         if (!("speechSynthesis" in window)) return;
         const bytes = Uint8Array.from(atob(b.dataset.say || ""), (c) => c.charCodeAt(0));
-        const u = new SpeechSynthesisUtterance(new TextDecoder().decode(bytes));
-        u.lang = "ru-RU"; u.rate = b.dataset.slow ? 0.55 : 0.85;
-        const v = window.speechSynthesis.getVoices().find((x) => x.lang.startsWith("ru"));
+        let text = new TextDecoder().decode(bytes);
+        const lang = b.dataset.lang || "ru-RU";
+        const voices = window.speechSynthesis.getVoices();
+        let v = voices.find((x) => x.lang.startsWith(lang.slice(0, 2)));
+        if (!v && lang !== "ru-RU") {  // D-803: нет белорусского голоса — русский голос + подсказка
+          v = voices.find((x) => x.lang.startsWith("ru"));
+          text = text.replace(/і/g, "и").replace(/І/g, "И").replace(/ў/g, "у").replace(/['’]/g, "ъ");
+          const note = form.querySelector("[data-dict-note]");
+          if (note) note.hidden = false;
+        }
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = v ? v.lang : lang; u.rate = b.dataset.slow ? 0.55 : 0.85;
         if (v) u.voice = v;
         window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
       }));

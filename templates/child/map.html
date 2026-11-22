@@ -5,7 +5,7 @@
 <h1><a href="{% url 'home' %}" aria-label="Назад" class="iconbtn">{% include "partials/icon.html" with n="arrow-left" %}</a> {{ subject.title }}: мои острова</h1>
 <div class="sea">
   {% for i in islands %}
-    {% ifchanged i.skill.topic.unit_id %}{% if subject.code == "ru" %}<h2 class="sea-unit">{{ i.skill.topic.unit.title }}</h2>{% endif %}{% endifchanged %}
+    {% ifchanged i.skill.topic.unit_id %}{% if subject.code == "ru" or subject.code == "by" %}<h2 class="sea-unit">{{ i.skill.topic.unit.title }}</h2>{% endif %}{% endifchanged %}
     {% if not forloop.first %}<span class="bridge" aria-hidden="true"></span>{% endif %}
     <div class="island {% if i.locked %}locked{% endif %}">
       <span class="ico" aria-hidden="true"><img src="{% get_static_prefix %}img/mastery/{% if i.locked %}locked{% else %}{{ i.status }}{% endif %}.svg" alt="" data-fallback="{{ i.icon }}"></span>

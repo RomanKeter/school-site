@@ -48,7 +48,7 @@ class Command(BaseCommand):
         subj_code = data["subject"]
         subject, _ = Subject.objects.get_or_create(
             code=subj_code,
-            defaults={"title": {"math": "Математика", "en": "Английский", "ru": "Русский язык"}.get(subj_code, subj_code),
+            defaults={"title": {"math": "Математика", "en": "Английский", "ru": "Русский язык", "by": "Белорусский язык"}.get(subj_code, subj_code),
                       "color_token": subj_code, "icon": "🔢" if subj_code == "math" else "🔤"},
         )
         u = data["unit"]

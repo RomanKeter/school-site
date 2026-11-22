@@ -292,3 +292,7 @@ body.subj-ru{--subj:var(--c-ru);--subj-bg:var(--c-ru-bg)}
 .dict-play{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
 .dict-in{width:100%;min-height:120px;font-size:26px;line-height:1.4;padding:12px 16px;resize:vertical}
 .sea-unit{flex-basis:100%;margin:8px 0 0;font-size:20px;color:var(--muted)}
+/* Белорусский язык (D-800): цвет предмета — уже заложенный токен --c-by */
+:root{--c-by-bg:#E3EFEC}
+body.subj-by{--subj:var(--c-by);--subj-bg:var(--c-by-bg)}
+.tile .ico.by{background:var(--c-by-bg);color:var(--c-by)}
