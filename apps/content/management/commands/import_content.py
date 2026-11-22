@@ -22,10 +22,13 @@ class Command(BaseCommand):
         data = json.loads(Path(path).read_text(encoding="utf-8"))
         if data.get("format_version") != 1:
             raise CommandError("format_version должен быть 1")
+        # D-504: один файл может содержать несколько юнитов в ключе "units".
+        items = data["units"] if "units" in data else [data]
         report = {"created": 0, "updated": 0, "errors": []}
         try:
             with transaction.atomic():
-                self._import(data, update, report)
+                for item in items:
+                    self._import(item, update, report)
                 if report["errors"]:
                     raise _HasErrors()
                 if dry_run:
