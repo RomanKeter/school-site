@@ -29,11 +29,11 @@
   <div class="actions task-actions">
     <button class="btn secondary small" data-hint-btn hx-post="{% url 'hint' blk.id exercise.id %}" hx-target="#hint-panel" hx-swap="innerHTML">{% include "partials/icon.html" with n="hint" %} Подсказка</button>
     <button class="btn secondary small" data-solution="1" hidden hx-post="{% url 'check_exercise' blk.id exercise.id %}" hx-target="#feedback">{% include "partials/icon.html" with n="eye" %} Покажи, как решать</button>
-    {% if exercise.type not in "single_choice fill_blank_choice audio_text_choice" %}
+    {% if exercise.type not in "single_choice fill_blank_choice audio_text_choice fill_letters" %}
     <button class="btn" type="button" data-submit-task>Проверить {% include "partials/icon.html" with n="check" %}</button>
     {% endif %}
   </div>
-  {% elif exercise.type not in "single_choice fill_blank_choice audio_text_choice" %}
+  {% elif exercise.type not in "single_choice fill_blank_choice audio_text_choice fill_letters" %}
   <div class="actions task-actions"><span></span><button class="btn" type="button" data-submit-task>Готово {% include "partials/icon.html" with n="check" %}</button></div>
   {% endif %}
 </div>

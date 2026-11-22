@@ -2,6 +2,7 @@
 <div class="fb ok" data-final="1"><span class="ic">{% include "partials/icon.html" with n="check-circle" %}</span><div>Записал! Идём дальше.{% if next_url %}<div style="margin-top:12px"><a class="btn next" href="{{ next_url }}">Дальше {% include "partials/icon.html" with n="arrow-right" %}</a></div>{% endif %}</div></div>
 {% elif fb.correct %}
 <div class="fb ok" data-final="1"><span class="ic">{% include "partials/icon.html" with n="check-circle" %}</span><div>{{ fb.phrase }}{% if fb.stars %} <span class="stars-earned">{% include "partials/icon.html" with n="star" %} +{{ fb.stars }}</span>{% endif %}
+  {% if fb.explain %}<div class="fb-explain">{{ fb.explain }}</div>{% endif %}
   {% if next_url %}<div style="margin-top:12px"><a class="btn next" href="{{ next_url }}">Дальше {% include "partials/icon.html" with n="arrow-right" %}</a></div>{% endif %}</div></div>
 {% elif fb.is_final %}
 <div class="fb almost" data-final="1"><span class="ic">{% include "partials/icon.html" with n="hint" %}</span><div>{% if blk.kind == "diagnostic" %}Записал! Идём дальше.{% else %}{{ fb.phrase }}{% if fb.stars %} <span class="stars-earned">{% include "partials/icon.html" with n="star" %} +{{ fb.stars }} за упорство</span>{% endif %}

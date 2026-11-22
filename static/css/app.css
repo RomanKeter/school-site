@@ -13,7 +13,7 @@
   --blue:#4C6A85; --blue-d:#3A536A; --coral:#A35A42; --lime:#A9BF9A; --lime-d:#5E7A52;
   --c-math:#4C6A85; --c-math-bg:#E7EDF2;
   --c-en:#A35A42; --c-en-bg:#F5E8E1;
-  --c-ru:#9C5B3E; --c-by:#4E8279;
+  --c-ru:#755A73; --c-ru-bg:#EFE8EE; --c-by:#4E8279;
   --ok:#5E7A52; --ok-bg:#EDF1E6;
   --almost:#B88A3A; --almost-bg:#F6EEDD;
   --hint-bg:#F7F0DE; --mark:#EBD9A6;
@@ -263,3 +263,15 @@ table.t td,table.t th{padding:8px;border-bottom:1px solid var(--line);text-align
 .island{align-self:stretch}
 #reflect .iconbtn .ico-svg{width:44px;height:44px}
 h1 .ico-svg,h2 .ico-svg{color:var(--blue)}
+
+/* Русский язык (этап 2, D-203): цвет предмета, плитка, «вставь букву», «поставь запятые» */
+body.subj-ru{--subj:var(--c-ru);--subj-bg:var(--c-ru-bg)}
+.tile .ico.ru{background:var(--c-ru-bg);color:var(--c-ru)}
+.ru-word{font-size:44px;font-weight:800;text-align:center;letter-spacing:.02em;margin:8px 0 20px}
+.ru-word .gap{display:inline-block;min-width:1.1em;margin:0 3px;padding:0 6px;border-bottom:4px solid var(--subj);color:var(--subj);background:var(--subj-bg);border-radius:8px 8px 0 0}
+.ru-letters{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.ru-letters .opt{font-size:32px}
+.ru-sentence{font-size:28px;font-weight:700;line-height:2.2;text-align:center;margin:8px 0 16px}
+.ru-sentence .gapbtn{min-width:44px;min-height:44px;margin:0 2px;border:2px dashed var(--line);border-radius:12px;background:transparent;color:transparent;font:800 28px/1 Manrope,system-ui,sans-serif;cursor:pointer;vertical-align:middle}
+.ru-sentence .gapbtn.on{border-style:solid;border-color:var(--subj);background:var(--subj-bg);color:var(--subj)}
+.fb-explain{margin-top:6px;font-weight:600}

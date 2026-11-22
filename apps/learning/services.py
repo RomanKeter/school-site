@@ -11,6 +11,7 @@ from apps.srs.algorithm import quality
 
 from . import adaptive as adaptive_mod
 from . import mastery as mastery_mod
+from . import ru_types
 from .checkers import check
 from .feedback import phrase
 from .models import Attempt, Block, DailyActivity, SkillMastery
@@ -114,6 +115,8 @@ def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block
 
     if result.correct:
         feedback["phrase"] = phrase("correct_first" if attempt_no == 1 and hints_used == 0 else "correct_retry")
+        if exercise and exercise.type in ru_types.RU_TYPES:  # D-202: правило после верного ответа
+            feedback["explain"] = (exercise.payload or {}).get("explain", "")
     elif is_final:
         feedback["phrase"] = phrase("solution")
         feedback["correct_answer"] = correct_answer_text(exercise=exercise, word=word, word_mode=word_mode)
@@ -219,6 +222,8 @@ def correct_answer_text(*, exercise=None, word=None, word_mode=""):
         return f"{word.picture} {word.word} — {word.translation_ru}"
     if exercise is None:
         return ""
+    if exercise.type in ru_types.RU_TYPES:  # D-202: слово/предложение целиком
+        return ru_types.answer_text(exercise)
     a, p = exercise.answer or {}, exercise.payload or {}
     if "correct" in a:
         opts = {o["id"]: o["text"] for o in p.get("options", [])}
