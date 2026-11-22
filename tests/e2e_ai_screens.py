@@ -1,5 +1,5 @@
 """Скриншоты этапа 2: «Спросить Масю», «Научи Масю», страница родителя (iPad 1024×768).
-Запуск: python tests/e2e_ai_screens.py [base_url] [out_dir]. Данные: seed_demo (+ demo_progress).
+Запуск: python tests/e2e_ai_screens.py [base_url] [out_dir] [префикс, по умолчанию s2]. Данные: seed_demo (+ demo_progress).
 Готовит демо-ребёнку практику и открытые темы через ORM; тихие часы для демо выключает.
 """
 import os
@@ -12,6 +12,7 @@ from playwright.sync_api import sync_playwright
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8001"
 OUT = Path(sys.argv[2] if len(sys.argv) > 2 else "../screens")
 OUT.mkdir(parents=True, exist_ok=True)
+PREFIX = sys.argv[3] if len(sys.argv) > 3 else "s2"
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
 django.setup()
@@ -42,6 +43,7 @@ with sync_playwright() as p:
     page.on("pageerror", lambda e: errors.append(str(e)))
 
     def shot(name):
+        name = name.replace("s2_", PREFIX + "_", 1)
         page.screenshot(path=str(OUT / name), full_page=True)
         print("shot", name, flush=True)
 
