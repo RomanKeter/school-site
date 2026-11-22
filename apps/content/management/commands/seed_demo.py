@@ -23,7 +23,7 @@ class Command(BaseCommand):
         Subject.objects.get_or_create(code="en", defaults={"title": "Английский", "color_token": "en", "icon": "🔤", "order": 2})
         Subject.objects.get_or_create(code="ru", defaults={"title": "Русский язык", "color_token": "ru", "icon": "📝", "order": 3})
         samples = Path(__file__).resolve().parents[4] / "content_samples"
-        for name in ("math_divisibility.json", "math_fractions.json", "en_words.json", *RU_FILES):
+        for name in ("math_divisibility.json", "math_fractions.json", "en_words.json", "en_program.json", *RU_FILES):
             call_command("import_content", str(samples / name), update=True)
         call_command("seed_feynman")
         call_command("seed_homework")

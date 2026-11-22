@@ -21,7 +21,7 @@ def content(db):
 
     seed_badges()
     base = Path(__file__).resolve().parent.parent / "content_samples"
-    for n in ("math_divisibility.json", "math_fractions.json", "en_words.json"):
+    for n in ("math_divisibility.json", "math_fractions.json", "en_words.json", "en_program.json"):
         call_command("import_content", str(base / n), update=True)
 
 
