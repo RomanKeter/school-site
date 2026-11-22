@@ -1,0 +1,2365 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.u2",
+  "title": "Выражения. Уравнения",
+  "grade": 5,
+  "quarter": 2,
+  "order": 2
+ },
+ "topics": [
+  {
+   "key": "math.expressions",
+   "title": "Выражения и формулы",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [
+    "порядок действий",
+    "переменная",
+    "формула"
+   ],
+   "keywords": [
+    "выражение",
+    "уравнение",
+    "путь",
+    "периметр"
+   ],
+   "textbook_refs": [
+    "тема «Выражения. Уравнения»"
+   ],
+   "skills": [
+    {
+     "key": "math.expr.value",
+     "title": "Числовые выражения и порядок действий",
+     "description": "",
+     "rule_card": "Числовое выражение составлено из чисел и знаков действий (и скобок). Его значение находят, выполняя действия в порядке: 1) скобки; 2) степени; 3) умножение и деление слева направо; 4) сложение и вычитание слева направо.",
+     "worked_example": {
+      "title": "7+18:3×2",
+      "steps": [
+       "Умножение и деление слева направо: сначала 18:3=6.",
+       "Затем 6×2=12.",
+       "Затем 7+12=19."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.ex.val.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 3+4×5.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "Сначала умножение: 4×5=20, затем 3+20=23."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "23"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3+4*5"
+       }
+      },
+      {
+       "key": "math.ex.val.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: (3+4)×5.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "Сначала скобки: 7×5=35."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "35"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(3+4)*5"
+       }
+      },
+      {
+       "key": "math.ex.val.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 20−12:4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "Сначала деление: 12:4=3, затем 20−3=17."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "17"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "20-12/4"
+       }
+      },
+      {
+       "key": "math.ex.val.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 18:3+2×4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "18:3=6, 2×4=8, 6+8=14."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "14"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18/3+2*4"
+       }
+      },
+      {
+       "key": "math.ex.val.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 100−5×6+4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "5×6=30, 100−30+4=74."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "74"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "100-5*6+4"
+       }
+      },
+      {
+       "key": "math.ex.val.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 8×(7−3).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "Скобки: 7−3=4, 8×4=32."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "32"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8*(7-3)"
+       }
+      },
+      {
+       "key": "math.ex.val.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 45:(5+4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "Скобки: 5+4=9, 45:9=5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "45/(5+4)"
+       }
+      },
+      {
+       "key": "math.ex.val.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 2+3×4−5.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Порядок: скобки, затем × и :, затем + и −."
+         },
+         {
+          "level": 2,
+          "text": "3×4=12, 2+12−5=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2+3*4-5"
+       }
+      },
+      {
+       "key": "math.ex.val.ex9",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "В выражении 7+18:3×2 первым действием будет…",
+        "options": [
+         {
+          "id": "a",
+          "text": "сложение"
+         },
+         {
+          "id": "b",
+          "text": "деление 18:3"
+         },
+         {
+          "id": "c",
+          "text": "умножение 3×2"
+         },
+         {
+          "id": "d",
+          "text": "вычитание"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Умножение и деление — одного приоритета, их делают слева направо."
+         },
+         {
+          "level": 2,
+          "text": "Слева первым стоит деление 18:3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7+18/3*2"
+       }
+      },
+      {
+       "key": "math.ex.val.ex10",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 7+18:3×2.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "18:3=6, 6×2=12, 7+12=19."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "19"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7+18/3*2"
+       }
+      },
+      {
+       "key": "math.ex.val.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 5×(8+4):6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Скобки: 12, 5×12=60, 60:6=10."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "10"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5*(8+4)/6"
+       }
+      },
+      {
+       "key": "math.ex.val.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое выражение равно 20?",
+        "options": [
+         {
+          "id": "a",
+          "text": "4+2×8"
+         },
+         {
+          "id": "b",
+          "text": "4×2+8"
+         },
+         {
+          "id": "c",
+          "text": "(4+2)×8"
+         },
+         {
+          "id": "d",
+          "text": "4+2+8"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "4+2×8 = 4+16 = 20."
+         },
+         {
+          "level": 2,
+          "text": "4×2+8=16, (4+2)×8=48, 4+2+8=14."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4+2*8"
+       }
+      },
+      {
+       "key": "math.ex.val.ex13",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 9×8−9×3. Можно вынести 9.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "9×(8−3)=9×5=45."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "45"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9*8-9*3"
+       }
+      },
+      {
+       "key": "math.ex.val.ex14",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 48:(3×4)+2 по шагам",
+        "steps": [
+         {
+          "ask": "Сначала скобки: 3×4 = ?",
+          "answer": 12
+         },
+         {
+          "ask": "48 : 12 = ?",
+          "answer": 4
+         },
+         {
+          "ask": "4 + 2 = ?",
+          "answer": 6
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Скобки, деление, сложение."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 12
+         },
+         {
+          "answer": 4
+         },
+         {
+          "answer": 6
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48/(3*4)+2"
+       }
+      },
+      {
+       "key": "math.ex.val.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 11×11.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "11×10+11=110+11=121."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "121"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "11*11"
+       }
+      }
+     ],
+     "order": 0
+    },
+    {
+     "key": "math.expr.variables",
+     "title": "Выражения с переменными",
+     "description": "",
+     "rule_card": "Переменная — буква, вместо которой подставляют число. Чтобы найти значение выражения с переменными, подставляют данные значения и вычисляют по правилам порядка действий. Например, при a=4 выражение 3a+5 равно 3×4+5=17.",
+     "worked_example": {
+      "title": "3a+5 при a=4",
+      "steps": [
+       "Подставь 4 вместо a: 3×4+5.",
+       "Сначала умножение: 12, затем 12+5=17."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.ex.var.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение выражения 3a + 5 при a = 4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Подставь 4 вместо a: 3×4+5=12+5=17."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "17"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3*4+5"
+       }
+      },
+      {
+       "key": "math.ex.var.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение 5x − 2 при x = 6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5×6−2=30−2=28."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "28"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5*6-2"
+       }
+      },
+      {
+       "key": "math.ex.var.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение 2(x+3) при x = 7.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала скобки: 7+3=10, 2×10=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*(7+3)"
+       }
+      },
+      {
+       "key": "math.ex.var.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение a² при a = 8.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "a² = a×a = 8×8=64."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "64"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8**2"
+       }
+      },
+      {
+       "key": "math.ex.var.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение 10 − b при b = 3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10−3=7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10-3"
+       }
+      },
+      {
+       "key": "math.ex.var.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение x:y при x = 24, y = 6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "24:6=4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "24/6"
+       }
+      },
+      {
+       "key": "math.ex.var.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение 4a − b при a = 5, b = 6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4×5−6=20−6=14."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "14"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4*5-6"
+       }
+      },
+      {
+       "key": "math.ex.var.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выражение с переменной — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "только число, например 15"
+         },
+         {
+          "id": "b",
+          "text": "запись из чисел, переменных и знаков действий, например 3a+5"
+         },
+         {
+          "id": "c",
+          "text": "любое слово"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Переменная — буква, вместо которой можно подставить число."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "запись из чисел, переменных и знаков действий, например 3a+5"
+       }
+      },
+      {
+       "key": "math.ex.var.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение (a+b)×c при a=2, b=3, c=4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2+3=5, 5×4=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(2+3)*4"
+       }
+      },
+      {
+       "key": "math.ex.var.ex10",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "При каком значении x выражение 2x равно 18? Введи x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2x=18, x=18:2=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18/2"
+       }
+      },
+      {
+       "key": "math.ex.var.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение 3² + a при a = 10.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала степень: 9, затем 9+10=19."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "19"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3**2+10"
+       }
+      },
+      {
+       "key": "math.ex.var.ex12",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 5(a−2) при a=8",
+        "steps": [
+         {
+          "ask": "Сначала скобки: 8 − 2 = ?",
+          "answer": 6
+         },
+         {
+          "ask": "5 × 6 = ?",
+          "answer": 30
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Скобки, затем умножение."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 6
+         },
+         {
+          "answer": 30
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5*(8-2)"
+       }
+      },
+      {
+       "key": "math.ex.var.ex13",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр квадрата со стороной a записывают 4a. Найди периметр при a = 11 (см).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4×11=44."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "44"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4*11"
+       }
+      },
+      {
+       "key": "math.ex.var.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Площадь прямоугольника a×b. Найди площадь при a=9, b=6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "9×6=54."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "54"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9*6"
+       }
+      },
+      {
+       "key": "math.ex.var.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение 100 − 3x при x = 20.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×20=60, 100−60=40."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "40"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "100-3*20"
+       }
+      }
+     ],
+     "order": 1,
+     "prerequisites": [
+      "math.expr.value"
+     ]
+    },
+    {
+     "key": "math.eq.formulas",
+     "title": "Формулы: путь, периметр, площадь",
+     "description": "",
+     "rule_card": "Формула связывает величины. При равномерном движении s = v·t, откуда v = s:t, t = s:v. Периметр квадрата P = 4a, площадь S = a². Периметр прямоугольника P = 2(a+b), площадь S = a·b. По двум известным величинам находят третью.",
+     "worked_example": {
+      "title": "Периметр прямоугольника 8 см и 5 см",
+      "steps": [
+       "P = 2(a+b) = 2(8+5).",
+       "2×13 = 26 (см)."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.eq.fm.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Скорость 12 км/ч, время 5 ч. Найди путь в километрах (s = v·t).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "s = 12×5 = 60."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "60"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12*5"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Путь 90 км, скорость 15 км/ч. Найди время в часах (t = s:v).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "t = 90:15 = 6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "90/15"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Путь 48 км, время 4 ч. Найди скорость в км/ч (v = s:t).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "v = 48:4 = 12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48/4"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сторона квадрата 9 см. Найди периметр в см (P = 4a).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "P = 4×9 = 36."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "36"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4*9"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр квадрата 48 см. Найди сторону в см (a = P:4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "a = 48:4 = 12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48/4"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сторона квадрата 7 см. Найди площадь в см² (S = a²).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "S = 7×7 = 49."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "49"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7**2"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Стороны прямоугольника 8 см и 5 см. Периметр в см (P = 2(a+b)).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "P = 2×(8+5)=2×13=26."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "26"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*(8+5)"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Стороны прямоугольника 11 см и 4 см. Площадь в см² (S = a·b).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "S = 11×4 = 44."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "44"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "11*4"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр прямоугольника 30 см, одна сторона 7 см. Найди другую сторону в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2(a+b)=30, a+b=15, b=15−7=8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "30/2-7"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Площадь прямоугольника 36 см², одна сторона 4 см. Найди другую в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "b = S:a = 36:4 = 9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "36/4"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Формула пути при равномерном движении — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "s = v + t"
+         },
+         {
+          "id": "b",
+          "text": "s = v·t"
+         },
+         {
+          "id": "c",
+          "text": "s = v:t"
+         },
+         {
+          "id": "d",
+          "text": "s = v−t"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Путь равен скорости, умноженной на время."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "s = v·t"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Велосипедист ехал 2 часа со скоростью 16 км/ч и ещё 1 час со скоростью 10 км/ч. Какой весь путь в км?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "16×2=32, 10×1=10, всего 42."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "42"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "16*2+10*1"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex13",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Прямоугольник 6 см на 3 см. Найди периметр и площадь",
+        "steps": [
+         {
+          "ask": "Периметр 2×(6+3) = ?",
+          "answer": 18
+         },
+         {
+          "ask": "Площадь 6×3 = ?",
+          "answer": 18
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Периметр — сумма сторон, умноженная на 2; площадь — произведение сторон."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 18
+         },
+         {
+          "answer": 18
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*(6+3)"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Квадрат и периметр 20 см. Найди площадь в см².",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сторона 20:4=5, площадь 5×5=25."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "25"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(20/4)**2"
+       }
+      },
+      {
+       "key": "math.eq.fm.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Автомобиль проехал 150 км за 3 часа. Сколько километров он проедет за 5 часов с той же скоростью?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Скорость 150:3=50 км/ч, за 5 ч: 50×5=250."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "250"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(150/3)*5"
+       }
+      }
+     ],
+     "order": 2,
+     "prerequisites": [
+      "math.expr.variables"
+     ]
+    },
+    {
+     "key": "math.eq.word",
+     "title": "Решение задач с помощью уравнений",
+     "description": "",
+     "rule_card": "Чтобы решить задачу уравнением, обозначают неизвестное буквой, составляют равенство по условию и находят корень. Если x увеличили на a и получили b, то x+a=b, x=b−a. Если x увеличили в k раз и получили b, то kx=b, x=b:k. Корень обязательно проверяют подстановкой.",
+     "worked_example": {
+      "title": "x + (x+12) = 40",
+      "steps": [
+       "Это 2x + 12 = 40.",
+       "2x = 28, x = 14.",
+       "Проверка: 14+26=40."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.eq.wd.ex1",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Задумали число x. Если его увеличить на 7, получится 20. Найди x. Уравнение: x+7=20.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x = 20−7 = 13."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "13"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "20-7"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex2",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Задумали число x. Если его уменьшить на 9, получится 11. Найди x. Уравнение: x−9=11.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x = 11+9 = 20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "11+9"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex3",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Задумали число x. Если его умножить на 6, получится 42. Найди x. Уравнение: 6x=42.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x = 42:6 = 7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "42/6"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex4",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Задумали число x. Если его разделить на 5, получится 8. Найди x. Уравнение: x:5=8.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x = 8×5 = 40."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "40"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8*5"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex5",
+       "type": "equation",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В одной коробке x карандашей, в другой на 12 больше, всего 40. Уравнение: x+(x+12)=40. Найди x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2x+12=40, 2x=28, x=14."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "14"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(40-12)/2"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex6",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Яна купила 3 одинаковые тетради за 240 копеек. Сколько стоит одна? Уравнение: 3x=240.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x=240:3=80."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "80"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "240/3"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex7",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Число увеличили в 4 раза и получили 36. Какое было число? Уравнение: 4x=36.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x=36:4=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "36/4"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex8",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "После того как отрезали 15 см, осталось 27 см ленты. Какой была лента? Уравнение: x−15=27.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x=27+15=42."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "42"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "27+15"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex9",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Сумма двух чисел 50, одно на 8 больше другого. Найди меньшее. Уравнение: x+(x+8)=50.",
+        "steps": [
+         {
+          "ask": "2x + 8 = 50, тогда 2x = ?",
+          "answer": 42
+         },
+         {
+          "ask": "x = 42 : 2 = ?",
+          "answer": 21
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Меньшее — x, большее — x+8."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 42
+         },
+         {
+          "answer": 21
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(50-8)/2"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex10",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр квадрата 64 см. Найди сторону. Уравнение: 4x=64.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x=64:4=16."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "16"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "64/4"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex11",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В 5 одинаковых пакетах 75 яблок. Сколько в одном? Уравнение: 5x=75.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x=75:5=15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "75/5"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex12",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "К задуманному числу прибавили 18 и получили 50. Найди число. Уравнение: x+18=50.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x=50−18=32."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "32"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "50-18"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex13",
+       "type": "equation",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Мася съела x лакомств, потом ещё столько же и ещё 3, всего 15. Уравнение: x+x+3=15. Найди x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2x+3=15, 2x=12, x=6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(15-3)/2"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Корень уравнения — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "любое число в уравнении"
+         },
+         {
+          "id": "b",
+          "text": "значение переменной, при котором равенство верно"
+         },
+         {
+          "id": "c",
+          "text": "знак «равно»"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Подставили корень — получили верное числовое равенство."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "значение переменной, при котором равенство верно"
+       }
+      },
+      {
+       "key": "math.eq.wd.ex15",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Проверка: если x=9 — корень уравнения 3x−7=20? Введи 1, если да, и 0, если нет.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×9−7=27−7=20, равенство верно, значит да (1)."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1"
+       }
+      }
+     ],
+     "order": 3,
+     "prerequisites": [
+      "math.eq.formulas"
+     ]
+    }
+   ],
+   "order": 0
+  },
+  {
+   "key": "math.angles",
+   "title": "Углы",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [],
+   "keywords": [
+    "градус",
+    "биссектриса",
+    "транспортир"
+   ],
+   "textbook_refs": [],
+   "skills": [
+    {
+     "key": "math.geom.angles",
+     "title": "Угол и его градусная мера",
+     "description": "",
+     "rule_card": "Угол — фигура из двух лучей с общим началом (вершиной). Градусная мера: прямой — 90°, развёрнутый — 180°, острый — меньше 90°, тупой — больше 90° и меньше 180°. Измеряют и строят угол транспортиром. Биссектриса — луч, который делит угол пополам.",
+     "worked_example": {
+      "title": "Биссектриса угла 70°",
+      "steps": [
+       "Биссектриса делит угол на два равных.",
+       "70° : 2 = 35°."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.ang.ex1",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини вид угла и его градусную меру",
+        "left": [
+         {
+          "id": "l0",
+          "text": "Острый"
+         },
+         {
+          "id": "l1",
+          "text": "Прямой"
+         },
+         {
+          "id": "l2",
+          "text": "Тупой"
+         },
+         {
+          "id": "l3",
+          "text": "Развёрнутый"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "меньше 90°"
+         },
+         {
+          "id": "r1",
+          "text": "ровно 90°"
+         },
+         {
+          "id": "r2",
+          "text": "больше 90°, но меньше 180°"
+         },
+         {
+          "id": "r3",
+          "text": "ровно 180°"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Прямой угол как угол квадрата, развёрнутый — как прямая."
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       },
+       "verify": {
+        "op": "pairs",
+        "n": 4
+       }
+      },
+      {
+       "key": "math.gm.ang.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Угол 35° — это угол…",
+        "options": [
+         {
+          "id": "a",
+          "text": "острый"
+         },
+         {
+          "id": "b",
+          "text": "прямой"
+         },
+         {
+          "id": "c",
+          "text": "тупой"
+         },
+         {
+          "id": "d",
+          "text": "развёрнутый"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "35 < 90, значит острый."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "angle_kind",
+        "deg": 35
+       }
+      },
+      {
+       "key": "math.gm.ang.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Угол 90° — это угол…",
+        "options": [
+         {
+          "id": "a",
+          "text": "острый"
+         },
+         {
+          "id": "b",
+          "text": "прямой"
+         },
+         {
+          "id": "c",
+          "text": "тупой"
+         },
+         {
+          "id": "d",
+          "text": "развёрнутый"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Прямой — ровно 90°."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "angle_kind",
+        "deg": 90
+       }
+      },
+      {
+       "key": "math.gm.ang.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Угол 140° — это угол…",
+        "options": [
+         {
+          "id": "a",
+          "text": "острый"
+         },
+         {
+          "id": "b",
+          "text": "прямой"
+         },
+         {
+          "id": "c",
+          "text": "тупой"
+         },
+         {
+          "id": "d",
+          "text": "развёрнутый"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "140 больше 90 и меньше 180."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "angle_kind",
+        "deg": 140
+       }
+      },
+      {
+       "key": "math.gm.ang.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Угол 180° — это угол…",
+        "options": [
+         {
+          "id": "a",
+          "text": "острый"
+         },
+         {
+          "id": "b",
+          "text": "прямой"
+         },
+         {
+          "id": "c",
+          "text": "тупой"
+         },
+         {
+          "id": "d",
+          "text": "развёрнутый"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Развёрнутый угол выглядит как прямая."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "d"
+        ]
+       },
+       "verify": {
+        "op": "angle_kind",
+        "deg": 180
+       }
+      },
+      {
+       "key": "math.gm.ang.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Биссектриса делит угол 70° пополам. Чему равна каждая часть (в градусах)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Биссектриса — луч, делящий угол пополам."
+         },
+         {
+          "level": 2,
+          "text": "70:2=35."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "35"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "70/2"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Биссектриса угла 128°. Чему равна каждая часть?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "128:2=64."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "64"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "128/2"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какой инструмент измеряет градусную меру угла?",
+        "options": [
+         {
+          "id": "a",
+          "text": "линейка"
+         },
+         {
+          "id": "b",
+          "text": "циркуль"
+         },
+         {
+          "id": "c",
+          "text": "транспортир"
+         },
+         {
+          "id": "d",
+          "text": "угольник только без шкалы"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Градусы отсчитывают по шкале транспортира. Угольником удобно строить прямой угол."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "транспортир"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Два луча биссектрисы разбили развёрнутый угол на два равных. Чему равен каждый (в градусах)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Развёрнутый 180°, половина — 90, прямые углы."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "90"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "180/2"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Угол 0,5 прямого угла равен…",
+        "options": [
+         {
+          "id": "a",
+          "text": "30°"
+         },
+         {
+          "id": "b",
+          "text": "45°"
+         },
+         {
+          "id": "c",
+          "text": "60°"
+         },
+         {
+          "id": "d",
+          "text": "180°"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Прямой — 90°, половина — 45°."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "90/2"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex11",
+       "type": "categorize",
+       "difficulty": 2,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Разложи углы по видам",
+        "buckets": [
+         {
+          "id": "acute",
+          "title": "Острые"
+         },
+         {
+          "id": "obtuse",
+          "title": "Тупые"
+         }
+        ],
+        "items": [
+         {
+          "id": "20°",
+          "text": "20°"
+         },
+         {
+          "id": "50°",
+          "text": "50°"
+         },
+         {
+          "id": "91°",
+          "text": "91°"
+         },
+         {
+          "id": "120°",
+          "text": "120°"
+         },
+         {
+          "id": "89°",
+          "text": "89°"
+         },
+         {
+          "id": "170°",
+          "text": "170°"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Острый < 90°, тупой — между 90° и 180°."
+         }
+        ]
+       },
+       "answer": {
+        "buckets": {
+         "acute": [
+          "20°",
+          "50°",
+          "89°"
+         ],
+         "obtuse": [
+          "91°",
+          "120°",
+          "170°"
+         ]
+        }
+       },
+       "verify": {
+        "op": "categorize_angle",
+        "items": [
+         20,
+         50,
+         91,
+         120,
+         89,
+         170
+        ]
+       }
+      },
+      {
+       "key": "math.gm.ang.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Угол ABC = 80°. Луч BM — биссектриса. Чему равен угол ABM?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "80:2=40."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "40"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "80/2"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое утверждение верно?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Тупой угол меньше острого"
+         },
+         {
+          "id": "b",
+          "text": "Прямой угол больше развёрнутого"
+         },
+         {
+          "id": "c",
+          "text": "Острый угол меньше прямого"
+         },
+         {
+          "id": "d",
+          "text": "Развёрнутый угол равен 90°"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Острый < 90° = прямой < тупой < 180° = развёрнутый."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Острый угол меньше прямого"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сумма двух углов, которые вместе составляют развёрнутый, равна 180°. Один угол 65°. Найди второй.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "180−65=115."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "115"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "180-65"
+       }
+      },
+      {
+       "key": "math.gm.ang.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Угол 2 прямых угла равен скольким градусам?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2×90=180, это развёрнутый угол."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "180"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*90"
+       }
+      }
+     ],
+     "order": 4
+    }
+   ],
+   "order": 0
+  }
+ ]
+}

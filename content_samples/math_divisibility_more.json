@@ -1,0 +1,3998 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.u1",
+  "title": "Делимость натуральных чисел",
+  "grade": 5,
+  "quarter": 1,
+  "order": 1
+ },
+ "topics": [
+  {
+   "key": "math.divisibility",
+   "title": "Делимость",
+   "description": "",
+   "badge_code": "divisibility",
+   "synonyms": [
+    "признаки делимости",
+    "делители и кратные"
+   ],
+   "keywords": [
+    "делитель",
+    "кратное",
+    "НОД",
+    "НОК"
+   ],
+   "textbook_refs": [
+    "§ 5",
+    "§ 6"
+   ],
+   "skills": [
+    {
+     "key": "math.div.signs_2_5_10",
+     "title": "Признаки делимости на 2, 5 и 10",
+     "description": "",
+     "rule_card": "На 2 делятся числа, оканчивающиеся чётной цифрой (0, 2, 4, 6, 8); на 5 — на 0 или 5; на 10 — на 0.",
+     "worked_example": {
+      "title": "Делится ли 340 на 2, 5 и 10?",
+      "steps": [
+       "Последняя цифра — 0.",
+       "0 чётная, значит делится на 2.",
+       "Оканчивается на 0 — делится на 5 и на 10."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.div.s1.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 10?",
+        "options": [
+         {
+          "id": "a",
+          "text": "111"
+         },
+         {
+          "id": "b",
+          "text": "205"
+         },
+         {
+          "id": "c",
+          "text": "430"
+         },
+         {
+          "id": "d",
+          "text": "501"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "На 10 делятся числа с нулём на конце."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 10,
+        "options": [
+         111,
+         205,
+         430,
+         501
+        ]
+       }
+      },
+      {
+       "key": "math.div.s1.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число НЕ делится на 2?",
+        "options": [
+         {
+          "id": "a",
+          "text": "128"
+         },
+         {
+          "id": "b",
+          "text": "444"
+         },
+         {
+          "id": "c",
+          "text": "807"
+         },
+         {
+          "id": "d",
+          "text": "990"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нечётное оканчивается на 1, 3, 5, 7 или 9."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "not_divisible_which",
+        "d": 2,
+        "options": [
+         128,
+         444,
+         807,
+         990
+        ]
+       }
+      },
+      {
+       "key": "math.div.s1.ex10",
+       "type": "categorize",
+       "difficulty": 2,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Разложи: делится на 10 или нет",
+        "buckets": [
+         {
+          "id": "yes",
+          "title": "Делится на 10"
+         },
+         {
+          "id": "no",
+          "title": "Не делится"
+         }
+        ],
+        "items": [
+         {
+          "id": "20",
+          "text": "20"
+         },
+         {
+          "id": "35",
+          "text": "35"
+         },
+         {
+          "id": "80",
+          "text": "80"
+         },
+         {
+          "id": "101",
+          "text": "101"
+         },
+         {
+          "id": "150",
+          "text": "150"
+         },
+         {
+          "id": "213",
+          "text": "213"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Только с нулём на конце."
+         }
+        ]
+       },
+       "answer": {
+        "buckets": {
+         "yes": [
+          "20",
+          "80",
+          "150"
+         ],
+         "no": [
+          "35",
+          "101",
+          "213"
+         ]
+        }
+       },
+       "verify": {
+        "op": "categorize_div",
+        "d": 10,
+        "items": [
+         20,
+         35,
+         80,
+         101,
+         150,
+         213
+        ]
+       }
+      },
+      {
+       "key": "math.div.s1.ex11",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое самое маленькое двузначное число делится на 5, но не делится на 10?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Двузначные, кратные 5, но не на 0 в конце, а на 5."
+         },
+         {
+          "level": 2,
+          "text": "10 делится на 10, следующее — 15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "15"
+       }
+      },
+      {
+       "key": "math.div.s1.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Число оканчивается на 4. На что оно точно делится?",
+        "options": [
+         {
+          "id": "a",
+          "text": "на 5"
+         },
+         {
+          "id": "b",
+          "text": "на 10"
+         },
+         {
+          "id": "c",
+          "text": "на 2"
+         },
+         {
+          "id": "d",
+          "text": "на 3"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "4 — чётная цифра, признак делимости на 2."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "на 2"
+       }
+      },
+      {
+       "key": "math.div.s1.ex13",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько чисел от 1 до 30 делятся на 5?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5, 10, 15, 20, 25, 30 — шесть чисел."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "count_div",
+        "a": 1,
+        "b": 30,
+        "d": 5
+       }
+      },
+      {
+       "key": "math.div.s1.ex14",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится и на 2, и на 5, и на 10?",
+        "options": [
+         {
+          "id": "a",
+          "text": "15"
+         },
+         {
+          "id": "b",
+          "text": "22"
+         },
+         {
+          "id": "c",
+          "text": "45"
+         },
+         {
+          "id": "d",
+          "text": "70"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Если делится на 2 и на 5, оно оканчивается на 0 и делится на 10."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "d"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 10,
+        "options": [
+         15,
+         22,
+         45,
+         70
+        ]
+       }
+      },
+      {
+       "key": "math.div.s1.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди наименьшее четырёхзначное число, которое делится на 2.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Наименьшее четырёхзначное — 1000, оно чётное."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1000"
+       }
+      }
+     ],
+     "order": 0
+    },
+    {
+     "key": "math.div.signs_3_9",
+     "title": "Признаки делимости на 3 и 9",
+     "description": "",
+     "rule_card": "Число делится на 3 (на 9), если сумма его цифр делится на 3 (на 9).",
+     "worked_example": {
+      "title": "Делится ли 4 518 на 9?",
+      "steps": [
+       "4+5+1+8=18.",
+       "18 делится на 9, значит 4 518 делится на 9."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.div.s2.ex7",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "1 234"
+         },
+         {
+          "id": "b",
+          "text": "2 736"
+         },
+         {
+          "id": "c",
+          "text": "5 001"
+         },
+         {
+          "id": "d",
+          "text": "8 008"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сложи цифры каждого числа."
+         },
+         {
+          "level": 2,
+          "text": "2+7+3+6=18, 18 делится на 9."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 9,
+        "options": [
+         1234,
+         2736,
+         5001,
+         8008
+        ]
+       }
+      },
+      {
+       "key": "math.div.s2.ex8",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 3, но не делится на 9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "18"
+         },
+         {
+          "id": "b",
+          "text": "27"
+         },
+         {
+          "id": "c",
+          "text": "12"
+         },
+         {
+          "id": "d",
+          "text": "36"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма цифр 12 равна 3 — делится на 3, на 9 — нет."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "12"
+       }
+      },
+      {
+       "key": "math.div.s2.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сумма цифр числа 5 076 равна…",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5+0+7+6=18."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "18"
+       },
+       "verify": {
+        "op": "digit_sum",
+        "n": 5076
+       }
+      },
+      {
+       "key": "math.div.s2.ex10",
+       "type": "categorize",
+       "difficulty": 2,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Разложи: делится на 9 или нет",
+        "buckets": [
+         {
+          "id": "yes",
+          "title": "Делится на 9"
+         },
+         {
+          "id": "no",
+          "title": "Не делится"
+         }
+        ],
+        "items": [
+         {
+          "id": "18",
+          "text": "18"
+         },
+         {
+          "id": "21",
+          "text": "21"
+         },
+         {
+          "id": "27",
+          "text": "27"
+         },
+         {
+          "id": "32",
+          "text": "32"
+         },
+         {
+          "id": "45",
+          "text": "45"
+         },
+         {
+          "id": "50",
+          "text": "50"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма цифр должна делиться на 9."
+         }
+        ]
+       },
+       "answer": {
+        "buckets": {
+         "yes": [
+          "18",
+          "27",
+          "45"
+         ],
+         "no": [
+          "21",
+          "32",
+          "50"
+         ]
+        }
+       },
+       "verify": {
+        "op": "categorize_div",
+        "d": 9,
+        "items": [
+         18,
+         21,
+         27,
+         32,
+         45,
+         50
+        ]
+       }
+      },
+      {
+       "key": "math.div.s2.ex11",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какую цифру поставить вместо * в числе 2*4, чтобы оно делилось на 3?",
+        "options": [
+         {
+          "id": "a",
+          "text": "0"
+         },
+         {
+          "id": "b",
+          "text": "1"
+         },
+         {
+          "id": "c",
+          "text": "2"
+         },
+         {
+          "id": "d",
+          "text": "4"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "2+*+4=6+* должно делиться на 3."
+         },
+         {
+          "level": 2,
+          "text": "6 уже делится на 3, значит * может быть 0 (из вариантов 0 подходит; 1 даёт 7, 2 даёт 8, 4 даёт 10 — не делятся на 3)."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "0"
+       }
+      },
+      {
+       "key": "math.div.s2.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое наименьшее двузначное число делится на 9?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "9 — однозначное, следующее 18."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "18"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18"
+       }
+      },
+      {
+       "key": "math.div.s2.ex13",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Число делится на 3. Обязательно ли оно делится на 9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да, всегда"
+         },
+         {
+          "id": "b",
+          "text": "Нет, не обязательно"
+         },
+         {
+          "id": "c",
+          "text": "Только если оно чётное"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Например, 12 делится на 3, но не на 9."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Нет, не обязательно"
+       }
+      },
+      {
+       "key": "math.div.s2.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько чисел от 1 до 20 делятся на 3?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3, 6, 9, 12, 15, 18."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "count_div",
+        "a": 1,
+        "b": 20,
+        "d": 3
+       }
+      },
+      {
+       "key": "math.div.s2.ex15",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится и на 3, и на 9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "15"
+         },
+         {
+          "id": "b",
+          "text": "21"
+         },
+         {
+          "id": "c",
+          "text": "24"
+         },
+         {
+          "id": "d",
+          "text": "27"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Если делится на 9, то автоматически делится на 3."
+         },
+         {
+          "level": 2,
+          "text": "Из списка на 9 делится 27."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "d"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 9,
+        "options": [
+         15,
+         21,
+         24,
+         27
+        ]
+       }
+      }
+     ],
+     "order": 1,
+     "prerequisites": [
+      "math.div.signs_2_5_10"
+     ]
+    },
+    {
+     "key": "math.div.gcd",
+     "title": "Наибольший общий делитель (НОД)",
+     "description": "",
+     "rule_card": "НОД двух чисел — самое большое число, на которое делятся оба числа.",
+     "worked_example": {
+      "title": "НОД(8, 12)",
+      "steps": [
+       "Делители 8: 1, 2, 4, 8.",
+       "Делители 12: 1, 2, 3, 4, 6, 12.",
+       "Общие: 1, 2, 4. Наибольший — 4."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.div.s3.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(21, 28)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 21 и 28."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 21,
+        "b": 28
+       }
+      },
+      {
+       "key": "math.div.s3.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(15, 25)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 15 и 25."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 15,
+        "b": 25
+       }
+      },
+      {
+       "key": "math.div.s3.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(14, 35)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 14 и 35."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 14,
+        "b": 35
+       }
+      },
+      {
+       "key": "math.div.s3.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(9, 27)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 9 и 27."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 9,
+        "b": 27
+       }
+      },
+      {
+       "key": "math.div.s3.ex11",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(32, 48)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 32 и 48."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "16"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 32,
+        "b": 48
+       }
+      },
+      {
+       "key": "math.div.s3.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(11, 17)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 11 и 17."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 11,
+        "b": 17
+       }
+      },
+      {
+       "key": "math.div.s3.ex13",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(20, 30)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 20 и 30."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "10"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 20,
+        "b": 30
+       }
+      },
+      {
+       "key": "math.div.s3.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОД(18, 45)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Выпиши делители 18 и 45."
+         },
+         {
+          "level": 2,
+          "text": "Возьми наибольшее общее число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 18,
+        "b": 45
+       }
+      },
+      {
+       "key": "math.div.s3.ex15",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Числа 8 и 15 взаимно простые. Что это значит?",
+        "options": [
+         {
+          "id": "a",
+          "text": "У них НОД = 1"
+         },
+         {
+          "id": "b",
+          "text": "У них НОД = 8"
+         },
+         {
+          "id": "c",
+          "text": "Они равны"
+         },
+         {
+          "id": "d",
+          "text": "Оба чётные"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Взаимно простые числа не имеют общих делителей, кроме 1."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "gcd",
+        "a": 8,
+        "b": 15
+       }
+      }
+     ],
+     "order": 2,
+     "prerequisites": [
+      "math.div.signs_3_9"
+     ]
+    },
+    {
+     "key": "math.div.signs_4",
+     "title": "Признак делимости на 4",
+     "description": "",
+     "rule_card": "Число делится на 4 тогда и только тогда, когда число, образованное его двумя последними цифрами, делится на 4. Например, 316 оканчивается на 16, 16:4=4, значит 316 делится на 4.",
+     "worked_example": {
+      "title": "Делится ли 1 124 на 4?",
+      "steps": [
+       "Две последние цифры — 24.",
+       "24:4=6, делится.",
+       "Значит 1 124 делится на 4."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.div.s4.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "112"
+         },
+         {
+          "id": "b",
+          "text": "123"
+         },
+         {
+          "id": "c",
+          "text": "215"
+         },
+         {
+          "id": "d",
+          "text": "331"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "На 4 делится число, у которого две последние цифры образуют число, делящееся на 4."
+         },
+         {
+          "level": 2,
+          "text": "Проверь две последние цифры: у 112 это выполняется."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 4,
+        "options": [
+         112,
+         123,
+         215,
+         331
+        ]
+       }
+      },
+      {
+       "key": "math.div.s4.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "200"
+         },
+         {
+          "id": "b",
+          "text": "214"
+         },
+         {
+          "id": "c",
+          "text": "218"
+         },
+         {
+          "id": "d",
+          "text": "222"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "На 4 делится число, у которого две последние цифры образуют число, делящееся на 4."
+         },
+         {
+          "level": 2,
+          "text": "Проверь две последние цифры: у 200 это выполняется."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 4,
+        "options": [
+         200,
+         214,
+         218,
+         222
+        ]
+       }
+      },
+      {
+       "key": "math.div.s4.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "76"
+         },
+         {
+          "id": "b",
+          "text": "74"
+         },
+         {
+          "id": "c",
+          "text": "70"
+         },
+         {
+          "id": "d",
+          "text": "78"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "На 4 делится число, у которого две последние цифры образуют число, делящееся на 4."
+         },
+         {
+          "level": 2,
+          "text": "Проверь две последние цифры: у 76 это выполняется."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 4,
+        "options": [
+         76,
+         74,
+         70,
+         78
+        ]
+       }
+      },
+      {
+       "key": "math.div.s4.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "316"
+         },
+         {
+          "id": "b",
+          "text": "318"
+         },
+         {
+          "id": "c",
+          "text": "322"
+         },
+         {
+          "id": "d",
+          "text": "326"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "На 4 делится число, у которого две последние цифры образуют число, делящееся на 4."
+         },
+         {
+          "level": 2,
+          "text": "Проверь две последние цифры: у 316 это выполняется."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 4,
+        "options": [
+         316,
+         318,
+         322,
+         326
+        ]
+       }
+      },
+      {
+       "key": "math.div.s4.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 12 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 12. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 12,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 24 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 24. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 24,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex7",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 36 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 36. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 36,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 48 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 48. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 48,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 52 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 52. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 52,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 64 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 64. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 64,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 80 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 80. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 80,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 100 на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Две последние цифры — 00. Делится ли это число на 4?"
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 100,
+        "d": 4
+       }
+      },
+      {
+       "key": "math.div.s4.ex13",
+       "type": "categorize",
+       "difficulty": 2,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Разложи: делится на 4 или нет",
+        "buckets": [
+         {
+          "id": "yes",
+          "title": "Делится на 4"
+         },
+         {
+          "id": "no",
+          "title": "Не делится"
+         }
+        ],
+        "items": [
+         {
+          "id": "16",
+          "text": "16"
+         },
+         {
+          "id": "18",
+          "text": "18"
+         },
+         {
+          "id": "32",
+          "text": "32"
+         },
+         {
+          "id": "34",
+          "text": "34"
+         },
+         {
+          "id": "100",
+          "text": "100"
+         },
+         {
+          "id": "102",
+          "text": "102"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри две последние цифры."
+         }
+        ]
+       },
+       "answer": {
+        "buckets": {
+         "yes": [
+          "16",
+          "32",
+          "100"
+         ],
+         "no": [
+          "18",
+          "34",
+          "102"
+         ]
+        }
+       },
+       "verify": {
+        "op": "categorize_div",
+        "d": 4,
+        "items": [
+         16,
+         18,
+         32,
+         34,
+         100,
+         102
+        ]
+       }
+      },
+      {
+       "key": "math.div.s4.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое наименьшее трёхзначное число делится на 4?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "100: две последние цифры 00, а 0 делится на 4."
+         },
+         {
+          "level": 2,
+          "text": "100:4=25."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "100"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "100"
+       }
+      },
+      {
+       "key": "math.div.s4.ex15",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Число оканчивается на 32. Делится ли оно на 4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Всегда да"
+         },
+         {
+          "id": "b",
+          "text": "Всегда нет"
+         },
+         {
+          "id": "c",
+          "text": "Только если оно чётное"
+         },
+         {
+          "id": "d",
+          "text": "Неизвестно"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "32:4=8, значит любое число с окончанием 32 делится на 4."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 32,
+        "d": 4
+       }
+      }
+     ],
+     "order": 3,
+     "prerequisites": [
+      "math.div.signs_2_5_10"
+     ]
+    },
+    {
+     "key": "math.div.lcm",
+     "title": "Наименьшее общее кратное (НОК)",
+     "description": "",
+     "rule_card": "НОК двух чисел — самое маленькое натуральное число, которое делится на каждое из них. Связь с НОД: НОК(a, b) = a×b : НОД(a, b). Если числа взаимно простые, НОК равен их произведению.",
+     "worked_example": {
+      "title": "НОК(6, 8)",
+      "steps": [
+       "НОД(6, 8)=2.",
+       "НОК = 6×8 : 2 = 48:2 = 24.",
+       "Проверка: кратные 6 — 6, 12, 18, 24…; кратные 8 — 8, 16, 24…"
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.div.lcm.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(6, 8)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 6,
+        "b": 8
+       }
+      },
+      {
+       "key": "math.div.lcm.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(4, 10)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 4,
+        "b": 10
+       }
+      },
+      {
+       "key": "math.div.lcm.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(6, 9)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "18"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 6,
+        "b": 9
+       }
+      },
+      {
+       "key": "math.div.lcm.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(5, 7)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "35"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 5,
+        "b": 7
+       }
+      },
+      {
+       "key": "math.div.lcm.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(8, 12)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 8,
+        "b": 12
+       }
+      },
+      {
+       "key": "math.div.lcm.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(3, 5)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 3,
+        "b": 5
+       }
+      },
+      {
+       "key": "math.div.lcm.ex7",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(9, 12)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "36"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 9,
+        "b": 12
+       }
+      },
+      {
+       "key": "math.div.lcm.ex8",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(7, 14)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "14"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 7,
+        "b": 14
+       }
+      },
+      {
+       "key": "math.div.lcm.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(15, 25)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "75"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 15,
+        "b": 25
+       }
+      },
+      {
+       "key": "math.div.lcm.ex10",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(8, 10)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК — самое маленькое общее кратное обоих чисел."
+         },
+         {
+          "level": 2,
+          "text": "Можно перечислить кратные или взять произведение, делённое на НОД."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "40"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 8,
+        "b": 10
+       }
+      },
+      {
+       "key": "math.div.lcm.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Найди НОК(6, 8) через НОД",
+        "steps": [
+         {
+          "ask": "НОД(6, 8) = ?",
+          "answer": 2
+         },
+         {
+          "ask": "Произведение 6×8 = ?",
+          "answer": 48
+         },
+         {
+          "ask": "НОК = произведение : НОД = 48 : 2 = ?",
+          "answer": 24
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Формула: НОК(a, b) = a×b : НОД(a, b)."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 2
+         },
+         {
+          "answer": 48
+         },
+         {
+          "answer": 24
+         }
+        ]
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 6,
+        "b": 8
+       }
+      },
+      {
+       "key": "math.div.lcm.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "НОК(4, 12) равен…",
+        "options": [
+         {
+          "id": "a",
+          "text": "4"
+         },
+         {
+          "id": "b",
+          "text": "8"
+         },
+         {
+          "id": "c",
+          "text": "12"
+         },
+         {
+          "id": "d",
+          "text": "48"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "12 уже делится на 4, поэтому наименьшее общее кратное — само 12."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 4,
+        "b": 12
+       }
+      },
+      {
+       "key": "math.div.lcm.ex13",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Два маячка мигают каждые 6 и 9 секунд. Через сколько секунд они мигнут вместе, если только что мигнули одновременно?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это НОК(6, 9)=18."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "18"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 6,
+        "b": 9
+       }
+      },
+      {
+       "key": "math.div.lcm.ex14",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Для взаимно простых чисел a и b НОК(a, b) равен…",
+        "options": [
+         {
+          "id": "a",
+          "text": "1"
+         },
+         {
+          "id": "b",
+          "text": "a+b"
+         },
+         {
+          "id": "c",
+          "text": "a×b"
+         },
+         {
+          "id": "d",
+          "text": "НОД(a, b)"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Если НОД=1, то НОК=a×b. Пример: 5 и 7, НОК=35."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "a×b"
+       }
+      },
+      {
+       "key": "math.div.lcm.ex15",
+       "type": "number_input",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди НОК(21, 28)",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОД(21, 28)=7, НОК=21×28:7=84."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "84"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 21,
+        "b": 28
+       }
+      }
+     ],
+     "order": 4,
+     "prerequisites": [
+      "math.div.gcd"
+     ]
+    },
+    {
+     "key": "math.div.signs_6",
+     "title": "Признак делимости на 6",
+     "description": "",
+     "rule_card": "Число делится на 6 тогда и только тогда, когда оно делится и на 2, и на 3 (потому что 6=2×3, а 2 и 3 взаимно простые). Проверяют оба признака: последняя цифра чётная и сумма цифр делится на 3.",
+     "worked_example": {
+      "title": "Делится ли 54 на 6?",
+      "steps": [
+       "54 чётное — делится на 2.",
+       "5+4=9, 9 делится на 3 — делится на 3.",
+       "Значит 54 делится на 6. Проверка: 54:6=9."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.div.s6.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "15"
+         },
+         {
+          "id": "b",
+          "text": "16"
+         },
+         {
+          "id": "c",
+          "text": "18"
+         },
+         {
+          "id": "d",
+          "text": "21"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "На 6 делится то, что делится и на 2, и на 3."
+         },
+         {
+          "level": 2,
+          "text": "18 чётное, 1+8=9 делится на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 6,
+        "options": [
+         15,
+         16,
+         18,
+         21
+        ]
+       }
+      },
+      {
+       "key": "math.div.s6.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число делится на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "27"
+         },
+         {
+          "id": "b",
+          "text": "28"
+         },
+         {
+          "id": "c",
+          "text": "32"
+         },
+         {
+          "id": "d",
+          "text": "54"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "54 чётное, 5+4=9 делится на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "d"
+        ]
+       },
+       "verify": {
+        "op": "divisible_which",
+        "d": 6,
+        "options": [
+         27,
+         28,
+         32,
+         54
+        ]
+       }
+      },
+      {
+       "key": "math.div.s6.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Почему 15 не делится на 6, хотя делится на 3?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Оно нечётное, не делится на 2"
+         },
+         {
+          "id": "b",
+          "text": "Сумма цифр не делится на 3"
+         },
+         {
+          "id": "c",
+          "text": "Оно простое"
+         },
+         {
+          "id": "d",
+          "text": "Оно меньше 16"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Для 6 нужны оба признака: и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Оно нечётное, не делится на 2"
+       }
+      },
+      {
+       "key": "math.div.s6.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Почему 14 не делится на 6, хотя оно чётное?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Не делится на 3: 1+4=5"
+         },
+         {
+          "id": "b",
+          "text": "Не делится на 2"
+         },
+         {
+          "id": "c",
+          "text": "Оно простое"
+         },
+         {
+          "id": "d",
+          "text": "Оно слишком маленькое"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Чётность есть, а суммы цифр 5 на 3 не делится."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Не делится на 3: 1+4=5"
+       }
+      },
+      {
+       "key": "math.div.s6.ex5",
+       "type": "categorize",
+       "difficulty": 2,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Разложи: делится на 6 или нет",
+        "buckets": [
+         {
+          "id": "yes",
+          "title": "Делится на 6"
+         },
+         {
+          "id": "no",
+          "title": "Не делится"
+         }
+        ],
+        "items": [
+         {
+          "id": "12",
+          "text": "12"
+         },
+         {
+          "id": "14",
+          "text": "14"
+         },
+         {
+          "id": "18",
+          "text": "18"
+         },
+         {
+          "id": "21",
+          "text": "21"
+         },
+         {
+          "id": "24",
+          "text": "24"
+         },
+         {
+          "id": "25",
+          "text": "25"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Проверь и чётность, и сумму цифр."
+         }
+        ]
+       },
+       "answer": {
+        "buckets": {
+         "yes": [
+          "12",
+          "18",
+          "24"
+         ],
+         "no": [
+          "14",
+          "21",
+          "25"
+         ]
+        }
+       },
+       "verify": {
+        "op": "categorize_div",
+        "d": 6,
+        "items": [
+         12,
+         14,
+         18,
+         21,
+         24,
+         25
+        ]
+       }
+      },
+      {
+       "key": "math.div.s6.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 36 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 36,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex7",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 42 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 42,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 48 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 48,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 8 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 8,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 9 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 9,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 16 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 16,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 27 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 27,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Делится ли 60 на 6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нужно и на 2, и на 3."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "divisible_bool",
+        "n": 60,
+        "d": 6
+       }
+      },
+      {
+       "key": "math.div.s6.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое наименьшее двузначное число делится на 6?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10 и 11 не подходят, 12 делится и на 2, и на 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12"
+       }
+      },
+      {
+       "key": "math.div.s6.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько чисел от 1 до 24 делятся на 6?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "6, 12, 18, 24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4"
+       },
+       "verify": {
+        "op": "count_div",
+        "a": 1,
+        "b": 24,
+        "d": 6
+       }
+      }
+     ],
+     "order": 5,
+     "prerequisites": [
+      "math.div.signs_2_5_10",
+      "math.div.signs_3_9"
+     ]
+    }
+   ],
+   "order": 0
+  },
+  {
+   "key": "math.primes",
+   "title": "Простые и составные числа",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [],
+   "keywords": [
+    "простое число",
+    "разложение"
+   ],
+   "textbook_refs": [],
+   "skills": [
+    {
+     "key": "math.primes.notion",
+     "title": "Простые и составные числа",
+     "description": "",
+     "rule_card": "Простое число имеет ровно два делителя: 1 и само себя. Составное — больше двух. Число 1 — ни простое, ни составное.",
+     "worked_example": {
+      "title": "Простое ли число 9?",
+      "steps": [
+       "Делители 9: 1, 3, 9 — три делителя.",
+       "Значит 9 составное. У 7 делители только 1 и 7 — простое."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.primes.ex7",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число простое?",
+        "options": [
+         {
+          "id": "a",
+          "text": "21"
+         },
+         {
+          "id": "b",
+          "text": "22"
+         },
+         {
+          "id": "c",
+          "text": "23"
+         },
+         {
+          "id": "d",
+          "text": "25"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "21=3×7, 22=2×11, 25=5×5, у 23 делители только 1 и 23."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "prime_which",
+        "options": [
+         21,
+         22,
+         23,
+         25
+        ]
+       }
+      },
+      {
+       "key": "math.primes.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число составное?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2"
+         },
+         {
+          "id": "b",
+          "text": "3"
+         },
+         {
+          "id": "c",
+          "text": "17"
+         },
+         {
+          "id": "d",
+          "text": "27"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "2, 3 и 17 — простые. 27=3×9 — составное."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "d"
+        ]
+       },
+       "verify": {
+        "op": "composite_which",
+        "options": [
+         2,
+         3,
+         17,
+         27
+        ]
+       }
+      },
+      {
+       "key": "math.primes.ex9",
+       "type": "categorize",
+       "difficulty": 2,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Разложи числа",
+        "buckets": [
+         {
+          "id": "prime",
+          "title": "Простые"
+         },
+         {
+          "id": "comp",
+          "title": "Составные"
+         }
+        ],
+        "items": [
+         {
+          "id": "5",
+          "text": "5"
+         },
+         {
+          "id": "8",
+          "text": "8"
+         },
+         {
+          "id": "11",
+          "text": "11"
+         },
+         {
+          "id": "15",
+          "text": "15"
+         },
+         {
+          "id": "19",
+          "text": "19"
+         },
+         {
+          "id": "21",
+          "text": "21"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Считай делители. Если больше двух — составное."
+         }
+        ]
+       },
+       "answer": {
+        "buckets": {
+         "prime": [
+          "5",
+          "11",
+          "19"
+         ],
+         "comp": [
+          "8",
+          "15",
+          "21"
+         ]
+        }
+       },
+       "verify": {
+        "op": "categorize_prime",
+        "items": [
+         5,
+         8,
+         11,
+         15,
+         19,
+         21
+        ]
+       }
+      },
+      {
+       "key": "math.primes.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Число 1 является…",
+        "options": [
+         {
+          "id": "a",
+          "text": "простым"
+         },
+         {
+          "id": "b",
+          "text": "составным"
+         },
+         {
+          "id": "c",
+          "text": "ни простым, ни составным"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "У 1 только один делитель — само 1. Нужно ровно два, чтобы быть простым."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "ни простым, ни составным"
+       }
+      },
+      {
+       "key": "math.primes.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое наименьшее простое число?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2 — единственное чётное простое число."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2"
+       }
+      },
+      {
+       "key": "math.primes.ex12",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое утверждение верно?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Все чётные числа составные"
+         },
+         {
+          "id": "b",
+          "text": "Единственное чётное простое число — 2"
+         },
+         {
+          "id": "c",
+          "text": "Все нечётные числа простые"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Любое чётное больше 2 делится на 2, значит составное."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Единственное чётное простое число — 2"
+       }
+      },
+      {
+       "key": "math.primes.ex13",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число простое?",
+        "options": [
+         {
+          "id": "a",
+          "text": "49"
+         },
+         {
+          "id": "b",
+          "text": "51"
+         },
+         {
+          "id": "c",
+          "text": "53"
+         },
+         {
+          "id": "d",
+          "text": "57"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "49=7×7, 51=3×17, 57=3×19. 53 не делится ни на одно простое до √53."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "prime_which",
+        "options": [
+         49,
+         51,
+         53,
+         57
+        ]
+       }
+      },
+      {
+       "key": "math.primes.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько простых чисел между 1 и 10 (не включая 1 и 10)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2, 3, 5, 7 — четыре числа."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4"
+       }
+      },
+      {
+       "key": "math.primes.ex15",
+       "type": "single_choice",
+       "difficulty": 3,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Число 91 — составное, потому что делится на…",
+        "options": [
+         {
+          "id": "a",
+          "text": "3"
+         },
+         {
+          "id": "b",
+          "text": "7"
+         },
+         {
+          "id": "c",
+          "text": "5"
+         },
+         {
+          "id": "d",
+          "text": "11"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "9+1=10 не делится на 3, на 5 и 11 не делится. 7×13=91."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "7"
+       }
+      }
+     ],
+     "order": 0,
+     "prerequisites": [
+      "math.div.signs_2_5_10"
+     ]
+    },
+    {
+     "key": "math.primes.factor",
+     "title": "Разложение на простые множители",
+     "description": "",
+     "rule_card": "Любое составное число можно единственным образом (с точностью до порядка) записать как произведение простых множителей — каноническое разложение. Делят число на самые маленькие простые (2, 3, 5, …), пока не останется 1. Одинаковые множители собирают в степень: 12=2×2×3=2²·3.",
+     "worked_example": {
+      "title": "Разложи 60",
+      "steps": [
+       "60:2=30, 30:2=15, 15:3=5, 5 — простое.",
+       "60=2×2×3×5=2²·3·5."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.pr.fac.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 12 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·6"
+         },
+         {
+          "id": "b",
+          "text": "4·3"
+         },
+         {
+          "id": "c",
+          "text": "2²·3"
+         },
+         {
+          "id": "d",
+          "text": "2·3²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 12,
+        "expected": "2²·3"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 18 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·9"
+         },
+         {
+          "id": "b",
+          "text": "3·6"
+         },
+         {
+          "id": "c",
+          "text": "2·3²"
+         },
+         {
+          "id": "d",
+          "text": "2²·3"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 18,
+        "expected": "2·3²"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 20 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·10"
+         },
+         {
+          "id": "b",
+          "text": "4·5"
+         },
+         {
+          "id": "c",
+          "text": "2²·5"
+         },
+         {
+          "id": "d",
+          "text": "2·5²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 20,
+        "expected": "2²·5"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 30 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·15"
+         },
+         {
+          "id": "b",
+          "text": "3·10"
+         },
+         {
+          "id": "c",
+          "text": "2·3·5"
+         },
+         {
+          "id": "d",
+          "text": "2²·3·5"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 30,
+        "expected": "2·3·5"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 42 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·21"
+         },
+         {
+          "id": "b",
+          "text": "6·7"
+         },
+         {
+          "id": "c",
+          "text": "2·3·7"
+         },
+         {
+          "id": "d",
+          "text": "2·3²·7"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 42,
+        "expected": "2·3·7"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 8 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·4"
+         },
+         {
+          "id": "b",
+          "text": "2³"
+         },
+         {
+          "id": "c",
+          "text": "4·2"
+         },
+         {
+          "id": "d",
+          "text": "2²·2²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 8,
+        "expected": "2³"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex7",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 45 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "5·9"
+         },
+         {
+          "id": "b",
+          "text": "3·15"
+         },
+         {
+          "id": "c",
+          "text": "3²·5"
+         },
+         {
+          "id": "d",
+          "text": "3·5²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 45,
+        "expected": "3²·5"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex8",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 16 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "2·8"
+         },
+         {
+          "id": "b",
+          "text": "4·4"
+         },
+         {
+          "id": "c",
+          "text": "2⁴"
+         },
+         {
+          "id": "d",
+          "text": "2³·2"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 16,
+        "expected": "2⁴"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex9",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 28 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "4·7"
+         },
+         {
+          "id": "b",
+          "text": "2·14"
+         },
+         {
+          "id": "c",
+          "text": "2²·7"
+         },
+         {
+          "id": "d",
+          "text": "2·7²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 28,
+        "expected": "2²·7"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex10",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери каноническое разложение 100 на простые множители.",
+        "options": [
+         {
+          "id": "a",
+          "text": "10·10"
+         },
+         {
+          "id": "b",
+          "text": "4·25"
+         },
+         {
+          "id": "c",
+          "text": "2²·5²"
+         },
+         {
+          "id": "d",
+          "text": "2·5²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Дели на простые по возрастанию, одинаковые собирай в степень."
+         },
+         {
+          "level": 2,
+          "text": "В разложении должны быть только простые числа."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 100,
+        "expected": "2²·5²"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Разложи 60 на простые множители",
+        "steps": [
+         {
+          "ask": "60 : 2 = ?",
+          "answer": 30
+         },
+         {
+          "ask": "30 : 2 = ?",
+          "answer": 15
+         },
+         {
+          "ask": "15 : 3 = ?",
+          "answer": 5
+         },
+         {
+          "ask": "Осталось простое 5. Сколько двоек в разложении?",
+          "answer": 2
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "60=2×2×3×5=2²·3·5."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 30
+         },
+         {
+          "answer": 15
+         },
+         {
+          "answer": 5
+         },
+         {
+          "answer": 2
+         }
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 60,
+        "expected": "2²·3·5"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В разложении 24 = 2ⁿ · 3 показатель n равен…",
+        "hints": [
+         {
+          "level": 1,
+          "text": "24=8×3=2³·3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Как выглядит разложение простого числа 13 на простые множители?",
+        "options": [
+         {
+          "id": "a",
+          "text": "13"
+         },
+         {
+          "id": "b",
+          "text": "1·13"
+         },
+         {
+          "id": "c",
+          "text": "13²"
+         },
+         {
+          "id": "d",
+          "text": "2·13"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Простое число уже является простым множителем."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 13,
+        "expected": "13"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Произведение простых множителей 2×2×5 равно…",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4×5=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*2*5"
+       }
+      },
+      {
+       "key": "math.pr.fac.ex15",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Разложение 36 — какое?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2²·3²"
+         },
+         {
+          "id": "b",
+          "text": "2³·3"
+         },
+         {
+          "id": "c",
+          "text": "4·9"
+         },
+         {
+          "id": "d",
+          "text": "6²"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "36=4×9=2²×3²."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "factor",
+        "n": 36,
+        "expected": "2²·3²"
+       }
+      }
+     ],
+     "order": 1,
+     "prerequisites": [
+      "math.primes.notion"
+     ]
+    }
+   ],
+   "order": 0
+  }
+ ]
+}

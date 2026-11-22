@@ -1,0 +1,4087 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.nat",
+  "title": "Натуральные числа",
+  "grade": 5,
+  "quarter": 1,
+  "order": 0
+ },
+ "topics": [
+  {
+   "key": "math.naturals",
+   "title": "Натуральные числа и действия",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [
+    "натуральный ряд",
+    "округление",
+    "степень"
+   ],
+   "keywords": [
+    "разряд",
+    "координатный луч",
+    "остаток"
+   ],
+   "textbook_refs": [
+    "часть 1, начало темы «Натуральные числа»"
+   ],
+   "skills": [
+    {
+     "key": "math.nat.read_write",
+     "title": "Чтение, запись и сравнение натуральных чисел",
+     "description": "",
+     "rule_card": "Натуральные числа — 1, 2, 3, … Нуль натуральным не считают. Цифра — знак записи; число может состоять из нескольких цифр. Сравнивают слева направо: больше число с большим количеством цифр, а при равном — с большей первой отличающейся цифрой слева. Число записывают суммой разрядных слагаемых: 4070 = 4000 + 70.",
+     "worked_example": {
+      "title": "Сравни 4 080 и 4 800",
+      "steps": [
+       "Оба четырёхзначные, по 4 тысячи.",
+       "Сотни: у 4 080 — 0 сотен, у 4 800 — 8 сотен.",
+       "8 > 0, поэтому 4 800 > 4 080.",
+       "Проверка: 4 800 − 4 080 = 720."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.rw.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число больше: 708 или 780?",
+        "options": [
+         {
+          "id": "a",
+          "text": "708"
+         },
+         {
+          "id": "b",
+          "text": "780"
+         },
+         {
+          "id": "c",
+          "text": "Они равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сотни одинаковые — по 7."
+         },
+         {
+          "level": 2,
+          "text": "Сравни десятки: 8 больше 0."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "cmp",
+        "a": 708,
+        "b": 780,
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Как читается число 305 047?",
+        "options": [
+         {
+          "id": "a",
+          "text": "триста пять тысяч сорок семь"
+         },
+         {
+          "id": "b",
+          "text": "триста пять тысяч четыреста семь"
+         },
+         {
+          "id": "c",
+          "text": "тридцать пять тысяч сорок семь"
+         },
+         {
+          "id": "d",
+          "text": "триста пятьдесят тысяч сорок семь"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала класс тысяч: 305 тысяч."
+         },
+         {
+          "level": 2,
+          "text": "Потом класс единиц: 047 — это сорок семь."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "триста пять тысяч сорок семь"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Запиши число: 4 сотни тысяч + 2 десятка тысяч + 8 единиц (только цифры).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4 сотни тысяч — 400 000."
+         },
+         {
+          "level": 2,
+          "text": "2 десятка тысяч — 20 000, плюс 8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "420008"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "400000+20000+8"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько полных тысяч в числе 58 306?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Класс тысяч — цифры слева от трёх последних."
+         },
+         {
+          "level": 2,
+          "text": "58 306 = 58 тысяч 306."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "58"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "58306//1000"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какая цифра стоит в разряде сотен числа 47 285?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Справа налево: единицы, десятки, сотни."
+         },
+         {
+          "level": 2,
+          "text": "5 — единицы, 8 — десятки, 2 — сотни."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "digit",
+        "n": 47285,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rw.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая запись — сумма разрядных слагаемых числа 4 070?",
+        "options": [
+         {
+          "id": "a",
+          "text": "4000+70"
+         },
+         {
+          "id": "b",
+          "text": "4000+700"
+         },
+         {
+          "id": "c",
+          "text": "400+70"
+         },
+         {
+          "id": "d",
+          "text": "4070+0"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "4 тысячи и 7 десятков, сотен нет."
+         },
+         {
+          "level": 2,
+          "text": "7 десятков — это 70."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4000+70"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex7",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое утверждение верно в программе 5 класса?",
+        "options": [
+         {
+          "id": "a",
+          "text": "0 — натуральное число"
+         },
+         {
+          "id": "b",
+          "text": "0 не является натуральным числом"
+         },
+         {
+          "id": "c",
+          "text": "Натуральных чисел конечное число"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Натуральные числа — 1, 2, 3, … (числа для счёта)."
+         },
+         {
+          "level": 2,
+          "text": "Нуль нужен в записи и на луче, но натуральным его не считают."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "0 не является натуральным числом"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери числа в порядке возрастания.",
+        "options": [
+         {
+          "id": "a",
+          "text": "905, 950, 509"
+         },
+         {
+          "id": "b",
+          "text": "509, 905, 950"
+         },
+         {
+          "id": "c",
+          "text": "950, 905, 509"
+         },
+         {
+          "id": "d",
+          "text": "509, 950, 905"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Все трёхзначные — сравниваем слева направо."
+         },
+         {
+          "level": 2,
+          "text": "Сотни: 5 < 9, поэтому 509 самое маленькое."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "sort",
+        "items": [
+         509,
+         905,
+         950
+        ]
+       }
+      },
+      {
+       "key": "math.nat.rw.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое самое маленькое четырёхзначное число?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Самое маленькое число из 4 цифр: 1 и три нуля."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10**3"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какое самое большое трёхзначное число?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Все три цифры — девятки."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "999"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1000-1"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex11",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "В каком числе цифра 6 стоит в разряде десятков тысяч?",
+        "options": [
+         {
+          "id": "a",
+          "text": "16 045"
+         },
+         {
+          "id": "b",
+          "text": "61 045"
+         },
+         {
+          "id": "c",
+          "text": "10 645"
+         },
+         {
+          "id": "d",
+          "text": "6 145"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "У пятизначного числа первый разряд слева — десятки тысяч."
+         },
+         {
+          "level": 2,
+          "text": "Нужно число вида 6 _ _ _ _ : это 61 045."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "digit",
+        "n": 61045,
+        "place": 10000
+       }
+      },
+      {
+       "key": "math.nat.rw.ex12",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини число и сумму разрядных слагаемых",
+        "left": [
+         {
+          "id": "l0",
+          "text": "3 205"
+         },
+         {
+          "id": "l1",
+          "text": "3 250"
+         },
+         {
+          "id": "l2",
+          "text": "3 025"
+         },
+         {
+          "id": "l3",
+          "text": "325"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "3000+200+5"
+         },
+         {
+          "id": "r1",
+          "text": "3000+200+50"
+         },
+         {
+          "id": "r2",
+          "text": "3000+20+5"
+         },
+         {
+          "id": "r3",
+          "text": "300+20+5"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри, в каких разрядах стоит ноль — этих слагаемых нет."
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       },
+       "verify": {
+        "op": "pairs",
+        "n": 4
+       }
+      },
+      {
+       "key": "math.nat.rw.ex13",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "На сколько 8 400 больше, чем 8 040?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вычти: 8 400 − 8 040."
+         },
+         {
+          "level": 2,
+          "text": "400 − 40 = 360."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "360"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8400-8040"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое неравенство верно?",
+        "options": [
+         {
+          "id": "a",
+          "text": "1999 > 2001"
+         },
+         {
+          "id": "b",
+          "text": "2001 < 1999"
+         },
+         {
+          "id": "c",
+          "text": "1999 < 2001"
+         },
+         {
+          "id": "d",
+          "text": "2001 = 1999"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Оба четырёхзначные."
+         },
+         {
+          "level": 2,
+          "text": "2 тысячи больше, чем 1 тысяча 999."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "cmp",
+        "a": 1999,
+        "b": 2001,
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.nat.rw.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Запиши число, в котором 7 сотен, 0 десятков и 4 единицы.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сотни, десятки, единицы — три цифры."
+         },
+         {
+          "level": 2,
+          "text": "Десятков нет, пишем 0 посередине."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "704"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7*100+4"
+       }
+      }
+     ],
+     "order": 0
+    },
+    {
+     "key": "math.nat.coord_ray",
+     "title": "Координатный луч, точка, прямая, луч, отрезок",
+     "description": "",
+     "rule_card": "Точка не имеет размеров. Прямую продолжают в обе стороны. Луч имеет начало и не имеет конца. Отрезок — часть прямой с двумя концами; длину измеряют. На координатном луче начало O имеет координату 0. Координата — число единичных отрезков от начала. Расстояние между точками с координатами a и b равно большему минус меньшее.",
+     "worked_example": {
+      "title": "Расстояние между точками 3 и 11",
+      "steps": [
+       "11 > 3, поэтому AB = 11 − 3.",
+       "Расстояние равно 8 единичным отрезкам."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.cr.ex1",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини название и описание",
+        "left": [
+         {
+          "id": "l0",
+          "text": "Точка"
+         },
+         {
+          "id": "l1",
+          "text": "Прямая"
+         },
+         {
+          "id": "l2",
+          "text": "Луч"
+         },
+         {
+          "id": "l3",
+          "text": "Отрезок"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "не имеет длины, только положение"
+         },
+         {
+          "id": "r1",
+          "text": "не имеет концов, продолжается в обе стороны"
+         },
+         {
+          "id": "r2",
+          "text": "имеет начало и не имеет конца"
+         },
+         {
+          "id": "r3",
+          "text": "часть прямой с двумя концами"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Луч как солнечный: есть начало, дальше — без конца."
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       },
+       "verify": {
+        "op": "pairs",
+        "n": 4
+       }
+      },
+      {
+       "key": "math.nat.cr.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Координатный луч начинается в O (координата 0). Какая координата у точки в 5 единичных отрезках от начала?",
+        "options": [
+         {
+          "id": "a",
+          "text": "0"
+         },
+         {
+          "id": "b",
+          "text": "1"
+         },
+         {
+          "id": "c",
+          "text": "5"
+         },
+         {
+          "id": "d",
+          "text": "10"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Координата — сколько единичных отрезков отложили от нуля."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Точки A и B на луче имеют координаты 3 и 11. Чему равно расстояние AB?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Расстояние — большее минус меньшее."
+         },
+         {
+          "level": 2,
+          "text": "11 − 3 = 8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "11-3"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Точка M имеет координату 14, точка N на 6 единиц ближе к нулю. Какая координата у N?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Ближе к нулю — координата меньше."
+         },
+         {
+          "level": 2,
+          "text": "14 − 6 = 8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "14-6"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Две точки A и B на прямой. Часть прямой между ними — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "луч AB"
+         },
+         {
+          "id": "b",
+          "text": "отрезок AB"
+         },
+         {
+          "id": "c",
+          "text": "прямая AB"
+         },
+         {
+          "id": "d",
+          "text": "плоскость AB"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "У отрезка ровно два конца."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "отрезок AB"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сколько концов у луча?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Ни одного"
+         },
+         {
+          "id": "b",
+          "text": "Один"
+         },
+         {
+          "id": "c",
+          "text": "Два"
+         },
+         {
+          "id": "d",
+          "text": "Три"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть начало, второго конца нет."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex7",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Отрезок CD = 9 см, K — середина. Длина CK в сантиметрах?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Середина делит отрезок пополам."
+         },
+         {
+          "level": 2,
+          "text": "9 : 2 = 4,5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4.5"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9/2"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex8",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Точка A в начале луча, единичный отрезок 2 см. Точка B в 10 см от A по лучу. Координата B?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько единичных отрезков в 10 см?"
+         },
+         {
+          "level": 2,
+          "text": "10 : 2 = 5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10/2"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex9",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое утверждение верно?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Через одну точку проходит только одна прямая"
+         },
+         {
+          "id": "b",
+          "text": "Через две точки проходит только одна прямая"
+         },
+         {
+          "id": "c",
+          "text": "Отрезок можно продолжать, и он останется отрезком"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Через одну точку проходит сколько угодно прямых."
+         },
+         {
+          "level": 2,
+          "text": "Две точки задают единственную прямую."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Через две точки проходит только одна прямая"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex10",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Координаты: A = 2, B = 9, C = 15. Длина ломаной ABC (AB + BC)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "AB = 9 − 2 = 7, BC = 15 − 9 = 6."
+         },
+         {
+          "level": 2,
+          "text": "7 + 6 = 13."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "13"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(9-2)+(15-9)"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Плоскость — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "линия с двумя концами"
+         },
+         {
+          "id": "b",
+          "text": "поверхность без границ во все стороны"
+         },
+         {
+          "id": "c",
+          "text": "луч без начала"
+         },
+         {
+          "id": "d",
+          "text": "большая точка"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Лист тетради — только часть плоскости, у плоскости края нет."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "поверхность без границ во все стороны"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "A имеет координату 4, B — 20. Точка P правее A, AP = 5, и P между A и B. Координата P?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "От 4 отложи 5 единиц вправо."
+         },
+         {
+          "level": 2,
+          "text": "4 + 5 = 9, это меньше 20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4+5"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex13",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Длина отрезка 1 дм 3 см. Сколько это сантиметров?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 дм = 10 см."
+         },
+         {
+          "level": 2,
+          "text": "10 + 3 = 13."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "13"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10+3"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Отрезок 2 м 15 см. Сколько это сантиметров?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 м = 100 см."
+         },
+         {
+          "level": 2,
+          "text": "2 м = 200 см, плюс 15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "215"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*100+15"
+       }
+      },
+      {
+       "key": "math.nat.cr.ex15",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "На координатном луче число 0 отмечают…",
+        "options": [
+         {
+          "id": "a",
+          "text": "в любой точке"
+         },
+         {
+          "id": "b",
+          "text": "в начале луча"
+         },
+         {
+          "id": "c",
+          "text": "на конце луча"
+         },
+         {
+          "id": "d",
+          "text": "посередине"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Начало отсчёта — точка O, её координата 0."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "в начале луча"
+       }
+      }
+     ],
+     "order": 1
+    },
+    {
+     "key": "math.nat.round",
+     "title": "Округление натуральных чисел",
+     "description": "",
+     "rule_card": "Чтобы округлить до какого-то разряда, смотрят на цифру справа от него: 0, 1, 2, 3 или 4 — разряд оставляют, цифры правее заменяют нулями; 5, 6, 7, 8 или 9 — разряд увеличивают на 1. Если после увеличения получается 10, единица переходит в следующий разряд слева.",
+     "worked_example": {
+      "title": "Округли 1 847 до сотен",
+      "steps": [
+       "Разряд сотен — цифра 8. Справа от неё — 4.",
+       "4 < 5, сотни не меняем.",
+       "1 847 ≈ 1 800."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.rd.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 47 до десятков.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда десятков."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 50."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "50"
+       },
+       "verify": {
+        "op": "round",
+        "n": 47,
+        "place": 10
+       }
+      },
+      {
+       "key": "math.nat.rd.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 352 до десятков.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда десятков."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 350."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "350"
+       },
+       "verify": {
+        "op": "round",
+        "n": 352,
+        "place": 10
+       }
+      },
+      {
+       "key": "math.nat.rd.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 352 до сотен.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда сотен."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 400."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "400"
+       },
+       "verify": {
+        "op": "round",
+        "n": 352,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rd.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 1 847 до десятков.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда десятков."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 1 850."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1850"
+       },
+       "verify": {
+        "op": "round",
+        "n": 1847,
+        "place": 10
+       }
+      },
+      {
+       "key": "math.nat.rd.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 1 847 до сотен.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда сотен."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 1 800."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1800"
+       },
+       "verify": {
+        "op": "round",
+        "n": 1847,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rd.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 1 847 до тысяч.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда тысяч."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 2 000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2000"
+       },
+       "verify": {
+        "op": "round",
+        "n": 1847,
+        "place": 1000
+       }
+      },
+      {
+       "key": "math.nat.rd.ex7",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 650 до сотен.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда сотен."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 700."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "700"
+       },
+       "verify": {
+        "op": "round",
+        "n": 650,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rd.ex8",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 2 500 до тысяч.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда тысяч."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 3 000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3000"
+       },
+       "verify": {
+        "op": "round",
+        "n": 2500,
+        "place": 1000
+       }
+      },
+      {
+       "key": "math.nat.rd.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 999 до десятков.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда десятков."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 1 000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1000"
+       },
+       "verify": {
+        "op": "round",
+        "n": 999,
+        "place": 10
+       }
+      },
+      {
+       "key": "math.nat.rd.ex10",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 12 450 до сотен.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри цифру справа от разряда сотен."
+         },
+         {
+          "level": 2,
+          "text": "Цифры 0–4 — оставляем разряд как есть, 5–9 — увеличиваем на 1."
+         },
+         {
+          "level": 3,
+          "text": "Получается 12 500."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12500"
+       },
+       "verify": {
+        "op": "round",
+        "n": 12450,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rd.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "При округлении 2 350 до сотен получается…",
+        "options": [
+         {
+          "id": "a",
+          "text": "2300"
+         },
+         {
+          "id": "b",
+          "text": "2400"
+         },
+         {
+          "id": "c",
+          "text": "2000"
+         },
+         {
+          "id": "d",
+          "text": "2350"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Цифра десятков — 5, значит сотни увеличиваем."
+         },
+         {
+          "level": 2,
+          "text": "23 сотни + 1 = 24 сотни, это 2 400."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "round",
+        "n": 2350,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rd.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число при округлении до десятков даёт 80?",
+        "options": [
+         {
+          "id": "a",
+          "text": "71"
+         },
+         {
+          "id": "b",
+          "text": "84"
+         },
+         {
+          "id": "c",
+          "text": "86"
+         },
+         {
+          "id": "d",
+          "text": "88"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "71 округляется до 70 (единицы 1)."
+         },
+         {
+          "level": 2,
+          "text": "86 и 88 — до 90. У 84 единицы 4, поэтому 80."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "round",
+        "n": 84,
+        "place": 10
+       }
+      },
+      {
+       "key": "math.nat.rd.ex13",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Мася пробежала 1 249 м. Округли расстояние до сотен метров.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Цифра десятков — 4, сотни не увеличиваем."
+         },
+         {
+          "level": 2,
+          "text": "1 249 ≈ 1 200."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1200"
+       },
+       "verify": {
+        "op": "round",
+        "n": 1249,
+        "place": 100
+       }
+      },
+      {
+       "key": "math.nat.rd.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Округли 7 501 до тысяч.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Цифра сотен — 5, тысячи увеличиваем."
+         },
+         {
+          "level": 2,
+          "text": "7 тысяч + 1 = 8 тысяч."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8000"
+       },
+       "verify": {
+        "op": "round",
+        "n": 7501,
+        "place": 1000
+       }
+      },
+      {
+       "key": "math.nat.rd.ex15",
+       "type": "single_choice",
+       "difficulty": 3,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Число 399 округлили до десятков. Что получили?",
+        "options": [
+         {
+          "id": "a",
+          "text": "390"
+         },
+         {
+          "id": "b",
+          "text": "400"
+         },
+         {
+          "id": "c",
+          "text": "300"
+         },
+         {
+          "id": "d",
+          "text": "410"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Единицы 9 ≥ 5, десятки 9 + 1 = 10."
+         },
+         {
+          "level": 2,
+          "text": "9 десятков плюс 1 — это уже 10 десятков, то есть 400."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "round",
+        "n": 399,
+        "place": 10
+       }
+      }
+     ],
+     "order": 2
+    },
+    {
+     "key": "math.nat.add_sub",
+     "title": "Сложение и вычитание натуральных чисел",
+     "description": "",
+     "rule_card": "Сложение и вычитание выполняют по разрядам, при необходимости делают переход через разряд. Свойства сложения: переместительное a+b=b+a и сочетательное (a+b)+c=a+(b+c) помогают считать удобно, собирая «круглые» числа. Вычитание проверяют сложением.",
+     "worked_example": {
+      "title": "Вычисли 47 + 29 + 53",
+      "steps": [
+       "Удобно сначала 47 + 53 = 100.",
+       "Затем 100 + 29 = 129."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.as.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 378 + 455",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Складывай по разрядам, не забудь переход через десяток."
+         },
+         {
+          "level": 2,
+          "text": "8+5=13, пишем 3, 1 десяток в уме."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "833"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "378+455"
+       }
+      },
+      {
+       "key": "math.nat.as.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 1 000 − 378",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 000 − 378: удобно 999 − 378 = 621, затем +1."
+         },
+         {
+          "level": 2,
+          "text": "Или вычитание столбиком."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "622"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1000-378"
+       }
+      },
+      {
+       "key": "math.nat.as.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли удобным способом: 47 + 29 + 53",
+        "hints": [
+         {
+          "level": 1,
+          "text": "47 + 53 = 100, это удобная пара."
+         },
+         {
+          "level": 2,
+          "text": "100 + 29 = 129."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "129"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "47+29+53"
+       }
+      },
+      {
+       "key": "math.nat.as.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 560 + 40 − 200",
+        "hints": [
+         {
+          "level": 1,
+          "text": "По порядку слева направо: 560+40=600, 600−200=400."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "400"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "560+40-200"
+       }
+      },
+      {
+       "key": "math.nat.as.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое равенство выражает переместительное свойство сложения?",
+        "options": [
+         {
+          "id": "a",
+          "text": "(a+b)+c = a+(b+c)"
+         },
+         {
+          "id": "b",
+          "text": "a+b = b+a"
+         },
+         {
+          "id": "c",
+          "text": "a+0 = a"
+         },
+         {
+          "id": "d",
+          "text": "a−a = 0"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Переместительное — слагаемые можно менять местами."
+         },
+         {
+          "level": 2,
+          "text": "Сочетательное — про скобки."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "a+b = b+a"
+       }
+      },
+      {
+       "key": "math.nat.as.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди значение: 250 + 176 + 50",
+        "hints": [
+         {
+          "level": 1,
+          "text": "250+50=300, затем 300+176=476."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "476"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "250+176+50"
+       }
+      },
+      {
+       "key": "math.nat.as.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "На сколько 1 205 больше 890?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "«На сколько больше» — это вычитание."
+         },
+         {
+          "level": 2,
+          "text": "1 205 − 890 = 315."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "315"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1205-890"
+       }
+      },
+      {
+       "key": "math.nat.as.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В одной коробке 145 карандашей, в другой на 38 больше. Сколько карандашей во второй?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "«На 38 больше» — прибавляем."
+         },
+         {
+          "level": 2,
+          "text": "145 + 38 = 183."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "183"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "145+38"
+       }
+      },
+      {
+       "key": "math.nat.as.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 7 003 − 2 148",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вычитай столбиком, занимая из тысяч."
+         },
+         {
+          "level": 2,
+          "text": "7 003 − 2 148 = 4 855."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4855"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7003-2148"
+       }
+      },
+      {
+       "key": "math.nat.as.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сумма двух чисел 900, одно из них 357. Найди второе.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Второе слагаемое = сумма − известное слагаемое."
+         },
+         {
+          "level": 2,
+          "text": "900 − 357 = 543."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "543"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "900-357"
+       }
+      },
+      {
+       "key": "math.nat.as.ex11",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Как удобнее вычислить 199 + 67?",
+        "options": [
+         {
+          "id": "a",
+          "text": "199+67 без перегруппировки только столбиком"
+         },
+         {
+          "id": "b",
+          "text": "200+67−1"
+         },
+         {
+          "id": "c",
+          "text": "199+70+3"
+         },
+         {
+          "id": "d",
+          "text": "100+99+67"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "199 = 200 − 1, поэтому 199+67 = 200+67 − 1 = 266."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "200+67-1"
+       }
+      },
+      {
+       "key": "math.nat.as.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 200 + 67 − 1",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это и есть удобный способ для 199+67."
+         },
+         {
+          "level": 2,
+          "text": "267 − 1 = 266."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "266"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "200+67-1"
+       }
+      },
+      {
+       "key": "math.nat.as.ex13",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 508 − 179 по шагам",
+        "steps": [
+         {
+          "ask": "508 − 180 = ? (179 почти 180)",
+          "answer": 328
+         },
+         {
+          "ask": "Мы вычли на 1 больше. Прибавь 1: 328 + 1 = ?",
+          "answer": 329
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Округли вычитаемое, потом поправь результат."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 328
+         },
+         {
+          "answer": 329
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "508-179"
+       }
+      },
+      {
+       "key": "math.nat.as.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Мася прошла 1 250 м утром и 875 м вечером. Сколько метров всего?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сложи 1 250 и 875."
+         },
+         {
+          "level": 2,
+          "text": "1 250 + 875 = 2 125."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2125"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1250+875"
+       }
+      },
+      {
+       "key": "math.nat.as.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Из 3 000 вычли 1 256 и ещё 744. Что осталось?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3 000 − 1 256 = 1 744."
+         },
+         {
+          "level": 2,
+          "text": "1 744 − 744 = 1 000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3000-1256-744"
+       }
+      }
+     ],
+     "order": 3
+    },
+    {
+     "key": "math.nat.mul_div",
+     "title": "Умножение и деление натуральных чисел",
+     "description": "",
+     "rule_card": "Умножение — сложение одинаковых слагаемых. Деление — действие, обратное умножению: a = b × q, если a : b = q (при делении без остатка). Переместительное, сочетательное и распределительное свойства умножения помогают считать рационально: 25×16×4 = (25×4)×16 = 100×16.",
+     "worked_example": {
+      "title": "24 × 15",
+      "steps": [
+       "15 = 10 + 5, поэтому 24×15 = 24×10 + 24×5.",
+       "240 + 120 = 360."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.md.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 24 × 15",
+        "hints": [
+         {
+          "level": 1,
+          "text": "24 × 10 = 240, 24 × 5 = 120."
+         },
+         {
+          "level": 2,
+          "text": "240 + 120 = 360."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "360"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "24*15"
+       }
+      },
+      {
+       "key": "math.nat.md.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 840 : 7",
+        "hints": [
+         {
+          "level": 1,
+          "text": "84 : 7 = 12, значит 840 : 7 = 120."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "120"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "840/7"
+       }
+      },
+      {
+       "key": "math.nat.md.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли удобно: 25 × 16 × 4",
+        "hints": [
+         {
+          "level": 1,
+          "text": "25 × 4 = 100."
+         },
+         {
+          "level": 2,
+          "text": "100 × 16 = 1 600."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1600"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "25*16*4"
+       }
+      },
+      {
+       "key": "math.nat.md.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 125 × 8",
+        "hints": [
+         {
+          "level": 1,
+          "text": "125 × 8 = 1 000 (это полезно помнить)."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "125*8"
+       }
+      },
+      {
+       "key": "math.nat.md.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое равенство — сочетательное свойство умножения?",
+        "options": [
+         {
+          "id": "a",
+          "text": "a×b = b×a"
+         },
+         {
+          "id": "b",
+          "text": "(a×b)×c = a×(b×c)"
+         },
+         {
+          "id": "c",
+          "text": "a×1 = a"
+         },
+         {
+          "id": "d",
+          "text": "a×0 = 0"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сочетательное свойство позволяет переставлять скобки."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "(a×b)×c = a×(b×c)"
+       }
+      },
+      {
+       "key": "math.nat.md.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В 9 коробках по 24 карандаша. Сколько карандашей всего?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "9 × 24 = 9×20 + 9×4 = 180 + 36 = 216."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "216"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9*24"
+       }
+      },
+      {
+       "key": "math.nat.md.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "72 конфеты разложили по 8 в пакет. Сколько пакетов?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это деление: 72 : 8 = 9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "72/8"
+       }
+      },
+      {
+       "key": "math.nat.md.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 405 : 5",
+        "hints": [
+         {
+          "level": 1,
+          "text": "40 десятков : 5 = 8 десятков, 5 единиц : 5 = 1."
+         },
+         {
+          "level": 2,
+          "text": "81."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "81"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "405/5"
+       }
+      },
+      {
+       "key": "math.nat.md.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 36 × 25",
+        "hints": [
+         {
+          "level": 1,
+          "text": "36 × 100 : 4, потому что 25 = 100 : 4."
+         },
+         {
+          "level": 2,
+          "text": "3 600 : 4 = 900."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "900"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "36*25"
+       }
+      },
+      {
+       "key": "math.nat.md.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Частное 56 и 7 умножили на 3. Что получили?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала 56 : 7 = 8, затем 8 × 3 = 24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(56/7)*3"
+       }
+      },
+      {
+       "key": "math.nat.md.ex11",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 1 200 : 40",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 200 : 4 = 300, ещё разделить на 10: 30."
+         },
+         {
+          "level": 2,
+          "text": "Или 120 : 4 = 30."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "30"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1200/40"
+       }
+      },
+      {
+       "key": "math.nat.md.ex12",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди неизвестное: x × 12 = 144. Чему равно x?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "x = 144 : 12."
+         },
+         {
+          "level": 2,
+          "text": "144 : 12 = 12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "144/12"
+       }
+      },
+      {
+       "key": "math.nat.md.ex13",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 18 × 15 по шагам",
+        "steps": [
+         {
+          "ask": "18 × 10 = ?",
+          "answer": 180
+         },
+         {
+          "ask": "18 × 5 = ?",
+          "answer": 90
+         },
+         {
+          "ask": "Сложи результаты: 180 + 90 = ?",
+          "answer": 270
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Разложи 15 = 10 + 5 и воспользуйся распределительным свойством."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 180
+         },
+         {
+          "answer": 90
+         },
+         {
+          "answer": 270
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18*15"
+       }
+      },
+      {
+       "key": "math.nat.md.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Лента 96 см разрезали на равные куски по 6 см. Сколько кусков?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "96 : 6 = 16."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "16"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "96/6"
+       }
+      },
+      {
+       "key": "math.nat.md.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 7 × 8 × 5",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8 × 5 = 40, затем 7 × 40 = 280."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "280"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7*8*5"
+       }
+      }
+     ],
+     "order": 4,
+     "prerequisites": [
+      "math.nat.add_sub"
+     ]
+    },
+    {
+     "key": "math.nat.power",
+     "title": "Степень с натуральным показателем и порядок действий",
+     "description": "",
+     "rule_card": "Степень aⁿ при натуральном n>1 — произведение n множителей, равных a. a¹ = a. Порядок действий: сначала скобки, затем степени, затем умножение и деление слева направо, затем сложение и вычитание. Число можно записывать через степени десяти: 3 000 = 3×10³.",
+     "worked_example": {
+      "title": "12 + 3 × 2⁴",
+      "steps": [
+       "Сначала степень: 2⁴ = 16.",
+       "Затем умножение: 3×16 = 48.",
+       "Затем сложение: 12+48 = 60."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.pw.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 2⁵ (2 в степени 5).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Степень — это произведение одинаковых множителей."
+         },
+         {
+          "level": 2,
+          "text": "2×2×2×2×2 = 32."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "32"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2**5"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 5³.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5×5=25, 25×5=125."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "125"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5**3"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 10⁴.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10 в степени n — это единица и n нулей."
+         },
+         {
+          "level": 2,
+          "text": "10⁴ = 10 000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "10000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10**4"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Как иначе записать произведение 3·3·3·3?",
+        "options": [
+         {
+          "id": "a",
+          "text": "3+4"
+         },
+         {
+          "id": "b",
+          "text": "3×4"
+         },
+         {
+          "id": "c",
+          "text": "3⁴"
+         },
+         {
+          "id": "d",
+          "text": "4³"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Основание — число 3, показатель — сколько раз его умножили, то есть 4."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3**4"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 2³ + 4².",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала степени: 2³=8, 4²=16."
+         },
+         {
+          "level": 2,
+          "text": "Потом 8+16=24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2**3+4**2"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 3² × 2³.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "9 × 8 = 72."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "72"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3**2 * 2**3"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 7² − 4².",
+        "hints": [
+         {
+          "level": 1,
+          "text": "49 − 16 = 33."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "33"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7**2-4**2"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "В каком порядке выполняют действия в выражении 12 + 3 × 2⁴?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Слева направо всё подряд"
+         },
+         {
+          "id": "b",
+          "text": "Сначала сложение, потом умножение, потом степень"
+         },
+         {
+          "id": "c",
+          "text": "Сначала степень, потом умножение, потом сложение"
+         },
+         {
+          "id": "d",
+          "text": "Сначала умножение, потом степень, потом сложение"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала степени, затем умножение и деление слева направо, затем сложение и вычитание."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12+3*2**4"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 12 + 3 × 2⁴.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2⁴ = 16, 3×16=48, 12+48=60."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "60"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12+3*2**4"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: (3+2)³.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала скобки: 3+2=5."
+         },
+         {
+          "level": 2,
+          "text": "5³ = 125."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "125"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(3+2)**3"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Чему равно 1⁸?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Единица в любой натуральной степени равна 1."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "1**8"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 2 × 5² + 10.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала 5²=25, затем 2×25=50, затем 50+10=60."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "60"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*5**2+10"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex13",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Число 3 000 = 3 × 10ⁿ. Чему равно n?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10³ = 1 000, 3×1 000=3 000, значит n=3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex14",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 20 − 2 × 3² по шагам",
+        "steps": [
+         {
+          "ask": "3² = ?",
+          "answer": 9
+         },
+         {
+          "ask": "2 × 9 = ?",
+          "answer": 18
+         },
+         {
+          "ask": "20 − 18 = ?",
+          "answer": 2
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Степень, затем умножение, затем вычитание."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 9
+         },
+         {
+          "answer": 18
+         },
+         {
+          "answer": 2
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "20-2*3**2"
+       }
+      },
+      {
+       "key": "math.nat.pw.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вычисли: 6² : 3².",
+        "hints": [
+         {
+          "level": 1,
+          "text": "36 : 9 = 4."
+         },
+         {
+          "level": 2,
+          "text": "Можно и так: (6:3)² = 2² = 4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6**2 / 3**2"
+       }
+      }
+     ],
+     "order": 5,
+     "prerequisites": [
+      "math.nat.mul_div"
+     ]
+    },
+    {
+     "key": "math.nat.div_remainder",
+     "title": "Деление с остатком",
+     "description": "",
+     "rule_card": "Разделить a на b с остатком — значит найти такие целые q (неполное частное) и r (остаток), что a = b×q + r и 0 ≤ r < b. Если r = 0, число a делится на b нацело.",
+     "worked_example": {
+      "title": "17 : 5 с остатком",
+      "steps": [
+       "5×3=15, это наибольшее кратное 5, не превосходящее 17.",
+       "Остаток 17−15=2, 2<5.",
+       "Проверка: 5×3+2=17. Пишут 17=5×3+2."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.rm.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 17 на 5.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 5 укладывается в 17?"
+         },
+         {
+          "level": 2,
+          "text": "5×3 = 15, остаток 17 − 15 = 2."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 17,
+        "b": 5
+       }
+      },
+      {
+       "key": "math.nat.rm.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 20 на 6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 6 укладывается в 20?"
+         },
+         {
+          "level": 2,
+          "text": "6×3 = 18, остаток 20 − 18 = 2."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 20,
+        "b": 6
+       }
+      },
+      {
+       "key": "math.nat.rm.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 100 на 7.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 7 укладывается в 100?"
+         },
+         {
+          "level": 2,
+          "text": "7×14 = 98, остаток 100 − 98 = 2."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 100,
+        "b": 7
+       }
+      },
+      {
+       "key": "math.nat.rm.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 50 на 8.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 8 укладывается в 50?"
+         },
+         {
+          "level": 2,
+          "text": "8×6 = 48, остаток 50 − 48 = 2."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 50,
+        "b": 8
+       }
+      },
+      {
+       "key": "math.nat.rm.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 29 на 4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 4 укладывается в 29?"
+         },
+         {
+          "level": 2,
+          "text": "4×7 = 28, остаток 29 − 28 = 1."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 29,
+        "b": 4
+       }
+      },
+      {
+       "key": "math.nat.rm.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 13 на 13.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 13 укладывается в 13?"
+         },
+         {
+          "level": 2,
+          "text": "13×1 = 13, остаток 13 − 13 = 0."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "0"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 13,
+        "b": 13
+       }
+      },
+      {
+       "key": "math.nat.rm.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 25 на 4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 4 укладывается в 25?"
+         },
+         {
+          "level": 2,
+          "text": "4×6 = 24, остаток 25 − 24 = 1."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 25,
+        "b": 4
+       }
+      },
+      {
+       "key": "math.nat.rm.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 81 на 10.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 10 укладывается в 81?"
+         },
+         {
+          "level": 2,
+          "text": "10×8 = 80, остаток 81 − 80 = 1."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 81,
+        "b": 10
+       }
+      },
+      {
+       "key": "math.nat.rm.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 7 на 3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 3 укладывается в 7?"
+         },
+         {
+          "level": 2,
+          "text": "3×2 = 6, остаток 7 − 6 = 1."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 7,
+        "b": 3
+       }
+      },
+      {
+       "key": "math.nat.rm.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди остаток при делении 200 на 9.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сколько раз 9 укладывается в 200?"
+         },
+         {
+          "level": 2,
+          "text": "9×22 = 198, остаток 200 − 198 = 2."
+         },
+         {
+          "level": 3,
+          "text": "Остаток всегда меньше делителя."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 200,
+        "b": 9
+       }
+      },
+      {
+       "key": "math.nat.rm.ex11",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "При делении на 6 получили частное 7 и остаток 2. Какое делимое?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делимое = делитель × частное + остаток."
+         },
+         {
+          "level": 2,
+          "text": "6×7 + 2 = 42 + 2 = 44."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "44"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6*7+2"
+       }
+      },
+      {
+       "key": "math.nat.rm.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какой остаток может получиться при делении на 5?",
+        "options": [
+         {
+          "id": "a",
+          "text": "5"
+         },
+         {
+          "id": "b",
+          "text": "6"
+         },
+         {
+          "id": "c",
+          "text": "0"
+         },
+         {
+          "id": "d",
+          "text": "7"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Остаток строго меньше делителя: 0, 1, 2, 3 или 4."
+         },
+         {
+          "level": 2,
+          "text": "0 — значит, разделилось нацело."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "0"
+       }
+      },
+      {
+       "key": "math.nat.rm.ex13",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Раздели 47 на 5 с остатком",
+        "steps": [
+         {
+          "ask": "Неполное частное (сколько раз 5 укладывается в 47)?",
+          "answer": 9
+         },
+         {
+          "ask": "5 × 9 = ?",
+          "answer": 45
+         },
+         {
+          "ask": "Остаток: 47 − 45 = ?",
+          "answer": 2
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Подбери ближайшее меньшее кратное 5."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 9
+         },
+         {
+          "answer": 45
+         },
+         {
+          "answer": 2
+         }
+        ]
+       },
+       "verify": {
+        "op": "mod",
+        "a": 47,
+        "b": 5
+       }
+      },
+      {
+       "key": "math.nat.rm.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Ленту 50 см режут на куски по 8 см. Сколько сантиметров останется?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "50 : 8 = 6 (кусков) и остаток 2, потому что 8×6=48, 50−48=2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "mod",
+        "a": 50,
+        "b": 8
+       }
+      },
+      {
+       "key": "math.nat.rm.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди неполное частное при делении 100 на 9.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "9×11=99, 9×12=108 — уже больше 100."
+         },
+         {
+          "level": 2,
+          "text": "Частное 11, остаток 1."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "11"
+       },
+       "verify": {
+        "op": "floordiv",
+        "a": 100,
+        "b": 9
+       }
+      }
+     ],
+     "order": 6,
+     "prerequisites": [
+      "math.nat.mul_div"
+     ]
+    },
+    {
+     "key": "math.nat.word_problems",
+     "title": "Текстовые задачи арифметическим способом",
+     "description": "",
+     "rule_card": "Текстовую задачу решают арифметическим способом: анализируют условие, выделяют величины и связи между ними, при необходимости рисуют схему или таблицу, составляют план и выполняют действия. Типовые модели: «на сколько больше/меньше» — сложение или вычитание; «в несколько раз» — умножение или деление; путь = скорость × время; периметр и площадь квадрата и прямоугольника.",
+     "worked_example": {
+      "title": "Катер 3 часа шёл со скоростью 18 км/ч",
+      "steps": [
+       "Ищем путь. Формула: s = v × t.",
+       "s = 18 × 3 = 54 (км)."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.nat.wp.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "У Маси 24 лакомства, у Яны на 8 больше. Сколько лакомств у Яны?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "«На 8 больше» — прибавляем."
+         },
+         {
+          "level": 2,
+          "text": "24+8=32."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "32"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "24+8"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В двух коробках 60 карандашей, в первой 22. Сколько во второй?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Во второй: всего минус первая."
+         },
+         {
+          "level": 2,
+          "text": "60−22=38."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "38"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "60-22"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Катер шёл 3 часа со скоростью 18 км/ч. Какой путь он прошёл (в км)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Путь = скорость × время."
+         },
+         {
+          "level": 2,
+          "text": "18×3=54."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "54"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18*3"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Путь 120 км прошли за 4 часа равномерно. Какая скорость в км/ч?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Скорость = путь : время."
+         },
+         {
+          "level": 2,
+          "text": "120:4=30."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "30"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "120/4"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Скорость 15 км/ч, путь 60 км. Сколько часов займёт путь?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Время = путь : скорость."
+         },
+         {
+          "level": 2,
+          "text": "60:15=4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "60/15"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex6",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Две Масины миски: в первой 350 г корма, во второй на 80 г меньше. Сколько граммов в обеих мисках вместе?",
+        "steps": [
+         {
+          "ask": "Во второй миске: 350 − 80 = ?",
+          "answer": 270
+         },
+         {
+          "ask": "Всего: 350 + 270 = ?",
+          "answer": 620
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала найди второе количество, потом сумму."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 270
+         },
+         {
+          "answer": 620
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "350+(350-80)"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Тетрадь стоит 80 копеек, купили 6 тетрадей. Сколько копеек заплатили?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "80×6=480."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "480"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "80*6"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "900 страниц разложили поровну в 5 стопок. Сколько страниц в одной стопке?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "900:5=180."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "180"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "900/5"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex9",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Яна прочитала 45 страниц в понедельник, во вторник — в 2 раза больше, а в среду столько же, сколько в понедельник и вторник вместе. Сколько страниц в среду?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вторник: 45×2=90."
+         },
+         {
+          "level": 2,
+          "text": "Среда: 45+90=135."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "135"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "45+45*2"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр квадрата 36 см. Чему равна сторона квадрата в сантиметрах?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Периметр квадрата — 4 стороны."
+         },
+         {
+          "level": 2,
+          "text": "36:4=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "36/4"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Прямоугольник со сторонами 8 см и 5 см. Найди периметр в сантиметрах.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Периметр = (a+b)×2."
+         },
+         {
+          "level": 2,
+          "text": "(8+5)×2=26."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "26"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*(8+5)"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Площадь прямоугольника со сторонами 7 см и 4 см (в см²).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Площадь прямоугольника = длина × ширина."
+         },
+         {
+          "level": 2,
+          "text": "7×4=28."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "28"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7*4"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex13",
+       "type": "number_input",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Из города вышли навстречу два велосипедиста. Скорости 12 км/ч и 14 км/ч, встретились через 3 часа. Какое расстояние между городами в километрах?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "За час сближаются на 12+14=26 км."
+         },
+         {
+          "level": 2,
+          "text": "За 3 часа: 26×3=78."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "78"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(12+14)*3"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В трёх одинаковых пачках 48 фломастеров. Сколько фломастеров в 5 таких пачках?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "В одной пачке 48:3=16."
+         },
+         {
+          "level": 2,
+          "text": "В пяти: 16×5=80."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "80"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "(48/3)*5"
+       }
+      },
+      {
+       "key": "math.nat.wp.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Купили 3 ручки по 90 копеек и линейку за 70 копеек. Сколько копеек стоила вся покупка?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×90=270, плюс 70=340."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "340"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3*90+70"
+       }
+      }
+     ],
+     "order": 7,
+     "prerequisites": [
+      "math.nat.add_sub",
+      "math.nat.mul_div"
+     ]
+    }
+   ],
+   "order": 0
+  }
+ ]
+}
