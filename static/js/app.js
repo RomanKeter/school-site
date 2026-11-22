@@ -287,3 +287,16 @@ document.addEventListener("click", function (e) {
   const f = document.querySelector("form.taskform");
   if (f && !f.dataset.final) htmx.trigger(f, "submit");
 });
+
+// Стиль 2 (D-039): если SVG-картинки для значения нет — показываем прежний эмодзи из данных
+(function () {
+  function fallback(img) {
+    if (!img || img.tagName !== "IMG" || img.dataset.fallback === undefined) return;
+    const s = document.createElement("span");
+    s.className = "emoji-fallback";
+    s.textContent = img.dataset.fallback;
+    img.replaceWith(s);
+  }
+  document.addEventListener("error", (e) => fallback(e.target), true);
+  document.querySelectorAll("img[data-fallback]").forEach((img) => { if (img.complete && img.naturalWidth === 0) fallback(img); });
+})();

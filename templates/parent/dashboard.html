@@ -1,30 +1,31 @@
 {% extends "parent/base_parent.html" %}
+{% load static %}
 {% block pcontent %}
 {% if not child %}
   <div class="card"><h1>Добро пожаловать!</h1><p>Создайте профиль ребёнка, чтобы начать.</p><a class="btn" href="{% url 'add_child' %}">+ Создать профиль</a></div>
 {% else %}
-<h1>{{ child.avatar }} {{ child.display_name }} · неделя {{ week.0|date:"j E" }} – {{ week.6|date:"j E" }}</h1>
+<h1><img src="{% get_static_prefix %}img/avatars/{{ child.avatar_code }}.svg" alt="" data-fallback="{{ child.avatar }}" style="width:40px;height:40px;vertical-align:-10px"> {{ child.display_name }} · неделя {{ week.0|date:"j E" }} – {{ week.6|date:"j E" }}</h1>
 {% if children|length > 1 %}<p>{% for c in children %}<a href="?child={{ c.pk }}">{{ c.display_name }}</a> {% endfor %}</p>{% endif %}
 
 <div class="card">
   <h2>Сегодня</h2>
   <p>Миссия: <b>{% if mission.status == "done" %}выполнена ✓{% elif mission %}в процессе{% else %}ещё не начата{% endif %}</b>
-  · звёзд всего: <b>⭐ {{ stars }}</b> · лимит: {{ settings.daily_limit_min }} мин</p>
+  · звёзд всего: <b>{{ stars }}</b> · лимит: {{ settings.daily_limit_min }} мин</p>
   <div class="week">{% for d in week %}<div class="d {% if d in done_days %}ok{% endif %}">{{ d|date:"D" }}<b>{% if d in done_days %}✓{% else %}·{% endif %}</b></div>{% endfor %}</div>
 </div>
 
 <div class="card">
   <h2>Прогресс по предметам</h2>
   <table class="t">{% for s in subjects %}
-    <tr><td>{{ s.subject.icon }} {{ s.subject.title }}</td><td>{{ s.label }}</td>
+    <tr><td>{{ s.subject.title }}</td><td>{{ s.label }}</td>
     <td>{% if s.pct is not None %}<div class="pbar"><span style="width:{{ s.pct }}%"></span></div>{% endif %}</td></tr>
   {% endfor %}
-  <tr><td class="muted">✏️ Русский язык</td><td class="muted" colspan="2">этап 2</td></tr>
+  <tr><td class="muted">Русский язык</td><td class="muted" colspan="2">этап 2</td></tr>
   </table>
 </div>
 
 <div class="card">
-  <h2>⚠ Слабые темы</h2>
+  <h2>{% include "partials/icon.html" with n="alert" %} Слабые темы</h2>
   {% for w in weak %}
   <div class="weak">
     <b>{{ w.mastery.skill.title }}</b> — {% widthratio w.mastery.mastery 1 100 %} %, {{ w.mastery.attempts_count }} попыток{% if w.note %} · {{ w.note }}{% endif %}
@@ -33,7 +34,7 @@
       <input type="hidden" name="child" value="{{ child.pk }}"><input type="hidden" name="skill" value="{{ w.mastery.skill_id }}">
       <button class="btn secondary">В миссию на завтра</button></form>
   </div>
-  {% empty %}<p class="muted">Слабых тем пока нет 👍 (тема попадает сюда при освоении &lt; 60 % после 6+ попыток или 2 провалах повторения подряд).</p>{% endfor %}
+  {% empty %}<p class="muted">Слабых тем пока нет (тема попадает сюда при освоении &lt; 60 % после 6+ попыток или 2 провалах повторения подряд).</p>{% endfor %}
 </div>
 
 <div class="card">

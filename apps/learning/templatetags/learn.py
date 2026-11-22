@@ -59,7 +59,8 @@ def visual_model(model):
             )
         return mark_safe(f'<svg class="vmodel" viewBox="0 0 {w} 64" role="img" aria-label="Столбчатая модель">{"".join(out)}</svg>')
     if kind == "scales":
-        return format_html('<div class="vmodel-emoji" aria-label="Весы">⚖️</div>')
+        from django.templatetags.static import static
+        return format_html('<img class="vmodel" style="max-width:220px" src="{}" alt="Весы">', static("img/scales.svg"))
     return ""
 
 

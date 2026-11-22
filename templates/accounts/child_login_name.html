@@ -4,7 +4,7 @@
 <form method="post" class="card center">{% csrf_token %}
   <p><input class="bigin" style="width:320px" name="login" autocomplete="username" autofocus value="{{ form.login.value|default:'' }}" aria-label="Логин"></p>
   {% if form.login.errors %}<p class="muted">{{ form.login.errors.0 }}</p>{% endif %}
-  <button class="btn">Дальше →</button>
+  <button class="btn">Дальше {% include "partials/icon.html" with n="arrow-right" %}</button>
 </form>
-<a class="btn secondary small adult" href="{% url 'parent_login' %}">🔒 Я взрослый</a>
+<a class="btn secondary small adult" href="{% url 'parent_login' %}">{% include "partials/icon.html" with n="lock" %} Я взрослый</a>
 {% endblock %}

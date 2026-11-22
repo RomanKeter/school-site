@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 {% block bodyclass %}subj-{{ subject.code }}{% endblock %}
 {% block content %}
-<h1><a href="{% url 'home' %}" aria-label="Назад">←</a> {{ subject.icon }} {{ subject.title }}: мои острова</h1>
+<h1><a href="{% url 'home' %}" aria-label="Назад" class="iconbtn">{% include "partials/icon.html" with n="arrow-left" %}</a> {{ subject.title }}: мои острова</h1>
 <div class="sea">
   {% for i in islands %}
     {% if not forloop.first %}<span class="bridge" aria-hidden="true"></span>{% endif %}
     <div class="island {% if i.locked %}locked{% endif %}">
-      <span class="ico" aria-hidden="true">{{ i.icon }}</span>
+      <span class="ico" aria-hidden="true"><img src="{% get_static_prefix %}img/mastery/{% if i.locked %}locked{% else %}{{ i.status }}{% endif %}.svg" alt="" data-fallback="{{ i.icon }}"></span>
       <span class="t">{{ i.skill.title }}</span>
       <span class="s">{{ i.label }}</span>
       {% if not i.locked %}<form method="post" action="{% url 'practice_skill' i.skill.id %}">{% csrf_token %}<button class="btn small" style="min-height:48px;margin-top:6px">{% if i.status == "not_started" %}Учить урок{% else %}Потренироваться{% endif %}</button></form>{% endif %}
     </div>
   {% empty %}<p>Острова скоро появятся.</p>{% endfor %}
 </div>
-<p class="muted">🌱 учу → 🌷 почти → 🌳 освоено. Острова растут, когда ты занимаешься.</p>
+<p class="muted legend"><img src="{% get_static_prefix %}img/mastery/learning.svg" alt=""> учу <img src="{% get_static_prefix %}img/mastery/almost.svg" alt=""> почти <img src="{% get_static_prefix %}img/mastery/mastered.svg" alt=""> освоено · Острова растут, когда ты занимаешься.</p>
 {% endblock %}

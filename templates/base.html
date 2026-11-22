@@ -14,12 +14,12 @@
 {% block topbar %}
 {% if current_child %}
 <header class="topbar">
-  <div class="who"><span class="avatar" aria-hidden="true">{{ current_child.avatar }}</span>{{ current_child.display_name }}</div>
-  <div class="stat" title="Звёзды">⭐ {{ star_balance }}</div>
-  <div class="stat" title="Серия дней">🔥 {{ streak_current }}</div>
+  <div class="who"><span class="avatar" aria-hidden="true"><img src="{% get_static_prefix %}img/avatars/{{ current_child.avatar_code }}.svg" alt="" data-fallback="{{ current_child.avatar }}"></span>{{ current_child.display_name }}</div>
+  <div class="stat stat-star" title="Звёзды">{% include "partials/icon.html" with n="star" %} {{ star_balance }}</div>
+  <div class="stat stat-flame" title="Серия дней">{% include "partials/icon.html" with n="flame" %} {{ streak_current }}</div>
   <div class="spacer"></div>
-  <a class="iconbtn" href="{% url 'home' %}" aria-label="Домой">🏠</a>
-  <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="iconbtn" aria-label="Выйти">🚪</button></form>
+  <a class="iconbtn" href="{% url 'home' %}" aria-label="Домой">{% include "partials/icon.html" with n="home" %}</a>
+  <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="iconbtn" aria-label="Выйти">{% include "partials/icon.html" with n="logout" %}</button></form>
 </header>
 {% endif %}
 {% endblock %}

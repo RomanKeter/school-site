@@ -2,17 +2,17 @@
 {% load learn %}
 {% block content %}
 <div class="task card" id="worked">
-  <div class="muted">👀 Смотри, как</div>
+  <div class="muted">{% include "partials/icon.html" with n="eye" %} Разбор примера</div>
   <h1>{{ example.title|default:skill.title }}</h1>
-  {% if skill.rule_card %}<p class="hint">📘 {{ skill.rule_card }}</p>{% endif %}
+  {% if skill.rule_card %}<p class="hint">{% include "partials/icon.html" with n="rule" %} {{ skill.rule_card }}</p>{% endif %}
   {% visual_model example.model %}
   <ol class="steps-list" style="font-size:22px">
     {% for s in example.steps %}<li class="wstep">{{ s }}</li>{% endfor %}
   </ol>
   <div class="actions">
     <span></span>
-    <button class="btn secondary" type="button" id="worked-more">Дальше ↓</button>
-    <form method="post" action="{% url 'worked_next' blk.id %}" id="worked-go" hidden>{% csrf_token %}<button class="btn">Понятно, попробую! →</button></form>
+    <button class="btn secondary" type="button" id="worked-more">Дальше {% include "partials/icon.html" with n="arrow-down" %}</button>
+    <form method="post" action="{% url 'worked_next' blk.id %}" id="worked-go" hidden>{% csrf_token %}<button class="btn">Понятно, попробую {% include "partials/icon.html" with n="arrow-right" %}</button></form>
   </div>
 </div>
 {% endblock %}

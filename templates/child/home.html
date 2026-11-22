@@ -1,40 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-{% if mission.status == "done" %}
-  {% include "partials/mascot.html" with state="party" size="big" say="Миссия выполнена! 🎉 Ты молодец." %}
-{% elif current and current.kind == "diagnostic" %}
-  {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Я Зубрик. Давай познакомимся: решим немного задачек, чтобы я понял, с чего начать." %}
-{% else %}
-  {% include "partials/mascot.html" with state="hello" size="big" say=greeting %}
-{% endif %}
-
+<section class="hero">
+<div class="hero-main">
+<span class="chip">Миссия дня{% if mission.status != "done" %} · ~{{ left_min }} мин{% endif %}</span>
 <nav class="path" aria-label="Тропинка миссии">
   {% for b in blocks %}
     {% if not forloop.first %}<span class="dash" aria-hidden="true"></span>{% endif %}
-    {% if b.status == "done" %}<span class="step done">✅ {{ b.title }}</span>
-    {% elif b == current %}<span class="step current">▶ {{ b.title }}</span>
-    {% elif b.kind == "surprise" %}<span class="step">{{ b.title }}</span>
-    {% else %}<a class="step" href="{% url 'play_block' b.id %}">○ {{ b.title }}</a>{% endif %}
+    {% if b.status == "done" %}<span class="step done">{% include "partials/icon.html" with n="check" %} {{ b.title|cut:" 🎁" }}</span>
+    {% elif b == current %}<span class="step current">{% include "partials/icon.html" with n="play" %} {{ b.title|cut:" 🎁" }}</span>
+    {% elif b.kind == "surprise" %}<span class="step">{% include "partials/icon.html" with n="gift" %} {{ b.title|cut:" 🎁" }}</span>
+    {% else %}<a class="step" href="{% url 'play_block' b.id %}">{{ b.title|cut:" 🎁" }}</a>{% endif %}
   {% endfor %}
 </nav>
-
-<div class="center">
   {% if mission.status == "done" %}
-    <a class="btn secondary" href="{% url 'map' 'math' %}">Свободная практика</a>
+    <a class="btn secondary" href="{% url 'map' 'math' %}">Свободная практика {% include "partials/icon.html" with n="arrow-right" %}</a>
   {% else %}
+    <div class="bar" aria-hidden="true" style="margin-left:0"><span style="width:{{ progress_pct }}%"></span></div>
+    <div class="muted" style="margin-bottom:16px">~{{ left_min }} мин осталось</div>
     <form method="post" action="{% url 'start_mission' %}">{% csrf_token %}
-      <button class="btn">▶ {% if mission.status == "pending" %}Начать миссию{% else %}Продолжить миссию{% endif %}</button>
+      <button class="btn">{% if mission.status == "pending" %}Начать миссию{% else %}Продолжить миссию{% endif %} {% include "partials/icon.html" with n="arrow-right" %}</button>
     </form>
-    <div class="bar" aria-hidden="true"><span style="width:{{ progress_pct }}%"></span></div>
-    <div class="muted">~{{ left_min }} мин осталось</div>
   {% endif %}
 </div>
+{% if mission.status == "done" %}
+  {% include "partials/mascot.html" with state="party" size="big" say="Миссия выполнена. Отличная работа!" %}
+{% elif current and current.kind == "diagnostic" %}
+  {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Я Зубрик. Давай познакомимся: несколько задач — и я пойму, с чего начать." %}
+{% else %}
+  {% include "partials/mascot.html" with state="hello" size="big" say=greeting %}
+{% endif %}
+</section>
 
-<section class="tiles" style="margin-top:32px">
-  <a class="tile" href="{% url 'map' 'math' %}"><span class="ico">🏝️</span>Мои острова</a>
-  <a class="tile" href="{% url 'map' 'en' %}"><span class="ico">🔤</span>Английский</a>
-  <a class="tile" href="{% url 'dictionary' %}"><span class="ico">📖</span>Словарик</a>
-  <a class="tile" href="{% url 'rewards' %}"><span class="ico">🏅</span>Награды</a>
-  <span class="tile disabled" aria-disabled="true"><span class="ico">📝</span>Домашка<small class="muted">скоро</small></span>
+<h2 class="section-title">Разделы</h2>
+<section class="tiles">
+  <a class="tile" href="{% url 'map' 'math' %}"><span class="ico">{% include "partials/icon.html" with n="map" %}</span><span>Математика<small class="muted">Острова тем</small></span></a>
+  <a class="tile" href="{% url 'map' 'en' %}"><span class="ico coral">{% include "partials/icon.html" with n="lang" %}</span><span>English<small class="muted">Слова и грамматика</small></span></a>
+  <a class="tile" href="{% url 'dictionary' %}"><span class="ico lime">{% include "partials/icon.html" with n="book" %}</span><span>Словарь<small class="muted">Мои слова</small></span></a>
+  <a class="tile" href="{% url 'rewards' %}"><span class="ico">{% include "partials/icon.html" with n="medal" %}</span><span>Награды<small class="muted">Значки и серия</small></span></a>
+  <span class="tile disabled" aria-disabled="true"><span class="ico gray">{% include "partials/icon.html" with n="pencil" %}</span><span>Домашка<small class="muted">скоро</small></span></span>
 </section>
 {% endblock %}

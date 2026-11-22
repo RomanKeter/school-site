@@ -1,18 +1,19 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 {% if locked %}
   {% include "partials/mascot.html" with state="rest" size="big" say="Давай передохнём минутку и попробуем снова." %}
   <p class="center"><a class="btn secondary" href="{% url 'child_start' %}">Назад</a></p>
 {% else %}
-  {% if retry %}{% include "partials/mascot.html" with state="hello" say="Попробуй ещё раз 🙂" %}
+  {% if retry %}{% include "partials/mascot.html" with state="hello" say="Попробуй ещё раз." %}
   {% else %}{% include "partials/mascot.html" with state="hello" say="Привет, "|add:child.display_name|add:"! Выбери свои 4 картинки" %}{% endif %}
   <form method="post" id="pwform" class="center">{% csrf_token %}
     <input type="hidden" name="sequence">
     <div class="pwdots {% if retry %}wobble{% endif %}" aria-live="polite"><span>○</span><span>○</span><span>○</span><span>○</span></div>
     <div class="pwgrid">
-      {% for code, emoji, name in pictures %}<button type="button" data-pic="{{ code }}" aria-label="{{ name }}">{{ emoji }}</button>{% endfor %}
+      {% for code, emoji, name in pictures %}<button type="button" data-pic="{{ code }}" aria-label="{{ name }}"><img src="{% get_static_prefix %}img/pw/{{ code }}.svg" alt="" data-fallback="{{ emoji }}"></button>{% endfor %}
     </div>
-    <button type="button" class="btn secondary small" data-erase>← Стереть</button>
+    <button type="button" class="btn secondary small" data-erase>{% include "partials/icon.html" with n="erase" %} Стереть</button>
   </form>
 {% endif %}
 {% endblock %}

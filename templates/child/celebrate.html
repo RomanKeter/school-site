@@ -1,17 +1,18 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 <div class="center card" style="max-width:720px;margin:24px auto">
   {% include "partials/mascot.html" with state="party" size="big" say="Ура! Получилось!" %}
-  <h1>{% if blk.kind == "surprise" %}Миссия выполнена! 🎁{% elif blk.kind == "diagnostic" %}Спасибо! Теперь я знаю, с чего начать{% elif blk.kind == "lesson" %}Урок пройден!{% else %}Шаг пройден!{% endif %}</h1>
-  {% if island %}<p style="font-size:22px;font-weight:700">⭐ +5 за урок · {{ island }}</p>{% endif %}
+  <h1>{% if blk.kind == "surprise" %}Миссия выполнена!{% elif blk.kind == "diagnostic" %}Спасибо! Теперь я знаю, с чего начать{% elif blk.kind == "lesson" %}Урок пройден!{% else %}Шаг пройден!{% endif %}</h1>
+  {% if island %}<p class="stars-earned" style="font-size:22px">{% include "partials/icon.html" with n="star" %} +5 за урок · <span style="color:var(--text)">{{ island }}</span></p>{% endif %}
   {% for a in awards %}
-    <div class="badge" style="max-width:320px;margin:16px auto"><div class="i" style="font-size:120px">{{ a.badge.icon }}</div><h2>{{ a.badge.title }}</h2><p>{{ a.badge.description }}</p></div>
+    <div class="badge" style="max-width:320px;margin:16px auto"><div class="i"><img class="big" src="{% get_static_prefix %}img/badges/{{ a.badge.code }}.svg" alt="" data-fallback="{{ a.badge.icon }}"></div><h2>{{ a.badge.title }}</h2><p>{{ a.badge.description }}</p></div>
   {% endfor %}
   {% if blk.kind == "surprise" or blk.kind == "lesson" %}
   <div id="reflect">
   <p>Как тебе было?</p>
-  <p>{% for code, emo, label in reflect_options %}<button class="iconbtn" style="font-size:44px;width:88px;height:88px;margin:0 8px;background:#fff" hx-post="{% url 'reflect' %}" hx-vals='{"mood": "{{ code }}"}' hx-target="#reflect" aria-label="{{ label }}">{{ emo }}</button>{% endfor %}</p>
+  <p>{% for code, emo, label in reflect_options %}<button class="iconbtn" style="width:88px;height:88px;margin:0 8px;background:var(--c-math-bg)" hx-post="{% url 'reflect' %}" hx-vals='{"mood": "{{ code }}"}' hx-target="#reflect" aria-label="{{ label }}">{% if code == "easy" %}{% include "partials/icon.html" with n="face-happy" %}{% elif code == "ok" %}{% include "partials/icon.html" with n="face-ok" %}{% else %}{% include "partials/icon.html" with n="face-hard" %}{% endif %}</button>{% endfor %}</p>
   </div>{% endif %}
-  <a class="btn" href="{% url 'home' %}">Дальше →</a>
+  <a class="btn" href="{% url 'home' %}">Дальше {% include "partials/icon.html" with n="arrow-right" %}</a>
 </div>
 {% endblock %}

@@ -1,2 +1,2 @@
-{% load learn %}<p class="center"><button type="button" class="speak" data-speak="{{ payload.audio_text }}">🔊</button></p>
+{% load learn %}<p class="center"><button type="button" class="speak" data-speak="{{ payload.audio_text }}" aria-label="Послушать">{% include "partials/icon.html" with n="sound" %}</button></p>
 <div class="options">{% for o in payload.options|shuffled %}<button type="button" class="opt" data-choice="{{ o.id }}">{{ o.text }}</button>{% endfor %}</div>

@@ -2,4 +2,4 @@
   {% if payload.expression %}<span>{{ payload.expression }} =</span>{% endif %}
   <span class="fraction"><input class="bigin" name="num" inputmode="numeric" autocomplete="off" aria-label="Числитель"><span class="line"></span><input class="bigin" name="den" inputmode="numeric" autocomplete="off" aria-label="Знаменатель"></span>
 </div>
-<div class="keypad">{% for k in "1234567890" %}<button type="button" data-key="{{ k }}">{{ k }}</button>{% endfor %}<button type="button" data-key="next" aria-label="Вниз, к знаменателю">↓</button><button type="button" data-key="back" aria-label="Стереть">⌫</button></div>
+<div class="keypad">{% for k in "1234567890" %}<button type="button" data-key="{{ k }}">{{ k }}</button>{% endfor %}<button type="button" data-key="next" aria-label="Вниз, к знаменателю">{% include "partials/icon.html" with n="arrow-down" %}</button><button type="button" data-key="back" aria-label="Стереть">{% include "partials/icon.html" with n="erase" %}</button></div>

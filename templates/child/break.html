@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}<div class="rest card">
 {% include "partials/mascot.html" with state="rest" size="big" say="Ты занимаешься 15 минут. Разомнёмся?" %}
-<p style="font-size:24px">🙆 Потянись вверх 3 раза · 👀 Моргни 10 раз · 🪟 Посмотри в окно на что-то далёкое 20 секунд</p>
+<p class="moves"><span>{% include "partials/icon.html" with n="stretch" %} Потянись вверх 3 раза</span><span>{% include "partials/icon.html" with n="blink" %} Моргни 10 раз</span><span>{% include "partials/icon.html" with n="window" %} Посмотри вдаль 20 секунд</span></p>
 <a class="btn secondary" id="break-continue" data-left="{{ left }}" href="{% url 'home' %}" disabled>Продолжить (<span id="break-left">{{ left }}</span>)</a>
 </div>{% endblock %}

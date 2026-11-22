@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block bodyclass %}subj-en{% endblock %}
 {% block content %}
-<h1>📖 Мой словарик</h1>
+<h1>{% include "partials/icon.html" with n="book" %} Мой словарь</h1>
 <div class="badges">
 {% for w in words %}{% if w.id in learned %}
-  <div class="badge"><div class="i">{{ w.picture }}</div><b style="font-size:24px">{{ w.word }}</b><div>{{ w.translation_ru }}</div>
-  <button class="iconbtn" data-speak="{{ w.word }}" aria-label="Послушать {{ w.word }}">🔊</button></div>
+  <div class="badge"><div class="i"><img src="{% get_static_prefix %}img/words/{{ w.word|lower }}.svg" alt="" data-fallback="{{ w.picture }}"></div><b style="font-size:24px">{{ w.word }}</b><div>{{ w.translation_ru }}</div>
+  <button class="iconbtn" data-speak="{{ w.word }}" aria-label="Послушать {{ w.word }}">{% include "partials/icon.html" with n="sound" %}</button></div>
 {% endif %}{% endfor %}
 </div>
 {% if not learned %}<p class="muted">Слова появятся здесь, когда ты с ними познакомишься в миссии.</p>{% endif %}

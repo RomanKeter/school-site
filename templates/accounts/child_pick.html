@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Кто сегодня учится?" %}
 <div class="pick">
   {% for c in children %}
-  <a href="{% url 'child_pictures' c.pk %}"><span class="a">{{ c.avatar }}</span>{{ c.display_name }}</a>
+  <a href="{% url 'child_pictures' c.pk %}"><span class="a"><img src="{% get_static_prefix %}img/avatars/{{ c.avatar_code }}.svg" alt="" data-fallback="{{ c.avatar }}"></span>{{ c.display_name }}</a>
   {% empty %}<p class="muted">Пока нет профилей. Взрослый может создать профиль в кабинете.</p>
   {% endfor %}
 </div>
-<a class="btn secondary small adult" href="{% url 'parent_login' %}">🔒 Я взрослый</a>
+<a class="btn secondary small adult" href="{% url 'parent_login' %}">{% include "partials/icon.html" with n="lock" %} Я взрослый</a>
 {% endblock %}

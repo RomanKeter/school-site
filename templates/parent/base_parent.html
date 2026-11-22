@@ -2,7 +2,7 @@
 {% block bodyclass %}parent{% endblock %}
 {% block topbar %}
 <header class="ptop">
-  <b>👨‍👧 Кабинет родителя</b>
+  <b>{% include "partials/icon.html" with n="parent" %} Кабинет родителя</b>
   <a href="{% url 'parent_dashboard' %}">Сводка</a>
   <a href="{% url 'parent_settings' %}{% if child %}?child={{ child.pk }}{% endif %}">Настройки</a>
   <a href="{% url 'add_child' %}">+ Ребёнок</a>

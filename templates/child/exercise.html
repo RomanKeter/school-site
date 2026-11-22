@@ -3,18 +3,18 @@
 {% block bodyclass %}subj-{{ exercise.skill.topic.unit.subject.code }}{% endblock %}
 {% block topbar %}
 <header class="topbar">
-  <a class="iconbtn" href="{% url 'home' %}" aria-label="Назад к миссии">🏠</a>
+  <a class="iconbtn" href="{% url 'home' %}" aria-label="Назад к миссии">{% include "partials/icon.html" with n="home" %}</a>
   <div class="progressdots" aria-label="Шаг {{ progress }}"><span style="width:{% widthratio blk.position|add:1 blk.queue|length 100 %}%"></span></div>
   <span class="muted">{{ progress }}</span>
-  <button class="iconbtn" data-speak="{{ payload.prompt }}" data-lang="{% if exercise.skill.topic.unit.subject.code == 'en' %}en-GB{% else %}ru-RU{% endif %}" aria-label="Озвучить задание">🔊</button>
+  <button class="iconbtn" data-speak="{{ payload.prompt }}" data-lang="{% if exercise.skill.topic.unit.subject.code == 'en' %}en-GB{% else %}ru-RU{% endif %}" aria-label="Озвучить задание">{% include "partials/icon.html" with n="sound" %}</button>
 </header>
 {% endblock %}
 {% block content %}
 <div class="task card">
-  {% if stage == "review" %}<div class="muted">🔁 Повторение</div>{% elif stage == "guided" %}<div class="muted">🤝 Попробуем вместе</div>{% elif blk.kind == "diagnostic" %}<div class="muted">👋 Знакомимся</div>{% endif %}
+  {% if stage == "review" %}<div class="muted">{% include "partials/icon.html" with n="repeat" %} Повторение</div>{% elif stage == "guided" %}<div class="muted">{% include "partials/icon.html" with n="together" %} Попробуем вместе</div>{% elif blk.kind == "diagnostic" %}<div class="muted">{% include "partials/icon.html" with n="compass" %} Знакомимся</div>{% endif %}
   <p class="prompt">{{ payload.prompt }}</p>
   {% visual_model payload.model %}
-  {% if stage == "guided" and payload.hints %}<div class="hint"><span class="lvl">💡 Подсказка-помощник</span><br>{{ payload.hints.0.text }}</div>{% endif %}
+  {% if stage == "guided" and payload.hints %}<div class="hint"><span class="lvl">{% include "partials/icon.html" with n="hint" %} Подсказка-помощник</span><br>{{ payload.hints.0.text }}</div>{% endif %}
 
   <form class="taskform" data-type="{{ exercise.type }}" data-attempt="1" data-hints="{% if stage == 'guided' %}1{% else %}0{% endif %}"
         hx-post="{% url 'check_exercise' blk.id exercise.id %}" hx-target="#feedback" hx-swap="innerHTML">
@@ -26,14 +26,14 @@
 
   {% if blk.kind != "diagnostic" %}
   <div class="actions task-actions">
-    <button class="btn secondary small" data-hint-btn hx-post="{% url 'hint' blk.id exercise.id %}" hx-target="#hint-panel" hx-swap="innerHTML">💡 Подсказка</button>
-    <button class="btn secondary small" data-solution="1" hidden hx-post="{% url 'check_exercise' blk.id exercise.id %}" hx-target="#feedback">🤔 Покажи, как решать</button>
+    <button class="btn secondary small" data-hint-btn hx-post="{% url 'hint' blk.id exercise.id %}" hx-target="#hint-panel" hx-swap="innerHTML">{% include "partials/icon.html" with n="hint" %} Подсказка</button>
+    <button class="btn secondary small" data-solution="1" hidden hx-post="{% url 'check_exercise' blk.id exercise.id %}" hx-target="#feedback">{% include "partials/icon.html" with n="eye" %} Покажи, как решать</button>
     {% if exercise.type not in "single_choice fill_blank_choice audio_text_choice" %}
-    <button class="btn" type="button" data-submit-task>Проверить ✓</button>
+    <button class="btn" type="button" data-submit-task>Проверить {% include "partials/icon.html" with n="check" %}</button>
     {% endif %}
   </div>
   {% elif exercise.type not in "single_choice fill_blank_choice audio_text_choice" %}
-  <div class="actions task-actions"><span></span><button class="btn" type="button" data-submit-task>Готово ✓</button></div>
+  <div class="actions task-actions"><span></span><button class="btn" type="button" data-submit-task>Готово {% include "partials/icon.html" with n="check" %}</button></div>
   {% endif %}
 </div>
 {% endblock %}
