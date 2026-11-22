@@ -14,6 +14,7 @@ from apps.missions.models import DailyMission
 from apps.rewards.models import StarTransaction
 from apps.rewards.stars import balance
 from apps.srs.models import ReviewItem
+from apps.reports.models import WeeklyReport
 
 
 @parent_required
@@ -106,7 +107,11 @@ def settings_view(request):
         messages.success(request, "Настройки сохранены.")
         return redirect(f"/parent/settings/?child={child.pk}")
     days = list(enumerate(["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]))
-    return render(request, "parent/settings.html", {"child": child, "settings": s, "days": days, "children": parent.family.children.all()})
+    ctx = {"child": child, "settings": s, "days": days, "children": parent.family.children.all(), "parent": parent}
+    preview = request.GET.get("preview")
+    if preview:
+        ctx["report"] = WeeklyReport.objects.filter(pk=preview, child__family=parent.family).first()
+    return render(request, "parent/settings.html", ctx)
 
 
 @parent_required

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Неделя {{ child_name }}</title>
+<style>
+@font-face{font-family:Manrope;font-weight:500;font-display:block;src:url("{{ font_cyr_500 }}") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Manrope;font-weight:500;font-display:block;src:url("{{ font_lat_500 }}") format("woff2");unicode-range:U+0000-00FF}
+@font-face{font-family:Manrope;font-weight:700;font-display:block;src:url("{{ font_cyr_700 }}") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Manrope;font-weight:700;font-display:block;src:url("{{ font_lat_700 }}") format("woff2");unicode-range:U+0000-00FF}
+@font-face{font-family:Manrope;font-weight:800;font-display:block;src:url("{{ font_cyr_800 }}") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Manrope;font-weight:800;font-display:block;src:url("{{ font_lat_800 }}") format("woff2");unicode-range:U+0000-00FF}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;background:#F5F1EA;color:#2B2F2E;font-family:Manrope,system-ui,sans-serif;}
+.page{width:1080px;height:1350px;padding:56px 56px 48px;position:relative;overflow:hidden;}
+h1{font-weight:800;font-size:52px;line-height:1.15;letter-spacing:-0.02em;}
+.weekline{font-weight:500;font-size:32px;color:#5F6663;margin-top:10px;}
+.days{display:flex;gap:12px;margin:36px 0 40px;}
+.day{flex:1;height:120px;border-radius:22px;background:#FFFFFF;text-align:center;padding-top:18px;box-shadow:0 6px 20px rgba(60,50,30,.08);}
+.day .l{display:block;font-size:28px;font-weight:700;color:#5F6663;}
+.day .m{display:block;font-size:40px;font-weight:800;margin-top:6px;color:#C5C0B6;}
+.day.ok{background:#EDF1E6;}
+.day.ok .m{color:#5E7A52;}
+.nums{display:flex;gap:20px;margin-bottom:32px;}
+.num{flex:1;background:#FFFFFF;border-radius:28px;padding:28px 32px;box-shadow:0 6px 20px rgba(60,50,30,.08);}
+.num .v{font-weight:800;font-size:64px;line-height:1;color:#3A536A;}
+.num .k{font-weight:700;font-size:28px;color:#5F6663;margin-top:8px;}
+.block{background:#FFFFFF;border-radius:28px;padding:28px 32px;margin-bottom:20px;box-shadow:0 6px 20px rgba(60,50,30,.08);}
+.block h2{font-weight:800;font-size:28px;color:#4C6A85;margin-bottom:12px;}
+.block li,.block p{font-weight:500;font-size:30px;line-height:1.35;list-style:none;}
+.block li{margin:6px 0;}
+.tip{background:#F7F0DE;border-radius:28px;padding:28px 280px 28px 32px;margin-bottom:0;min-height:240px;}
+.tip h2{font-weight:800;font-size:28px;color:#A35A42;margin-bottom:12px;}
+.tip p{font-weight:500;font-size:30px;line-height:1.4;}
+.mascot{position:absolute;right:48px;bottom:40px;width:240px;height:auto;}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>{{ child_name }}</h1>
+  <div class="weekline">Неделя {{ week_label }}</div>
+  <div class="days">
+    {% for d in days %}
+    <div class="day{% if d.done %} ok{% endif %}"><span class="l">{{ d.label }}</span><span class="m">{% if d.done %}✓{% else %}·{% endif %}</span></div>
+    {% endfor %}
+  </div>
+  <div class="nums">
+    <div class="num"><div class="v">{{ minutes }}</div><div class="k">минут за неделю</div></div>
+    <div class="num"><div class="v">+{{ stars_week }}</div><div class="k">звёзд за неделю</div></div>
+  </div>
+  {% if mastered %}
+  <div class="block">
+    <h2>Получилось</h2>
+    <ul>{% for m in mastered %}<li>{{ m.title }}</li>{% endfor %}</ul>
+  </div>
+  {% endif %}
+  {% if practice %}
+  <div class="block">
+    <h2>Потренироваться</h2>
+    <p>{{ practice.title }}</p>
+  </div>
+  {% endif %}
+  <div class="tip">
+    <h2>За ужином</h2>
+    <p>{{ tip }}</p>
+  </div>
+  <img class="mascot" src="{{ mascot }}" alt="">
+</div>
+</body>
+</html>

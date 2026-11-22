@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "apps.parents",
     "apps.ai",
     "apps.homework",
+    "apps.reports",
 ]
 
 MIDDLEWARE = [
@@ -158,4 +159,12 @@ AI = {
     "MONTHLY_BUDGET_USD": float(os.environ.get("AI_MONTHLY_BUDGET_USD", "3")),
     "PRICE_IN_PER_M": float(os.environ.get("AI_PRICE_IN_PER_M", "0.30")),
     "PRICE_OUT_PER_M": float(os.environ.get("AI_PRICE_OUT_PER_M", "2.50")),
+}
+
+# Недельный отчёт родителю в Telegram (этап 2, разделы 13.2 и 23.6, D-600+).
+# Токен — только TELEGRAM_REPORT_BOT_TOKEN (отдельный бот). TELEGRAM_BOT_TOKEN не используется.
+TELEGRAM_REPORT = {
+    "BOT_TOKEN": os.environ.get("TELEGRAM_REPORT_BOT_TOKEN", ""),
+    "SITE_URL": os.environ.get("SITE_URL", ""),
+    "CHROME": os.environ.get("TELEGRAM_CHROME", "/usr/bin/google-chrome"),
 }

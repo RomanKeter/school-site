@@ -70,6 +70,7 @@ class Skill(ContentBase):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
     rule_card = models.TextField("карточка правила", blank=True)
+    dinner_tip = models.TextField("совет за ужином", blank=True)
     worked_example = models.JSONField(
         "разобранный пример", default=dict, blank=True,
         help_text='{"title": "...", "steps": ["шаг 1", "шаг 2", ...], "model": {...}}',

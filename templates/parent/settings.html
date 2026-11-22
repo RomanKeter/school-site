@@ -14,4 +14,26 @@
     {% for d, name in days %}<label><input type="checkbox" name="days_off" value="{{ d }}" {% if d in settings.days_off %}checked{% endif %}> {{ name }}</label> {% endfor %}</p>
   <p><button class="btn">Сохранить</button> <button class="btn secondary" name="extend15" value="1">+15 минут на сегодня</button></p>
 </form>
+<div class="card" style="margin-top:24px">
+  <h2>Telegram</h2>
+  <p class="muted">Недельный отчёт картинкой (воскресенье 19:00) и пробная отправка. Chat id — число из Telegram (для группы — с минусом). Нужен отдельный бот учебного сайта.</p>
+  <form method="post" action="{% url 'parent_telegram' %}" class="form">{% csrf_token %}
+    <input type="hidden" name="child" value="{{ child.pk }}">
+    <p><label>Chat id <input type="text" name="telegram_chat_id" value="{{ parent.telegram_chat_id }}" inputmode="numeric" autocomplete="off" placeholder="например 123456789"></label></p>
+    <p><label>Формат недельного отчёта
+      <select name="weekly_report_format">
+        <option value="image" {% if parent.weekly_report_format == "image" %}selected{% endif %}>картинка</option>
+        <option value="text" {% if parent.weekly_report_format == "text" %}selected{% endif %}>текст</option>
+        <option value="both" {% if parent.weekly_report_format == "both" %}selected{% endif %}>текст и картинка</option>
+      </select></label></p>
+    <p>
+      <button class="btn secondary" name="save_telegram" value="1">Сохранить</button>
+      <button class="btn" name="send_test" value="1">Отправить пробный отчёт</button>
+    </p>
+  </form>
+  {% if report and report.image %}
+  <p class="muted">Пробная карточка этой недели:</p>
+  <p><img src="{% url 'parent_weekly_image' report.pk %}" alt="Недельный отчёт" style="width:min(100%,360px);height:auto;border-radius:16px;box-shadow:0 6px 20px rgba(60,50,30,.08)"></p>
+  {% endif %}
+</div>
 {% endblock %}

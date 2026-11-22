@@ -42,6 +42,12 @@ class ParentProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="parent_profile")
     family = models.ForeignKey(Family, on_delete=models.CASCADE, related_name="parents")
     telegram_chat_id = models.CharField(max_length=40, blank=True)  # этап 2
+    weekly_report_format = models.CharField(
+        "формат недельного отчёта",
+        max_length=8,
+        choices=[("text", "текст"), ("image", "картинка"), ("both", "текст и картинка")],
+        default="image",
+    )
 
     class Meta:
         verbose_name = "профиль родителя"
