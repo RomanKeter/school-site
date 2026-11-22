@@ -36,7 +36,7 @@ def dashboard(request):
         )
         # прогресс по предметам
         subjects = []
-        for subj in Subject.objects.filter(code__in=("math", "en")):
+        for subj in Subject.objects.filter(code__in=("math", "en", "ru")):
             if subj.code == "en":
                 total = ReviewItem.objects.filter(child=child, item_type="word").count()
                 learned = ReviewItem.objects.filter(child=child, item_type="word", interval_days__gte=7).count()

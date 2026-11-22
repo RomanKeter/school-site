@@ -174,15 +174,14 @@ def build_regular(child, mission: DailyMission, today: dt.date, order: int = 0) 
     # 3. Назначенный родителем навык
     assigned = AssignedSkill.objects.filter(child=child, date=today, used=False).select_related("skill").first()
     lesson_skill = assigned.skill if assigned else None
-    # приоритет предметов по дню недели: Пн/Ср/Пт — math, Вт/Чт — en (русского в MVP нет)
+    # приоритет предметов по дню недели: Пн/Ср/Пт — math, Вт/Чт — русский (D-204); en — урок слов отдельно
     if lesson_skill is None:
-        primary = "math" if today.weekday() in (0, 2, 4) else "en"
-        # для en урок слов отдельно; skill-урок — math всегда если есть
-        lesson_skill = current_skill(child, "math")
+        primary = "ru" if today.weekday() in (1, 3) else "math"
+        lesson_skill = current_skill(child, primary) or current_skill(child, "math")
     if lesson_skill:
         Block.objects.create(
             child=child, mission=mission, order=order, kind="lesson",
-            title=lesson_skill.title, subject_code="math", skill=lesson_skill,
+            title=lesson_skill.title, subject_code=lesson_skill.topic.unit.subject.code, skill=lesson_skill,
             queue=_lesson_queue(lesson_skill), est_seconds=5 * 60, meta={"level": 1},
         )
         order += 1

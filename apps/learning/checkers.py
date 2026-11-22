@@ -198,3 +198,9 @@ def public_payload(ex) -> dict:
     p = dict(ex.payload or {})
     # перемешиваем варианты на клиенте; сервер отдаёт как есть + shuffle seed
     return p
+
+
+# Русский язык (этап 2, D-201): fill_letters проверяется как выбор варианта, punctuation — по набору запятых.
+from .ru_types import check_punctuation  # noqa: E402
+
+CHECKERS.update({"fill_letters": _single_choice, "punctuation": check_punctuation})
