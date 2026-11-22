@@ -7,6 +7,8 @@ from apps.accounts.services import create_child, create_parent
 def family(db):
     parent = create_parent("parent1", "VeryLongPass123", family_name="Семья А")
     child = create_child(parent.family, "kid1", "Аня", ["apple", "cat", "star", "ball"])
+    child.settings.quiet_from = child.settings.quiet_to
+    child.settings.save()
     return parent, child
 
 
