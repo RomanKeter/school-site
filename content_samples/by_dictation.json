@@ -1,0 +1,703 @@
+{
+ "format_version": 1,
+ "subject": "by",
+ "unit": {
+  "key": "by.g5.u5",
+  "title": "Дыктоўкі",
+  "grade": 5,
+  "quarter": 4,
+  "order": 6
+ },
+ "topics": [
+  {
+   "key": "by.dict",
+   "title": "Пішам пад дыктоўку",
+   "synonyms": [],
+   "keywords": [],
+   "skills": [
+    {
+     "key": "by.dc.words",
+     "title": "Слоўнікавая дыктоўка",
+     "rule_card": "Паслухай слова (можна некалькі разоў, можна павольна) і запішы яго. Успамінай правілы: аканне, яканне, ў, апостраф, мяккі знак, падоўжаныя зычныя, дз і ц.",
+     "worked_example": {
+      "title": "Як пісаць пад дыктоўку",
+      "steps": [
+       "Націсні «Послушать» і паслухай слова.",
+       "Падумай, якія правілы тут ёсць.",
+       "Запішы і націсні «Проверить»."
+      ]
+     },
+     "prerequisites": [],
+     "exercises": [
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "вясна",
+        "explain": "Вясна — яканне: я ў першым складзе перад націскам.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Вясна — яканне: я ў першым складзе перад націскам."
+        ]
+       },
+       "answer": {
+        "value": "вясна"
+       },
+       "key": "by.dc.wd.ex1",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "сям'я",
+        "explain": "Сям'я — апостраф пасля м перад я.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Сям'я — апостраф пасля м перад я."
+        ]
+       },
+       "answer": {
+        "value": "сям'я"
+       },
+       "key": "by.dc.wd.ex2",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "праўда",
+        "explain": "Праўда — ў пасля галоснай.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Праўда — ў пасля галоснай."
+        ]
+       },
+       "answer": {
+        "value": "праўда"
+       },
+       "key": "by.dc.wd.ex3",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "дзяўчынка",
+        "explain": "Дзяўчынка — дз перад я, ў пасля галоснай.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Дзяўчынка — дз перад я, ў пасля галоснай."
+        ]
+       },
+       "answer": {
+        "value": "дзяўчынка"
+       },
+       "key": "by.dc.wd.ex4",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "жыццё",
+        "explain": "Жыццё — падоўжаны цц, ы пасля ж.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Жыццё — падоўжаны цц, ы пасля ж."
+        ]
+       },
+       "answer": {
+        "value": "жыццё"
+       },
+       "key": "by.dc.wd.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "вяселле",
+        "explain": "Вяселле — падоўжаны лл.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Вяселле — падоўжаны лл."
+        ]
+       },
+       "answer": {
+        "value": "вяселле"
+       },
+       "key": "by.dc.wd.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "радыё",
+        "explain": "Радыё — пасля д пішам ыё.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Радыё — пасля д пішам ыё."
+        ]
+       },
+       "answer": {
+        "value": "радыё"
+       },
+       "key": "by.dc.wd.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "бяроза",
+        "explain": "Бяроза — яканне.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Бяроза — яканне."
+        ]
+       },
+       "answer": {
+        "value": "бяроза"
+       },
+       "key": "by.dc.wd.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "сэрца",
+        "explain": "Сэрца — э пад націскам, без д.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Сэрца — э пад націскам, без д."
+        ]
+       },
+       "answer": {
+        "value": "сэрца"
+       },
+       "key": "by.dc.wd.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "шчаслівы",
+        "explain": "Шчаслівы — шч, без т.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Шчаслівы — шч, без т."
+        ]
+       },
+       "answer": {
+        "value": "шчаслівы"
+       },
+       "key": "by.dc.wd.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "воўк",
+        "explain": "Воўк — ў пасля галоснай.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Воўк — ў пасля галоснай."
+        ]
+       },
+       "answer": {
+        "value": "воўк"
+       },
+       "key": "by.dc.wd.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "малако",
+        "explain": "Малако — аканне.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Малако — аканне."
+        ]
+       },
+       "answer": {
+        "value": "малако"
+       },
+       "key": "by.dc.wd.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "сонца",
+        "explain": "Сонца — без л.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Сонца — без л."
+        ]
+       },
+       "answer": {
+        "value": "сонца"
+       },
+       "key": "by.dc.wd.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "вуліца",
+        "explain": "Вуліца — прыстаўны в.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Вуліца — прыстаўны в."
+        ]
+       },
+       "answer": {
+        "value": "вуліца"
+       },
+       "key": "by.dc.wd.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "дзень",
+        "explain": "Дзень — дз перад е, мяккі знак у канцы.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Дзень — дз перад е, мяккі знак у канцы."
+        ]
+       },
+       "answer": {
+        "value": "дзень"
+       },
+       "key": "by.dc.wd.ex15",
+       "difficulty": 3
+      }
+     ]
+    },
+    {
+     "key": "by.dc.phrases",
+     "title": "Дыктоўка сказаў",
+     "rule_card": "Паслухай сказ і запішы яго з вялікай літары, з патрэбнымі знакамі прыпынку ў сярэдзіне і ў канцы.",
+     "worked_example": {
+      "title": "Сказ пад дыктоўку",
+      "steps": [
+       "Паслухай сказ цалкам.",
+       "Запішы па словах, правер правапіс.",
+       "Пастаў коскі і знак у канцы."
+      ]
+     },
+     "prerequisites": [
+      "by.dc.words"
+     ],
+     "exercises": [
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Мася гуляе ў двары.",
+        "explain": "Ў пасля галоснай: гуляе ў двары.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Ў пасля галоснай: гуляе ў двары."
+        ]
+       },
+       "answer": {
+        "value": "Мася гуляе ў двары."
+       },
+       "key": "by.dc.ph.ex1",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Вясной прыляцелі буслы.",
+        "explain": "Вясной — яканне.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Вясной — яканне."
+        ]
+       },
+       "answer": {
+        "value": "Вясной прыляцелі буслы."
+       },
+       "key": "by.dc.ph.ex2",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "У лесе растуць бярозы, клёны і дубы.",
+        "explain": "Аднародныя члены: бярозы, клёны і дубы.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Аднародныя члены: бярозы, клёны і дубы."
+        ]
+       },
+       "answer": {
+        "value": "У лесе растуць бярозы, клёны і дубы."
+       },
+       "key": "by.dc.ph.ex3",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Яна, хадзі дадому!",
+        "explain": "Яна — зваротак, выдзяляецца коскай.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Яна — зваротак, выдзяляецца коскай."
+        ]
+       },
+       "answer": {
+        "value": "Яна, хадзі дадому!"
+       },
+       "key": "by.dc.ph.ex4",
+       "difficulty": 1
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Мінск — сталіца Беларусі.",
+        "explain": "Працяжнік паміж назоўнікамі.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Працяжнік паміж назоўнікамі."
+        ]
+       },
+       "answer": {
+        "value": "Мінск — сталіца Беларусі."
+       },
+       "key": "by.dc.ph.ex5",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Сонца схавалася, і пайшоў дождж.",
+        "explain": "Складаны сказ — коска перад «і».",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Складаны сказ — коска перад «і»."
+        ]
+       },
+       "answer": {
+        "value": "Сонца схавалася, і пайшоў дождж."
+       },
+       "key": "by.dc.ph.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Дзяўчынка чытае цікавую кнігу.",
+        "explain": "Дзяўчынка — дз і ў; цікавую — ц перад і.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Дзяўчынка — дз і ў; цікавую — ц перад і."
+        ]
+       },
+       "answer": {
+        "value": "Дзяўчынка чытае цікавую кнігу."
+       },
+       "key": "by.dc.ph.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Наша сям'я любіць вандраваць.",
+        "explain": "Сям'я — апостраф.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Сям'я — апостраф."
+        ]
+       },
+       "answer": {
+        "value": "Наша сям'я любіць вандраваць."
+       },
+       "key": "by.dc.ph.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Восенню лісце жоўтае і чырвонае.",
+        "explain": "Жоўтае — ў пасля галоснай.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Жоўтае — ў пасля галоснай."
+        ]
+       },
+       "answer": {
+        "value": "Восенню лісце жоўтае і чырвонае."
+       },
+       "key": "by.dc.ph.ex9",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Бабуля сказала: «Прынясі вады».",
+        "explain": "Простая мова пасля слоў аўтара: двукроп'е і двукоссе.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Простая мова пасля слоў аўтара: двукроп'е і двукоссе."
+        ]
+       },
+       "answer": {
+        "value": "Бабуля сказала: «Прынясі вады»."
+       },
+       "key": "by.dc.ph.ex10",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Шчаслівай дарогі, сябры!",
+        "explain": "Сябры — зваротак у канцы, перад ім коска.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Сябры — зваротак у канцы, перад ім коска."
+        ]
+       },
+       "answer": {
+        "value": "Шчаслівай дарогі, сябры!"
+       },
+       "key": "by.dc.ph.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "dictation",
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Паслухай і запішы",
+        "say": "Ціха шуміць зялёны бор.",
+        "explain": "Ціха — ц перад і; зялёны — яканне.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Націсні «Медленно» і пішы па адным слове."
+         }
+        ],
+        "lang": "be-BY",
+        "solution_steps": [
+         "Ціха — ц перад і; зялёны — яканне."
+        ]
+       },
+       "answer": {
+        "value": "Ціха шуміць зялёны бор."
+       },
+       "key": "by.dc.ph.ex12",
+       "difficulty": 3
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
