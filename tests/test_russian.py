@@ -20,7 +20,9 @@ BASE = Path(__file__).resolve().parent.parent / "content_samples"
 
 @pytest.fixture
 def ru(content):
-    for n in ("ru_orthography.json", "ru_grammar.json"):
+    from apps.content.management.commands.seed_demo import RU_FILES
+
+    for n in RU_FILES:
         call_command("import_content", str(BASE / n), update=True)
 
 
@@ -42,13 +44,16 @@ def test_punctuation_checker_set_and_hints():
 
 def test_ru_content_volume_and_shape(ru):
     exs = Exercise.objects.filter(skill__topic__unit__subject__code="ru")
-    assert exs.count() >= 40
+    assert exs.count() >= 600
     skills = Skill.objects.filter(topic__unit__subject__code="ru")
-    assert skills.count() == 10
+    assert skills.count() >= 50
+    assert Skill.objects.filter(topic__unit__subject__code="ru", exercises__isnull=False).distinct().count() == skills.count()
     for s in skills:
         assert s.rule_card and (s.worked_example or {}).get("steps"), s.external_key
     types = set(exs.values_list("type", flat=True))
-    assert {"fill_letters", "punctuation", "single_choice", "categorize", "letter_tiles"} <= types
+    assert {"fill_letters", "punctuation", "single_choice", "categorize", "letter_tiles", "morphemes", "dictation", "number_input"} <= types
+    for ex in exs.filter(type="morphemes"):
+        assert len(ex.answer["labels"]) == len(ex.payload["word"]), ex.external_key
     for ex in exs.filter(type="punctuation"):
         n = len(ex.payload["words"])
         assert all(0 <= c < n - 1 for c in ex.answer["commas"]), ex.external_key
@@ -66,6 +71,8 @@ def test_every_ru_exercise_renders_and_hides_answer(client, family, ru):
         html = r.content.decode()
         assert r.status_code == 200 and "taskform" in html and "subj-ru" in html, ex.external_key
         assert ex.payload.get("explain", "") not in html, ex.external_key  # пояснение — только после ответа
+        if ex.type == "dictation":
+            assert ex.answer["value"] not in html, ex.external_key  # текст диктанта — только в base64 для озвучки
 
 
 def test_ru_map_and_home_tile(client, family, ru):
@@ -123,3 +130,62 @@ def test_parent_dashboard_lists_russian(client, family, ru):
     client.force_login(parent.user)
     html = client.get("/parent/").content.decode()
     assert "Русский язык" in html and "этап 2" not in html
+
+
+def test_morphemes_checker():
+    ans = {"labels": "pppkkkksss", "zero": True}
+    assert check("morphemes", {}, ans, {"labels": "pppkkkksss", "zero": True}).correct
+    r = check("morphemes", {}, ans, {"labels": "pppkkkksss", "zero": False})
+    assert not r.correct and "окончание" in r.distractor
+    r = check("morphemes", {}, ans, {"labels": "ppkkkkksss", "zero": True})
+    assert not r.correct and "приставка" in r.distractor and 0 < r.partial < 1
+    assert "Отметь каждую букву" in check("morphemes", {}, ans, {"labels": "ppp", "zero": True}).distractor
+
+
+def test_dictation_checker():
+    ans = {"value": "Яна, иди обедать!"}
+    assert check("dictation", {}, ans, {"value": "  яна,  иди обедать! "}).correct
+    assert check("dictation", {}, {"value": "Берёза растёт."}, {"value": "береза растет"}).correct  # е = ё, точка не важна
+    r = check("dictation", {}, ans, {"value": "Яна иди обедать!"})
+    assert not r.correct and "знаки" in r.distractor
+    r = check("dictation", {}, ans, {"value": "Яна, иди абедать!"})
+    assert not r.correct and "№ 3" in r.distractor
+    assert "3" in check("dictation", {}, ans, {"value": "Яна"}).distractor
+
+
+def test_morphemes_flow_shows_parsed_word(client, family, ru):
+    _, child = family
+    login_child(client, child)
+    ex = Exercise.objects.get(external_key="ru.rp.mo.ex12")  # подоконник
+    b = Block.objects.create(child=child, kind="free", title="t", skill=ex.skill, queue=[{"t": "ex", "id": ex.id}])
+    url = reverse("check_exercise", args=[b.id, ex.id])
+    html = ""
+    for n in (1, 2, 3):
+        html = client.post(url, {"answer": json.dumps({"labels": "kkkkkkkkkk", "zero": False}), "attempt_no": n,
+                                 "hints_used": 0, "duration_ms": 4000}).content.decode()
+    assert "под-окон-ник-□" in html and "приставка под" in html
+
+
+def test_rule_keeper_badge_after_ten_ru_skills(family, ru):
+    from apps.learning.models import SkillMastery
+    from apps.rewards.badges import evaluate, seed_badges
+    from apps.rewards.models import ChildBadge
+
+    seed_badges()
+    _, child = family
+    skills = list(Skill.objects.filter(topic__unit__subject__code="ru")[:10])
+    for s in skills[:9]:
+        SkillMastery.objects.create(child=child, skill=s, status="mastered")
+    evaluate(child, "skill_mastered", skill=skills[8])
+    assert not ChildBadge.objects.filter(child=child, badge__code="rule_keeper").exists()
+    SkillMastery.objects.create(child=child, skill=skills[9], status="mastered")
+    evaluate(child, "skill_mastered", skill=skills[9])
+    assert ChildBadge.objects.filter(child=child, badge__code="rule_keeper").exists()
+
+
+def test_ru_map_groups_by_units(client, family, ru):
+    _, child = family
+    login_child(client, child)
+    html = client.get(reverse("map", args=["ru"])).content.decode()
+    for title in ("Повторение: состав слова и орфограммы", "Фонетика, графика, орфоэпия", "Лексика", "Диктанты"):
+        assert f'<h2 class="sea-unit">{title}</h2>' in html

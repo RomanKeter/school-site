@@ -3,10 +3,10 @@
  "subject": "ru",
  "unit": {
   "key": "ru.g5.u1",
-  "title": "Орфография",
+  "title": "Орфография: корни, приставки, глаголы",
   "grade": 5,
-  "quarter": 1,
-  "order": 1
+  "quarter": 2,
+  "order": 5
  },
  "topics": [
   {
@@ -19,8 +19,7 @@
    ],
    "keywords": [
     "корень",
-    "проверочное слово",
-    "орфограмма"
+    "проверочное слово"
    ],
    "skills": [
     {
@@ -38,9 +37,7 @@
      "prerequisites": [],
      "exercises": [
       {
-       "key": "ru.or.un.ex1",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -73,18 +70,18 @@
         "correct": [
          "о"
         ]
-       }
+       },
+       "key": "ru.or.un.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.un.ex2",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
         "parts": [
          "л",
-         "са"
+         "сник"
         ],
         "options": [
          {
@@ -111,12 +108,12 @@
         "correct": [
          "е"
         ]
-       }
+       },
+       "key": "ru.or.un.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.un.ex3",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -149,12 +146,12 @@
         "correct": [
          "а"
         ]
-       }
+       },
+       "key": "ru.or.un.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.un.ex4",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -187,23 +184,23 @@
         "correct": [
          "е"
         ]
-       }
+       },
+       "key": "ru.or.un.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.un.ex5",
        "type": "single_choice",
-       "difficulty": 3,
        "est_seconds": 30,
        "payload": {
         "prompt": "Какое слово проверочное для слова «стрела́»?",
         "options": [
          {
           "id": "o0",
-          "text": "стрелок"
+          "text": "стре́лы"
          },
          {
           "id": "o1",
-          "text": "стре́лы"
+          "text": "стрелок"
          },
          {
           "id": "o2",
@@ -223,14 +220,14 @@
        },
        "answer": {
         "correct": [
-         "o1"
+         "o0"
         ]
-       }
+       },
+       "key": "ru.or.un.ex5",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.un.ex6",
        "type": "fill_letters",
-       "difficulty": 3,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -263,14 +260,358 @@
         "correct": [
          "е"
         ]
-       }
+       },
+       "key": "ru.or.un.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "гр",
+         "за"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Проверочное слово: гро́зы.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: гро́зы."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.un.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "ст",
+         "на"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Проверочное слово: сте́ны.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: сте́ны."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "е"
+        ]
+       },
+       "key": "ru.or.un.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "м",
+         "ря"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Проверочное слово: мо́ре.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: мо́ре."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.un.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "к",
+         "за"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Проверочное слово: ко́зы.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: ко́зы."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.un.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "сн",
+         "га"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Проверочное слово: сне́г.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: сне́г."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "е"
+        ]
+       },
+       "key": "ru.or.un.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "л",
+         "сица"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Проверочное слово: ли́сы.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: ли́сы."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "и"
+        ]
+       },
+       "key": "ru.or.un.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "х",
+         "дить"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Проверочное слово: хо́дит.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: хо́дит."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.un.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "р",
+         "чной"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Проверочное слово: ре́чка.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: ре́чка."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "е"
+        ]
+       },
+       "key": "ru.or.un.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "з",
+         "ма"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Проверочное слово: зи́мы, зи́мний.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Измени слово, чтобы гласная в корне стала ударной."
+         }
+        ],
+        "solution_steps": [
+         "Проверочное слово: зи́мы, зи́мний."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "и"
+        ]
+       },
+       "key": "ru.or.un.ex15",
+       "difficulty": 3
       }
      ]
     },
     {
      "key": "ru.or.alt",
      "title": "Чередование -лаг-/-лож-, -раст-/-рос-",
-     "rule_card": "Перед г пишем а (-лаг-), перед ж — о (-лож-): полагать, положить. Перед ст и щ пишем а (-раст-, -ращ-), в остальных случаях — о: растение, вырос. Исключения: росток, отрасль.",
+     "rule_card": "Перед г пишем а (-лаг-), перед ж — о (-лож-): полагать, положить. Перед ст и щ пишем а (-раст-, -ращ-), в остальных случаях — о: растение, вырос. Исключения: росток, ростовщик, отрасль.",
      "worked_example": {
       "title": "Пишем: пол..гать",
       "steps": [
@@ -284,9 +625,7 @@
      ],
      "exercises": [
       {
-       "key": "ru.or.al.ex1",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -319,12 +658,12 @@
         "correct": [
          "а"
         ]
-       }
+       },
+       "key": "ru.or.al.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.al.ex2",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -357,12 +696,12 @@
         "correct": [
          "о"
         ]
-       }
+       },
+       "key": "ru.or.al.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.al.ex3",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -395,12 +734,12 @@
         "correct": [
          "а"
         ]
-       }
+       },
+       "key": "ru.or.al.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.al.ex4",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -433,12 +772,12 @@
         "correct": [
          "о"
         ]
-       }
+       },
+       "key": "ru.or.al.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.al.ex5",
        "type": "fill_letters",
-       "difficulty": 3,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -471,7 +810,389 @@
         "correct": [
          "о"
         ]
-       }
+       },
+       "key": "ru.or.al.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "изл",
+         "жение"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед ж — о: изложение.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед ж — о: изложение."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.al.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "прил",
+         "гательное"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед г — а: прилагательное.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед г — а: прилагательное."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.al.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "сл",
+         "жение"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед ж — о: сложение.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед ж — о: сложение."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.al.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "предл",
+         "гать"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед г — а: предлагать.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед г — а: предлагать."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.al.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "распол",
+         "жить"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед ж — о: расположить.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед ж — о: расположить."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.al.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "выр",
+         "щенный"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед щ — а: выращенный.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед щ — а: выращенный."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.al.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "подр",
+         "сти"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Перед ст — а: подрасти.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Перед ст — а: подрасти."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.al.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "зар",
+         "сли"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Нет ст и щ — о: заросли.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Нет ст и щ — о: заросли."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.al.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "отр",
+         "сль"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Исключение: отрасль — пишем а.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Исключение: отрасль — пишем а."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.al.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "р",
+         "стовщик"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Исключение: ростовщик — пишем о.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Посмотри, какая буква стоит после корня: г или ж? ст, щ или нет?"
+         }
+        ],
+        "solution_steps": [
+         "Исключение: ростовщик — пишем о."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.al.ex15",
+       "difficulty": 3
       }
      ]
     },
@@ -490,9 +1211,7 @@
      "prerequisites": [],
      "exercises": [
       {
-       "key": "ru.or.vo.ex1",
        "type": "letter_tiles",
-       "difficulty": 1,
        "est_seconds": 40,
        "payload": {
         "prompt": "Собери словарное слово: большое судно",
@@ -518,12 +1237,12 @@
        },
        "answer": {
         "value": "корабль"
-       }
+       },
+       "key": "ru.or.vo.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.vo.ex2",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -556,12 +1275,12 @@
         "correct": [
          "о"
         ]
-       }
+       },
+       "key": "ru.or.vo.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.vo.ex3",
        "type": "letter_tiles",
-       "difficulty": 2,
        "est_seconds": 40,
        "payload": {
         "prompt": "Собери словарное слово: здесь растут овощи",
@@ -586,12 +1305,12 @@
        },
        "answer": {
         "value": "огород"
-       }
+       },
+       "key": "ru.or.vo.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.vo.ex4",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -624,12 +1343,12 @@
         "correct": [
          "о"
         ]
-       }
+       },
+       "key": "ru.or.vo.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.vo.ex5",
        "type": "letter_tiles",
-       "difficulty": 3,
        "est_seconds": 40,
        "payload": {
         "prompt": "Собери словарное слово: так говорят при встрече",
@@ -658,7 +1377,375 @@
        },
        "answer": {
         "value": "здравствуй"
-       }
+       },
+       "key": "ru.or.vo.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "к",
+         "рандаш"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Карандаш — словарное слово: ка-ран-даш.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Карандаш — словарное слово: ка-ран-даш."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.vo.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "м",
+         "дведь"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Медведь — словарное слово.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Медведь — словарное слово."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "е"
+        ]
+       },
+       "key": "ru.or.vo.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "с",
+         "бака"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Собака — словарное слово.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Собака — словарное слово."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.vo.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "в",
+         "рона"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Ворона — словарное слово.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Ворона — словарное слово."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "о"
+        ]
+       },
+       "key": "ru.or.vo.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "т",
+         "релка"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "е",
+          "text": "е"
+         }
+        ],
+        "explain": "Тарелка — словарное слово: та-рел-ка.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Тарелка — словарное слово: та-рел-ка."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.vo.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "школьный п",
+         "нал"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Пенал — словарное слово.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Пенал — словарное слово."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "е"
+        ]
+       },
+       "key": "ru.or.vo.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "б",
+         "рёза"
+        ],
+        "options": [
+         {
+          "id": "е",
+          "text": "е"
+         },
+         {
+          "id": "и",
+          "text": "и"
+         }
+        ],
+        "explain": "Берёза — словарное слово.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Берёза — словарное слово."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "е"
+        ]
+       },
+       "key": "ru.or.vo.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "к",
+         "пуста"
+        ],
+        "options": [
+         {
+          "id": "а",
+          "text": "а"
+         },
+         {
+          "id": "о",
+          "text": "о"
+         }
+        ],
+        "explain": "Капуста — словарное слово.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это словарное слово — вспомни, как оно пишется в словаре."
+         }
+        ],
+        "solution_steps": [
+         "Капуста — словарное слово."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "а"
+        ]
+       },
+       "key": "ru.or.vo.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "letter_tiles",
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Собери словарное слово: маленькая птичка, живёт рядом с людьми",
+        "letters": [
+         "в",
+         "о",
+         "р",
+         "о",
+         "б",
+         "е",
+         "й"
+        ],
+        "explain": "Воробей — словарное слово: во-ро-бей.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "В слове 7 букв. Первая — «в»."
+         }
+        ],
+        "solution_steps": [
+         "Воробей — словарное слово: во-ро-бей."
+        ]
+       },
+       "answer": {
+        "value": "воробей"
+       },
+       "key": "ru.or.vo.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "letter_tiles",
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Собери словарное слово: день недели после пятницы",
+        "letters": [
+         "с",
+         "у",
+         "б",
+         "б",
+         "о",
+         "т",
+         "а"
+        ],
+        "explain": "Суббота — словарное слово с двумя б.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "В слове 7 букв. Первая — «с»."
+         }
+        ],
+        "solution_steps": [
+         "Суббота — словарное слово с двумя б."
+        ]
+       },
+       "answer": {
+        "value": "суббота"
+       },
+       "key": "ru.or.vo.ex15",
+       "difficulty": 3
       }
      ]
     }
@@ -669,8 +1756,7 @@
    "title": "Приставки и разделительные знаки",
    "synonyms": [
     "приставки на з и с",
-    "разделительный твёрдый знак",
-    "разделительный мягкий знак"
+    "разделительный твёрдый знак"
    ],
    "keywords": [
     "приставка",
@@ -693,9 +1779,7 @@
      "prerequisites": [],
      "exercises": [
       {
-       "key": "ru.or.zs.ex1",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -717,7 +1801,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Звонкая или глухая буква после приставки?"
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
          }
         ],
         "solution_steps": [
@@ -728,12 +1812,12 @@
         "correct": [
          "з"
         ]
-       }
+       },
+       "key": "ru.or.zs.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.zs.ex2",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -755,7 +1839,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Звонкая или глухая буква после приставки?"
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
          }
         ],
         "solution_steps": [
@@ -766,12 +1850,12 @@
         "correct": [
          "с"
         ]
-       }
+       },
+       "key": "ru.or.zs.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.zs.ex3",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -793,7 +1877,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Звонкая или глухая буква после приставки?"
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
          }
         ],
         "solution_steps": [
@@ -804,12 +1888,12 @@
         "correct": [
          "з"
         ]
-       }
+       },
+       "key": "ru.or.zs.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.zs.ex4",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -831,7 +1915,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Звонкая или глухая буква после приставки?"
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
          }
         ],
         "solution_steps": [
@@ -842,12 +1926,12 @@
         "correct": [
          "с"
         ]
-       }
+       },
+       "key": "ru.or.zs.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.zs.ex5",
        "type": "fill_letters",
-       "difficulty": 3,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -869,7 +1953,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Ш — звонкий или глухой?"
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
          }
         ],
         "solution_steps": [
@@ -880,7 +1964,389 @@
         "correct": [
          "с"
         ]
-       }
+       },
+       "key": "ru.or.zs.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "во",
+         "ход"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки х — глухой: восход.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки х — глухой: восход."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "с"
+        ]
+       },
+       "key": "ru.or.zs.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "ра",
+         "вернуть"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки в — звонкий: развернуть.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки в — звонкий: развернуть."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "з"
+        ]
+       },
+       "key": "ru.or.zs.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "и",
+         "писать"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки п — глухой: исписать.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки п — глухой: исписать."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "с"
+        ]
+       },
+       "key": "ru.or.zs.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "бе",
+         "граничный"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки г — звонкий: безграничный.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки г — звонкий: безграничный."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "з"
+        ]
+       },
+       "key": "ru.or.zs.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "ра",
+         "писание"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки п — глухой: расписание.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки п — глухой: расписание."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "с"
+        ]
+       },
+       "key": "ru.or.zs.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "бе",
+         "заботный"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки з — звонкий: беззаботный (две з).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки з — звонкий: беззаботный (две з)."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "з"
+        ]
+       },
+       "key": "ru.or.zs.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "ра",
+         "ход"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки х — глухой: расход.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки х — глухой: расход."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "с"
+        ]
+       },
+       "key": "ru.or.zs.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "и",
+         "бежать"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки б — звонкий: избежать.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки б — звонкий: избежать."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "з"
+        ]
+       },
+       "key": "ru.or.zs.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "во",
+         "питание"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки п — глухой: воспитание.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки п — глухой: воспитание."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "с"
+        ]
+       },
+       "key": "ru.or.zs.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "ра",
+         "деть"
+        ],
+        "options": [
+         {
+          "id": "з",
+          "text": "з"
+         },
+         {
+          "id": "с",
+          "text": "с"
+         }
+        ],
+        "explain": "После приставки д — звонкий: раздеть.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звонкая или глухая буква стоит сразу после приставки?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки д — звонкий: раздеть."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "з"
+        ]
+       },
+       "key": "ru.or.zs.ex15",
+       "difficulty": 3
       }
      ]
     },
@@ -901,9 +2367,7 @@
      ],
      "exercises": [
       {
-       "key": "ru.or.sg.ex1",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -925,7 +2389,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Есть ли в слове приставка?"
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
          }
         ],
         "solution_steps": [
@@ -936,12 +2400,12 @@
         "correct": [
          "ъ"
         ]
-       }
+       },
+       "key": "ru.or.sg.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.sg.ex2",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -963,7 +2427,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Есть ли в слове приставка?"
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
          }
         ],
         "solution_steps": [
@@ -974,12 +2438,12 @@
         "correct": [
          "ь"
         ]
-       }
+       },
+       "key": "ru.or.sg.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.sg.ex3",
        "type": "categorize",
-       "difficulty": 2,
        "est_seconds": 60,
        "payload": {
         "prompt": "Разложи слова: где пишется ъ, а где ь?",
@@ -1011,7 +2475,7 @@
           "title": "ь"
          }
         ],
-        "explain": "ъ — после приставки: объявление, подъезд; ь — внутри корня или перед окончанием: вьюга, ручьи.",
+        "explain": "ъ — после приставки: объявление, подъезд; ь — внутри слова: вьюга, ручьи.",
         "hints": [
          {
           "level": 1,
@@ -1019,7 +2483,7 @@
          }
         ],
         "solution_steps": [
-         "ъ — после приставки: объявление, подъезд; ь — внутри корня или перед окончанием: вьюга, ручьи."
+         "ъ — после приставки: объявление, подъезд; ь — внутри слова: вьюга, ручьи."
         ]
        },
        "answer": {
@@ -1033,12 +2497,12 @@
           "ручьи"
          ]
         }
-       }
+       },
+       "key": "ru.or.sg.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.sg.ex4",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Вставь пропущенную букву",
@@ -1060,7 +2524,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Ъ перед и не пишется."
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
          }
         ],
         "solution_steps": [
@@ -1071,12 +2535,12 @@
         "correct": [
          "ь"
         ]
-       }
+       },
+       "key": "ru.or.sg.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.sg.ex5",
        "type": "categorize",
-       "difficulty": 3,
        "est_seconds": 60,
        "payload": {
         "prompt": "Разложи слова по знакам",
@@ -1140,7 +2604,389 @@
           "воробьи"
          ]
         }
-       }
+       },
+       "key": "ru.or.sg.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "об",
+         "явление"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "После приставки об- перед я — ъ.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки об- перед я — ъ."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ъ"
+        ]
+       },
+       "key": "ru.or.sg.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "солов",
+         "и"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "Приставки нет — ь: соловьи.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "Приставки нет — ь: соловьи."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ь"
+        ]
+       },
+       "key": "ru.or.sg.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "в",
+         "езд"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "После приставки в- перед е — ъ: въезд.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки в- перед е — ъ: въезд."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ъ"
+        ]
+       },
+       "key": "ru.or.sg.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "сем",
+         "я"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "Приставки нет — ь: семья.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "Приставки нет — ь: семья."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ь"
+        ]
+       },
+       "key": "ru.or.sg.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "раз",
+         "ехаться"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "После приставки раз- перед е — ъ.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки раз- перед е — ъ."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ъ"
+        ]
+       },
+       "key": "ru.or.sg.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "бел",
+         "ё"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "Приставки нет — ь: бельё.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "Приставки нет — ь: бельё."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ь"
+        ]
+       },
+       "key": "ru.or.sg.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "пол",
+         "ёт"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "Приставки нет — ь: польёт.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "Приставки нет — ь: польёт."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ь"
+        ]
+       },
+       "key": "ru.or.sg.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "под",
+         "ём"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "После приставки под- перед ё — ъ: подъём.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки под- перед ё — ъ: подъём."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ъ"
+        ]
+       },
+       "key": "ru.or.sg.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "лист",
+         "я"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "Приставки нет — ь: листья.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "Приставки нет — ь: листья."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ь"
+        ]
+       },
+       "key": "ru.or.sg.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Вставь пропущенную букву",
+        "parts": [
+         "с",
+         "есть"
+        ],
+        "options": [
+         {
+          "id": "ъ",
+          "text": "ъ"
+         },
+         {
+          "id": "ь",
+          "text": "ь"
+         }
+        ],
+        "explain": "После приставки с- перед е — ъ: съесть.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли в слове приставка, которая кончается на согласную?"
+         }
+        ],
+        "solution_steps": [
+         "После приставки с- перед е — ъ: съесть."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ъ"
+        ]
+       },
+       "key": "ru.or.sg.ex15",
+       "difficulty": 3
       }
      ]
     }
@@ -1155,7 +3001,6 @@
    ],
    "keywords": [
     "глагол",
-    "мягкий знак",
     "частица не"
    ],
    "skills": [
@@ -1174,9 +3019,7 @@
      "prerequisites": [],
      "exercises": [
       {
-       "key": "ru.or.ts.ex1",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Выбери окончание",
@@ -1198,7 +3041,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Задай вопрос к глаголу."
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
          }
         ],
         "solution_steps": [
@@ -1209,12 +3052,12 @@
         "correct": [
          "тся"
         ]
-       }
+       },
+       "key": "ru.or.ts.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ts.ex2",
        "type": "fill_letters",
-       "difficulty": 1,
        "est_seconds": 25,
        "payload": {
         "prompt": "Выбери окончание",
@@ -1236,7 +3079,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Задай вопрос к глаголу."
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
          }
         ],
         "solution_steps": [
@@ -1247,12 +3090,12 @@
         "correct": [
          "ться"
         ]
-       }
+       },
+       "key": "ru.or.ts.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ts.ex3",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Выбери окончание",
@@ -1274,7 +3117,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Любит что делать?"
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
          }
         ],
         "solution_steps": [
@@ -1285,12 +3128,12 @@
         "correct": [
          "ться"
         ]
-       }
+       },
+       "key": "ru.or.ts.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ts.ex4",
        "type": "fill_letters",
-       "difficulty": 2,
        "est_seconds": 25,
        "payload": {
         "prompt": "Выбери окончание",
@@ -1312,7 +3155,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Солнце что делает?"
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
          }
         ],
         "solution_steps": [
@@ -1323,12 +3166,12 @@
         "correct": [
          "тся"
         ]
-       }
+       },
+       "key": "ru.or.ts.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ts.ex5",
        "type": "fill_letters",
-       "difficulty": 3,
        "est_seconds": 25,
        "payload": {
         "prompt": "Выбери окончание",
@@ -1350,7 +3193,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Хочет что сделать?"
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
          }
         ],
         "solution_steps": [
@@ -1361,14 +3204,396 @@
         "correct": [
          "ться"
         ]
-       }
+       },
+       "key": "ru.or.ts.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Мася начинает учи",
+         "."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Начинает (что делать?) — учиться.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Начинает (что делать?) — учиться."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ться"
+        ]
+       },
+       "key": "ru.or.ts.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Дети собираю",
+         " в поход."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Что делают? — собираются, без ь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Что делают? — собираются, без ь."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "тся"
+        ]
+       },
+       "key": "ru.or.ts.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Нам надо постара",
+         "."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Надо (что сделать?) — постараться.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Надо (что сделать?) — постараться."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ться"
+        ]
+       },
+       "key": "ru.or.ts.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Листья кружа",
+         " на ветру."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Что делают? — кружатся.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Что делают? — кружатся."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "тся"
+        ]
+       },
+       "key": "ru.or.ts.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Снег искри",
+         " на солнце."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Что делает? — искрится.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Что делает? — искрится."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "тся"
+        ]
+       },
+       "key": "ru.or.ts.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Пора просыпа",
+         "."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Пора (что делать?) — просыпаться.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Пора (что делать?) — просыпаться."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ться"
+        ]
+       },
+       "key": "ru.or.ts.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Птица не бои",
+         " кота."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Что делает? — боится.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Что делает? — боится."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "тся"
+        ]
+       },
+       "key": "ru.or.ts.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Нужно умы",
+         " перед завтраком."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Нужно (что сделать?) — умыться.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Нужно (что сделать?) — умыться."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ться"
+        ]
+       },
+       "key": "ru.or.ts.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Яна улыбае",
+         "."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Что делает? — улыбается.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Что делает? — улыбается."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "тся"
+        ]
+       },
+       "key": "ru.or.ts.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "fill_letters",
+       "est_seconds": 25,
+       "payload": {
+        "prompt": "Выбери окончание",
+        "parts": [
+         "Ребята будут смея",
+         "."
+        ],
+        "options": [
+         {
+          "id": "тся",
+          "text": "тся"
+         },
+         {
+          "id": "ться",
+          "text": "ться"
+         }
+        ],
+        "explain": "Будут (что делать?) — смеяться.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Задай вопрос к глаголу: что делает? или что делать?"
+         }
+        ],
+        "solution_steps": [
+         "Будут (что делать?) — смеяться."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "ться"
+        ]
+       },
+       "key": "ru.or.ts.ex15",
+       "difficulty": 3
       }
      ]
     },
     {
      "key": "ru.or.ne",
      "title": "Не с глаголами",
-     "rule_card": "Не с глаголами пишется раздельно: не знаю, не спит. Слитно — только если без не слово не употребляется: ненавидеть, негодовать.",
+     "rule_card": "Не с глаголами пишется раздельно: не знаю, не спит. Слитно — только если без не слово не употребляется: ненавидеть, негодовать, недоумевать, нездоровится, невзлюбить.",
      "worked_example": {
       "title": "Как писать: (не)знает",
       "steps": [
@@ -1380,9 +3605,7 @@
      "prerequisites": [],
      "exercises": [
       {
-       "key": "ru.or.ne.ex1",
        "type": "single_choice",
-       "difficulty": 1,
        "est_seconds": 30,
        "payload": {
         "prompt": "Выбери, как правильно",
@@ -1400,7 +3623,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Есть ли слово без не?"
+          "text": "Есть ли такой глагол без не?"
          }
         ],
         "solution_steps": [
@@ -1411,30 +3634,30 @@
         "correct": [
          "o0"
         ]
-       }
+       },
+       "key": "ru.or.ne.ex1",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ne.ex2",
        "type": "single_choice",
-       "difficulty": 1,
        "est_seconds": 30,
        "payload": {
         "prompt": "Выбери, как правильно",
         "options": [
          {
           "id": "o0",
-          "text": "неспит"
+          "text": "не спит"
          },
          {
           "id": "o1",
-          "text": "не спит"
+          "text": "неспит"
          }
         ],
         "explain": "Не с глаголами — раздельно.",
         "hints": [
          {
           "level": 1,
-          "text": "Есть ли слово без не?"
+          "text": "Есть ли такой глагол без не?"
          }
         ],
         "solution_steps": [
@@ -1443,14 +3666,14 @@
        },
        "answer": {
         "correct": [
-         "o1"
+         "o0"
         ]
-       }
+       },
+       "key": "ru.or.ne.ex2",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ne.ex3",
        "type": "single_choice",
-       "difficulty": 2,
        "est_seconds": 30,
        "payload": {
         "prompt": "Выбери, как правильно",
@@ -1468,7 +3691,7 @@
         "hints": [
          {
           "level": 1,
-          "text": "Есть ли слово без не?"
+          "text": "Есть ли такой глагол без не?"
          }
         ],
         "solution_steps": [
@@ -1479,23 +3702,23 @@
         "correct": [
          "o0"
         ]
-       }
+       },
+       "key": "ru.or.ne.ex3",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ne.ex4",
        "type": "single_choice",
-       "difficulty": 2,
        "est_seconds": 30,
        "payload": {
         "prompt": "В каком предложении ошибка?",
         "options": [
          {
           "id": "o0",
-          "text": "Мася не лает на гостей."
+          "text": "Яна незабыла тетрадь."
          },
          {
           "id": "o1",
-          "text": "Яна незабыла тетрадь."
+          "text": "Мася не лает на гостей."
          },
          {
           "id": "o2",
@@ -1515,32 +3738,32 @@
        },
        "answer": {
         "correct": [
-         "o1"
+         "o0"
         ]
-       }
+       },
+       "key": "ru.or.ne.ex4",
+       "difficulty": 1
       },
       {
-       "key": "ru.or.ne.ex5",
        "type": "single_choice",
-       "difficulty": 3,
        "est_seconds": 30,
        "payload": {
         "prompt": "Выбери, как правильно",
         "options": [
          {
           "id": "o0",
-          "text": "не годовал"
+          "text": "негодовал"
          },
          {
           "id": "o1",
-          "text": "негодовал"
+          "text": "не годовал"
          }
         ],
         "explain": "Слова «годовал» нет — пишем слитно.",
         "hints": [
          {
           "level": 1,
-          "text": "Есть ли слово без не?"
+          "text": "Есть ли такой глагол без не?"
          }
         ],
         "solution_steps": [
@@ -1549,9 +3772,351 @@
        },
        "answer": {
         "correct": [
-         "o1"
+         "o0"
         ]
-       }
+       },
+       "key": "ru.or.ne.ex5",
+       "difficulty": 1
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не видел"
+         },
+         {
+          "id": "o1",
+          "text": "невидел"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex6",
+       "difficulty": 2
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не хочу"
+         },
+         {
+          "id": "o1",
+          "text": "нехочу"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex7",
+       "difficulty": 2
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не может"
+         },
+         {
+          "id": "o1",
+          "text": "неможет"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex8",
+       "difficulty": 2
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "недоумевает"
+         },
+         {
+          "id": "o1",
+          "text": "не доумевает"
+         }
+        ],
+        "explain": "Слова «доумевает» нет — слитно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Слова «доумевает» нет — слитно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex9",
+       "difficulty": 2
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "нездоровится"
+         },
+         {
+          "id": "o1",
+          "text": "не здоровится"
+         }
+        ],
+        "explain": "Без не слово не употребляется — слитно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Без не слово не употребляется — слитно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex10",
+       "difficulty": 2
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не сказал"
+         },
+         {
+          "id": "o1",
+          "text": "несказал"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex11",
+       "difficulty": 3
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не был"
+         },
+         {
+          "id": "o1",
+          "text": "небыл"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex12",
+       "difficulty": 3
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "невзлюбил"
+         },
+         {
+          "id": "o1",
+          "text": "не взлюбил"
+         }
+        ],
+        "explain": "Слова «взлюбил» нет — слитно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Слова «взлюбил» нет — слитно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex13",
+       "difficulty": 3
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не утихал"
+         },
+         {
+          "id": "o1",
+          "text": "неутихал"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex14",
+       "difficulty": 3
+      },
+      {
+       "type": "single_choice",
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери, как правильно",
+        "options": [
+         {
+          "id": "o0",
+          "text": "не слышал"
+         },
+         {
+          "id": "o1",
+          "text": "неслышал"
+         }
+        ],
+        "explain": "Не с глаголами — раздельно.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Есть ли такой глагол без не?"
+         }
+        ],
+        "solution_steps": [
+         "Не с глаголами — раздельно."
+        ]
+       },
+       "answer": {
+        "correct": [
+         "o0"
+        ]
+       },
+       "key": "ru.or.ne.ex15",
+       "difficulty": 3
       }
      ]
     }

@@ -11,6 +11,7 @@ DEFAULT_BADGES = [
     ("words_50", "50 слов", "50 английских слов с интервалом ≥ 7", "📚", {"type": "words", "value": 50}, 7),
     ("persistent", "Упорство", "10 заданий, решённых верно после ошибки", "💪", {"type": "retry_ok", "value": 10}, 8),
     ("comeback", "С возвращением!", "Миссия после перерыва ≥ 3 дня", "👋", {"type": "comeback"}, 9),
+    ("rule_keeper", "Хранитель правил", "Освоены 10 правил русского языка", "📜", {"type": "subject_skills", "subject": "ru", "value": 10}, 10),
 ]
 
 
@@ -67,6 +68,13 @@ def evaluate(child, event: str, **ctx):
                     b = grant(child, code)
                     if b:
                         awarded.append(b)
+        if skill and skill.topic.unit.subject.code == "ru":  # D-209: «Хранитель правил»
+            from apps.learning.models import SkillMastery
+
+            if SkillMastery.objects.filter(child=child, status="mastered", skill__topic__unit__subject__code="ru").count() >= 10:
+                b = grant(child, "rule_keeper")
+                if b:
+                    awarded.append(b)
     if event == "retry_ok":
         from apps.learning.models import Attempt
 
