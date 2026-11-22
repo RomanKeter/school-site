@@ -1,0 +1,1380 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.u3",
+  "title": "Обыкновенные дроби",
+  "grade": 5,
+  "quarter": 2,
+  "order": 3
+ },
+ "topics": [
+  {
+   "key": "math.fractions",
+   "title": "Обыкновенные дроби",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [],
+   "keywords": [],
+   "textbook_refs": [],
+   "skills": [
+    {
+     "key": "math.fr.notion",
+     "title": "Что такое дробь",
+     "description": "",
+     "rule_card": "Знаменатель показывает, на сколько равных частей разделили целое, числитель — сколько частей взяли.",
+     "worked_example": {
+      "title": "Дробь 3/5",
+      "steps": [
+       "Целое разделили на 5 равных частей.",
+       "Взяли 3 такие части.",
+       "Пишут 3/5."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.n.ex6",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Какая дробь означает «три из восьми равных частей»? Запиши числитель/знаменатель.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель — сколько частей взяли (3)."
+         },
+         {
+          "level": 2,
+          "text": "Знаменатель — на сколько разделили (8)."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/8",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3/8"
+       }
+      },
+      {
+       "key": "math.fr.n.ex7",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Пирог разрезали на 6 равных кусков, съели 5. Какая дробь съеденного?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Съели 5 из 6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/6",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "5/6"
+       }
+      },
+      {
+       "key": "math.fr.n.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "В дроби 4/9 число 9 — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "числитель"
+         },
+         {
+          "id": "b",
+          "text": "знаменатель"
+         },
+         {
+          "id": "c",
+          "text": "целое число"
+         },
+         {
+          "id": "d",
+          "text": "остаток"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Снизу — знаменатель, сверху — числитель."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "знаменатель"
+       }
+      },
+      {
+       "key": "math.fr.n.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь правильная?",
+        "options": [
+         {
+          "id": "a",
+          "text": "5/5"
+         },
+         {
+          "id": "b",
+          "text": "7/4"
+         },
+         {
+          "id": "c",
+          "text": "3/8"
+         },
+         {
+          "id": "d",
+          "text": "9/9"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Правильная — числитель меньше знаменателя."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "3/8"
+       }
+      },
+      {
+       "key": "math.fr.n.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь неправильная?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/5"
+         },
+         {
+          "id": "b",
+          "text": "3/7"
+         },
+         {
+          "id": "c",
+          "text": "8/3"
+         },
+         {
+          "id": "d",
+          "text": "1/9"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Неправильная — числитель больше знаменателя или равен ему."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "8/3"
+       }
+      },
+      {
+       "key": "math.fr.n.ex11",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Дробь 5/5 — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "правильная дробь, меньше 1"
+         },
+         {
+          "id": "b",
+          "text": "неправильная дробь, равная 1"
+         },
+         {
+          "id": "c",
+          "text": "смешанное число"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель равен знаменателю — это целое 1, дробь неправильная."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "5/5"
+       }
+      },
+      {
+       "key": "math.fr.n.ex12",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Запиши в виде дроби число 1 (как дробь со знаменателем 4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целая единица — это 4/4, если целое делили на 4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4/4",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "4/4"
+       }
+      },
+      {
+       "key": "math.fr.n.ex13",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини запись и смысл",
+        "left": [
+         {
+          "id": "l0",
+          "text": "1/2"
+         },
+         {
+          "id": "l1",
+          "text": "1/4"
+         },
+         {
+          "id": "l2",
+          "text": "3/4"
+         },
+         {
+          "id": "l3",
+          "text": "2/3"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "одна вторая, половина"
+         },
+         {
+          "id": "r1",
+          "text": "одна четвёртая"
+         },
+         {
+          "id": "r2",
+          "text": "три четвёртых"
+         },
+         {
+          "id": "r3",
+          "text": "две третьих"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель читают как обычное число, знаменатель — как «вторых, третьих, четвёртых»…"
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       },
+       "verify": {
+        "op": "pairs",
+        "n": 4
+       }
+      },
+      {
+       "key": "math.fr.n.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Если целое разделили на 10 равных частей и взяли 1 часть, дробь равна…",
+        "options": [
+         {
+          "id": "a",
+          "text": "10/1"
+         },
+         {
+          "id": "b",
+          "text": "1/10"
+         },
+         {
+          "id": "c",
+          "text": "1/1"
+         },
+         {
+          "id": "d",
+          "text": "10/10"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель 10, числитель 1."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "1/10"
+       }
+      },
+      {
+       "key": "math.fr.n.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "На сколько равных частей разделили целое в дроби 7/12? Введи знаменатель.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель показывает число частей."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12"
+       }
+      }
+     ],
+     "order": 0
+    },
+    {
+     "key": "math.fr.compare",
+     "title": "Сравнение дробей с одинаковыми знаменателями",
+     "description": "",
+     "rule_card": "Из двух дробей с одинаковыми знаменателями больше та, у которой числитель больше.",
+     "worked_example": {
+      "title": "Сравни 3/8 и 5/8",
+      "steps": [
+       "Знаменатели равны.",
+       "5>3, поэтому 5/8 > 3/8."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.c.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь больше: 4/11 или 7/11?",
+        "options": [
+         {
+          "id": "a",
+          "text": "4/11"
+         },
+         {
+          "id": "b",
+          "text": "7/11"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатели одинаковые — больше та, где числитель больше."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "4/11",
+        "b": "7/11",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.c.ex7",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь меньше: 5/9 или 2/9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "5/9"
+         },
+         {
+          "id": "b",
+          "text": "2/9"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "2 < 5, знаменатель один, поэтому 2/9 меньше."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "2/9",
+        "b": "5/9",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.c.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 6/6 и 5/6.",
+        "options": [
+         {
+          "id": "a",
+          "text": "6/6 < 5/6"
+         },
+         {
+          "id": "b",
+          "text": "6/6 > 5/6"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "6/6 — это целое, 5/6 — меньше целого."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "6/6",
+        "b": "5/6",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.c.ex9",
+       "type": "drag_order",
+       "difficulty": 2,
+       "est_seconds": 50,
+       "payload": {
+        "prompt": "Расставь дроби по возрастанию",
+        "items": [
+         {
+          "id": "a",
+          "text": "1/8"
+         },
+         {
+          "id": "b",
+          "text": "3/8"
+         },
+         {
+          "id": "c",
+          "text": "5/8"
+         },
+         {
+          "id": "d",
+          "text": "7/8"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатели равны — сортируй по числителям."
+         }
+        ]
+       },
+       "answer": {
+        "order": [
+         "a",
+         "b",
+         "c",
+         "d"
+        ]
+       },
+       "verify": {
+        "op": "frac_sort",
+        "items": [
+         "1/8",
+         "3/8",
+         "5/8",
+         "7/8"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.c.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь самая большая?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/10"
+         },
+         {
+          "id": "b",
+          "text": "9/10"
+         },
+         {
+          "id": "c",
+          "text": "5/10"
+         },
+         {
+          "id": "d",
+          "text": "1/10"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Одинаковый знаменатель 10, наибольший числитель 9."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_max",
+        "options": [
+         "2/10",
+         "9/10",
+         "5/10",
+         "1/10"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.c.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Верно ли, что 3/7 = 3/5?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатели разные, доли разного размера. Равенства нет."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "3/7",
+        "b": "3/5",
+        "rel": "!="
+       }
+      },
+      {
+       "key": "math.fr.c.ex12",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Из дробей с числителем 1 больше та, у которой…",
+        "options": [
+         {
+          "id": "a",
+          "text": "знаменатель больше"
+         },
+         {
+          "id": "b",
+          "text": "знаменатель меньше"
+         },
+         {
+          "id": "c",
+          "text": "это не важно"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "1/2 больше 1/8: пирог делили на меньшее число кусков — кусок крупнее."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "знаменатель меньше"
+       }
+      },
+      {
+       "key": "math.fr.c.ex13",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь больше: 1/5 или 1/9?",
+        "options": [
+         {
+          "id": "a",
+          "text": "1/5"
+         },
+         {
+          "id": "b",
+          "text": "1/9"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Пятая часть больше девятой."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "1/5",
+        "b": "1/9",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.c.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько восьмых в целой единице?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8/8 = 1, значит восемь восьмых."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8"
+       }
+      },
+      {
+       "key": "math.fr.c.ex15",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Выбери верное сравнение.",
+        "options": [
+         {
+          "id": "a",
+          "text": "4/5 < 1/5"
+         },
+         {
+          "id": "b",
+          "text": "4/5 = 1/5"
+         },
+         {
+          "id": "c",
+          "text": "4/5 > 1/5"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатели равны, 4>1."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "4/5",
+        "b": "1/5",
+        "rel": ">"
+       }
+      }
+     ],
+     "order": 1,
+     "prerequisites": [
+      "math.fr.notion"
+     ]
+    },
+    {
+     "key": "math.fr.add",
+     "title": "Сложение и вычитание дробей с одинаковыми знаменателями",
+     "description": "",
+     "rule_card": "Чтобы сложить дроби с одинаковыми знаменателями, сложи числители, а знаменатель оставь тем же.",
+     "worked_example": {
+      "title": "2/7 + 3/7",
+      "steps": [
+       "Знаменатель 7 оставляем.",
+       "Числители: 2+3=5.",
+       "Сумма 5/7."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.a.ex8",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/9 + 4/9. Запиши дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель не меняй."
+         },
+         {
+          "level": 2,
+          "text": "Сложи или вычти числители."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/9",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1/9",
+        "b": "4/9",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex9",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/10 + 6/10. Запиши дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель не меняй."
+         },
+         {
+          "level": 2,
+          "text": "Сложи или вычти числители."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9/10",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "3/10",
+        "b": "6/10",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex10",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5/12 − 2/12. Запиши дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель не меняй."
+         },
+         {
+          "level": 2,
+          "text": "Сложи или вычти числители."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/12",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "5/12",
+        "b": "2/12",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex11",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 8/15 − 3/15. Запиши дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель не меняй."
+         },
+         {
+          "level": 2,
+          "text": "Сложи или вычти числители."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/15",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "8/15",
+        "b": "3/15",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex12",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/5 + 2/5. Запиши дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель не меняй."
+         },
+         {
+          "level": 2,
+          "text": "Сложи или вычти числители."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "2/5",
+        "b": "2/5",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex13",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 7/8 − 1/8. Запиши дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатель не меняй."
+         },
+         {
+          "level": 2,
+          "text": "Сложи или вычти числители."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6/8",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "7/8",
+        "b": "1/8",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex14",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 6/10 + 3/10",
+        "steps": [
+         {
+          "ask": "Знаменатель остаётся…",
+          "answer": 10
+         },
+         {
+          "ask": "Числитель: 6+3 = ?",
+          "answer": 9
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Пиши 9/10."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 10
+         },
+         {
+          "answer": 9
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "6/10",
+        "b": "3/10",
+        "reduced": false
+       }
+      },
+      {
+       "key": "math.fr.a.ex15",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 11/12 − 11/12.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Одинаковые числители — получится нуль двенадцатых, то есть 0."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "0/12",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "11/12",
+        "b": "11/12",
+        "reduced": false
+       }
+      }
+     ],
+     "order": 2,
+     "prerequisites": [
+      "math.fr.compare"
+     ]
+    }
+   ],
+   "order": 0
+  },
+  {
+   "key": "math.equations",
+   "title": "Уравнения и текстовые задачи",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [],
+   "keywords": [],
+   "textbook_refs": [],
+   "skills": [
+    {
+     "key": "math.eq.simple",
+     "title": "Простые уравнения",
+     "description": "",
+     "rule_card": "Неизвестное слагаемое = сумма − известное слагаемое. Неизвестный множитель = произведение : известный множитель.",
+     "worked_example": {
+      "title": "x + 37 = 105",
+      "steps": [
+       "x = 105 − 37.",
+       "x = 68.",
+       "Проверка: 68+37=105."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.eq.ex8",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение x+19=50. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 31."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "31"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "50-19"
+       }
+      },
+      {
+       "key": "math.eq.ex9",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение x-14=27. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 41."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "41"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "27+14"
+       }
+      },
+      {
+       "key": "math.eq.ex10",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение 8x=56. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "56/8"
+       }
+      },
+      {
+       "key": "math.eq.ex11",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение x:4=9. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 36."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "36"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9*4"
+       }
+      },
+      {
+       "key": "math.eq.ex12",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение x+100=250. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 150."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "150"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "250-100"
+       }
+      },
+      {
+       "key": "math.eq.ex13",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение 3x=96. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 32."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "32"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "96/3"
+       }
+      },
+      {
+       "key": "math.eq.ex14",
+       "type": "equation",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Реши уравнение x-70=15. Введи значение x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Вспомни, каким действием находят неизвестное."
+         },
+         {
+          "level": 2,
+          "text": "x = 85."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "85"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "15+70"
+       }
+      },
+      {
+       "key": "math.eq.ex15",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Реши x + 45 = 102 по шагам",
+        "steps": [
+         {
+          "ask": "Неизвестное слагаемое: 102 − 45 = ?",
+          "answer": 57
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Проверка: 57+45=102."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 57
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "102-45"
+       }
+      }
+     ],
+     "order": 0
+    }
+   ],
+   "order": 0
+  }
+ ]
+}

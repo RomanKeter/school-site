@@ -1,0 +1,2941 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.u4",
+  "title": "Наглядная геометрия",
+  "grade": 5,
+  "quarter": 4,
+  "order": 5
+ },
+ "topics": [
+  {
+   "key": "math.visual_geom",
+   "title": "Наглядная геометрия",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [
+    "параллельность",
+    "периметр",
+    "площадь",
+    "объём",
+    "диаграмма"
+   ],
+   "keywords": [
+    "прямоугольный треугольник",
+    "параллелепипед",
+    "среднее арифметическое"
+   ],
+   "textbook_refs": [
+    "тема «Наглядная геометрия»"
+   ],
+   "skills": [
+    {
+     "key": "math.geom.parallel",
+     "title": "Параллельные и перпендикулярные прямые",
+     "description": "",
+     "rule_card": "На плоскости параллельные прямые не пересекаются. Перпендикулярные прямые пересекаются под прямым углом (90°). Через точку вне прямой проводят единственную параллельную; через точку прямой — единственный перпендикуляр к ней. Строят с помощью линейки и угольника.",
+     "worked_example": {
+      "title": "Стороны прямоугольника",
+      "steps": [
+       "Соседние стороны пересекаются под 90° — они перпендикулярны.",
+       "Противоположные стороны не встречаются — они параллельны."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.par.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Прямые на плоскости называются параллельными, если они…",
+        "options": [
+         {
+          "id": "a",
+          "text": "пересекаются под прямым углом"
+         },
+         {
+          "id": "b",
+          "text": "не пересекаются"
+         },
+         {
+          "id": "c",
+          "text": "имеют одну общую точку"
+         },
+         {
+          "id": "d",
+          "text": "совпадают только в одной точке"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Параллельные прямые идут «рядом» и никогда не встретятся."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "не пересекаются"
+       }
+      },
+      {
+       "key": "math.gm.par.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Перпендикулярные прямые пересекаются под углом…",
+        "options": [
+         {
+          "id": "a",
+          "text": "45°"
+         },
+         {
+          "id": "b",
+          "text": "90°"
+         },
+         {
+          "id": "c",
+          "text": "180°"
+         },
+         {
+          "id": "d",
+          "text": "60°"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Перпендикуляр — это прямой угол."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "90"
+       }
+      },
+      {
+       "key": "math.gm.par.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Каким инструментом удобно проводить перпендикуляр к прямой?",
+        "options": [
+         {
+          "id": "a",
+          "text": "только линейка без угольника"
+         },
+         {
+          "id": "b",
+          "text": "угольник"
+         },
+         {
+          "id": "c",
+          "text": "транспортир обязателен"
+         },
+         {
+          "id": "d",
+          "text": "циркуль один"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Прямой угол угольника прикладывают к прямой."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "угольник"
+       }
+      },
+      {
+       "key": "math.gm.par.ex4",
+       "type": "matching",
+       "difficulty": 1,
+       "est_seconds": 60,
+       "payload": {
+        "prompt": "Соедини термин и смысл",
+        "left": [
+         {
+          "id": "l0",
+          "text": "Параллельные прямые"
+         },
+         {
+          "id": "l1",
+          "text": "Перпендикулярные прямые"
+         },
+         {
+          "id": "l2",
+          "text": "Пересекающиеся прямые"
+         },
+         {
+          "id": "l3",
+          "text": "Отрезки на одной прямой"
+         }
+        ],
+        "right": [
+         {
+          "id": "r0",
+          "text": "не пересекаются"
+         },
+         {
+          "id": "r1",
+          "text": "пересекаются под углом 90°"
+         },
+         {
+          "id": "r2",
+          "text": "имеют ровно одну общую точку"
+         },
+         {
+          "id": "r3",
+          "text": "лежат на одной прямой"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знак параллельности — ∥, перпендикулярности — ⊥."
+         }
+        ]
+       },
+       "answer": {
+        "pairs": {
+         "l0": "r0",
+         "l1": "r1",
+         "l2": "r2",
+         "l3": "r3"
+        }
+       },
+       "verify": {
+        "op": "pairs",
+        "n": 4
+       }
+      },
+      {
+       "key": "math.gm.par.ex5",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Через точку вне прямой можно провести параллельную этой прямой…",
+        "options": [
+         {
+          "id": "a",
+          "text": "бесконечно много прямых"
+         },
+         {
+          "id": "b",
+          "text": "ровно одну прямую"
+         },
+         {
+          "id": "c",
+          "text": "ни одной прямой"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Это свойство параллельных на плоскости (как его дают в 5 классе наглядно)."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "ровно одну прямую"
+       }
+      },
+      {
+       "key": "math.gm.par.ex6",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Через точку на прямой можно провести перпендикуляр к этой прямой…",
+        "options": [
+         {
+          "id": "a",
+          "text": "сколько угодно"
+         },
+         {
+          "id": "b",
+          "text": "ровно один"
+         },
+         {
+          "id": "c",
+          "text": "два"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "В данной точке к прямой восстанавливается единственный перпендикуляр (на плоскости)."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "ровно один"
+       }
+      },
+      {
+       "key": "math.gm.par.ex7",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Если две прямые перпендикулярны одной и той же третьей, то относительно друг друга они…",
+        "options": [
+         {
+          "id": "a",
+          "text": "перпендикулярны"
+         },
+         {
+          "id": "b",
+          "text": "параллельны"
+         },
+         {
+          "id": "c",
+          "text": "совпадают"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Два перпендикуляра к одной прямой не пересекаются — они параллельны."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "параллельны"
+       }
+      },
+      {
+       "key": "math.gm.par.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Стороны тетрадного листа, которые не встречаются, — пример…",
+        "options": [
+         {
+          "id": "a",
+          "text": "перпендикулярных прямых"
+         },
+         {
+          "id": "b",
+          "text": "параллельных отрезков (частей параллельных прямых)"
+         },
+         {
+          "id": "c",
+          "text": "пересекающихся лучей"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Противоположные края листа параллельны, соседние — перпендикулярны."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "параллельных отрезков (частей параллельных прямых)"
+       }
+      },
+      {
+       "key": "math.gm.par.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Соседние стороны квадрата…",
+        "options": [
+         {
+          "id": "a",
+          "text": "параллельны"
+         },
+         {
+          "id": "b",
+          "text": "перпендикулярны"
+         },
+         {
+          "id": "c",
+          "text": "не пересекаются"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "У квадрата все углы прямые."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "перпендикулярны"
+       }
+      },
+      {
+       "key": "math.gm.par.ex10",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Противоположные стороны прямоугольника…",
+        "options": [
+         {
+          "id": "a",
+          "text": "перпендикулярны"
+         },
+         {
+          "id": "b",
+          "text": "параллельны и равны"
+         },
+         {
+          "id": "c",
+          "text": "пересекаются"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "В прямоугольнике противоположные стороны попарно параллельны."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "параллельны и равны"
+       }
+      },
+      {
+       "key": "math.gm.par.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "На сколько градусов отличается направление перпендикуляра от направления исходной прямой?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Перпендикуляр поворачивает на прямой угол, 90°."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "90"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "90"
+       }
+      },
+      {
+       "key": "math.gm.par.ex12",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Могут ли параллельные прямые быть перпендикулярными друг другу?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да, всегда"
+         },
+         {
+          "id": "b",
+          "text": "Да, иногда"
+         },
+         {
+          "id": "c",
+          "text": "Нет, никогда"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Параллельные не пересекаются, а перпендикулярные пересекаются."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "Нет, никогда"
+       }
+      },
+      {
+       "key": "math.gm.par.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Две прямые на клетчатой бумаге идут вдоль линий клетки горизонтально. Они…",
+        "options": [
+         {
+          "id": "a",
+          "text": "перпендикулярны"
+         },
+         {
+          "id": "b",
+          "text": "параллельны"
+         },
+         {
+          "id": "c",
+          "text": "пересекаются"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Горизонтали клетки не встречаются."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "параллельны"
+       }
+      },
+      {
+       "key": "math.gm.par.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Горизонтальная и вертикальная линии клетки…",
+        "options": [
+         {
+          "id": "a",
+          "text": "параллельны"
+         },
+         {
+          "id": "b",
+          "text": "перпендикулярны"
+         },
+         {
+          "id": "c",
+          "text": "не пересекаются"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Они образуют прямой угол клетки."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "перпендикулярны"
+       }
+      },
+      {
+       "key": "math.gm.par.ex15",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Чтобы проверить перпендикулярность двух отрезков, достаточно убедиться, что угол между ними…",
+        "options": [
+         {
+          "id": "a",
+          "text": "острый"
+         },
+         {
+          "id": "b",
+          "text": "прямой"
+         },
+         {
+          "id": "c",
+          "text": "тупой"
+         },
+         {
+          "id": "d",
+          "text": "развёрнутый"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Перпендикулярность = прямой угол = 90°."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "прямой"
+       }
+      }
+     ],
+     "order": 0
+    },
+    {
+     "key": "math.geom.polygon",
+     "title": "Ломаная, многоугольник, периметр",
+     "description": "",
+     "rule_card": "Ломаная состоит из отрезков-звеньев, соединённых концами. Если концы совпали — ломаная замкнутая. Длина ломаной — сумма длин звеньев. Многоугольник — фигура, граница которой — замкнутая ломаная без самопересечений. Периметр многоугольника — сумма длин всех сторон.",
+     "worked_example": {
+      "title": "Периметр треугольника 7, 8 и 9 см",
+      "steps": [
+       "P = 7+8+9.",
+       "P = 24 см."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.pg.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Ломаная — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "одна прямая"
+         },
+         {
+          "id": "b",
+          "text": "фигура из отрезков, которые соединены концами по очереди"
+         },
+         {
+          "id": "c",
+          "text": "окружность"
+         },
+         {
+          "id": "d",
+          "text": "один луч"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Звенья ломаной — отрезки."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "фигура из отрезков, которые соединены концами по очереди"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Если концы ломаной совпадают, ломаная…",
+        "options": [
+         {
+          "id": "a",
+          "text": "незамкнутая"
+         },
+         {
+          "id": "b",
+          "text": "замкнутая"
+         },
+         {
+          "id": "c",
+          "text": "прямая"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Замкнутая ломаная может быть границей многоугольника."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "замкнутая"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Многоугольник с тремя сторонами называется…",
+        "options": [
+         {
+          "id": "a",
+          "text": "четырёхугольник"
+         },
+         {
+          "id": "b",
+          "text": "треугольник"
+         },
+         {
+          "id": "c",
+          "text": "пятиугольник"
+         },
+         {
+          "id": "d",
+          "text": "круг"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смотри на число сторон."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "треугольник"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Ломаная из звеньев 3 см, 5 см и 6 см. Найди её длину в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Длина ломаной — сумма длин звеньев."
+         },
+         {
+          "level": 2,
+          "text": "3+5+6=14."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "14"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3+5+6"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр треугольника со сторонами 7, 8 и 9 см. Ответ в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Периметр — сумма всех сторон."
+         },
+         {
+          "level": 2,
+          "text": "7+8+9=24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "7+8+9"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр правильного пятиугольника со стороной 6 см (все стороны равны). Ответ в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5×6=30."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "30"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5*6"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Периметр квадрата 28 см. Длина одной стороны в см?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "28:4=7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "28/4"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Четырёхугольник со сторонами 4, 7, 4 и 7 см. Периметр в см?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4+7+4+7=22."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "22"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4+7+4+7"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "У шестиугольника сколько сторон?",
+        "options": [
+         {
+          "id": "a",
+          "text": "5"
+         },
+         {
+          "id": "b",
+          "text": "6"
+         },
+         {
+          "id": "c",
+          "text": "7"
+         },
+         {
+          "id": "d",
+          "text": "8"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "«Шесть» в названии — шесть сторон."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Замкнутая ломаная из 4 звеньев по 5 см. Её длина (периметр) в см?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4×5=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4*5"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Периметр треугольника 30 см, две стороны 8 см и 11 см. Найди третью.",
+        "steps": [
+         {
+          "ask": "Сумма известных сторон 8+11 = ?",
+          "answer": 19
+         },
+         {
+          "ask": "Третья сторона 30 − 19 = ?",
+          "answer": 11
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Периметр минус две стороны."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 19
+         },
+         {
+          "answer": 11
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "30-8-11"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Ломаная ABCDE имеет длину 25 см. Звенья AB=5, BC=4, CD=7, DE=x. Найди x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "25−5−4−7=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "25-5-4-7"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Периметр многоугольника — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "произведение сторон"
+         },
+         {
+          "id": "b",
+          "text": "сумма длин всех его сторон"
+         },
+         {
+          "id": "c",
+          "text": "наибольшая сторона"
+         },
+         {
+          "id": "d",
+          "text": "площадь"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Слово «периметр» — обход по краю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "сумма длин всех его сторон"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Равносторонний треугольник со стороной 12 см. Периметр в см?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×12=36."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "36"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3*12"
+       }
+      },
+      {
+       "key": "math.gm.pg.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Проволоку длиной 48 см согнули в правильный восьмиугольник. Длина стороны в см?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "48:8=6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48/8"
+       }
+      }
+     ],
+     "order": 1
+    },
+    {
+     "key": "math.geom.area",
+     "title": "Площадь: прямоугольный треугольник, единицы, разбиение",
+     "description": "",
+     "rule_card": "Площадь прямоугольного треугольника S = a·b/2, где a и b — катеты. 1 дм² = 100 см², 1 м² = 100 дм² = 10 000 см². Площадь многоугольника можно найти разбиением на прямоугольники, квадраты и прямоугольные треугольники и сложением площадей частей (или вычитанием вырезанных частей).",
+     "worked_example": {
+      "title": "Катеты 6 см и 8 см",
+      "steps": [
+       "S = 6×8 : 2.",
+       "48 : 2 = 24 (см²)."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.ar.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Катеты прямоугольного треугольника 6 см и 8 см. Найди площадь в см² (S = a·b:2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "S = 6×8:2 = 48:2 = 24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6*8/2"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Катеты 5 см и 12 см. Площадь прямоугольного треугольника в см²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5×12:2=30."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "30"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5*12/2"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex3",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Площадь прямоугольного треугольника 20 см², один катет 8 см. Найди второй катет в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "a·b:2=20, a·b=40, b=40:8=5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "20*2/8"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Площадь квадрата со стороной 9 см (в см²).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "S=9×9=81."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "81"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9*9"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько квадратных сантиметров в 1 дм²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 дм = 10 см, 10×10=100."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "100"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10*10"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вырази 3 дм² в квадратных сантиметрах.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×100=300."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "300"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3*100"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вырази 200 см² в квадратных дециметрах.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "200:100=2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "200/100"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько квадратных дециметров в 1 м²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 м = 10 дм, 10×10=100."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "100"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10**2"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Прямоугольник 8 см на 5 см разрезали диагональю на два прямоугольных треугольника. Площадь одного треугольника в см²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Площадь прямоугольника 40, половина — 20."
+         },
+         {
+          "level": 2,
+          "text": "Или катеты 8 и 5: 8×5:2=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8*5/2"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex10",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Фигура составлена из квадрата 4 см и прямоугольника 4 см на 3 см, приставленного стороной 4 см. Общая площадь в см²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Квадрат 16, прямоугольник 12, всего 28."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "28"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4*4+4*3"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex11",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Прямоугольник 10 см на 6 см. Из него вырезали квадрат со стороной 2 см. Оставшаяся площадь в см²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10×6=60, квадрат 4, 60−4=56."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "56"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10*6-2*2"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex12",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Площадь прямоугольного треугольника с катетами 9 см и 4 см",
+        "steps": [
+         {
+          "ask": "Произведение катетов 9×4 = ?",
+          "answer": 36
+         },
+         {
+          "ask": "Площадь — половина: 36 : 2 = ?",
+          "answer": 18
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "S = a·b/2."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 36
+         },
+         {
+          "answer": 18
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "9*4/2"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex13",
+       "type": "number_input",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вырази 2 м² в квадратных сантиметрах.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 м = 100 см, 1 м² = 100×100=10 000 см², два метра — 20 000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*100*100"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Площадь прямоугольного треугольника равна половине площади…",
+        "options": [
+         {
+          "id": "a",
+          "text": "окружности с тем же периметром"
+         },
+         {
+          "id": "b",
+          "text": "прямоугольника, стороны которого равны катетам"
+         },
+         {
+          "id": "c",
+          "text": "квадрата со стороной гипотенузы"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Диагональ делит такой прямоугольник на два равных прямоугольных треугольника."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "прямоугольника, стороны которого равны катетам"
+       }
+      },
+      {
+       "key": "math.gm.ar.ex15",
+       "type": "number_input",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Садовый участок — прямоугольник 20 м на 15 м плюс прямоугольный треугольник с катетами 20 м и 8 м, пристроенный к стороне 20 м. Общая площадь в м²?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Прямоугольник 20×15=300, треугольник 20×8:2=80, всего 380."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "380"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "20*15+20*8/2"
+       }
+      }
+     ],
+     "order": 2,
+     "prerequisites": [
+      "math.eq.formulas"
+     ]
+    },
+    {
+     "key": "math.geom.volume",
+     "title": "Объём прямоугольного параллелепипеда и куба",
+     "description": "",
+     "rule_card": "Объём прямоугольного параллелепипеда V = a·b·c (произведение трёх измерений). Объём куба с ребром a: V = a³. 1 дм³ = 1000 см³. Если известны объём и два измерения, третье находят делением.",
+     "worked_example": {
+      "title": "Измерения 3, 4 и 5 см",
+      "steps": [
+       "V = 3×4×5.",
+       "V = 60 см³."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.vol.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Измерения прямоугольного параллелепипеда 3 см, 4 см и 5 см. Найди объём в см³ (V = a·b·c).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "V=3×4×5=60."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "60"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3*4*5"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Рёбра 2 см, 6 см и 10 см. Объём в см³?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2×6×10=120."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "120"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*6*10"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Куб с ребром 5 см. Объём в см³ (V = a³).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5×5×5=125."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "125"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "5**3"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Куб с ребром 4 см. Объём в см³?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4×4×4=64."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "64"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "4**3"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex5",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Объём прямоугольного параллелепипеда 48 см³, сторона основания 4 см и 3 см. Найди высоту в см.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Высота = V : (a·b) = 48:(4×3)=48:12=4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48/(4*3)"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Сколько кубических сантиметров в 1 дм³?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1 дм=10 см, 10×10×10=1000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10**3"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вырази 2 дм³ в кубических сантиметрах.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2×1000=2000."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2000"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "2*1000"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Вырази 3000 см³ в кубических дециметрах.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3000:1000=3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3000/1000"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Формула объёма куба с ребром a — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "V=a+a+a"
+         },
+         {
+          "id": "b",
+          "text": "V=a²"
+         },
+         {
+          "id": "c",
+          "text": "V=a³"
+         },
+         {
+          "id": "d",
+          "text": "V=3a"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Три измерения одинаковые, их перемножают."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "V=a³"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Коробка 8 см × 5 см × 2 см. Объём в см³?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8×5×2=80."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "80"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8*5*2"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Объём параллелепипеда 6 см, 4 см, 3 см",
+        "steps": [
+         {
+          "ask": "Площадь основания 6×4 = ?",
+          "answer": 24
+         },
+         {
+          "ask": "Объём 24×3 = ?",
+          "answer": 72
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "V = площадь основания × высоту."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 24
+         },
+         {
+          "answer": 72
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6*4*3"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Куб с объёмом 27 см³. Чему равно ребро в см?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Какое число в кубе даёт 27? 3×3×3=27."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "3"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex13",
+       "type": "number_input",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Из куба с ребром 6 см вырезали куб с ребром 3 см. Оставшийся объём в см³?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "6³=216, 3³=27, 216−27=189."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "189"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6**3-3**3"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Бассейн 10 м × 4 м × 2 м. Объём в м³?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10×4×2=80."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "80"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10*4*2"
+       }
+      },
+      {
+       "key": "math.gm.vol.ex15",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "У куба все рёбра…",
+        "options": [
+         {
+          "id": "a",
+          "text": "разные"
+         },
+         {
+          "id": "b",
+          "text": "равны"
+         },
+         {
+          "id": "c",
+          "text": "попарно перпендикулярны только в основании"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Куб — прямоугольный параллелепипед с равными рёбрами."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "равны"
+       }
+      }
+     ],
+     "order": 3,
+     "prerequisites": [
+      "math.nat.power"
+     ]
+    },
+    {
+     "key": "math.geom.mean",
+     "title": "Среднее арифметическое",
+     "description": "",
+     "rule_card": "Среднее арифметическое нескольких чисел — их сумма, делённая на количество этих чисел. Если среднее известных n чисел равно m, их сумма равна m×n. По сумме и среднему можно находить неизвестное слагаемое.",
+     "worked_example": {
+      "title": "Среднее 4, 6 и 8",
+      "steps": [
+       "Сумма 4+6+8=18.",
+       "Чисел три, 18:3=6."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.mn.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди среднее арифметическое чисел 4, 6 и 8.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сложи числа: 4+6+8=18."
+         },
+         {
+          "level": 2,
+          "text": "Раздели на количество: 18:3=6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         4,
+         6,
+         8
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее арифметическое 10, 20 и 30.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "60:3=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         10,
+         20,
+         30
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее арифметическое 5 и 17.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "(5+17):2=11."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "11"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         5,
+         17
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее арифметическое 2, 4, 6 и 8.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "20:4=5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         2,
+         4,
+         6,
+         8
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Оценки Яны: 8, 9, 10, 9. Найди средний балл.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8+9+10+9=36, 36:4=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         8,
+         9,
+         10,
+         9
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex6",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "За три дня Мася прошла 4, 6 и 8 км. Средний путь за день в км?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "18:3=6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         4,
+         6,
+         8
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex7",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее двух чисел 12, одно из них 9. Найди другое.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма двух чисел 12×2=24, второе 24−9=15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12*2-9"
+       }
+      },
+      {
+       "key": "math.gm.mn.ex8",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Среднее чисел 7, 11 и 15",
+        "steps": [
+         {
+          "ask": "Сумма 7+11+15 = ?",
+          "answer": 33
+         },
+         {
+          "ask": "Среднее 33 : 3 = ?",
+          "answer": 11
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма, затем деление на 3."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 33
+         },
+         {
+          "answer": 11
+         }
+        ]
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         7,
+         11,
+         15
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее арифметическое 0, 10 и 20.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "30:3=10. Нуль тоже учитывают."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "10"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         0,
+         10,
+         20
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Пять чисел, сумма 45. Их среднее арифметическое?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "45:5=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "45/5"
+       }
+      },
+      {
+       "key": "math.gm.mn.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Среднее арифметическое чисел — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "наибольшее из них"
+         },
+         {
+          "id": "b",
+          "text": "сумма, делённая на их количество"
+         },
+         {
+          "id": "c",
+          "text": "произведение чисел"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Формула: (a₁+…+aₙ):n."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "сумма, делённая на их количество"
+       }
+      },
+      {
+       "key": "math.gm.mn.ex12",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее 3, 3, 3 и 15.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "24:4=6. Одно большое число тянет среднее вверх, но не до 15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         3,
+         3,
+         3,
+         15
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex13",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "За 4 урока набрали 8, 7, 9 и 8 баллов. Средний балл?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "32:4=8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         8,
+         7,
+         9,
+         8
+        ]
+       }
+      },
+      {
+       "key": "math.gm.mn.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее трёх чисел 10. Два из них 8 и 11. Третье число?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма 30, третье 30−8−11=11."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "11"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "10*3-8-11"
+       }
+      },
+      {
+       "key": "math.gm.mn.ex15",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Температура за 5 дней: 2, 3, 0, 4 и 6 градусов. Средняя температура?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2+3+0+4+6=15, 15:5=3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         2,
+         3,
+         0,
+         4,
+         6
+        ]
+       }
+      }
+     ],
+     "order": 4
+    },
+    {
+     "key": "math.geom.charts",
+     "title": "Таблицы, столбчатые и линейные диаграммы",
+     "description": "",
+     "rule_card": "Данные удобно представлять таблицей, столбчатой диаграммой (высота столбика — величина) и линейной диаграммой (точки, соединённые отрезками, показывают изменение). По таким данным находят сумму, разность, среднее, наибольшее и наименьшее значение и решают обратную задачу (найти неизвестный столбик по сумме).",
+     "worked_example": {
+      "title": "Столбики 8, 12, 7, 9",
+      "steps": [
+       "Всего 8+12+7+9=36.",
+       "Самый высокий — 12 (вторник).",
+       "Среднее 36:4=9."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.gm.ch.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В таблице число шагов Маси за 4 дня: пн — 8, вт — 12, ср — 7, чт — 9 (в сотнях). Сколько всего сотен шагов за эти дни?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8+12+7+9=36."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "36"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "8+12+7+9"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Столбчатая диаграмма: пн 8, вт 12, ср 7, чт 9. В какой день столбик самый высокий?",
+        "options": [
+         {
+          "id": "a",
+          "text": "понедельник"
+         },
+         {
+          "id": "b",
+          "text": "вторник"
+         },
+         {
+          "id": "c",
+          "text": "среда"
+         },
+         {
+          "id": "d",
+          "text": "четверг"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Самое большое число — 12, это вторник."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "вторник"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "По той же диаграмме: в какой день значение наименьшее?",
+        "options": [
+         {
+          "id": "a",
+          "text": "понедельник"
+         },
+         {
+          "id": "b",
+          "text": "вторник"
+         },
+         {
+          "id": "c",
+          "text": "среда"
+         },
+         {
+          "id": "d",
+          "text": "четверг"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Наименьшее число — 7."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "среда"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "На сколько сотен шагов во вторник (12) больше, чем в среду (7)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "12−7=5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12-7"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex5",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Среднее число сотен шагов за эти 4 дня (8, 12, 7, 9).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма 36, 36:4=9."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9"
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         8,
+         12,
+         7,
+         9
+        ]
+       }
+      },
+      {
+       "key": "math.gm.ch.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Линейная диаграмма показывает изменение величины вдоль оси времени. Если точки идут вверх, величина…",
+        "options": [
+         {
+          "id": "a",
+          "text": "уменьшается"
+         },
+         {
+          "id": "b",
+          "text": "растёт"
+         },
+         {
+          "id": "c",
+          "text": "обязательно равна нулю"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Подъём линии — рост значения."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "растёт"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В таблице осадки: май — 40 мм, июнь — 55 мм, июль — 35 мм. Сколько мм за три месяца?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "40+55+35=130."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "130"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "40+55+35"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "По таблице осадков 40, 55, 35 самый дождливый месяц — …",
+        "options": [
+         {
+          "id": "a",
+          "text": "май"
+         },
+         {
+          "id": "b",
+          "text": "июнь"
+         },
+         {
+          "id": "c",
+          "text": "июль"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "55 — наибольшее."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "июнь"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "На сколько миллиметров в июне (55) выпало больше, чем в июле (35)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "55−35=20."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "20"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "55-35"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex10",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Столбики: яблоки — 6 ящиков, груши — 4, сливы — 5. Сколько ящиков фруктов всего?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "6+4+5=15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6+4+5"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex11",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "По предыдущим данным: на сколько ящиков яблок больше, чем груш?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "6−4=2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "6-4"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex12",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Таблица: в пн 3 задачи, вт 5, ср 4, чт 8. Сколько всего и сколько в среднем за день?",
+        "steps": [
+         {
+          "ask": "Всего 3+5+4+8 = ?",
+          "answer": 20
+         },
+         {
+          "ask": "В среднем 20 : 4 = ?",
+          "answer": 5
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сначала сумма по таблице, затем среднее."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 20
+         },
+         {
+          "answer": 5
+         }
+        ]
+       },
+       "verify": {
+        "op": "mean",
+        "args": [
+         3,
+         5,
+         4,
+         8
+        ]
+       }
+      },
+      {
+       "key": "math.gm.ch.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Чтобы сравнить несколько величин «на глаз», удобнее всего…",
+        "options": [
+         {
+          "id": "a",
+          "text": "только текст без чисел"
+         },
+         {
+          "id": "b",
+          "text": "столбчатая диаграмма"
+         },
+         {
+          "id": "c",
+          "text": "одна точка на прямой"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Высота столбиков сразу показывает, что больше."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "столбчатая диаграмма"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex14",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Линейная диаграмма температуры: 6°, 8°, 7°, 11°. На сколько градусов выросла температура от первого замера к последнему?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "11−6=5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "11-6"
+       }
+      },
+      {
+       "key": "math.gm.ch.ex15",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В диаграмме три столбика: 10, 15 и x. Известно, что всего 40. Найди x.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "10+15=25, x=40−25=15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "40-10-15"
+       }
+      }
+     ],
+     "order": 5,
+     "prerequisites": [
+      "math.geom.mean"
+     ]
+    }
+   ],
+   "order": 0
+  }
+ ]
+}
