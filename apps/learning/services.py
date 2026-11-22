@@ -69,8 +69,17 @@ def pick_exercise(skill, level: int, exclude_ids=None, for_warmup=False):
 @transaction.atomic
 def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block | None = None,
                   given, attempt_no: int, hints_used: int, duration_ms: int, context: str,
-                  solution_shown=False, today: dt.date | None = None, final_now=False):
+                  solution_shown=False, today: dt.date | None = None, final_now=False,
+                  client_uuid=None, client_created_at=None, offline=False):
     today = today or timezone.localdate()
+    if client_uuid:
+        found = Attempt.objects.filter(client_uuid=client_uuid).first()
+        if found:
+            return found, {
+                "correct": found.is_correct, "partial": found.partial_score, "distractor": "",
+                "is_final": found.is_final, "q": found.q, "phrase": "", "stars": 0,
+                "solution_steps": [], "mastery_status": None, "duplicate": True,
+            }
     if exercise:
         result = check(exercise.type, exercise.payload, exercise.answer, given)
         est = exercise.est_seconds
@@ -99,6 +108,8 @@ def submit_answer(child, *, exercise=None, word=None, word_mode="", block: Block
         is_correct=result.correct, partial_score=result.partial, attempt_no=attempt_no,
         hints_used=hints_used, solution_shown=solution_shown, is_final=is_final,
         duration_ms=duration_ms, q=q if is_final else None,
+        client_uuid=client_uuid, client_created_at=client_created_at,
+        offline=offline, synced_at=timezone.now() if client_uuid else None,
     )
 
     feedback = {

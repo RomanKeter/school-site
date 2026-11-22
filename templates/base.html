@@ -6,8 +6,11 @@
 <title>{% block title %}Учимся с Масей{% endblock %}</title>
 <link rel="stylesheet" href="{% static 'css/app.css' %}">
 <link rel="icon" href="{% static 'favicon.svg' %}" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#4C6A85">
 <script src="{% static 'js/htmx.min.js' %}" defer></script>
 <script src="{% static 'js/app.js' %}" defer></script>
+<script src="{% static 'js/pwa.js' %}" defer></script>
 </head>
 <body class="{% block bodyclass %}{% endblock %}" data-csrf="{{ csrf_token }}" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
       {% if current_child %}data-child="1" data-en-variant="{% if current_child.settings.en_variant == 'us' %}en-US{% else %}en-GB{% endif %}" style="font-size:{{ current_child.font_scale|stringformat:'s' }}em"{% endif %}>
@@ -23,6 +26,7 @@
 </header>
 {% endif %}
 {% endblock %}
+<div id="offline-banner" class="offline-banner" hidden role="status"></div>
 <main class="wrap">{% block content %}{% endblock %}</main>
 </body>
 </html>

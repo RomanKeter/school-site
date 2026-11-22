@@ -23,6 +23,11 @@ class Attempt(models.Model):
     duration_ms = models.PositiveIntegerField(default=0)
     q = models.PositiveSmallIntegerField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    # офлайн-синхронизация (IMP-OFF-4, D-700+)
+    client_uuid = models.UUIDField(null=True, blank=True, unique=True)
+    client_created_at = models.DateTimeField(null=True, blank=True)
+    synced_at = models.DateTimeField(null=True, blank=True)
+    offline = models.BooleanField(default=False)
 
     class Meta:
         indexes = [models.Index(fields=["child", "created_at"]), models.Index(fields=["child", "exercise"])]
@@ -107,3 +112,33 @@ class DailyActivity(models.Model):
 
     class Meta:
         unique_together = [("child", "date")]
+
+
+class OfflinePackage(models.Model):
+    """Пакет дня: миссия на сегодня и завтра (IMP-OFF-2)."""
+
+    child = models.ForeignKey("accounts.ChildProfile", on_delete=models.CASCADE, related_name="offline_packages")
+    date = models.DateField()
+    version = models.PositiveIntegerField(default=1)
+    size_bytes = models.PositiveIntegerField(default=0)
+    generated_at = models.DateTimeField(auto_now=True)
+    downloaded_at = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        unique_together = [("child", "date")]
+        verbose_name = "офлайн-пакет"
+        verbose_name_plural = "офлайн-пакеты"
+
+
+class SyncConflict(models.Model):
+    """Расхождение офлайн-проверки и пересчёта на сервере (IMP-OFF-3)."""
+
+    attempt = models.ForeignKey(Attempt, on_delete=models.CASCADE, related_name="sync_conflicts")
+    client_result = models.JSONField(default=dict)
+    server_result = models.JSONField(default=dict)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "конфликт синхронизации"
+        verbose_name_plural = "конфликты синхронизации"
+

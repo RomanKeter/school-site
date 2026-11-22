@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from . import views, offline_views
 
 urlpatterns = [
     path("play/<int:block_id>/", views.play_block, name="play_block"),
@@ -11,4 +11,6 @@ urlpatterns = [
     path("activity/ping/", views.activity_ping, name="activity_ping"),
     path("words/", views.dictionary, name="dictionary"),
     path("reflect/", views.reflect, name="reflect"),
+    path("offline/package/", offline_views.package, name="offline_package"),
+    path("offline/sync/", offline_views.sync, name="offline_sync"),
 ]

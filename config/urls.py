@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import include, path
+from apps.learning import offline_views
 
 admin.site.site_header = "Учебный сайт — администрирование"
 admin.site.site_title = "Учебный сайт"
@@ -8,6 +9,8 @@ admin.site.site_title = "Учебный сайт"
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("healthz", lambda r: HttpResponse("ok", content_type="text/plain")),
+    path("manifest.webmanifest", offline_views.manifest, name="manifest"),
+    path("sw.js", offline_views.service_worker, name="service_worker"),
     path("", include("apps.accounts.urls")),
     path("", include("apps.missions.urls")),
     path("", include("apps.learning.urls")),
