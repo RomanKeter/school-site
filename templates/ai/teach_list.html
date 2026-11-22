@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{% include "partials/icon.html" with n="together" %} Научи Масю</h1>
+{% include "partials/mascot.html" with state="hello" size="big" say="Я Мася. Я ещё многого не знаю. Выбери тему, которую ты уже освоила, и объясни мне её!" %}
+<h2 class="section-title">Темы</h2>
+<section class="tiles">
+{% for t, open in topics %}
+  {% if open %}<a class="tile" href="{% url 'ai_teach' t.skill.id %}"><span class="ico{% if t.skill.topic.unit.subject.code == 'en' %} coral{% endif %}">{% if t.skill.topic.unit.subject.code == "en" %}{% include "partials/icon.html" with n="lang" %}{% else %}{% include "partials/icon.html" with n="book" %}{% endif %}</span><span>{{ t.skill.title }}<small class="muted">{{ t.skill.topic.unit.subject.title }}</small></span></a>
+  {% else %}<span class="tile disabled" aria-disabled="true"><span class="ico gray">{% include "partials/icon.html" with n="lock" %}</span><span>{{ t.skill.title }}<small class="muted">Сначала освой эту тему</small></span></span>{% endif %}
+{% empty %}<p class="muted">Темы скоро появятся.</p>
+{% endfor %}
+</section>
+{% endblock %}

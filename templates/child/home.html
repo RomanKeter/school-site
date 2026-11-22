@@ -36,6 +36,7 @@
   <a class="tile" href="{% url 'map' 'math' %}"><span class="ico">{% include "partials/icon.html" with n="map" %}</span><span>Математика<small class="muted">Острова тем</small></span></a>
   <a class="tile" href="{% url 'map' 'en' %}"><span class="ico coral">{% include "partials/icon.html" with n="lang" %}</span><span>English<small class="muted">Слова и грамматика</small></span></a>
   <a class="tile" href="{% url 'dictionary' %}"><span class="ico lime">{% include "partials/icon.html" with n="book" %}</span><span>Словарь<small class="muted">Мои слова</small></span></a>
+  {% include "ai/_home_tile.html" %}
   <a class="tile" href="{% url 'rewards' %}"><span class="ico">{% include "partials/icon.html" with n="medal" %}</span><span>Награды<small class="muted">Значки и серия</small></span></a>
   <span class="tile disabled" aria-disabled="true"><span class="ico gray">{% include "partials/icon.html" with n="pencil" %}</span><span>Домашка<small class="muted">скоро</small></span></span>
 </section>

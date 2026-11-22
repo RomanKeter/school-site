@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block bodyclass %}subj-{{ skill.topic.unit.subject.code }}{% endblock %}
+{% block content %}
+<div class="task card">
+  <div class="muted">{% include "partials/icon.html" with n="together" %} Научи Масю · {{ skill.title }}</div>
+  {% if result and result.finished %}
+    {% include "partials/mascot.html" with state="party" size="big" say=result.reply %}
+    {% if result.stars %}<p class="prompt center">{% include "partials/icon.html" with n="star" %} +{{ result.stars }} звёзд за урок для Маси!</p>
+    {% else %}<p class="muted center">Звёзды за эту тему уже были недавно — но Мася всё равно очень благодарна!</p>{% endif %}
+    <div class="actions"><a class="btn secondary" href="{% url 'ai_teach_list' %}">Другая тема</a><a class="btn" href="{% url 'home' %}">Домой {% include "partials/icon.html" with n="arrow-right" %}</a></div>
+  {% else %}
+    {% if result %}
+      {% include "partials/mascot.html" with state="think" size="big" say=result.reply %}
+    {% else %}
+      {% include "partials/mascot.html" with state="hello" size="big" say=topic.opener %}
+    {% endif %}
+    <form method="post">{% csrf_token %}
+      <p><textarea name="text" maxlength="{{ max_chars }}" rows="4" required aria-label="Твоё объяснение" placeholder="{{ topic.starter|default:'Расскажи своими словами…' }}" style="width:100%;font-size:22px;padding:14px 16px;border-radius:16px;border:2px solid #d9dfeb;font-family:inherit"></textarea></p>
+      <div class="actions">
+        {% if session.rounds %}<button class="btn secondary" name="action" value="finish" formnovalidate>Всё, я объяснила</button>{% else %}<span></span>{% endif %}
+        <button class="btn" name="action" value="send">{% if session.rounds %}Ответить{% else %}Готово, проверь{% endif %} {% include "partials/icon.html" with n="check" %}</button>
+      </div>
+    </form>
+  {% endif %}
+</div>
+{% endblock %}

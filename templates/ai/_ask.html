@@ -1,0 +1,6 @@
+{% load masya %}{% ai_settings as ais %}{% if ais.enabled and blk.kind != "diagnostic" %}
+<div class="actions" style="margin-top:12px">
+  <button class="btn secondary small" type="button" data-ai-ask hx-post="{% url 'ai_ask' blk.id exercise.id %}" hx-vals='{"turn": "1"}' hx-target="#ai-panel" hx-swap="innerHTML">{% include "partials/icon.html" with n="sparkles" %} Спросить Масю</button>
+</div>
+<div id="ai-panel" aria-live="polite"></div>
+{% endif %}

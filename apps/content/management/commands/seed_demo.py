@@ -19,6 +19,7 @@ class Command(BaseCommand):
         samples = Path(__file__).resolve().parents[4] / "content_samples"
         for name in ("math_divisibility.json", "math_fractions.json", "en_words.json"):
             call_command("import_content", str(samples / name), update=True)
+        call_command("seed_feynman")
         from apps.accounts.models import User
         if not User.objects.filter(username="roman").exists():
             parent = create_parent("roman", "ChildPass123!", email="roman@example.com", family_name="Семья Дацких")

@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "apps.missions",
     "apps.rewards",
     "apps.parents",
+    "apps.ai",
 ]
 
 MIDDLEWARE = [
@@ -137,4 +138,23 @@ LOGGING = {
     "disable_existing_loggers": False,
     "handlers": {"console": {"class": "logging.StreamHandler"}},
     "root": {"handlers": ["console"], "level": "INFO"},
+}
+
+# ИИ-помощник Мася и «Научи Масю» (этап 2, раздел 9.5 ТЗ, D-100…D-108). Ключи — только из окружения.
+# AI_PROVIDER: gemini | openrouter | fake; пусто — gemini при наличии GEMINI_API_KEY, иначе офлайн-подсказки.
+AI = {
+    "PROVIDER": os.environ.get("AI_PROVIDER", ""),
+    "MODEL": os.environ.get("AI_MODEL", "gemini-3.5-flash-lite"),
+    "GEMINI_API_KEY": os.environ.get("GEMINI_API_KEY", ""),
+    "GEMINI_BASE_URL": os.environ.get("GEMINI_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/"),
+    "OPENROUTER_API_KEY": os.environ.get("OPENROUTER_API_KEY", ""),
+    "OPENROUTER_BASE_URL": os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
+    "OPENROUTER_MODEL": os.environ.get("OPENROUTER_MODEL", ""),
+    "HTTPS_PROXY": os.environ.get("AI_HTTPS_PROXY", ""),
+    "REASONING_EFFORT": os.environ.get("AI_REASONING_EFFORT", ""),
+    "TIMEOUT": float(os.environ.get("AI_TIMEOUT", "15")),
+    "MIN_INTERVAL_SECONDS": int(os.environ.get("AI_MIN_INTERVAL_SECONDS", "10")),
+    "MONTHLY_BUDGET_USD": float(os.environ.get("AI_MONTHLY_BUDGET_USD", "3")),
+    "PRICE_IN_PER_M": float(os.environ.get("AI_PRICE_IN_PER_M", "0.30")),
+    "PRICE_OUT_PER_M": float(os.environ.get("AI_PRICE_OUT_PER_M", "2.50")),
 }

@@ -1,0 +1,3 @@
+{% load masya %}{% ai_settings as ais %}{% if ais.teach_enabled %}
+<a class="tile" href="{% url 'ai_teach_list' %}"><span class="ico lime">{% include "partials/icon.html" with n="together" %}</span><span>Научи Масю<small class="muted">Объясни тему своими словами</small></span></a>
+{% endif %}

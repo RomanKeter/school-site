@@ -1,0 +1,35 @@
+{% extends "parent/base_parent.html" %}
+{% block pcontent %}
+<h1>ИИ-помощник Мася: {{ child.display_name }}</h1>
+<form method="post" class="card form">{% csrf_token %}
+  <p><label><input type="checkbox" name="enabled" value="1" {% if s.enabled %}checked{% endif %}> Кнопка «Спросить Масю» на заданиях</label></p>
+  <p><label><input type="checkbox" name="teach_enabled" value="1" {% if s.teach_enabled %}checked{% endif %}> «Научи Масю» (ребёнок объясняет тему)</label></p>
+  <p><label>Вопросов в день (0–30) <input type="number" name="daily_limit" min="0" max="30" value="{{ s.daily_limit }}"></label>
+     <span class="muted">сегодня использовано: {{ used|floatformat:"-1" }}</span></p>
+  <p class="muted">Провайдер: {{ provider }}{% if provider == "offline" %} (ключ ИИ не задан — подсказки из учебника сайта){% endif %} · расходы за месяц: ${{ month_cost|floatformat:4 }}</p>
+  <p><button class="btn">Сохранить</button></p>
+</form>
+
+<h2>Вопросы помощнику</h2>
+<p><a href="?child={{ child.pk }}&f=all">все</a> · <a href="?child={{ child.pk }}&f=refused">с отказом</a> · <a href="?child={{ child.pk }}&f=flagged">с флагом</a></p>
+<table class="card" style="width:100%;border-collapse:collapse">
+<tr><th align="left">Когда</th><th align="left">Где</th><th align="left">Вопрос</th><th align="left">Ответ Маси</th><th align="left">Флаги</th></tr>
+{% for q in queries %}
+<tr style="border-top:1px solid #e5e9f2;vertical-align:top">
+  <td>{{ q.created_at|date:"d.m H:i" }}</td>
+  <td>{% if q.kind == "teach" %}Научи Масю{% else %}Задание{% endif %}<br><small class="muted">{{ q.skill.title|default:"" }}</small></td>
+  <td>{{ q.question|default:"(просто нажала кнопку)" }}</td>
+  <td>{{ q.answer }}</td>
+  <td><small>{{ q.provider }}{% if q.refused %} · отказ{% endif %}{% for f in q.flags %} · {{ f }}{% endfor %}</small></td>
+</tr>
+{% empty %}<tr><td colspan="5" class="muted">Пока вопросов не было.</td></tr>
+{% endfor %}
+</table>
+
+<h2>«Научи Масю»: объяснения</h2>
+{% for ss in sessions %}
+<div class="card" style="margin-bottom:10px"><b>{{ ss.skill.title }}</b> <span class="muted">{{ ss.created_at|date:"d.m H:i" }} · раундов {{ ss.rounds }} · идей {{ ss.covered|length }} из {{ ss.skill.feynman.key_points|length }} · звёзд {{ ss.stars_awarded }}</span>
+{% for h in ss.history %}<div>{% if h.who == "child" %}<b>{{ child.display_name }}:</b>{% else %}<b>Мася:</b>{% endif %} {{ h.text }}</div>{% endfor %}</div>
+{% empty %}<p class="muted">Пока объяснений не было.</p>
+{% endfor %}
+{% endblock %}

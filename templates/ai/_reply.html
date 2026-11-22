@@ -1,0 +1,9 @@
+<div class="hint ai-reply">{% include "partials/mascot.html" with state="think" size="small" %}
+<div class="lvl">Мася{% if r.offline and not r.blocked and not r.refused %} · подсказка из учебника{% endif %}</div>{{ r.text|linebreaksbr }}</div>
+{% if r.can_more %}
+<form class="ai-more" style="display:flex;gap:10px;margin-top:12px;align-items:center" hx-post="{% url 'ai_ask' blk.id exercise.id %}" hx-target="#ai-panel" hx-swap="innerHTML">
+  <input type="hidden" name="turn" value="{{ next_turn }}"><input type="hidden" name="prev" value="{{ prev_id }}">
+  <input name="q" maxlength="200" autocomplete="off" placeholder="Что ещё непонятно?" aria-label="Вопрос Масе" style="flex:1;min-height:56px;font-size:20px;padding:0 16px;border-radius:16px;border:2px solid #d9dfeb">
+  <button class="btn secondary small">Спросить ещё</button>
+</form>
+{% endif %}
