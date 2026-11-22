@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "apps.rewards",
     "apps.parents",
     "apps.ai",
+    "apps.homework",
 ]
 
 MIDDLEWARE = [

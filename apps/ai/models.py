@@ -21,7 +21,7 @@ class AISettings(models.Model):
 class AIQuery(models.Model):
     """Журнал для родителя (9.3 п. 7): вопрос после маскирования, ответ, провайдер, токены, флаги."""
 
-    KINDS = [("hint", "Спросить Масю"), ("teach", "Научи Масю")]
+    KINDS = [("hint", "Спросить Масю"), ("teach", "Научи Масю"), ("homework", "Моя домашка: подбор темы")]
     child = models.ForeignKey("accounts.ChildProfile", on_delete=models.CASCADE, related_name="ai_queries")
     kind = models.CharField(max_length=8, choices=KINDS, default="hint")
     skill = models.ForeignKey("content.Skill", null=True, blank=True, on_delete=models.SET_NULL)

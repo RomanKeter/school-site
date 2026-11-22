@@ -39,6 +39,6 @@
   <a class="tile" href="{% url 'dictionary' %}"><span class="ico lime">{% include "partials/icon.html" with n="book" %}</span><span>Словарь<small class="muted">Мои слова</small></span></a>
   {% include "ai/_home_tile.html" %}
   <a class="tile" href="{% url 'rewards' %}"><span class="ico">{% include "partials/icon.html" with n="medal" %}</span><span>Награды<small class="muted">Значки и серия</small></span></a>
-  <span class="tile disabled" aria-disabled="true"><span class="ico gray">{% include "partials/icon.html" with n="pencil" %}</span><span>Домашка<small class="muted">скоро</small></span></span>
+  <a class="tile" href="{% url 'homework' %}"><span class="ico">{% include "partials/icon.html" with n="pencil" %}</span><span>Домашка<small class="muted">Что задали?</small></span></a>
 </section>
 {% endblock %}

@@ -15,4 +15,5 @@ urlpatterns = [
     path("parent/", include("apps.parents.urls")),
     path("", include("apps.content.urls")),
     path("", include("apps.ai.urls")),
+    path("", include("apps.homework.urls")),
 ]
