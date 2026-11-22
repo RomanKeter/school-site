@@ -1,0 +1,10 @@
+<div class="morph">
+  <div class="morph-tools" role="group" aria-label="Чем отмечаем">
+    <button type="button" class="mtool m-p" data-tool="p"><span class="sym">⌐</span> приставка</button>
+    <button type="button" class="mtool m-k sel" data-tool="k"><span class="sym">⌒</span> корень</button>
+    <button type="button" class="mtool m-s" data-tool="s"><span class="sym">^</span> суффикс</button>
+    <button type="button" class="mtool m-o" data-tool="o"><span class="sym">□</span> окончание</button>
+  </div>
+  <p class="morph-word">{% for ch in payload.word %}<button type="button" class="mletter" data-i="{{ forloop.counter0 }}" aria-label="Буква {{ ch }}">{{ ch }}</button>{% endfor %}<button type="button" class="mzero" data-zero aria-pressed="false" aria-label="Нулевое окончание">□</button></p>
+  <p class="muted center">Выбери морфему вверху и нажимай на её буквы. Пустой квадрат в конце — нулевое окончание.</p>
+</div>

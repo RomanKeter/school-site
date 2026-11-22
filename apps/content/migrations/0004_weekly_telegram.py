@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('content', '0002_ru_exercise_types'),
+        ('content', '0003_ru_morphemes_dictation'),
     ]
 
     operations = [

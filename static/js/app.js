@@ -146,7 +146,35 @@
     // русский язык (D-203): буква встаёт в пропуск; запятые включаются тапом между словами
     if (type === "fill_letters") {
       const gap = form.querySelector(".gap");
-      form.querySelectorAll("[data-choice]").forEach((b) => b.addEventListener("click", () => { if (gap) gap.textContent = b.textContent; }));
+      form.querySelectorAll("[data-choice]").forEach((b) => b.addEventListener("click", () => { if (gap) gap.textContent = b.dataset.choice === "0" ? "·" : b.textContent; }));
+    }
+    // разбор по составу (D-207): инструмент-морфема + тап по буквам; повторный тап тем же — стереть
+    if (type === "morphemes") {
+      let tool = "k";
+      form.querySelectorAll("[data-tool]").forEach((t) => t.addEventListener("click", (e) => {
+        e.preventDefault(); tool = t.dataset.tool;
+        form.querySelectorAll("[data-tool]").forEach((x) => x.classList.toggle("sel", x === t));
+      }));
+      form.querySelectorAll(".mletter").forEach((b) => b.addEventListener("click", (e) => {
+        e.preventDefault();
+        b.dataset.m = (b.dataset.m || "") === tool ? "" : tool;
+        b.className = "mletter" + (b.dataset.m ? " m-" + b.dataset.m : "");
+      }));
+      const z = form.querySelector("[data-zero]");
+      if (z) z.addEventListener("click", (e) => { e.preventDefault(); z.classList.toggle("on"); z.setAttribute("aria-pressed", z.classList.contains("on")); });
+    }
+    // диктант (D-208): озвучка ru-RU, обычная и медленная
+    if (type === "dictation") {
+      form.querySelectorAll("[data-dict-play]").forEach((b) => b.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (!("speechSynthesis" in window)) return;
+        const bytes = Uint8Array.from(atob(b.dataset.say || ""), (c) => c.charCodeAt(0));
+        const u = new SpeechSynthesisUtterance(new TextDecoder().decode(bytes));
+        u.lang = "ru-RU"; u.rate = b.dataset.slow ? 0.55 : 0.85;
+        const v = window.speechSynthesis.getVoices().find((x) => x.lang.startsWith("ru"));
+        if (v) u.voice = v;
+        window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+      }));
     }
     if (type === "punctuation") {
       form.querySelectorAll("[data-gap]").forEach((b) =>
@@ -181,6 +209,11 @@
       }
       case "fill_letters":
         return { id: form.dataset.choice || "" };
+      case "morphemes":
+        return { labels: Array.from(form.querySelectorAll(".mletter")).map((l) => l.dataset.m || "-").join(""),
+                 zero: !!form.querySelector("[data-zero].on") };
+      case "dictation":
+        return { value: val("textarea[name=value]") };
       case "punctuation":
         return { commas: Array.from(form.querySelectorAll("[data-gap].on")).map((b) => Number(b.dataset.gap)) };
       case "letter_tiles": case "tiles":

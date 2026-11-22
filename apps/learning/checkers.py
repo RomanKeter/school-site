@@ -201,6 +201,7 @@ def public_payload(ex) -> dict:
 
 
 # Русский язык (этап 2, D-201): fill_letters проверяется как выбор варианта, punctuation — по набору запятых.
-from .ru_types import check_punctuation  # noqa: E402
+from .ru_types import check_dictation, check_morphemes, check_punctuation  # noqa: E402
 
-CHECKERS.update({"fill_letters": _single_choice, "punctuation": check_punctuation})
+CHECKERS.update({"fill_letters": _single_choice, "punctuation": check_punctuation,
+                 "morphemes": check_morphemes, "dictation": check_dictation})

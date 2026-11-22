@@ -1,0 +1,7 @@
+{% load ru_tags %}<div class="dict">
+  <div class="dict-play">
+    <button type="button" class="btn" data-dict-play data-say="{{ payload.say|say_b64 }}">{% include "partials/icon.html" with n="sound" %} Послушать</button>
+    <button type="button" class="btn secondary" data-dict-play data-slow="1" data-say="{{ payload.say|say_b64 }}">{% include "partials/icon.html" with n="sound" %} Медленно</button>
+  </div>
+  <textarea class="bigin dict-in" name="value" rows="3" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Запиши то, что услышала"></textarea>
+</div>
