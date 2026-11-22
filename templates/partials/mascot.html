@@ -1,4 +1,4 @@
 {% load static %}<div class="mascot {{ size }}">
-<img src="{% get_static_prefix %}img/mascot/zubrik-{{ state|default:'hello' }}{% if size == 'small' %}-face{% endif %}.svg" alt="Зубрик{% if state == 'hint' %} подсказывает{% elif state == 'party' %} празднует{% elif state == 'rest' %} отдыхает{% endif %}">
+<img src="{% get_static_prefix %}img/mascot/zubrik-{{ state|default:'hello' }}{% if size == 'small' %}-face{% endif %}.svg" alt="Мася{% if state == 'hint' %} подсказывает{% elif state == 'party' %} празднует{% elif state == 'rest' %} отдыхает{% endif %}">
 {% if say %}<div class="bubble">{{ say }}</div>{% endif %}
 </div>
