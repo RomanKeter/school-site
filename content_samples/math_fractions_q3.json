@@ -1,0 +1,4031 @@
+{
+ "format_version": 1,
+ "subject": "math",
+ "unit": {
+  "key": "math.g5.u3b",
+  "title": "Обыкновенные дроби (продолжение)",
+  "grade": 5,
+  "quarter": 3,
+  "order": 4
+ },
+ "topics": [
+  {
+   "key": "math.fractions_cont",
+   "title": "Дроби: сокращение, разные знаменатели, умножение и деление",
+   "description": "",
+   "badge_code": "",
+   "synonyms": [
+    "смешанное число",
+    "НОЗ",
+    "дробь от числа"
+   ],
+   "keywords": [
+    "сокращение",
+    "обратная дробь"
+   ],
+   "textbook_refs": [
+    "часть 2, тема «Обыкновенные дроби»"
+   ],
+   "skills": [
+    {
+     "key": "math.fr.proper_mixed",
+     "title": "Правильные, неправильные дроби и смешанные числа",
+     "description": "",
+     "rule_card": "Дробь правильная, если числитель меньше знаменателя (она меньше 1). Если числитель больше знаменателя или равен ему — дробь неправильная. Неправильную дробь можно записать смешанным числом: 7/3 = 2+1/3 (делим с остатком). Обратно: 2+1/3 = (2×3+1)/3 = 7/3.",
+     "worked_example": {
+      "title": "Переведи 11/4 в смешанное число",
+      "steps": [
+       "11:4 = 2 (целых) и остаток 3.",
+       "Знаменатель тот же: 11/4 = 2+3/4."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.pm.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какое число смешанное?",
+        "options": [
+         {
+          "id": "a",
+          "text": "9/4"
+         },
+         {
+          "id": "b",
+          "text": "2+1/4"
+         },
+         {
+          "id": "c",
+          "text": "1/4"
+         },
+         {
+          "id": "d",
+          "text": "4/4"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Смешанное число — целое плюс правильная дробь. Здесь пишем 2+1/4, в тетради обычно 2 1/4."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "2+1/4"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 7/3 в смешанное число. Запиши как целое+дробь, например 2+1/3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "7:3=2 и остаток 1, значит 2+1/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+1/3",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "2+1/3"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 11/4 в смешанное число (форма 2+3/4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "11:4=2, остаток 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+3/4",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "2+3/4"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex4",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи смешанное 3+1/5 в неправильную дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3 целых — это 15 пятых, плюс 1 пятая = 16/5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "16/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "16/5"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex5",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 4+2/3 в неправильную дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "4×3+2=14, знаменатель 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "14/3",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "14/3"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex6",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 15/4 в смешанное (форма 3+3/4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "15:4=3, остаток 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3+3/4",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3+3/4"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex7",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 1+7/8 в неправильную дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1×8+7=15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15/8",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "15/8"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Дробь 9/9 — это…",
+        "options": [
+         {
+          "id": "a",
+          "text": "правильная дробь"
+         },
+         {
+          "id": "b",
+          "text": "смешанное число 0+9/9"
+         },
+         {
+          "id": "c",
+          "text": "неправильная дробь, равная 1"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель равен знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "9/9"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex9",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Переведи 17/5 в смешанное число",
+        "steps": [
+         {
+          "ask": "Неполное частное 17:5 = ?",
+          "answer": 3
+         },
+         {
+          "ask": "Остаток 17−15 = ?",
+          "answer": 2
+         },
+         {
+          "ask": "Знаменатель остаётся…",
+          "answer": 5
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Получается 3+2/5."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 3
+         },
+         {
+          "answer": 2
+         },
+         {
+          "answer": 5
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3+2/5"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex10",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 5+0/2? Лучше: переведи 5 целых в пятые, то есть 5 = ?/5.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5 = 25/5, потому что 25:5=5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "25/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "25/5"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex11",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 2+5/6 в неправильную дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "2×6+5=17."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "17/6",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "17/6"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex12",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 13/6 в смешанное (форма 2+1/6).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "13:6=2, остаток 1."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+1/6",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "2+1/6"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Правильная дробь — это дробь, у которой…",
+        "options": [
+         {
+          "id": "a",
+          "text": "числитель больше знаменателя"
+         },
+         {
+          "id": "b",
+          "text": "числитель меньше знаменателя"
+         },
+         {
+          "id": "c",
+          "text": "числитель равен знаменателю"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Правильная дробь меньше 1."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "числитель меньше знаменателя"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex14",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 8/5 в смешанное (форма 1+3/5).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8:5=1, остаток 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1+3/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "1+3/5"
+       }
+      },
+      {
+       "key": "math.fr.pm.ex15",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Переведи 3+3/7 в неправильную дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×7+3=24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24/7",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "24/7"
+       }
+      }
+     ],
+     "order": 0,
+     "prerequisites": [
+      "math.fr.notion"
+     ]
+    },
+    {
+     "key": "math.fr.simplify",
+     "title": "Основное свойство дроби, сокращение, приведение к НОЗ",
+     "description": "",
+     "rule_card": "Основное свойство: числитель и знаменатель можно умножить или разделить на одно и то же натуральное число — величина дроби не изменится. Сократить дробь — разделить числитель и знаменатель на их НОД. Привести к новому знаменателю — умножить оба члена на одно и то же число. Наименьший общий знаменатель нескольких дробей — НОК их знаменателей.",
+     "worked_example": {
+      "title": "Сократи 16/24",
+      "steps": [
+       "НОД(16, 24)=8.",
+       "16:8=2, 24:8=3.",
+       "16/24 = 2/3."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.sm.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 6/8. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 3/4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "6/8"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 9/12. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 3/4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "9/12"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 10/15. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 2/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "10/15"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex4",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 8/12. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 2/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "8/12"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex5",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 14/21. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 2/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "14/21"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex6",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 15/25. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 3/5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/5",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "15/25"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex7",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 16/24. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 2/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "16/24"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex8",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи дробь 18/24. Запиши в несократимом виде.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Найди НОД числителя и знаменателя и раздели на него оба."
+         },
+         {
+          "level": 2,
+          "text": "Получится 3/4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "18/24"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex9",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Приведи дробь 2/3 к знаменателю 12.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "12:3=4, числитель тоже умножь на 4: 2×4=8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8/12",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "8/12"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex10",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Приведи 3/5 к знаменателю 20.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "20:5=4, 3×4=12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12/20",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "12/20"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex11",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Приведи 1/4 к знаменателю 12.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "12:4=3, 1×3=3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/12",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3/12"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Какой наименьший общий знаменатель у дробей 1/4 и 1/6?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОК(4, 6)=12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 4,
+        "b": 6
+       }
+      },
+      {
+       "key": "math.fr.sm.ex13",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Приведи 1/4 и 1/6 к НОЗ",
+        "steps": [
+         {
+          "ask": "НОК(4, 6) = ?",
+          "answer": 12
+         },
+         {
+          "ask": "1/4 = ?/12 (какой числитель?)",
+          "answer": 3
+         },
+         {
+          "ask": "1/6 = ?/12 (какой числитель?)",
+          "answer": 2
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "1/4=3/12, 1/6=2/12."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 12
+         },
+         {
+          "answer": 3
+         },
+         {
+          "answer": 2
+         }
+        ]
+       },
+       "verify": {
+        "op": "lcm",
+        "a": 4,
+        "b": 6
+       }
+      },
+      {
+       "key": "math.fr.sm.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Основное свойство дроби: если числитель и знаменатель умножить на одно и то же натуральное число, дробь…",
+        "options": [
+         {
+          "id": "a",
+          "text": "увеличится"
+         },
+         {
+          "id": "b",
+          "text": "уменьшится"
+         },
+         {
+          "id": "c",
+          "text": "не изменится"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "2/3 = 4/6 = 6/9 — это равные дроби."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "не изменится"
+       }
+      },
+      {
+       "key": "math.fr.sm.ex15",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Сократи 24/36 до несократимой дроби.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОД(24, 36)=12, 24:12=2, 36:12=3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_reduce",
+        "value": "24/36"
+       }
+      }
+     ],
+     "order": 1,
+     "prerequisites": [
+      "math.fr.proper_mixed",
+      "math.div.gcd"
+     ]
+    },
+    {
+     "key": "math.fr.compare_unlike",
+     "title": "Сравнение дробей с разными знаменателями",
+     "description": "",
+     "rule_card": "Чтобы сравнить дроби с разными знаменателями, их приводят к общему (обычно наименьшему) знаменателю и сравнивают числители. Дроби с числителем 1 сравнивают так: больше та, у которой знаменатель меньше. Равные дроби после сокращения совпадают.",
+     "worked_example": {
+      "title": "Сравни 2/3 и 3/4",
+      "steps": [
+       "НОЗ = НОК(3, 4)=12.",
+       "2/3=8/12, 3/4=9/12.",
+       "8<9, поэтому 2/3 < 3/4."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.cu.ex1",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 1/2 и 1/3. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "1/2 больше"
+         },
+         {
+          "id": "b",
+          "text": "1/3 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Половины больше, чем треть."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "1/2",
+        "b": "1/3",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex2",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 2/5 и 3/5. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/5 больше"
+         },
+         {
+          "id": "b",
+          "text": "3/5 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Знаменатели равны, 2<3."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "2/5",
+        "b": "3/5",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex3",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 1/4 и 1/6. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "1/4 больше"
+         },
+         {
+          "id": "b",
+          "text": "1/6 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Четверть больше шестой."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "1/4",
+        "b": "1/6",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex4",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 2/3 и 3/4. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/3 больше"
+         },
+         {
+          "id": "b",
+          "text": "3/4 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=12: 8/12 < 9/12."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "2/3",
+        "b": "3/4",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex5",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 3/8 и 1/2. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "3/8 больше"
+         },
+         {
+          "id": "b",
+          "text": "1/2 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "1/2=4/8, 3/8<4/8."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "3/8",
+        "b": "1/2",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex6",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 5/6 и 4/5. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "5/6 больше"
+         },
+         {
+          "id": "b",
+          "text": "4/5 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=30: 25/30 > 24/30."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "5/6",
+        "b": "4/5",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex7",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 2/7 и 1/3. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/7 больше"
+         },
+         {
+          "id": "b",
+          "text": "1/3 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=21: 6/21 < 7/21."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "2/7",
+        "b": "1/3",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex8",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 3/10 и 1/4. Что больше?",
+        "options": [
+         {
+          "id": "a",
+          "text": "3/10 больше"
+         },
+         {
+          "id": "b",
+          "text": "1/4 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=20: 6/20 > 5/20."
+         },
+         {
+          "level": 2,
+          "text": "Приведи к общему знаменателю."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "3/10",
+        "b": "1/4",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex9",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Сравни 3/6 и 1/2.",
+        "options": [
+         {
+          "id": "a",
+          "text": "3/6 больше"
+         },
+         {
+          "id": "b",
+          "text": "1/2 больше"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "3/6 сокращается до 1/2."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "3/6",
+        "b": "1/2",
+        "rel": "="
+       }
+      },
+      {
+       "key": "math.fr.cu.ex10",
+       "type": "drag_order",
+       "difficulty": 2,
+       "est_seconds": 50,
+       "payload": {
+        "prompt": "Расставь по возрастанию: 1/2, 1/3, 1/4",
+        "items": [
+         {
+          "id": "a",
+          "text": "1/2"
+         },
+         {
+          "id": "b",
+          "text": "1/3"
+         },
+         {
+          "id": "c",
+          "text": "1/4"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Чем больше знаменатель у дроби с числителем 1, тем дробь меньше."
+         }
+        ]
+       },
+       "answer": {
+        "order": [
+         "c",
+         "b",
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_sort",
+        "items": [
+         "1/4",
+         "1/3",
+         "1/2"
+        ]
+       }
+      },
+      {
+       "key": "math.fr.cu.ex11",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь больше: 5/12 или 1/3?",
+        "options": [
+         {
+          "id": "a",
+          "text": "5/12"
+         },
+         {
+          "id": "b",
+          "text": "1/3"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "1/3=4/12, 5/12>4/12."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "5/12",
+        "b": "1/3",
+        "rel": ">"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex12",
+       "type": "single_choice",
+       "difficulty": 2,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь меньше: 7/10 или 3/4?",
+        "options": [
+         {
+          "id": "a",
+          "text": "7/10"
+         },
+         {
+          "id": "b",
+          "text": "3/4"
+         },
+         {
+          "id": "c",
+          "text": "равны"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=20: 14/20 и 15/20, 14<15."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "7/10",
+        "b": "3/4",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex13",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Сравни 2/5 и 3/7 через НОЗ",
+        "steps": [
+         {
+          "ask": "НОК(5, 7) = ?",
+          "answer": 35
+         },
+         {
+          "ask": "2/5 = ?/35 (числитель)",
+          "answer": 14
+         },
+         {
+          "ask": "3/7 = ?/35 (числитель)",
+          "answer": 15
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "14/35 < 15/35, значит 2/5 < 3/7."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 35
+         },
+         {
+          "answer": 14
+         },
+         {
+          "answer": 15
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "2/5",
+        "b": "3/7",
+        "rel": "<"
+       }
+      },
+      {
+       "key": "math.fr.cu.ex14",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Верно ли 4/8 = 3/6?",
+        "options": [
+         {
+          "id": "a",
+          "text": "Да, обе равны 1/2"
+         },
+         {
+          "id": "b",
+          "text": "Нет"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сократи обе дроби."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_cmp",
+        "a": "4/8",
+        "b": "3/6",
+        "rel": "="
+       }
+      },
+      {
+       "key": "math.fr.cu.ex15",
+       "type": "single_choice",
+       "difficulty": 3,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Какая дробь самая большая?",
+        "options": [
+         {
+          "id": "a",
+          "text": "2/5"
+         },
+         {
+          "id": "b",
+          "text": "3/8"
+         },
+         {
+          "id": "c",
+          "text": "1/2"
+         },
+         {
+          "id": "d",
+          "text": "2/7"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "1/2=0,5; 2/5=0,4; 3/8=0,375; 2/7 меньше 1/3≈0,33."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "c"
+        ]
+       },
+       "verify": {
+        "op": "frac_max",
+        "options": [
+         "2/5",
+         "3/8",
+         "1/2",
+         "2/7"
+        ]
+       }
+      }
+     ],
+     "order": 2,
+     "prerequisites": [
+      "math.fr.simplify",
+      "math.fr.compare"
+     ]
+    },
+    {
+     "key": "math.fr.add_unlike",
+     "title": "Сложение и вычитание дробей с разными знаменателями",
+     "description": "",
+     "rule_card": "Чтобы сложить или вычесть дроби с разными знаменателями, приводят их к наименьшему общему знаменателю (НОК знаменателей), складывают или вычитают числители, знаменатель оставляют общий и при необходимости сокращают результат.",
+     "worked_example": {
+      "title": "1/2 + 1/3",
+      "steps": [
+       "НОЗ = НОК(2, 3)=6.",
+       "1/2=3/6, 1/3=2/6.",
+       "3/6+2/6=5/6."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.au.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/2 + 1/3. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/6",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1/2",
+        "b": "1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/4 + 1/2. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1/4",
+        "b": "1/2",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/3 + 1/6. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/6",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "2/3",
+        "b": "1/6",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex4",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/4 − 1/2. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "3/4",
+        "b": "1/2",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex5",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5/6 − 1/3. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/2",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "5/6",
+        "b": "1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex6",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/5 + 2/5. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/5",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1/5",
+        "b": "2/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex7",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/8 + 1/4. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/8",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "3/8",
+        "b": "1/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex8",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 7/10 − 1/5. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/2",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "7/10",
+        "b": "1/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex9",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/9 + 1/3. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/9",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "2/9",
+        "b": "1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex10",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5/12 − 1/4. Запиши несократимую дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Приведи к НОЗ, затем сложи или вычти числители."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/6",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "5/12",
+        "b": "1/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли 1/2 + 1/3",
+        "steps": [
+         {
+          "ask": "НОЗ (НОК 2 и 3) = ?",
+          "answer": 6
+         },
+         {
+          "ask": "1/2 = ?/6",
+          "answer": 3
+         },
+         {
+          "ask": "1/3 = ?/6",
+          "answer": 2
+         },
+         {
+          "ask": "Числитель суммы 3+2 = ?",
+          "answer": 5
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Сумма 5/6."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 6
+         },
+         {
+          "answer": 3
+         },
+         {
+          "answer": 2
+         },
+         {
+          "answer": 5
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1/2",
+        "b": "1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex12",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/5 + 1/2. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=10: 4/10+5/10=9/10."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "9/10",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "2/5",
+        "b": "1/2",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex13",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/4 − 1/6. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=12: 9/12−2/12=7/12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7/12",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "3/4",
+        "b": "1/6",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.au.ex14",
+       "type": "fraction_input",
+       "difficulty": 3,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/6 + 1/3 + 1/2. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "НОЗ=6: 1/6+2/6+3/6=6/6=1. Можно записать 1/1 или 1."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "1/1"
+       }
+      },
+      {
+       "key": "math.fr.au.ex15",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5/8 − 1/2. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1/2=4/8, 5/8−4/8=1/8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/8",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "5/8",
+        "b": "1/2",
+        "reduced": true
+       }
+      }
+     ],
+     "order": 3,
+     "prerequisites": [
+      "math.fr.add",
+      "math.fr.simplify"
+     ]
+    },
+    {
+     "key": "math.fr.mixed_ops",
+     "title": "Действия со смешанными числами",
+     "description": "",
+     "rule_card": "Смешанные числа складывают и вычитают по частям: отдельно целые, отдельно дробные. Если дробных частей не хватает для вычитания, занимают 1 целое (это знаменатель долей). Можно перевести оба числа в неправильные дроби, выполнить действие и вернуть смешанную запись.",
+     "worked_example": {
+      "title": "(2+1/2)+(1+1/3)",
+      "steps": [
+       "Целые: 2+1=3.",
+       "Дроби: 1/2+1/3=3/6+2/6=5/6.",
+       "Сумма 3+5/6."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.mo.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (1+1/2) + (2+1/2). Запиши смешанное, например 4+0/2 или как неправильную 4/1.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1+2=3, 1/2+1/2=1, всего 4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4/1",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "4/1"
+       }
+      },
+      {
+       "key": "math.fr.mo.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (2+1/3) + (1+1/3). Запиши смешанное 3+2/3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 2+1=3, дроби 1/3+1/3=2/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3+2/3",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3+2/3"
+       }
+      },
+      {
+       "key": "math.fr.mo.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (3+3/4) + (1+1/4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3+1=4, 3/4+1/4=1, всего 5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/1",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "5/1"
+       }
+      },
+      {
+       "key": "math.fr.mo.ex4",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (4+1/5) − (1+2/5). Запиши смешанное 2+4/5.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Нельзя вычесть 2/5 из 1/5 — занимаем 1 целое: 4+1/5=3+6/5, затем 3−1=2, 6/5−2/5=4/5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+4/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "4+1/5",
+        "b": "1+2/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex5",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (2+1/2) + (1+1/3). Запиши смешанное 3+5/6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 3, дроби 1/2+1/3=5/6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3+5/6",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "2+1/2",
+        "b": "1+1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex6",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (5+3/8) − (2+1/8). Запиши 3+2/8 или сократи 3+1/4. Лучше несократимую 3+1/4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 5−2=3, дроби 3/8−1/8=2/8=1/4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3+1/4",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "5+3/8",
+        "b": "2+1/8",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex7",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (1+3/4) + (2+3/4). Запиши смешанное.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 3, дроби 3/4+3/4=6/4=1+1/2, всего 4+1/2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4+1/2",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1+3/4",
+        "b": "2+3/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex8",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (3+1/6) − 2. Запиши смешанное 1+1/6.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3−2=1, дробная часть 1/6 остаётся."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1+1/6",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "3+1/6",
+        "b": "2/1",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex9",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5 − (2+1/3). Запиши 2+2/3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "5=4+3/3, 4−2=2, 3/3−1/3=2/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+2/3",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "5/1",
+        "b": "2+1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex10",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (1+1/5) + (1+2/5).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 2, дроби 3/5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+3/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1+1/5",
+        "b": "1+2/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли (2+1/4)+(1+1/2)",
+        "steps": [
+         {
+          "ask": "Приведи 1/2 к четвертям: 1/2 = ?/4",
+          "answer": 2
+         },
+         {
+          "ask": "Дроби: 1/4 + 2/4 = ?/4",
+          "answer": 3
+         },
+         {
+          "ask": "Целые 2+1 = ?",
+          "answer": 3
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Результат 3+3/4."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 2
+         },
+         {
+          "answer": 3
+         },
+         {
+          "answer": 3
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "2+1/4",
+        "b": "1+1/2",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex12",
+       "type": "fraction_input",
+       "difficulty": 3,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (6+2/7) − (3+5/7). Запиши 2+4/7.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Занимаем единицу: 6+2/7=5+9/7, 5−3=2, 9/7−5/7=4/7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2+4/7",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "sub",
+        "a": "6+2/7",
+        "b": "3+5/7",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mo.ex13",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (2+2/5) + (3+3/5).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 5, дроби 5/5=1, всего 6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6/1",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "6/1"
+       }
+      },
+      {
+       "key": "math.fr.mo.ex14",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (4+1/2) − (1+1/2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 4−1=3, дроби 1/2−1/2=0."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/1",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3/1"
+       }
+      },
+      {
+       "key": "math.fr.mo.ex15",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (1+2/3) + (1+2/3). Запиши 3+1/3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Целые 2, дроби 4/3=1+1/3, всего 3+1/3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3+1/3",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "add",
+        "a": "1+2/3",
+        "b": "1+2/3",
+        "reduced": true
+       }
+      }
+     ],
+     "order": 4,
+     "prerequisites": [
+      "math.fr.add_unlike",
+      "math.fr.proper_mixed"
+     ]
+    },
+    {
+     "key": "math.fr.multiply",
+     "title": "Умножение дробей и взаимно обратные числа",
+     "description": "",
+     "rule_card": "Чтобы умножить дроби, перемножают числители и знаменатели: a/b × c/d = (a×c)/(b×d). Перед умножением удобно сокращать «накрест». Число, обратное к a/b (неравному нулю), есть b/a: их произведение равно 1. Обратное к натуральному n есть 1/n.",
+     "worked_example": {
+      "title": "2/5 × 3/4",
+      "steps": [
+       "Числители: 2×3=6, знаменатели: 5×4=20.",
+       "6/20 сокращаем на 2: 3/10."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.mu.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/5 × 3/4. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/10",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "2/5",
+        "b": "3/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/2 × 1/3. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/6",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "1/2",
+        "b": "1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/4 × 2/3. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/2",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "3/4",
+        "b": "2/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex4",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5/6 × 2/5. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "5/6",
+        "b": "2/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex5",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/8 × 4/5. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/10",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "1/8",
+        "b": "4/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex6",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 7/9 × 3/7. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "7/9",
+        "b": "3/7",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex7",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/3 × 5/8. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/12",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "2/3",
+        "b": "5/8",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex8",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/10 × 5/6. Несократимая дробь.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Числитель на числитель, знаменатель на знаменатель."
+         },
+         {
+          "level": 2,
+          "text": "Сократи, если можно, и до, и после умножения."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "3/10",
+        "b": "5/6",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex9",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3 × (2/5). Несократимая дробь (или смешанное 1+1/5).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×2/5=6/5 = 1+1/5."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6/5",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "3/1",
+        "b": "2/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex10",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (1/4) × 8.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "8/4=2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "1/4",
+        "b": "8/1",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex11",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Взаимно обратные числа — это числа, произведение которых равно 1. Какое число обратное к 2/3?",
+        "options": [
+         {
+          "id": "a",
+          "text": "3/2"
+         },
+         {
+          "id": "b",
+          "text": "2/3"
+         },
+         {
+          "id": "c",
+          "text": "1/2"
+         },
+         {
+          "id": "d",
+          "text": "3"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Переверни дробь: числитель и знаменатель меняются местами."
+         },
+         {
+          "level": 2,
+          "text": "Проверка: (2/3)×(3/2)=1."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "a"
+        ]
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "3/2"
+       }
+      },
+      {
+       "key": "math.fr.mu.ex12",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Найди число, обратное к 5/4.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Переверни дробь."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "4/5",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "4/5"
+       }
+      },
+      {
+       "key": "math.fr.mu.ex13",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Найди число, обратное к 7 (запиши дробью).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "7=7/1, обратное — 1/7."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/7",
+        "require_reduced": false
+       },
+       "verify": {
+        "op": "frac_eq",
+        "value": "1/7"
+       }
+      },
+      {
+       "key": "math.fr.mu.ex14",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли (2/3)×(3/8)",
+        "steps": [
+         {
+          "ask": "Можно сократить тройки. Числители после сокращения: 2 и …?",
+          "answer": 1
+         },
+         {
+          "ask": "Знаменатели после сокращения: 1 и …?",
+          "answer": 8
+         },
+         {
+          "ask": "Произведение числителей 2×1 = ?",
+          "answer": 2
+         },
+         {
+          "ask": "Произведение знаменателей 1×8 = ?",
+          "answer": 8
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Результат 2/8=1/4, но в шагах получили 2/8, сокращение троек уже учтено: 2/8 ещё сокращается. После сокращения 3: (2/1)×(1/8)=2/8=1/4."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 1
+         },
+         {
+          "answer": 8
+         },
+         {
+          "answer": 2
+         },
+         {
+          "answer": 8
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "2/3",
+        "b": "3/8",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.mu.ex15",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (4/5)×(5/4).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Взаимно обратные, произведение равно 1."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "mul",
+        "a": "4/5",
+        "b": "5/4",
+        "reduced": true
+       }
+      }
+     ],
+     "order": 5,
+     "prerequisites": [
+      "math.fr.simplify"
+     ]
+    },
+    {
+     "key": "math.fr.divide",
+     "title": "Деление обыкновенных дробей",
+     "description": "",
+     "rule_card": "Чтобы разделить одну дробь на другую, первую умножают на число, обратное ко второй: a/b : c/d = a/b × d/c. Деление на натуральное n равно умножению на 1/n. Результат сокращают.",
+     "worked_example": {
+      "title": "3/4 : 1/2",
+      "steps": [
+       "Обратная к 1/2 — это 2/1.",
+       "3/4 × 2/1 = 6/4 = 3/2."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.dv.ex1",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/2 : 1/4. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 1/4 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "1/2",
+        "b": "1/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex2",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/3 : 1/3. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 1/3 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "2/3",
+        "b": "1/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex3",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3/4 : 1/2. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 1/2 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/2",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "3/4",
+        "b": "1/2",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex4",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 5/6 : 2/3. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 2/3 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "5/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "5/6",
+        "b": "2/3",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex5",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 1/2 : 3/4. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 3/4 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/3",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "1/2",
+        "b": "3/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex6",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 4/5 : 2/5. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 2/5 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "4/5",
+        "b": "2/5",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex7",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 7/8 : 1/4. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 1/4 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "7/2",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "7/8",
+        "b": "1/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex8",
+       "type": "fraction_input",
+       "difficulty": 2,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 2/5 : 4/15. Несократимая дробь (или 2/1, если получилось целое 2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Делить на дробь — значит умножить на обратную."
+         },
+         {
+          "level": 2,
+          "text": "Обратная к 4/15 получается переворотом."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/2",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "2/5",
+        "b": "4/15",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex9",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: 3 : (1/2).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3×2/1=6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "3/1",
+        "b": "1/2",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex10",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (3/4) : 3.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "3/4 × 1/3 = 3/12 = 1/4."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/4",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "3/4",
+        "b": "3/1",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Вычисли (2/3):(4/9)",
+        "steps": [
+         {
+          "ask": "Дробь, обратная к 4/9 — это ?/4 (числитель)",
+          "answer": 9
+         },
+         {
+          "ask": "Умножаем 2/3 на 9/4. После сокращения на 3 числитель: 2×3 = ?",
+          "answer": 6
+         },
+         {
+          "ask": "Знаменатель после сокращения: 1×4 = ?",
+          "answer": 4
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "6/4=3/2."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 9
+         },
+         {
+          "answer": 6
+         },
+         {
+          "answer": 4
+         }
+        ]
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "2/3",
+        "b": "4/9",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex12",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (5/8):(5/8).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Любое ненулевое число, делённое на себя, даёт 1."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "1/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "5/8",
+        "b": "5/8",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Чтобы разделить дробь на дробь, нужно…",
+        "options": [
+         {
+          "id": "a",
+          "text": "сложить знаменатели"
+         },
+         {
+          "id": "b",
+          "text": "умножить первую дробь на обратную ко второй"
+         },
+         {
+          "id": "c",
+          "text": "вычесть числители"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "a/b : c/d = a/b × d/c."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "умножить первую дробь на обратную ко второй"
+       }
+      },
+      {
+       "key": "math.fr.dv.ex14",
+       "type": "fraction_input",
+       "difficulty": 3,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (1+1/2) : (3/4). Запиши 2/1.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "1+1/2=3/2, 3/2 × 4/3 = 4/2 = 2."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "2/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "3/2",
+        "b": "3/4",
+        "reduced": true
+       }
+      },
+      {
+       "key": "math.fr.dv.ex15",
+       "type": "fraction_input",
+       "difficulty": 1,
+       "est_seconds": 45,
+       "payload": {
+        "prompt": "Вычисли: (6/7):(2/7).",
+        "hints": [
+         {
+          "level": 1,
+          "text": "6/7 × 7/2 = 6/2 = 3."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "3/1",
+        "require_reduced": true
+       },
+       "verify": {
+        "op": "frac_binop",
+        "binop": "div",
+        "a": "6/7",
+        "b": "2/7",
+        "reduced": true
+       }
+      }
+     ],
+     "order": 6,
+     "prerequisites": [
+      "math.fr.multiply"
+     ]
+    },
+    {
+     "key": "math.fr.of_number",
+     "title": "Дробь от числа и число по его дроби",
+     "description": "",
+     "rule_card": "Чтобы найти дробь a/b от числа n, вычисляют n × a/b (можно сначала разделить n на b и умножить на a). Чтобы найти число по его дроби (известно, что a/b числа равны m), делят m на a/b, то есть умножают m на b/a: сначала находят одну долю m:a, затем всё число умножают на b.",
+     "worked_example": {
+      "title": "2/3 от 24",
+      "steps": [
+       "24 : 3 = 8 — это одна треть.",
+       "Две трети: 8 × 2 = 16.",
+       "Или сразу 24 × 2/3 = 16."
+      ]
+     },
+     "exercises": [
+      {
+       "key": "math.fr.of.ex1",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди 1/5 от 30.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Чтобы найти дробь от числа, число умножают на дробь."
+         },
+         {
+          "level": 2,
+          "text": "30×1/5=6."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "6"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "30*1/5"
+       }
+      },
+      {
+       "key": "math.fr.of.ex2",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди 2/3 от 24.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "24:3=8, 8×2=16."
+         },
+         {
+          "level": 2,
+          "text": "Или 24×2/3=16."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "16"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "24*2/3"
+       }
+      },
+      {
+       "key": "math.fr.of.ex3",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди 3/4 от 40.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "40:4=10, 10×3=30."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "30"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "40*3/4"
+       }
+      },
+      {
+       "key": "math.fr.of.ex4",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди 5/6 от 18.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "18:6=3, 3×5=15."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "15"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18*5/6"
+       }
+      },
+      {
+       "key": "math.fr.of.ex5",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Число 12 составляет 1/3 неизвестного числа. Найди это число.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Чтобы найти число по его дроби, делят на эту дробь (умножают на обратную)."
+         },
+         {
+          "level": 2,
+          "text": "12 : 1/3 = 12×3=36."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "36"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "12*3"
+       }
+      },
+      {
+       "key": "math.fr.of.ex6",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Число 18 составляет 2/5 неизвестного. Найди неизвестное.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "18 : 2/5 = 18×5/2=45."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "45"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "18*5/2"
+       }
+      },
+      {
+       "key": "math.fr.of.ex7",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "В классе 28 учеников, 3/7 из них — девочки. Сколько девочек?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "28×3/7=12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "28*3/7"
+       }
+      },
+      {
+       "key": "math.fr.of.ex8",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Яна прочитала 2/5 книги в 150 страниц. Сколько страниц она прочитала?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "150×2/5=60."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "60"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "150*2/5"
+       }
+      },
+      {
+       "key": "math.fr.of.ex9",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Отрезок 48 см, отрезали 1/6. Какой длины отрезали (см)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "48:6=8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48/6"
+       }
+      },
+      {
+       "key": "math.fr.of.ex10",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Отрезали 1/6 от 48 см. Какая длина осталась (см)?",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Осталось 5/6: 48×5/6=40. Или 48−8=40."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "40"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "48-48/6"
+       }
+      },
+      {
+       "key": "math.fr.of.ex11",
+       "type": "step_by_step",
+       "difficulty": 2,
+       "est_seconds": 120,
+       "payload": {
+        "prompt": "Найди число, 3/4 которого равны 21",
+        "steps": [
+         {
+          "ask": "Сначала найди 1/4: 21 : 3 = ?",
+          "answer": 7
+         },
+         {
+          "ask": "Всё число — 4 таких доли: 7 × 4 = ?",
+          "answer": 28
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "Проверка: 28×3/4=21."
+         }
+        ]
+       },
+       "answer": {
+        "steps": [
+         {
+          "answer": 7
+         },
+         {
+          "answer": 28
+         }
+        ]
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "21*4/3"
+       }
+      },
+      {
+       "key": "math.fr.of.ex12",
+       "type": "number_input",
+       "difficulty": 1,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "Найди 4/9 от 27.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "27:9=3, 3×4=12."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "12"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "27*4/9"
+       }
+      },
+      {
+       "key": "math.fr.of.ex13",
+       "type": "single_choice",
+       "difficulty": 1,
+       "est_seconds": 30,
+       "payload": {
+        "prompt": "Чтобы найти дробь a/b от числа n, нужно…",
+        "options": [
+         {
+          "id": "a",
+          "text": "n + a/b"
+         },
+         {
+          "id": "b",
+          "text": "n × a/b"
+         },
+         {
+          "id": "c",
+          "text": "n − a/b"
+         }
+        ],
+        "hints": [
+         {
+          "level": 1,
+          "text": "«Дробь от числа» — это умножение."
+         }
+        ],
+        "solution_steps": []
+       },
+       "answer": {
+        "correct": [
+         "b"
+        ]
+       },
+       "verify": {
+        "op": "literal",
+        "expected": "n × a/b"
+       }
+      },
+      {
+       "key": "math.fr.of.ex14",
+       "type": "number_input",
+       "difficulty": 2,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "2/3 от числа равны 16. Найди 1/3 этого числа.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "Если 2/3 — это 16, то 1/3 — это 8."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "8"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "16/2"
+       }
+      },
+      {
+       "key": "math.fr.of.ex15",
+       "type": "number_input",
+       "difficulty": 3,
+       "est_seconds": 40,
+       "payload": {
+        "prompt": "2/3 от числа равны 16. Найди само число.",
+        "hints": [
+         {
+          "level": 1,
+          "text": "16 : 2/3 = 16×3/2=24."
+         }
+        ],
+        "solution_steps": [],
+        "distractor_feedback": {}
+       },
+       "answer": {
+        "value": "24"
+       },
+       "verify": {
+        "op": "eval",
+        "expr": "16*3/2"
+       }
+      }
+     ],
+     "order": 7,
+     "prerequisites": [
+      "math.fr.multiply",
+      "math.fr.divide"
+     ]
+    }
+   ],
+   "order": 0
+  }
+ ]
+}
