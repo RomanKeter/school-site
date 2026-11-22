@@ -7,6 +7,7 @@
     <div class="options" role="radiogroup" aria-label="Предмет" style="margin-bottom:12px">
       <label class="opt"><input type="radio" name="subject" value="" {% if not subject %}checked{% endif %}> Любой</label>
       <label class="opt"><input type="radio" name="subject" value="math" {% if subject == "math" %}checked{% endif %}> Математика</label>
+      <label class="opt"><input type="radio" name="subject" value="ru" {% if subject == "ru" %}checked{% endif %}> Русский</label>
       <label class="opt"><input type="radio" name="subject" value="en" {% if subject == "en" %}checked{% endif %}> English</label>
     </div>
     <p><input class="bigin" name="text" value="{{ text }}" maxlength="{{ max_chars }}" required autocomplete="off" placeholder="например: дроби с одинаковыми знаменателями" aria-label="Что задали" style="width:100%"></p>
@@ -21,11 +22,11 @@
 
 {% if results %}
 <h2 class="section-title">Нашла такие темы</h2>
-<section class="tiles">
+<section class="tiles" style="grid-template-columns:1fr">
 {% for m in results %}
   <form method="post" action="{% url 'homework_start' req.id %}" class="tile">{% csrf_token %}
     <input type="hidden" name="kind" value="{{ m.kind }}"><input type="hidden" name="id" value="{{ m.id }}">
-    <span class="ico{% if m.subject == 'en' %} coral{% endif %}">{% if m.subject == "en" %}{% include "partials/icon.html" with n="lang" %}{% else %}{% include "partials/icon.html" with n="book" %}{% endif %}</span>
+    <span class="ico{% if m.subject == 'en' %} coral{% elif m.subject == 'ru' %} ru{% endif %}">{% if m.subject == "en" %}{% include "partials/icon.html" with n="lang" %}{% elif m.subject == "ru" %}{% include "partials/icon.html" with n="rule" %}{% else %}{% include "partials/icon.html" with n="book" %}{% endif %}</span>
     <span style="flex:1">{{ m.title }}<small class="muted">{{ m.steps }} заданий</small></span>
     <button class="btn small">Тренироваться</button>
   </form>

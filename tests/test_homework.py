@@ -25,6 +25,10 @@ def _offline_ai(settings):
 
 @pytest.fixture
 def hw(content, family):
+    from pathlib import Path
+    base = Path(__file__).resolve().parent.parent / "content_samples"
+    for n in ("ru_orthography.json", "ru_grammar.json"):
+        call_command("import_content", str(base / n), update=True)
     call_command("seed_homework")
     return family[1]
 
@@ -54,6 +58,11 @@ PHRASES = [
     ("задачи на движение", "math.eq.simple"), ("has got", "en.gr.have_got"), ("животные англ", "T:en.animals"),
     ("words about school", "T:en.school"), ("my family слова", "T:en.family"), ("фрукты", "T:en.food"),
     ("комнаты в доме", "T:en.home"), ("времена года", "T:en.weather"), ("простые числа до 100", "math.primes.notion"),
+    # русский язык (после слияния stage2-ru)
+    ("тся ться", "ru.or.tsya"), ("безударные гласные", "ru.or.unstressed"), ("слова с чередованием", "ru.or.alt"),
+    ("приставки на з с", "ru.or.zs"), ("разделительный твёрдый знак", "ru.or.signs"), ("не с глаголами", "ru.or.ne"),
+    ("части речи", "ru.mo.pos"), ("запятые при однородных", "ru.pu.homog"), ("обращение запятые", "ru.pu.address"),
+    ("словарные слова", "ru.or.vocab"), ("одноротные члены", "ru.pu.homog"),
 ]
 
 
@@ -71,7 +80,8 @@ def test_search_accuracy_ac_2_04(hw):
 def test_search_subject_filter_and_nothing_found(hw):
     assert all(m["subject"] == "en" for m in matching.search("дроби", "en")) and not matching.search("дроби", "en")
     assert matching.search("дроби", "math")
-    assert matching.search("тся ться") == []  # русского в контенте ещё нет
+    assert matching.search("косинус угла") == []
+    assert _key(matching.search("тся ться", "ru")[0]) == "ru.or.tsya"
 
 
 def test_looks_like_task():
@@ -87,10 +97,12 @@ def test_submit_found_task_and_unknown(hw):
     req, msg = services.submit(child, "дроби с одинаковыми знаменателями", "math")
     assert req.match_method == "match" and req.matches and msg == ""
     req, msg = services.submit(child, "реши 2/7 + 3/7", "")
-    assert req.looks_like_task and msg == services.MSG_TASK and req.matches  # тема найдена, но задачу не решаем
-    req, msg = services.submit(child, "тся ться", "")
+    assert req.looks_like_task and msg == services.MSG_TASK and _key(req.matches[0]) == "math.fr.add"  # тему нашли, задачу не решаем
+    req, msg = services.submit(child, "косинус угла", "")
     assert req.match_method == "none" and msg == services.MSG_UNKNOWN
-    assert ContentRequest.objects.get().text == "тся ться"
+    assert ContentRequest.objects.get().text == "косинус угла"
+    services.submit(child, "косинус угла", "")
+    assert ContentRequest.objects.count() == 1  # повтор не плодит заявки
 
 
 def test_submit_masks_pii_and_refuses_unsafe(hw):
@@ -165,12 +177,12 @@ def test_views_child_flow_and_parent(client, hw):
     blk = Block.objects.get(meta__homework=req.id)
     assert r.status_code == 302 and r.url == reverse("play_block", args=[blk.id])
     assert client.get(r.url).status_code == 200
-    body = client.post(reverse("homework"), {"text": "тся ться"}).content.decode()
+    body = client.post(reverse("homework"), {"text": "косинус угла"}).content.decode()
     assert services.MSG_UNKNOWN in body
     assert client.get(reverse("parent_homework")).status_code == 404  # ребёнку нельзя
     client.force_login(child.family.parents.first().user)
     page = client.get(reverse("parent_homework")).content.decode()
-    assert "тся ться" in page and "сложение дробей" in page
+    assert "косинус угла" in page and "сложение дробей" in page
     cr = ContentRequest.objects.get()
     client.post(reverse("parent_homework"), {"done": cr.pk})
     cr.refresh_from_db()
@@ -179,8 +191,8 @@ def test_views_child_flow_and_parent(client, hw):
 
 def test_parent_cannot_close_other_family_request(client, hw):
     from apps.accounts.services import create_parent
-    services.submit(hw, "тся ться", "")
+    services.submit(hw, "косинус угла", "")
     p2 = create_parent("parent2", "VeryLongPass456", family_name="Б")
     client.force_login(p2.user)
-    assert "тся ться" not in client.get(reverse("parent_homework")).content.decode()
+    assert "косинус угла" not in client.get(reverse("parent_homework")).content.decode()
     assert client.post(reverse("parent_homework"), {"done": ContentRequest.objects.get().pk}).status_code == 404

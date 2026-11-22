@@ -143,6 +143,10 @@ def _shape_words(text: str) -> list[str]:
     extra = []
     if re.search(r"\d+\s*/\s*\d+", t):
         extra.append("дроби")
+        if re.search(r"\d\s*[-+−]\s*\d", t):
+            extra.append("сложение")
+        elif re.search(r"\d\s*[<>?]\s*\d", t):
+            extra.append("сравнение")
     if re.search(r"(?<![a-zа-я])[xх](?![a-zа-я])", t) and "=" in t:
         extra.append("уравнения")
     return extra

@@ -84,7 +84,7 @@ def submit(child, text: str, subject_code: str | None) -> tuple[HomeworkRequest 
         return None, "Напиши, что задали: тему, номер параграфа или правило."
     if safety.has_stopword(text) or safety.is_injection(text):
         return None, safety.REFUSAL
-    subject_code = subject_code if subject_code in ("math", "en") else None
+    subject_code = subject_code if subject_code in ("math", "en", "ru") else None
     req = HomeworkRequest(child=child, text=text, looks_like_task=matching.looks_like_task(text),
                           subject=Subject.objects.filter(code=subject_code).first() if subject_code else None)
     found = matching.search(text, subject_code)
@@ -96,7 +96,8 @@ def submit(child, text: str, subject_code: str | None) -> tuple[HomeworkRequest 
     req.save()
     msg = MSG_TASK if req.looks_like_task else ""
     if not found:
-        ContentRequest.objects.create(family=child.family, child=child, text=text, source="homework")
+        ContentRequest.objects.get_or_create(family=child.family, text=text, status="new",
+                                             defaults={"child": child, "source": "homework"})  # без дублей
         msg = MSG_UNKNOWN
     return req, msg
 
