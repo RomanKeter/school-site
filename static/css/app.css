@@ -14,6 +14,7 @@
   --c-math:#4C6A85; --c-math-bg:#E7EDF2;
   --c-en:#A35A42; --c-en-bg:#F5E8E1;
   --c-ru:#755A73; --c-ru-bg:#EFE8EE; --c-by:#4E8279;
+  --c-cim:#3E5A36; --c-cim-bg:#E8EFE4;
   --ok:#5E7A52; --ok-bg:#EDF1E6;
   --almost:#B88A3A; --almost-bg:#F6EEDD;
   --hint-bg:#F7F0DE; --mark:#EBD9A6;
@@ -267,6 +268,8 @@ h1 .ico-svg,h2 .ico-svg{color:var(--blue)}
 /* Русский язык (этап 2, D-203): цвет предмета, плитка, «вставь букву», «поставь запятые» */
 body.subj-ru{--subj:var(--c-ru);--subj-bg:var(--c-ru-bg)}
 .tile .ico.ru{background:var(--c-ru-bg);color:var(--c-ru)}
+body.subj-cim{--subj:var(--c-cim);--subj-bg:var(--c-cim-bg)}
+.tile .ico.cim{background:var(--c-cim-bg);color:var(--c-cim)}
 .ru-word{font-size:44px;font-weight:800;text-align:center;letter-spacing:.02em;margin:8px 0 20px}
 .ru-word .gap{display:inline-block;min-width:1.1em;margin:0 3px;padding:0 6px;border-bottom:4px solid var(--subj);color:var(--subj);background:var(--subj-bg);border-radius:8px 8px 0 0}
 .ru-letters{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}

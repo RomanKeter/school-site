@@ -22,6 +22,7 @@ class Command(BaseCommand):
         Subject.objects.get_or_create(code="math", defaults={"title": "Математика", "color_token": "math", "icon": "🔢", "order": 1})
         Subject.objects.get_or_create(code="en", defaults={"title": "Английский", "color_token": "en", "icon": "🔤", "order": 2})
         Subject.objects.get_or_create(code="ru", defaults={"title": "Русский язык", "color_token": "ru", "icon": "📝", "order": 3})
+        Subject.objects.get_or_create(code="cim", defaults={"title": "Человек и мир", "color_token": "cim", "icon": "🌍", "order": 4})
         samples = Path(__file__).resolve().parents[4] / "content_samples"
         math_full = (
             "math_divisibility.json", "math_fractions.json",
@@ -29,7 +30,7 @@ class Command(BaseCommand):
             "math_expressions.json", "math_fractions_more.json",
             "math_fractions_q3.json", "math_geometry.json",
         )
-        for name in (*math_full, "en_words.json", "en_program.json", *RU_FILES):
+        for name in (*math_full, "en_words.json", "en_program.json", *RU_FILES, "cim_grade5.json"):
             call_command("import_content", str(samples / name), update=True)
         call_command("seed_feynman")
         call_command("seed_homework")

@@ -51,8 +51,8 @@ class Command(BaseCommand):
         subj_code = data["subject"]
         subject, _ = Subject.objects.get_or_create(
             code=subj_code,
-            defaults={"title": {"math": "Математика", "en": "Английский", "ru": "Русский язык"}.get(subj_code, subj_code),
-                      "color_token": subj_code, "icon": "🔢" if subj_code == "math" else "🔤"},
+            defaults={"title": {"math": "Математика", "en": "Английский", "ru": "Русский язык", "cim": "Человек и мир"}.get(subj_code, subj_code),
+                      "color_token": subj_code, "icon": {"math": "🔢", "cim": "🌍", "ru": "📝"}.get(subj_code, "🔤")},
         )
         u = data["unit"]
         unit = self._upsert(Unit, u["key"], update, report,

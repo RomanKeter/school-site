@@ -189,6 +189,17 @@ def build_regular(child, mission: DailyMission, today: dt.date, order: int = 0) 
             assigned.used = True
             assigned.save(update_fields=["used"])
 
+    # 3б. «Человек и мир» по пятницам (1 ч/нед., D-1000); математика в этот день сохраняется
+    if today.weekday() == 4:
+        cim_skill = current_skill(child, "cim")
+        if cim_skill:
+            Block.objects.create(
+                child=child, mission=mission, order=order, kind="lesson",
+                title=cim_skill.title, subject_code="cim", skill=cim_skill,
+                queue=_lesson_queue(cim_skill), est_seconds=5 * 60, meta={"level": 1},
+            )
+            order += 1
+
     # 4. Английские слова
     wq, words = _word_queue(child, today, 5)
     if wq:
