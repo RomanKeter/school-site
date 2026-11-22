@@ -6,6 +6,7 @@
   <a href="{% url 'parent_dashboard' %}">Сводка</a>
   <a href="{% url 'parent_settings' %}{% if child %}?child={{ child.pk }}{% endif %}">Настройки</a>
   <a href="{% url 'parent_ai' %}{% if child %}?child={{ child.pk }}{% endif %}">ИИ-помощник</a>
+  <a href="{% url 'parent_homework' %}">Домашка</a>
   <a href="{% url 'add_child' %}">+ Ребёнок</a>
   {% if user.is_staff %}<a href="/admin/">Контент (админка)</a>{% endif %}
   <span class="spacer"></span>

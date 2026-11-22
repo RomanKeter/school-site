@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{% include "partials/icon.html" with n="pencil" %} Моя домашка</h1>
+<div class="task card">
+  <form method="post">{% csrf_token %}
+    <p class="prompt">Что задали? Напиши тему или номер правила</p>
+    <div class="options" role="radiogroup" aria-label="Предмет" style="margin-bottom:12px">
+      <label class="opt"><input type="radio" name="subject" value="" {% if not subject %}checked{% endif %}> Любой</label>
+      <label class="opt"><input type="radio" name="subject" value="math" {% if subject == "math" %}checked{% endif %}> Математика</label>
+      <label class="opt"><input type="radio" name="subject" value="en" {% if subject == "en" %}checked{% endif %}> English</label>
+    </div>
+    <p><input class="bigin" name="text" value="{{ text }}" maxlength="{{ max_chars }}" required autocomplete="off" placeholder="например: дроби с одинаковыми знаменателями" aria-label="Что задали" style="width:100%"></p>
+    <div class="actions"><span></span><button class="btn">Найти тренировку {% include "partials/icon.html" with n="arrow-right" %}</button></div>
+  </form>
+</div>
+
+{% if msg %}
+  {% if results %}<div class="hint">{% include "partials/mascot.html" with state="hint" size="small" %}{{ msg }}</div>
+  {% else %}{% include "partials/mascot.html" with state="think" size="big" say=msg %}{% endif %}
+{% endif %}
+
+{% if results %}
+<h2 class="section-title">Нашла такие темы</h2>
+<section class="tiles">
+{% for m in results %}
+  <form method="post" action="{% url 'homework_start' req.id %}" class="tile">{% csrf_token %}
+    <input type="hidden" name="kind" value="{{ m.kind }}"><input type="hidden" name="id" value="{{ m.id }}">
+    <span class="ico{% if m.subject == 'en' %} coral{% endif %}">{% if m.subject == "en" %}{% include "partials/icon.html" with n="lang" %}{% else %}{% include "partials/icon.html" with n="book" %}{% endif %}</span>
+    <span style="flex:1">{{ m.title }}<small class="muted">{{ m.steps }} заданий</small></span>
+    <button class="btn small">Тренироваться</button>
+  </form>
+{% endfor %}
+</section>
+{% endif %}
+
+{% if recent %}
+<h2 class="section-title">Недавно</h2>
+<ul class="muted">{% for r in recent %}<li>{{ r.created_at|date:"d.m" }} — {{ r.text }}</li>{% endfor %}</ul>
+{% endif %}
+<p class="muted" style="margin-top:20px">Сайт не решает домашку за тебя, но поможет потренироваться на похожих заданиях. Папа видит, что ты искала.</p>
+{% endblock %}

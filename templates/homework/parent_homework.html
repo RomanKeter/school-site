@@ -1,0 +1,24 @@
+{% extends "parent/base_parent.html" %}
+{% block pcontent %}
+<h1>Моя домашка</h1>
+<h2>Заявки на контент</h2>
+<table class="card" style="width:100%;border-collapse:collapse">
+<tr><th align="left">Когда</th><th align="left">Кто</th><th align="left">Что искала</th><th align="left">Статус</th></tr>
+{% for c in content_requests %}
+<tr style="border-top:1px solid #e5e9f2"><td>{{ c.created_at|date:"d.m H:i" }}</td><td>{{ c.child.display_name|default:"" }}</td><td>{{ c.text }}</td>
+<td>{% if c.status == "new" %}<form method="post">{% csrf_token %}<button class="btn secondary" name="done" value="{{ c.pk }}">Сделано</button></form>{% else %}сделано{% endif %}</td></tr>
+{% empty %}<tr><td colspan="4" class="muted">Заявок нет — все темы нашлись.</td></tr>
+{% endfor %}
+</table>
+<h2>Запросы</h2>
+<table class="card" style="width:100%;border-collapse:collapse">
+<tr><th align="left">Когда</th><th align="left">Кто</th><th align="left">Запрос</th><th align="left">Найдено</th><th align="left">Тренировка</th></tr>
+{% for r in requests %}
+<tr style="border-top:1px solid #e5e9f2;vertical-align:top"><td>{{ r.created_at|date:"d.m H:i" }}</td><td>{{ r.child.display_name }}</td>
+<td>{{ r.text }}{% if r.looks_like_task %}<br><small class="muted">похоже на условие задачи</small>{% endif %}</td>
+<td>{% for m in r.matches %}{{ m.title }}{% if not forloop.last %}; {% endif %}{% empty %}<span class="muted">не найдено</span>{% endfor %}<br><small class="muted">{{ r.get_match_method_display }}</small></td>
+<td>{% if r.chosen_skill %}{{ r.chosen_skill.title }}{% elif r.chosen_topic %}Слова: {{ r.chosen_topic.title }}{% else %}—{% endif %}</td></tr>
+{% empty %}<tr><td colspan="5" class="muted">Запросов пока не было.</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
