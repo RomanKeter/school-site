@@ -25,7 +25,7 @@
 {% if mission.status == "done" %}
   {% include "partials/mascot.html" with state="party" size="big" say="Миссия выполнена. Отличная работа!" %}
 {% elif current and current.kind == "diagnostic" %}
-  {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Я Зубрик. Давай познакомимся: несколько задач — и я пойму, с чего начать." %}
+  {% include "partials/mascot.html" with state="hello" size="big" say="Привет! Я Мася. Давай познакомимся: несколько задач — и я пойму, с чего начать." %}
 {% else %}
   {% include "partials/mascot.html" with state="hello" size="big" say=greeting %}
 {% endif %}
