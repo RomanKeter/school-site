@@ -338,3 +338,54 @@ def test_reflection_star_once_per_day(client, family):
     r1 = client.post(reverse("reflect"), {"mood": "hard"}).content.decode()
     r2 = client.post(reverse("reflect"), {"mood": "easy"}).content.decode()
     assert "+1" in r1 and "+1" not in r2
+
+
+def test_review_block_requeues_failed_once_and_updates_srs_once(client, family, content):
+    """SR-4: неверная карточка показывается ещё раз в конце сессии, формула — только по первому ответу дня."""
+    from apps.learning.models import DiagnosticResult
+    from apps.srs.services import ensure_item
+    from django.utils import timezone
+    from apps.srs.models import ReviewLog
+    _, child = family
+    DiagnosticResult.objects.create(child=child, completed_at=timezone.now())
+    login_child(client, child)
+    today = timezone.localdate()
+    sk = Skill.objects.get(external_key="math.div.signs_2_5_10")
+    item = ensure_item(child, today=today - dt.timedelta(days=2), skill=sk)
+    b = Block.objects.create(child=child, kind="review", title="Повторим", queue=[{"t": "review", "item": item.id}], meta={"level": 1})
+    html = client.get(reverse("play_block", args=[b.id])).content.decode()
+    assert "Повторение" in html
+    b.refresh_from_db()
+    ex = Exercise.objects.get(pk=b.queue[0]["chosen"])
+    for n in (1, 2, 3):
+        client.post(reverse("check_exercise", args=[b.id, ex.id]),
+                    {"answer": json.dumps(_answer_for(ex, False)), "attempt_no": n, "hints_used": 0, "duration_ms": 3000})
+    b.refresh_from_db()
+    assert len(b.queue) == 2 and b.queue[1].get("again")
+    item.refresh_from_db()
+    assert item.interval_days == 1 and item.n == 0 and item.last_reviewed == today
+    client.get(reverse("play_block", args=[b.id]))
+    b.refresh_from_db()
+    ex2 = Exercise.objects.get(pk=b.queue[1]["chosen"])
+    client.post(reverse("check_exercise", args=[b.id, ex2.id]),
+                {"answer": json.dumps(_answer_for(ex2, True)), "attempt_no": 1, "hints_used": 0, "duration_ms": 3000})
+    assert ReviewLog.objects.filter(review_item=item).count() == 1  # второй ответ дня формулу не меняет
+    b.refresh_from_db()
+    assert b.status == "done" and len(b.queue) == 2
+
+
+def test_ping_triggers_break_then_gate_for_60s(client, family, content):
+    from apps.learning.services import activity_get
+    from apps.accounts.utils import local_today
+    from apps.learning.models import DailyActivity
+    _, child = family
+    login_child(client, child)
+    a = activity_get(child, local_today(child.family))
+    a.since_break_seconds = 15 * 60 - 10
+    a.save()
+    r = client.post(reverse("activity_ping")).json()
+    assert r.get("redirect") == "/home/"
+    html = client.get(reverse("home")).content.decode()
+    assert "Разомнёмся" in html and "disabled" in html
+    a = DailyActivity.objects.get(pk=a.pk)
+    assert a.breaks_taken == 1 and a.since_break_seconds == 0
