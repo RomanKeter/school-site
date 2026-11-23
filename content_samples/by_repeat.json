@@ -1,0 +1,1370 @@
+[
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-zwoo",
+    "skill_title": "Звукі і іх абазначэнне на пісьме",
+    "skill_order": 1,
+    "rule_title": "Звукі і іх абазначэнне на пісьме",
+    "rule_body": "Усё, што мы чуем і вымаўляем, - гэта **гук**. Усё, што мы бачым і пішам, - гэта **літара**.\n\nГукі беларускай мовы падзяляюцца на **галосныя** і **зычныя**.\n\nУ беларускай мове **10 галосных гукаў** і **35 зычных гукаў**.",
+    "rule_examples": "гук — чуем і вымаўляем; літара — бачым і пішам",
+    "memory_hook": "Гук — чуем, літару — бачым.",
+    "tags": "гукі, літары, галосныя, зычныя, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-zwoo-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што мы чуем і вымаўляем?",
+        "explanation": "Усё, што мы чуем і вымаўляем, - гэта гук.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "гук"},
+            {"id": "b", "text": "літара"},
+            {"id": "c", "text": "слова"},
+            {"id": "d", "text": "склад"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zwoo-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што мы бачым і пішам?",
+        "explanation": "Усё, што мы бачым і пішам, - гэта літара.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "літара"},
+            {"id": "b", "text": "гук"},
+            {"id": "c", "text": "склад"},
+            {"id": "d", "text": "слова"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zwoo-sc-03",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "На якія групы дзеляцца гукі беларускай мовы?",
+        "explanation": "Гукі беларускай мовы падзяляюцца на галосныя і зычныя.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "на галосныя і зычныя"},
+            {"id": "b", "text": "на вялікія і малыя"},
+            {"id": "c", "text": "на доўгія і кароткія"},
+            {"id": "d", "text": "на друкаваныя і пісьмовыя"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zwoo-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: г..к (тое, што чуем і вымаўляем)",
+        "explanation": "Гук - усё, што мы чуем і вымаўляем.",
+        "payload": {"lang": "be-BY", "answer": "гук", "missing_index": 1}
+      },
+      {
+        "ext_id": "by-rep-zwoo-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: л..тара (тое, што бачым і пішам)",
+        "explanation": "Літара - усё, што мы бачым і пішам.",
+        "payload": {"lang": "be-BY", "answer": "літара", "missing_index": 1}
+      },
+      {
+        "ext_id": "by-rep-zwoo-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Колькі галосных гукаў у беларускай мове?",
+        "explanation": "У беларускай мове 10 галосных гукаў.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "10"},
+            {"id": "b", "text": "6"},
+            {"id": "c", "text": "35"},
+            {"id": "d", "text": "32"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zwoo-sc-07",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Колькі зычных гукаў у беларускай мове?",
+        "explanation": "У беларускай мове 35 зычных гукаў.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "35"},
+            {"id": "b", "text": "10"},
+            {"id": "c", "text": "32"},
+            {"id": "d", "text": "6"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zwoo-dt-08",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку (адно слова): усё, што мы чуем і вымаўляем.",
+        "explanation": "Гук - усё, што мы чуем і вымаўляем.",
+        "payload": {"lang": "be-BY", "answer": "гук"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-halsk",
+    "skill_title": "Галосныя гукі. Склад. Нацёк",
+    "skill_order": 2,
+    "rule_title": "Галосныя гукі. Склад. Нацёк",
+    "rule_body": "**Галосныя** гукі ўтвараюцца голасам без перашкод і цягнуцца. У беларускай мове 10 галосных гукаў: [а], [о], [у], [ы], [э], [і], [а'], [о'], [у'], [э']. Іх абазначаюць 10 літар: а, о, у, ы, э, е, ё, ю, я, і.\n\nГалосны гук - аснова **склада**. Колькі ў слове галосных, столькі і складаў.\n\n**Нацёк** - гэта вылучэнне аднаго са складаў маўленнем. У націскным складзе галосны вымаўляецца выразна і выразна.",
+    "rule_examples": "ва-да́ (2 склады, націск на -да́); 10 галосных літар: а, о, у, ы, э, е, ё, ю, я, і",
+    "memory_hook": "Колькі галосных - столькі складаў.",
+    "tags": "галосныя, склад, націск, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-halsk-fl-01",
+        "type": "fill_letters",
+        "difficulty": 1,
+        "prompt": "Устаў прапушчаную літару: га-л..сны (гук, які цягнецца)",
+        "explanation": "Галосны - гук, які ўтвараецца голасам без перашкод і цягнецца.",
+        "payload": {"lang": "be-BY", "answer": "галосны", "missing_index": 3}
+      },
+      {
+        "ext_id": "by-rep-halsk-fl-02",
+        "type": "fill_letters",
+        "difficulty": 1,
+        "prompt": "Устаў прапушчаную літару: скл..д (частка слова)",
+        "explanation": "Галосны гук - аснова склада.",
+        "payload": {"lang": "be-BY", "answer": "склад", "missing_index": 3}
+      },
+      {
+        "ext_id": "by-rep-halsk-fl-03",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: нац..ск (вылучэнне склада)",
+        "explanation": "Націск - вылучэнне аднаго са складаў маўленнем.",
+        "payload": {"lang": "be-BY", "answer": "націск", "missing_index": 3}
+      },
+      {
+        "ext_id": "by-rep-halsk-sc-04",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Што з'яўляецца асновай склада?",
+        "explanation": "Галосны гук - аснова склада. Колькі ў слове галосных, столькі і складаў.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "галосны гук"},
+            {"id": "b", "text": "зычны гук"},
+            {"id": "c", "text": "націск"},
+            {"id": "d", "text": "літара"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-halsk-sc-05",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Колькі літар абазначаюць галосныя гукі ў беларускай мове?",
+        "explanation": "10 галосных гукаў абазначаюцца 10 літарамі: а, о, у, ы, э, е, ё, ю, я, і.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "10"},
+            {"id": "b", "text": "6"},
+            {"id": "c", "text": "32"},
+            {"id": "d", "text": "35"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-halsk-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "На які склад падае націск у слове 'вада́'?",
+        "explanation": "У слове 'вада́' націск падае на другі склад (-да́).",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "на другі"},
+            {"id": "b", "text": "на першы"},
+            {"id": "c", "text": "на апошні"},
+            {"id": "d", "text": "націску няма"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-halsk-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: вада́.",
+        "explanation": "вада́ - два склады: ва-да́.",
+        "payload": {"lang": "be-BY", "answer": "вада"}
+      },
+      {
+        "ext_id": "by-rep-halsk-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: зямля́.",
+        "explanation": "зямля́ - два склады: зя-мля́.",
+        "payload": {"lang": "be-BY", "answer": "зямля"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-zvuky",
+    "skill_title": "Зычныя гукі. Цвёрдыя і мяккія, глухія і звонкія",
+    "skill_order": 3,
+    "rule_title": "Зычныя гукі. Цвёрдыя і мяккія, глухія і звонкія",
+    "rule_body": "**Зычныя** гукі ўтвараюцца з перашкодай (шумам) і не цягнуцца.\n\nЗычныя бываюць **цвёрдыя** і **мяккія** (гарод - гарадзі́), **звонкія** і **глухія** (зуб - суп, дом - том).\n\nУ беларускай мове **дзесканьне** абавязковае: [т], [д], [н], [с], [з], [л], [ц] перад галоснымі вымаўляюцца мякка: цень, дзень, нёбо, сел, зе́мля, лес, цепла.",
+    "rule_examples": "зычныя не цягнуцца: [б], [в], [г], [д]; дзесканьне: цень, дзень, нёбо",
+    "memory_hook": "Зычныя не цягнуцца: [б], [в], [г], [д].",
+    "tags": "зычныя, цвёрдыя, мяккія, глухія, звонкія, дзесканьне, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-zvuky-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Якія гукі ўтвараюцца з перашкодай і не цягнуцца?",
+        "explanation": "Зычныя гукі ўтвараюцца з перашкодай (шумам) і не цягнуцца.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "зычныя"},
+            {"id": "b", "text": "галосныя"},
+            {"id": "c", "text": "націскныя"},
+            {"id": "d", "text": "мяккія"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zvuky-sc-02",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Якія бываюць зычныя гукі?",
+        "explanation": "Зычныя бываюць цвёрдыя і мяккія, звонкія і глухія.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "цвёрдыя і мяккія, звонкія і глухія"},
+            {"id": "b", "text": "толькі цвёрдыя"},
+            {"id": "c", "text": "толькі мяккія"},
+            {"id": "d", "text": "толькі звонкія"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zvuky-fl-03",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: з..чны (гук з перашкодай)",
+        "explanation": "Зычны - гук, які ўтвараецца з перашкодай і не цягнецца.",
+        "payload": {"lang": "be-BY", "answer": "зычны", "missing_index": 1}
+      },
+      {
+        "ext_id": "by-rep-zvuky-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: звонк.. (пара да глухога)",
+        "explanation": "Зычныя бываюць звонкія і глухія.",
+        "payload": {"lang": "be-BY", "answer": "звонкі", "missing_index": 5}
+      },
+      {
+        "ext_id": "by-rep-zvuky-sc-05",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Што такое дзесканьне?",
+        "explanation": "Дзесканьне - абавязковае мяккае вымаўленне [т], [д], [н], [с], [з], [л], [ц] перад галоснымі.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "мяккае вымаўленне [т], [д], [н], [с], [з], [л], [ц] перад галоснымі"},
+            {"id": "b", "text": "вымаўленне [а] замест [о]"},
+            {"id": "c", "text": "вымаўленне [ў] на канцы слова"},
+            {"id": "d", "text": "вылучэнне склада"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zvuky-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Які гук парны звонкі да [с]?",
+        "explanation": "[с] - [з]: суп - зуб.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "[з]"},
+            {"id": "b", "text": "[ш]"},
+            {"id": "c", "text": "[ц]"},
+            {"id": "d", "text": "[ж]"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-zvuky-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: цень.",
+        "explanation": "цень - дзесканьне: [ц'] мяккае перад [э].",
+        "payload": {"lang": "be-BY", "answer": "цень"}
+      },
+      {
+        "ext_id": "by-rep-zvuky-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: нёбо.",
+        "explanation": "нёбо - дзесканьне: [н'] мяккае перад [о].",
+        "payload": {"lang": "be-BY", "answer": "нёбо"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-akdze",
+    "skill_title": "Аканне і дзеканне. Яканне",
+    "skill_order": 4,
+    "rule_title": "Аканне і дзеканне. Яканне",
+    "rule_body": "**Аканне** - вымаўленне [а] на месцы [о] у ненаціскных складах: вада́ [вада́], малако́ [малако́].\n\n**Дзеканне** - мяккае вымаўленне [д] перад галоснымі: дзень [дз'эн'], дзяцінец.\n\n**Яканне** - вымаўленне [а] на месцы [э] у першым ненаціскным складзе пасля мяккіх зычных: зямля́ [з'амл'а́], вясна́ [в'асна́].\n\nНа пісьме аканне і яканне **не адлюстроўваюцца**: пішацца літары **о, е, я** па правілах.",
+    "rule_examples": "аканне: вада́; дзеканне: дзень; яканне: зямля́",
+    "memory_hook": "Аканне: вада́; дзеканне: дзень; яканне: зямля́.",
+    "tags": "аканне, дзеканне, яканне, вымаўленне, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-akdze-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое аканне?",
+        "explanation": "Аканне - вымаўленне [а] на месцы [о] у ненаціскных складах.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "вымаўленне [а] на месцы [о] у ненаціскных складах"},
+            {"id": "b", "text": "мяккае вымаўленне [д] перад галоснымі"},
+            {"id": "c", "text": "вымаўленне [а] на месцы [э] пасля мяккіх"},
+            {"id": "d", "text": "вылучэнне склада"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-akdze-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое дзеканне?",
+        "explanation": "Дзеканне - мяккае вымаўленне [д] перад галоснымі.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "мяккае вымаўленне [д] перад галоснымі"},
+            {"id": "b", "text": "вымаўленне [а] на месцы [о]"},
+            {"id": "c", "text": "вымаўленне [а] на месцы [э]"},
+            {"id": "d", "text": "націск на першы склад"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-akdze-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Што такое яканне?",
+        "explanation": "Яканне - вымаўленне [а] на месцы [э] у першым ненаціскным складзе пасля мяккіх зычных.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "вымаўленне [а] на месцы [э] пасля мяккіх зычных"},
+            {"id": "b", "text": "вымаўленне [а] на месцы [о]"},
+            {"id": "c", "text": "мяккае вымаўленне [д]"},
+            {"id": "d", "text": "падвоенае вымаўленне зычных"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-akdze-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: ак..нне (вада́)",
+        "explanation": "Аканне - вымаўленне [а] на месцы [о] у ненаціскных складах.",
+        "payload": {"lang": "be-BY", "answer": "аканне", "missing_index": 2}
+      },
+      {
+        "ext_id": "by-rep-akdze-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: дзеканн.. (дзень)",
+        "explanation": "Дзеканне - мяккае вымаўленне [д] перад галоснымі.",
+        "payload": {"lang": "be-BY", "answer": "дзеканне", "missing_index": 7}
+      },
+      {
+        "ext_id": "by-rep-akdze-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Як вымаўляецца слова 'малако́'?",
+        "explanation": "Малако́ [малако́] - аканне: [а] на месцы [о] у ненаціскных складах.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "[малако́]"},
+            {"id": "b", "text": "[молоко́]"},
+            {"id": "c", "text": "[малако]"},
+            {"id": "d", "text": "[молоко]"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-akdze-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: малако́.",
+        "explanation": "малако́ - на пісьме аканне не адлюстроўваецца: пішацца літара о.",
+        "payload": {"lang": "be-BY", "answer": "малако"}
+      },
+      {
+        "ext_id": "by-rep-akdze-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: вясна́.",
+        "explanation": "вясна́ - на пісьме яканне не адлюстроўваецца: пішацца літара я.",
+        "payload": {"lang": "be-BY", "answer": "вясна"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-pravpis",
+    "skill_title": "Правілы пераносу слоў",
+    "skill_order": 5,
+    "rule_title": "Правілы пераносу слоў",
+    "rule_body": "Словы пераносяцца **па складах**: ра-бота, па-ля, ву-ль-га.\n\nНельга пераносіць і пакідаць у канцы радка адзін склад з адной літары: **а́-гарод** (няправільна), **а-гарод** (няправільна).\n\nНельга адрываць ад слова літары **й** і **ь**: май-стрэ́шча (не ма-йстрэ́шча), боль-шы (не бол-ьшы).",
+    "rule_examples": "перанос: ра-бота, па-ля; нельга: а-гарод, ма-йстрэ́шча",
+    "memory_hook": "Пераносім па складах, літары й і ь не адрываем.",
+    "tags": "перанос, склады, правілы, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-pravpis-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Як пераносяцца словы?",
+        "explanation": "Словы пераносяцца па складах.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "па складах"},
+            {"id": "b", "text": "па літарах"},
+            {"id": "c", "text": "пасля зычных"},
+            {"id": "d", "text": "як заўгодна"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravpis-sc-02",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Які перанос слова 'работа' правільны?",
+        "explanation": "Правільны перанос: ра-бота (па складах).",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "ра-бота"},
+            {"id": "b", "text": "рабо-та"},
+            {"id": "c", "text": "р-абота"},
+            {"id": "d", "text": "работ-а"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravpis-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Ці можна пераносіць слова 'агарод' як 'а-гарод'?",
+        "explanation": "Нельга пераносіць і пакідаць у канцы радка адзін склад з адной літары.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "не, нельга"},
+            {"id": "b", "text": "так, можна"},
+            {"id": "c", "text": "толькі ў канцы старонкі"},
+            {"id": "d", "text": "толькі ў дыктоўцы"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravpis-sc-04",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Ці можна адрываць пры пераносе літары й і ь?",
+        "explanation": "Нельга адрываць ад слова літары й і ь: май-стрэ́шча, боль-шы.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "не, нельга"},
+            {"id": "b", "text": "так, можна"},
+            {"id": "c", "text": "толькі літару й"},
+            {"id": "d", "text": "толькі літару ь"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravpis-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: перан..с слоў",
+        "explanation": "Перанос слоў - па складах.",
+        "payload": {"lang": "be-BY", "answer": "перанос", "missing_index": 5}
+      },
+      {
+        "ext_id": "by-rep-pravpis-fl-06",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: скл..д (аснова пераносу)",
+        "explanation": "Словы пераносяцца па складах.",
+        "payload": {"lang": "be-BY", "answer": "склад", "missing_index": 3}
+      },
+      {
+        "ext_id": "by-rep-pravpis-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова для пераносу: работа.",
+        "explanation": "работа - перанос: ра-бота.",
+        "payload": {"lang": "be-BY", "answer": "работа"}
+      },
+      {
+        "ext_id": "by-rep-pravpis-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова для пераносу: майстрэ́шча.",
+        "explanation": "майстрэ́шча - перанос: май-стрэ́шча (й не адрываем).",
+        "payload": {"lang": "be-BY", "answer": "майстрэшча"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-naguk",
+    "skill_title": "Нагук і нацёк у слове",
+    "skill_order": 6,
+    "rule_title": "Нагук і нацёк у слове",
+    "rule_body": "**Нагук** - гэта гукі слова без нацёку.\n\n**Нацёк** - вылучэнне аднаго са складаў маўленнем. Склад, на які падае нацёк, называецца **націскны́м**.\n\nНацёк у беларускай мове можа падаць на любой склад і можа перамяшчацца: во́ды - воды́, до́ма - дамо́ў.",
+    "rule_examples": "націскны склад вымаўляецца мацней: во́ды; нацёк рухомы: во́ды - воды́",
+    "memory_hook": "Націскны склад вымаўляем мацней.",
+    "tags": "нагук, націск, склад, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-naguk-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое націск?",
+        "explanation": "Націск - вылучэнне аднаго са складаў маўленнем.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "вылучэнне аднаго са складаў маўленнем"},
+            {"id": "b", "text": "гукі слова без нацёку"},
+            {"id": "c", "text": "перанос слова"},
+            {"id": "d", "text": "падзел на склады"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-naguk-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое нагук?",
+        "explanation": "Нагук - гэта гукі слова без нацёку.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "гукі слова без нацёку"},
+            {"id": "b", "text": "вылучэнне склада"},
+            {"id": "c", "text": "націскны склад"},
+            {"id": "d", "text": "першы склад слова"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-naguk-fl-03",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: нац..ск (вылучэнне склада)",
+        "explanation": "Націск - вылучэнне аднаго са складаў маўленнем.",
+        "payload": {"lang": "be-BY", "answer": "націск", "missing_index": 3}
+      },
+      {
+        "ext_id": "by-rep-naguk-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: націскны.. склад",
+        "explanation": "Склад, на які падае націск, называецца націскным.",
+        "payload": {"lang": "be-BY", "answer": "націскны", "missing_index": 8}
+      },
+      {
+        "ext_id": "by-rep-naguk-sc-05",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Ці можа націск у беларускай мове перамяшчацца?",
+        "explanation": "Націск рухомы: во́ды - воды́, до́ма - дамо́ў.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "так, націск рухомы"},
+            {"id": "b", "text": "не, заўсёды на першым складзе"},
+            {"id": "c", "text": "не, заўсёды на апошнім складзе"},
+            {"id": "d", "text": "толькі ў двухскладовых словах"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-naguk-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "На які склад падае націск у слове 'воды́'?",
+        "explanation": "У слове 'воды́' націск падае на другі склад.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "на другі"},
+            {"id": "b", "text": "на першы"},
+            {"id": "c", "text": "на абодва"},
+            {"id": "d", "text": "націску няма"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-naguk-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: во́ды.",
+        "explanation": "во́ды - націск на першы склад.",
+        "payload": {"lang": "be-BY", "answer": "воды"}
+      },
+      {
+        "ext_id": "by-rep-naguk-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: дамо́ў.",
+        "explanation": "дамо́ў - націск на другі склад.",
+        "payload": {"lang": "be-BY", "answer": "дамоў"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-alphabet",
+    "skill_title": "Алфавіт. Літары і іх парадак",
+    "skill_order": 7,
+    "rule_title": "Алфавіт. Літары і іх парадак",
+    "rule_body": "**Алфавіт** - гэта літары, размешчаныя ў пэўным парадку.\n\nУ беларускім алфавіце **32 літары**: а б в г д (дж дз) е ё ж з і й к л м н о п р с т у ў ф х ц ч ш ы ь э ю я.\n\nВеданне алфавіту дапамагае карыстацца слоўнікамі і каталогамі.",
+    "rule_examples": "алфавіт: 32 літары, ад а да я",
+    "memory_hook": "Алфавіт - літары па парадку: ад а да я.",
+    "tags": "алфавіт, літары, парадак, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-alphabet-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое алфавіт?",
+        "explanation": "Алфавіт - гэта літары, размешчаныя ў пэўным парадку.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "літары ў пэўным парадку"},
+            {"id": "b", "text": "усе словы мовы"},
+            {"id": "c", "text": "правілы правапісу"},
+            {"id": "d", "text": "зборнік казак"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-alphabet-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Колькі літар у беларускім алфавіце?",
+        "explanation": "У беларускім алфавіце 32 літары.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "32"},
+            {"id": "b", "text": "33"},
+            {"id": "c", "text": "30"},
+            {"id": "d", "text": "26"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-alphabet-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Якая літара ідзе ў алфавіце пасля 'д'?",
+        "explanation": "Парадак: а б в г д е ё... Пасля 'д' ідзе 'е'.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "е"},
+            {"id": "b", "text": "ё"},
+            {"id": "c", "text": "ж"},
+            {"id": "d", "text": "з"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-alphabet-sc-04",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Якая літара апошняя ў беларускім алфавіце?",
+        "explanation": "Апошняя літара - я.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "я"},
+            {"id": "b", "text": "ю"},
+            {"id": "c", "text": "э"},
+            {"id": "d", "text": "ы"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-alphabet-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: алфав..т",
+        "explanation": "Алфавіт - літары ў пэўным парадку.",
+        "payload": {"lang": "be-BY", "answer": "алфавіт", "missing_index": 6}
+      },
+      {
+        "ext_id": "by-rep-alphabet-fl-06",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: літара .. (восьмая літара алфавіту)",
+        "explanation": "Парадак: а(1) б(2) в(3) г(4) д(5) е(6) ё(7) ж(8). Восьмая літара - ж.",
+        "payload": {"lang": "be-BY", "answer": "ж", "missing_index": 0}
+      },
+      {
+        "ext_id": "by-rep-alphabet-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: алфавіт.",
+        "explanation": "алфавіт - 8 літар.",
+        "payload": {"lang": "be-BY", "answer": "алфавіт"}
+      },
+      {
+        "ext_id": "by-rep-alphabet-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку першыя чатыры літары алфавіту: а б в г.",
+        "explanation": "Першыя літары: а б в г.",
+        "payload": {"lang": "be-BY", "answer": "абвг"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-sklad",
+    "skill_title": "Склад. Нагук. Правілы пераносу",
+    "skill_order": 8,
+    "rule_title": "Склад. Нагук. Правілы пераносу",
+    "rule_body": "**Склад** - гэта адзін галосны гук ці некалькі гукаў з адным галосным. Колькі ў слове галосных, столькі і складаў.\n\nПа нацёку склады бываюць **націскныя** і **ненаціскныя**.\n\nПераносім словы па складах, не адрываючы літар **й** і **ь** і не пакідаючы адзінкавых літар.",
+    "rule_examples": "ма́ма (2 склады: ма́-ма); націскны склад: ма́",
+    "memory_hook": "Склад = адзін галосны. Пераносім па складах.",
+    "tags": "склад, націск, перанос, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-sklad-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое склад?",
+        "explanation": "Склад - адзін галосны гук ці некалькі гукаў з адным галосным.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "адзін галосны гук ці некалькі гукаў з адным галосным"},
+            {"id": "b", "text": "толькі зычны гук"},
+            {"id": "c", "text": "уся слоўная форма"},
+            {"id": "d", "text": "першая літара слова"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-sklad-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Колькі складаў у слове 'ма́ма'?",
+        "explanation": "ма́-ма: 2 галосныя, значыць 2 склады.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "2"},
+            {"id": "b", "text": "1"},
+            {"id": "c", "text": "3"},
+            {"id": "d", "text": "4"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-sklad-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Які склад называецца націскным?",
+        "explanation": "Націскны склад - той, на які падае націск.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "той, на які падае націск"},
+            {"id": "b", "text": "першы склад"},
+            {"id": "c", "text": "апошні склад"},
+            {"id": "d", "text": "самы доўгі склад"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-sklad-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: націскны.. склад",
+        "explanation": "Склад, на які падае націск, - націскны.",
+        "payload": {"lang": "be-BY", "answer": "націскны", "missing_index": 8}
+      },
+      {
+        "ext_id": "by-rep-sklad-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: ненаціскны.. склад",
+        "explanation": "Склад без націску - ненаціскны.",
+        "payload": {"lang": "be-BY", "answer": "ненаціскны", "missing_index": 10}
+      },
+      {
+        "ext_id": "by-rep-sklad-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Колькі складаў у слове 'ву́льга'?",
+        "explanation": "ву́ль-га: 2 галосныя (у, а), значыць 2 склады.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "2"},
+            {"id": "b", "text": "1"},
+            {"id": "c", "text": "3"},
+            {"id": "d", "text": "4"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-sklad-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: ву́льга.",
+        "explanation": "ву́льга - 2 склады: ву́ль-га.",
+        "payload": {"lang": "be-BY", "answer": "вульга"}
+      },
+      {
+        "ext_id": "by-rep-sklad-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: па́ле.",
+        "explanation": "па́ле - 2 склады: па́-ле.",
+        "payload": {"lang": "be-BY", "answer": "пале"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-litguk",
+    "skill_title": "Суадносіны гуку і літары",
+    "skill_order": 9,
+    "rule_title": "Суадносіны гуку і літары",
+    "rule_body": "Гукі і літары не заўсёды супадаюць. Адна літара можа абазначаць розныя гукі, і адзін гук можа перадавацца рознымі літарамі.\n\nЛітары **е, ё, ю, я** пасля зычных паказваюць мяккасць зычнага і абазначаюць адзін гук: лес [л'эс], люк [л'ук].\n\nУ пачатку слова і пасля галосных яны абазначаюць два гукі: ёж [йож], ясень [йас'эн'].",
+    "rule_examples": "лес [л'эс] - мяккасць; ёж [йож] - два гукі",
+    "memory_hook": "Гук чуем, літару пішам - яны не заўсёды сябры.",
+    "tags": "гук, літара, суадносіны, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-litguk-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Ці заўсёды гукі і літары супадаюць?",
+        "explanation": "Не, гукі і літары не заўсёды супадаюць.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "не, не заўсёды"},
+            {"id": "b", "text": "так, заўсёды"},
+            {"id": "c", "text": "толькі ў націскных складах"},
+            {"id": "d", "text": "толькі ў канцы слова"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-litguk-sc-02",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Што паказваюць літары е, ё, ю, я пасля зычных?",
+        "explanation": "Пасля зычных яны паказваюць мяккасць зычнага і абазначаюць адзін гук.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "мяккасць зычнага і адзін гук"},
+            {"id": "b", "text": "цвёрдасць зычнага"},
+            {"id": "c", "text": "два гукі"},
+            {"id": "d", "text": "націск"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-litguk-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Колькі гукаў абазначае літара 'ё' у пачатку слова 'ёж'?",
+        "explanation": "У пачатку слова 'ё' абазначае два гукі: [й] + [о] = ёж [йож].",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "два"},
+            {"id": "b", "text": "адзін"},
+            {"id": "c", "text": "тры"},
+            {"id": "d", "text": "ніякіх"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-litguk-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: мяккасць зычнага паказвае літара .. (напрыклад, у слове лес)",
+        "explanation": "У слове 'лес' літара 'е' паказвае мяккасць [л'].",
+        "payload": {"lang": "be-BY", "answer": "е", "missing_index": 0}
+      },
+      {
+        "ext_id": "by-rep-litguk-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: ..ж (звярок з калючкамі)",
+        "explanation": "ёж - у пачатку слова літара 'ё' абазначае два гукі.",
+        "payload": {"lang": "be-BY", "answer": "ёж", "missing_index": 0}
+      },
+      {
+        "ext_id": "by-rep-litguk-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Які гук чуем у слове 'вада́' на месцы літары 'о'?",
+        "explanation": "У ненаціскным складзе чуем [а] (аканне), але пішам 'о'.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "[а]"},
+            {"id": "b", "text": "[о]"},
+            {"id": "c", "text": "[у]"},
+            {"id": "d", "text": "[ы]"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-litguk-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: лес.",
+        "explanation": "лес [л'эс] - літара 'е' паказвае мяккасць.",
+        "payload": {"lang": "be-BY", "answer": "лес"}
+      },
+      {
+        "ext_id": "by-rep-litguk-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: ясень.",
+        "explanation": "ясень [йас'эн'] - літара 'я' у пачатку абазначае два гукі.",
+        "payload": {"lang": "be-BY", "answer": "ясень"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-mova",
+    "skill_title": "Мова і маўленне. Слова ў мове і маўленні",
+    "skill_order": 10,
+    "rule_title": "Мова і маўленне. Слова ў мове і маўленні",
+    "rule_body": "**Мова** - гэта сістэма знакаў (слоў і правілаў) для маўлення.\n\n**Маўленне** - гэта працэс гаворкі і вынік гэтай працэсы (тэкст).\n\nУ маўленні слова змяняецца: у мове - **вожык**, у маўленні - **вожыкі, вожыку, вожыкам**. Формы слова ў маўленні называюцца словаформамі.",
+    "rule_examples": "мова - сістэма, маўленне - працэс гаворкі; вожык - вожыкі - вожыку",
+    "memory_hook": "Мова - сістэма, маўленне - гаворка.",
+    "tags": "мова, маўленне, слова, словаформа, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-mova-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое мова?",
+        "explanation": "Мова - сістэма знакаў (слоў і правілаў) для маўлення.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "сістэма знакаў для маўлення"},
+            {"id": "b", "text": "працэс гаворкі"},
+            {"id": "c", "text": "тэкст"},
+            {"id": "d", "text": "адно слова"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-mova-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое маўленне?",
+        "explanation": "Маўленне - працэс гаворкі і вынік гэтай працэсы (тэкст).",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "працэс гаворкі і тэкст"},
+            {"id": "b", "text": "сістэма знакаў"},
+            {"id": "c", "text": "толькі пісьмо"},
+            {"id": "d", "text": "толькі чытанне"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-mova-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Як называюцца формы слова ў маўленні (вожык - вожыкі - вожыку)?",
+        "explanation": "Формы слова ў маўленні называюцца словаформамі.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "словаформы"},
+            {"id": "b", "text": "склады"},
+            {"id": "c", "text": "літары"},
+            {"id": "d", "text": "гукі"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-mova-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: мова - сістэма знакаў для маўленн..",
+        "explanation": "Мова - сістэма знакаў для маўлення.",
+        "payload": {"lang": "be-BY", "answer": "маўлення", "missing_index": 7}
+      },
+      {
+        "ext_id": "by-rep-mova-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: словафо́рм.. (формы слова ў маўленні)",
+        "explanation": "Формы слова ў маўленні - словаформы.",
+        "payload": {"lang": "be-BY", "answer": "словаформы", "missing_index": 10}
+      },
+      {
+        "ext_id": "by-rep-mova-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Дзе змяняецца слова: у мове ці ў маўленні?",
+        "explanation": "У маўленні слова змяняецца: вожык - вожыкі - вожыку.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "у маўленні"},
+            {"id": "b", "text": "у мове"},
+            {"id": "c", "text": "нідзе"},
+            {"id": "d", "text": "толькі ў пісьме"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-mova-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: вожык.",
+        "explanation": "вожык - формы: вожыкі, вожыку, вожыкам.",
+        "payload": {"lang": "be-BY", "answer": "вожык"}
+      },
+      {
+        "ext_id": "by-rep-mova-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: маўленне.",
+        "explanation": "маўленне - працэс гаворкі.",
+        "payload": {"lang": "be-BY", "answer": "маўленне"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-pravila",
+    "skill_title": "Наша мова. Правілы беларускага правапісу",
+    "skill_order": 11,
+    "rule_title": "Наша мова. Правілы беларускага правапісу",
+    "rule_body": "Беларуская мова - наша родная мова. Яна жыве ў песнях, казках, гутарках.\n\n**Правілы правапісу** дапамагаюць пісаць правільна і зразумела.\n\nПравапіс вывучаем уважліва: чытаем, параўноўваем, запамінаем.",
+    "rule_examples": "беларуская мова - родная мова; правілы правапісу дапамагаюць пісаць правільна",
+    "memory_hook": "Правілы правапісу - сябры пісьменніка.",
+    "tags": "мова, правапіс, правілы, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-pravila-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Якая мова з'яўляецца нашай роднай?",
+        "explanation": "Беларуская мова - наша родная мова.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "беларуская"},
+            {"id": "b", "text": "руская"},
+            {"id": "c", "text": "англійская"},
+            {"id": "d", "text": "польская"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravila-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што дапамагае пісаць правільна і зразумела?",
+        "explanation": "Правілы правапісу дапамагаюць пісаць правільна і зразумела.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "правілы правапісу"},
+            {"id": "b", "text": "толькі інтуіцыя"},
+            {"id": "c", "text": "толькі вымаўленне"},
+            {"id": "d", "text": "толькі слоўнік"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravila-fl-03",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: прав..лы правапісу",
+        "explanation": "Правілы правапісу дапамагаюць пісаць правільна.",
+        "payload": {"lang": "be-BY", "answer": "правілы", "missing_index": 4}
+      },
+      {
+        "ext_id": "by-rep-pravila-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: правап..с",
+        "explanation": "Правапіс вывучаем уважліва.",
+        "payload": {"lang": "be-BY", "answer": "правапіс", "missing_index": 6}
+      },
+      {
+        "ext_id": "by-rep-pravila-sc-05",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Дзе жыве беларуская мова?",
+        "explanation": "Беларуская мова жыве ў песнях, казках, гутарках.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "у песнях, казках, гутарках"},
+            {"id": "b", "text": "толькі ў падручніках"},
+            {"id": "c", "text": "толькі ў газетах"},
+            {"id": "d", "text": "нідзе"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravila-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Як вывучаем правапіс?",
+        "explanation": "Правапіс вывучаем уважліва: чытаем, параўноўваем, запамінаем.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "уважліва: чытаем, параўноўваем, запамінаем"},
+            {"id": "b", "text": "толькі перапісваем"},
+            {"id": "c", "text": "толькі слухаем"},
+            {"id": "d", "text": "не вывучаем"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-pravila-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: правапіс.",
+        "explanation": "правапіс - правілы правапісу.",
+        "payload": {"lang": "be-BY", "answer": "правапіс"}
+      },
+      {
+        "ext_id": "by-rep-pravila-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: родная.",
+        "explanation": "родная - родная мова.",
+        "payload": {"lang": "be-BY", "answer": "родная"}
+      }
+    ]
+  },
+  {
+    "unit_title": "Паўтарэнне",
+    "unit_order": 0,
+    "skill_code": "by-rep-slovnik",
+    "skill_title": "Слоўнікавая работа. Парадак слоў у слоўніку",
+    "skill_order": 12,
+    "rule_title": "Слоўнікавая работа. Парадак слоў у слоўніку",
+    "rule_body": "**Слоўнік** - гэта кніга, у якой сабраны словы ў алфавітным парадку з тлумачэннямі.\n\nУ слоўніку словы размешчаны **па алфавіце**: спачатку на а, потым на б, в, г і гэтак далей.\n\nКалі некалькі слоў пачынаюцца на адну літару, глядзім на другую літару, потым на трэцюю.",
+    "rule_examples": "слоўнік: словы па алфавіце; арбуз - арка - аркада (глядзім на 2-ю і 3-ю літары)",
+    "memory_hook": "Слоўнік - словы па алфавіце.",
+    "tags": "слоўнік, алфавіт, парадак слоў, паўтарэнне",
+    "exercises": [
+      {
+        "ext_id": "by-rep-slovnik-sc-01",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "Што такое слоўнік?",
+        "explanation": "Слоўнік - кніга, у якой сабраны словы ў алфавітным парадку з тлумачэннямі.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "кніга са словамі ў алфавітным парадку"},
+            {"id": "b", "text": "зборнік казак"},
+            {"id": "c", "text": "падручнік па матэматыцы"},
+            {"id": "d", "text": "дзённік"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-slovnik-sc-02",
+        "type": "single_choice",
+        "difficulty": 1,
+        "prompt": "У якім парадку размешчаны словы ў слоўніку?",
+        "explanation": "У слоўніку словы размешчаны па алфавіце.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "па алфавіце"},
+            {"id": "b", "text": "па даўжыні слова"},
+            {"id": "c", "text": "па колькасці літар"},
+            {"id": "d", "text": "у выпадковым парадку"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-slovnik-sc-03",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "Якое слова пойдзе ў слоўніку раней: 'арбуз' ці 'арка'?",
+        "explanation": "Абедзве пачынаюцца на 'ар', глядзім на 3-ю літару: б < к, значыць 'арбуз' раней.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "арбуз"},
+            {"id": "b", "text": "арка"},
+            {"id": "c", "text": "адначасова"},
+            {"id": "d", "text": "абодва не ў слоўніку"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-slovnik-fl-04",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: слоўн..к",
+        "explanation": "Слоўнік - кніга са словамі ў алфавітным парадку.",
+        "payload": {"lang": "be-BY", "answer": "слоўнік", "missing_index": 5}
+      },
+      {
+        "ext_id": "by-rep-slovnik-fl-05",
+        "type": "fill_letters",
+        "difficulty": 2,
+        "prompt": "Устаў прапушчаную літару: алфав..тны парадак",
+        "explanation": "Словы ў слоўніку - у алфавітным парадку.",
+        "payload": {"lang": "be-BY", "answer": "алфавітны", "missing_index": 5}
+      },
+      {
+        "ext_id": "by-rep-slovnik-sc-06",
+        "type": "single_choice",
+        "difficulty": 2,
+        "prompt": "На якую літару глядзім, калі словы пачынаюцца аднолькава?",
+        "explanation": "Глядзім на другую, потым на трэцюю літару.",
+        "payload": {
+          "lang": "be-BY",
+          "options": [
+            {"id": "a", "text": "на другую і трэцюю"},
+            {"id": "b", "text": "толькі на першую"},
+            {"id": "c", "text": "толькі на апошнюю"},
+            {"id": "d", "text": "не глядзім"}
+          ],
+          "correct": "a"
+        }
+      },
+      {
+        "ext_id": "by-rep-slovnik-dt-07",
+        "type": "dictation",
+        "difficulty": 2,
+        "prompt": "Запішы пад дыктоўку слова: слоўнік.",
+        "explanation": "слоўнік - кніга са словамі па алфавіце.",
+        "payload": {"lang": "be-BY", "answer": "слоўнік"}
+      },
+      {
+        "ext_id": "by-rep-slovnik-dt-08",
+        "type": "dictation",
+        "difficulty": 3,
+        "prompt": "Запішы пад дыктоўку слова: тлумачэнне.",
+        "explanation": "тлумачэнне - высьветленне значэння слова.",
+        "payload": {"lang": "be-BY", "answer": "тлумачэнне"}
+      }
+    ]
+  }
+]
